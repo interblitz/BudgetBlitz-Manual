@@ -13,8 +13,6 @@
   :width: 25%
 .. image:: images/about-170-pie.png
   :width: 25%
-.. image:: images/about-180-bars.png
-  :width: 25%
 .. image:: images/about-190-lines.png
   :width: 25%
 
