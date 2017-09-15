@@ -11,9 +11,15 @@
    about
    intro
    getting-started
+   directories
+   transactions
    account-identities
    import
+   teamwork
    banks
+   versions
+   migration_to_pro
+   glossary
 
 Indices and tables
 ==================

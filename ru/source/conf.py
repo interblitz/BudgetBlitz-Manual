@@ -195,7 +195,7 @@ latex_documents = [('index', 'BudgetBlitz.tex', u'BudgetBlitz Documentation', u'
 
 # A dictionary that contains LaTeX snippets that override those Sphinx usually 
 # puts into the generated .tex files.
-latex_elements = { 'babel': '\\usepackage[russian]{babel}' }
+latex_elements = { 'babel': '\\usepackage[russian]{babel}', 'papersize': 'a4paper' }
 
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -208,7 +208,7 @@ latex_use_parts = False
 
 
 # If true, show page references after internal links.
-#latex_show_pagerefs = False
+latex_show_pagerefs = True
 
 # If true, show URL addresses after external links.
 #latex_show_urls = False
