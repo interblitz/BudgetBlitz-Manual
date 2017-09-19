@@ -14,8 +14,20 @@
 
 .. image:: images/transactions-010-transactions.png
   :width: 25%
+.. image:: images/transactions-015-transactions-bottom-sheet-opening.png
+  :width: 25%
+.. image:: images/transactions-016-transactions-bottom-sheet-open.png
+  :width: 25%
+
+В список операций можно использовать фильтр, который находится в подвале. Также доступен быстрый выбор периода.
+
+.. image:: images/transactions-017-transactions-dates-range-swipe.png
+  :width: 25%
+.. image:: images/transactions-018-transactions-dates-range-spinner.png
+  :width: 25%
 .. image:: images/transactions-020-transaction.png
   :width: 25%
+
 
 Операция может быть доходной или расходной. Специального признака для вида операции нет, достаточно указать
 положительную или отрицательную сумму. Если операция является переводом, то в ней необходимо выбрать статью

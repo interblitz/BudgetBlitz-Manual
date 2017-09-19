@@ -14,11 +14,13 @@
    directories
    transactions
    account-identities
+   notifications
    import
    teamwork
-   banks
+   reports
    versions
    migration_to_pro
+   banks
    glossary
 
 Indices and tables
