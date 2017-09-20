@@ -11,6 +11,7 @@
    about
    intro
    getting-started
+   main-screen
    directories
    transactions
    account-identities
