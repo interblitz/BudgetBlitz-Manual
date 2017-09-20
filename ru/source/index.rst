@@ -18,8 +18,9 @@
    import
    teamwork
    reports
+   remote-access
    versions
-   migration_to_pro
+   migration-to-pro
    banks
    glossary
 

@@ -44,9 +44,9 @@ master_doc = u'index'
 
 
 # General information about the project.
-project = u'BudgetBlitz'
+project = u'Блиц Бюджет'
 
-copyright = u'2017, Mika'
+copyright = u'2017, Interblitz'
 
 
 # The version info for the project you're documenting, acts as replacement for
@@ -190,10 +190,10 @@ latex_font_size = u'10pt'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
-latex_documents = [('index', 'BudgetBlitz.tex', u'BudgetBlitz Documentation', u'Mika', 'manual')]
+latex_documents = [('index', 'BudgetBlitz.tex', u'Блиц Бюджет: Документация', u'Басин Михаил', 'manual')]
 
 
-# A dictionary that contains LaTeX snippets that override those Sphinx usually 
+# A dictionary that contains LaTeX snippets that override those Sphinx usually
 # puts into the generated .tex files.
 latex_elements = { 'babel': '\\usepackage[russian]{babel}', 'papersize': 'a4paper' }
 
