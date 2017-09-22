@@ -19,6 +19,8 @@
    import
    teamwork
    reports
+   bulk-actions
+   shortcuts
    remote-access
    versions
    migration-to-pro
