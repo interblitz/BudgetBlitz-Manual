@@ -21,9 +21,12 @@
    reports
    bulk-actions
    shortcuts
+   widgets
    remote-access
+   api
    versions
    migration-to-pro
+   service
    banks
    glossary
 

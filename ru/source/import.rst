@@ -4,6 +4,41 @@
 Импорт данных
 =============
 
+Настройки импорта уведомлений
+-----------------------------
+
+Настройки импорта уведомлений играют важную роль в процессе импорта уведомлений. Если банк меняет
+структуру уведомлений, то вместе со структурой меняются и настройки импорта. В этом случае Вы можете
+загрузить обновление настроек или отредактировать настройки самостоятельно, см. главу :ref:`chapter_notifications`.
+
+.. image:: images/updateimporttunes-010-select-actions.png
+  :width: 25%
+.. image:: images/updateimporttunes-020-select-import.png
+  :width: 25%
+.. image:: images/updateimporttunes-030-select-import-sms-tunes.png
+  :width: 25%
+
+Для загрузки обновлений выберите пункт меню :menuselection:`Действия --> Импорт --> Настройки импорта SMS и Push`.
+
+.. image:: images/updateimporttunes-040-select-import-tunes-updated.png
+  :width: 25%
+.. image:: images/updateimporttunes-050-select-import-tunes-new.png
+  :width: 25%
+.. image:: images/updateimporttunes-060-select-import-tunes-no-updates.png
+  :width: 25%
+
+Приложение покажет доступные обновления. Здесь же можно загрузить настройки для новых банков.
+
+.. image:: images/updateimporttunes-070-select-actions.png
+  :width: 25%
+.. image:: images/updateimporttunes-080-select-active_profile.png
+  :width: 25%
+.. image:: images/updateimporttunes-090-check-use_exchange_when_wifi.png
+  :width: 25%
+
+Возможно, что приложение не покажет доступные настройки импорта уведомлений. В этом случае проверьте, что
+в активном профиле включен обмен настройками импорта SMS.
+
 SMS и Push уведомления
 ----------------------
 

@@ -24,3 +24,10 @@
 Предыдущее официальное руководство: http://interblitz.biz/projects/blitz-0035/wiki/Blitz_Budget
 
 Предыдущее руководство для новичков: http://bbmoney.biz.ru/assets/budgetblitz-manual.pdf
+
+Варианты руководства
+--------------------
+
+HTML: http://bbmoney.biz/ru/manual/index.html
+
+PDF: http://bbmoney.biz/ru/assets/budgetblitz-user-manual.pdf
