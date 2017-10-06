@@ -11,11 +11,11 @@
 После первого запуска отредактируйте основные настройки приложения. Для этого через меню :menuselection:`Действия --> Профили (Настройки)`
 откройте справочник настроек.
 
+.. image:: images/gettingstarted-010-main-screen.png
+  :width: 25%
 .. image:: images/gettingstarted-020-click-on-actions-menu.png
   :width: 25%
 .. image:: images/gettingstarted-030-settings.png
-  :width: 25%
-.. image:: images/gettingstarted-010-main-screen.png
   :width: 25%
 
 Здесь можно:
