@@ -1,0 +1,12 @@
+#!/bin/sh
+
+make latexpdf
+
+sed ':a;N;$!ba;s/\.png}\n\n\\no/\.png}\n\\no/g' ./build/latex/BudgetBlitz.tex > ./build/latex/budgetblitz-user-manual.tex
+
+cd ./build/latex
+pdflatex -synctex=1 -interaction=nonstopmode ./budgetblitz-user-manual.tex
+#Чтобы подставились номера страниц
+pdflatex -synctex=1 -interaction=nonstopmode ./budgetblitz-user-manual.tex
+
+evince ./budgetblitz-user-manual.pdf
