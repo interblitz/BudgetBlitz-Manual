@@ -1,15 +1,15 @@
 .. include:: termins.rst
 .. _chapter_import:
 
-Импорт данных
-=============
+Data Import
+===========
 
-Настройки импорта уведомлений
------------------------------
+Notification Import Tunes
+-------------------------
 
-Настройки импорта уведомлений играют важную роль в процессе импорта уведомлений. Если банк меняет
-структуру уведомлений, то вместе со структурой меняются и настройки импорта. В этом случае Вы можете
-загрузить обновление настроек или отредактировать настройки самостоятельно, см. главу :ref:`chapter_notifications`.
+Notification import tunes have the main role in the notifications import. Once
+financial institution changes notification structure the import tunes should be changed too.
+For that case you can download update or modify tunes by yourself, see chapter :ref:`chapter_notifications`.
 
 .. image:: images/updateimporttunes-010-select-actions.png
   :width: 25%
@@ -18,7 +18,7 @@
 .. image:: images/updateimporttunes-030-select-import-sms-tunes.png
   :width: 25%
 
-Для загрузки обновлений выберите пункт меню |menu_actions_import_sms_import_settings|.
+Select menu item |menu_actions_import_sms_import_settings| to get updates.
 
 .. image:: images/updateimporttunes-040-select-import-tunes-updated.png
   :width: 25%
@@ -27,7 +27,7 @@
 .. image:: images/updateimporttunes-060-select-import-tunes-no-updates.png
   :width: 25%
 
-Приложение покажет доступные обновления. Здесь же можно загрузить настройки для новых банков.
+The app will show available update, also it is possible to download new ones here.
 
 .. image:: images/updateimporttunes-070-select-actions.png
   :width: 25%
@@ -36,21 +36,20 @@
 .. image:: images/updateimporttunes-090-check-use_exchange_when_wifi.png
   :width: 25%
 
-Возможно, что приложение не покажет доступные настройки импорта уведомлений. В этом случае проверьте, что
-в активном профиле включен обмен настройками импорта SMS.
+But may be you will see nothing. Check the import tunes exchange is on at the active profile.
 
-SMS и Push уведомления
-----------------------
+SMS and Push Notifications
+--------------------------
 
-По умолчанию |бб| автоматически импортирует SMS и Push уведомления. Тем не менее, в приложении есть возможность
-в любой момент импортировать вручную SMS и push-уведомления. Для этого:
+The app |bb| imports SMS and push notifications by default. But it is possible to import
+certain notification by hands. To do that
 
-#. Откройте диалог импорта.
-#. Выберите счет, для которого нужно импортировать SMS. В счете должны быть указаны идентификатор и настройка импорта SMS.
-#. Отметьте галочками SMS для импорта.
-#. Нажмите |button_import|. Кнопка будет доступна, если есть отмеченные SMS.
-#. Проверьте результат в списке операций.
-#. Проблемы, возникшие при импорте, можно увидеть в журнале событий.
+#. Open the import dialog.
+#. Select a required account. The account should have the identity and the import tune.
+#. Select required notifications.
+#. Press |button_import| button.
+#. Check transactions list for the result.
+#. Use event log to view issues.
 
 .. image:: images/manualsmsimport-010-select-actions.png
   :width: 25%
@@ -72,91 +71,89 @@ SMS и Push уведомления
   :width: 25%
 
 
-CSV файлы
+CSV files
 ---------
 
-Во время импорта импорта данных из файлов в формате |csv|, помимо операций, могут быть созданы новые
-счета и элементы справочников статей, плательщиков / получателей, проектов и персон.
+During |csv| file import the app can create new accounts, categories, payers or payees,
+projects, and persons. It depends on your choice.
 
-Программа автоматически определяет разделитель колонок, который может быть одним из символов ";", ",", "|", "/", "\".
-Файл должен быть в кодировке UTF-8.
+The column separator can be one of  ";", ",", "|", "/", "\". File must be UTF-8 encoded.
 
-Первая строка файла должна содержать имена колонок на английском языке, регистр не имеет значения. Помимо этого, имена
-колонок могут быть заданы в любой другой строке, тогда они будут иметь силу для последующих строк. Поддерживаются имена:
+The first row of the file must have column names in English, case does not matter.
+Since column names are placed at another row they are valid for next rows.
 
-.. list-table:: Формат CSV файла
+.. list-table:: CSV file format
    :widths: 7 5 30
    :header-rows: 1
 
-   * - Имена
-     - Обязательный
-     - Комментарий
+   * - Names
+     - Mandatory
+     - Comment
    * - id
-     - Нет
-     - Идентификатор операции, если указан, то будет выполнен поиск существующей операции
+     - No
+     - Transaction identity, the app will search existed transaction if not empty.
    * - account
-     - Да
-     - Наименование или номер счета
+     - Yes
+     - Name, number, or identity of the account
    * - date
-     - Нет
-     - Дата в одном из форматов: "dd'd'MM'd'yyyy" (например, 01d01d2017), "yyyy'd'MM'd'dd" (например, 2017d01d01), "yyyyMMddHHmmss", "yyyyMMddHHmm", "yyyyMMdd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm", "yyyy-MM-dd", "dd-MM-yyyy HH:mm:ss", "dd-MM-yyyy HH:mm", "dd-MM-yyyy", "dd.MM.yyyy HH:mm:ss", "dd.MM.yyyy HH:mm", "dd.MM.yyyy"
+     - No
+     - Date of the transaction, supported formates: "dd'd'MM'd'yyyy" (for example, 01d01d2017), "yyyy'd'MM'd'dd" (for example, 2017d01d01), "yyyyMMddHHmmss", "yyyyMMddHHmm", "yyyyMMdd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm", "yyyy-MM-dd", "dd-MM-yyyy HH:mm:ss", "dd-MM-yyyy HH:mm", "dd-MM-yyyy", "dd.MM.yyyy HH:mm:ss", "dd.MM.yyyy HH:mm", "dd.MM.yyyy"
    * - time
-     - Нет
-     - Время в одном из форматов: "HH:mm:ss", "HH:mm", "HHmmss", "HHmm"
+     - No
+     - Time of the transaction, supported formates: "HH:mm:ss", "HH:mm", "HHmmss", "HHmm"
    * - amount
-     - Да
-     - Сумма операции (может содержать валюту и разделители групп разрядов), десятичный разделитель может быть точкой или запятой
+     - Yes
+     - Transaction amount, can have a currency and digits delimiters, fixed point should be point or comma
    * - rate, exchange rate
-     - Нет
-     - Курс операции
+     - No
+     - Transaction rate
    * - currency
-     - Нет
-     - Валюта операции, если не указано, то используется в валюта счета
-   * - payee, contractor
-     - Нет
-     - Наименование плательщика или получателя платежа
+     - No
+     - Transaction currency, account currency is used when empty
+   * - payer, payee, contractor
+     - No
+     - Name of the contractor, the app will analyze current row keywords when empty
    * - category
-     - Нет
-     - Наименование категории, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки
+     - No
+     - Name of the category, the app will analyze current row keywords when empty
    * - project
-     - Нет
-     - Наименование проекта, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки
-   * - unit
-     - Нет
-     - Наименование персоны/подразделения, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки
+     - No
+     - Name of the project, the app will analyze current row keywords when empty
+   * - person, unit
+     - No
+     - Name of the person, the app will analyze current row keywords when empty
    * - notes, note
-     - Нет
-     - Примечание
+     - No
+     - Note
    * - planned, plan
-     - Нет
-     - Фактическая (0), или плановая (1) операция. Если колонка не задана, создается фактическая операция
+     - No
+     - Actual = 1, or planned = 1, default value is actual
 
-Если строка не содержит обязательных колонок, или значение обязательной колонки не задано, то такая
-строка будет пропущена. Для импорта:
+The row is canceled when mandatory columns are empty. To start the import
 
-#. Откройте диалог импорта.
-#. Выберите файл для импорта.
-#. Нажмите |button_next| и отметьте галочками строки для импорта.
-#. Нажмите |button_import|. Кнопка будет доступна, если есть отмеченные строки.
-#. Проверьте результат в списке операций.
-#. Проблемы, возникшие при импорте, можно увидеть в журнале событий.
+#. Open the import dialog.
+#. Select a file.
+#. Press |button_next| and select required rows.
+#. Press |button_import| button.
+#. Check transactions list for the result.
+#. Use event log to view issues.
 
 .. image:: images/csvimport-030-select-import-csv.png
   :width: 25%
 .. image:: images/csvimport-040-select-file-and-options.png
   :width: 25%
 
-OFX файлы
+OFX files
 ---------
 
-|бб| поддерживает импорт |OFX| файлов. Поддерживается спецификация начиная с версии 2.1.1. Для импорта:
+|бб| supports import of |OFX| files meet specification starting from 2.1.1.
 
-#. Откройте диалог импорта.
-#. Выберите файл для импорта.
-#. Нажмите |button_next| и отметьте галочками строки для импорта.
-#. Нажмите |button_import|. Кнопка будет доступна, если есть отмеченные строки.
-#. Проверьте результат в списке операций.
-#. Проблемы, возникшие при импорте, можно увидеть в журнале событий.
+#. Open the import dialog.
+#. Select a file.
+#. Press |button_next| and select required rows.
+#. Press |button_import| button.
+#. Check transactions list for the result.
+#. Use event log to view issues.
 
 .. image:: images/ofximport-030-select-import-ofx.png
   :width: 25%

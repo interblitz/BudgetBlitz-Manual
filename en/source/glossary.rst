@@ -1,20 +1,21 @@
+.. include:: termins.rst
 .. _chapter-index:
 
-Определения и термины
+Terms and definitions
 =====================
 
 .. glossary::
   :sorted:
 
-  сплит
-     Расшифровка операции называется сплитом. В сплите можно указать статью, проект, персону и комментарий
-     для каждой строки расшифровки.
+  split
+    Transaction details are called split. Split has its own category, project and person for each line.
 
-  узел обмена
-    Узлом обмена или просто узлом называется устройство, участвующее в обмене данными при коллективной работе.
+  exchange node
+    Exchange node or node is a device used by teamwork member.
 
-  контрагент
-    Контрагентом называется противоположная сторона в операции.
+  contractor
+    Contractor is a payer or payee.
 
-  техническая статья
-    Технической называется статья, в которой выключены признаки Доходная и Расходная.
+  technical category
+    Technical category is category having neither |property_category_income| nor |property_category_outcome|
+    options.

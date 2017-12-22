@@ -2,64 +2,62 @@
 .. include:: <isonum.txt>
 .. _chapter_notifications:
 
-Расширенная настройка импорта SMS и push-уведомлений
-====================================================
+Advanced Import SMS and Push Notifications Setting
+==================================================
 
-Алгоритм распознавания уведомлений
-----------------------------------
+Notifications Detection Algorithm
+---------------------------------
 
-Основную роль при импорте SMS и push-уведомлений играет настройка импорта. Именно от нее зависит
-как приложение распознает операцию, будет ли операция доходной, расходной или переводом, нужно ли
-рассчитать баланс и курс операции и т.д.
+The import tune ensures the process of SMS and push notification detection. Exactly import
+tune controls type of transaction, revenue, expense or transfer, is balance required or not,
+and so on.
 
-Алгоритм распознавания операции показан на рис ниже.
+You can see the algorithm of notifications detection at the picture below.
 
 .. image:: images/sms-import-algorithm-en.png
   :width: 75%
   :align: center
 
-При поступлении нового уведомление приложение пытается определить счет исходя из идентификаторов,
-которые указаны в справочнике счетов. Если счет найден и он является единственным, то приложение
-загружает связанную со счетом настройку импорта.
+When new notification arrived then the app tries to detect an account. It uses identities from the
+|meta_dir_accounts| directory. Since single account found the app loads connected import tune.
 
-Далее, на основании настройки выполняется классификация типа операции --- доходная, расходная или перевод.
-Для переводов приложение пытается подобрать счет-получатель исходя из ключевых фраз,
-которые указаны в справочнике счетов. Если корреспондирующий счет найден и он является единственным, то
-приложение создаст вторую операцию и перевод будет завершенным.
+Further the app classifies transaction, revenue, expense, or transfer, based on the import tune.
+While transaction is transfer the app tries to find a target account. Now it uses key phrases from the
+|meta_dir_accounts| directory. Since single target account found the app makes a target transaction
+in order to complete transfer.
 
-Следующий этап --- определение аналитик. По соответствующим ключевым фразам приложение пытается подобрать
-контрагента, статью, проект и персону. При подборе учитывается тип операции. Если какую-либо из
-аналитик не удалось подобрать, то используются значения по умолчанию.
+Next stage is to select dimensions. The app tries to find a category, payer or payee, project, person
+based on there key phrases. Default values is used when no value found out.
 
-Наконец, приложение вычисляет сумму и баланс после операции. Если баланс по данным приложения не совпадает
-с указанным в тексте уведомления, то могут быть созданы дополнительные операции комиссии, корректировки баланса
-или же будет рассчитан курс операции. Это зависит от контекста и валюты операции.
+Finally the app calculates amount and balance. Additional commission or correction
+transaction can be made or currency rate calculated when balance from notification is not equal to the app one.
+It depends on a context and transaction currency.
 
-Иногда бывает так, что уведомления приходят не в том порядке, как были совершены операции. В этом случае приложение
-будет создавать автоматические корректировки баланса до тех пор, пока порядок не восстановится. После восстановления
-правильного порядка приложение по возможности удалит лишние корректировки.
+Sometimes notifications arrive in a wrong order not like a real transactions done. The app
+creates balance correction transactions in that case until the order becomes correct.
+The app will remove redundant corrections as far as possible after the order becomes correct.
 
-Например:
+Example
 
-1. 13.04.2016, 10:00, остаток = 1000 |c|
+1. 13.04.2016, 10:00, balance = 1000 |c|
 
-Пришли SMS в неправильном порядке (правильный порядок: 4, 3, 5, 2)
+The app got messages, sequence is invalid, correct one is 4, 3, 5, 2.
 
-2. 13.04.2016, 15:00, списание = -50 |c|, баланс = 500 |c|, |rarr| автокорректировка = -450 |c|
-3. 13.04.2016, 15:05, списание = -90 |c|, баланс = 800 |c|, |rarr| автокорректировка = +390 |c|
-4. 13.04.2016, 15:10, списание = -110 |c|, баланс = 890 |c|, |rarr| автокорректировка = +200 |c|
-5. 13.04.2016, 15:15, списание = -250 |c|, баланс = 550 |c|, |rarr| автокорректировка = -90 |c|
+2. 13.04.2016, 15:00, expense = -50 |c|, balance = 500 |c|, |rarr| automatic correction = -450 |c|
+3. 13.04.2016, 15:05, expense = -90 |c|, balance = 800 |c|, |rarr| automatic correction = +390 |c|
+4. 13.04.2016, 15:10, expense = -110 |c|, balance = 890 |c|, |rarr| automatic correction = +200 |c|
+5. 13.04.2016, 15:15, expense = -250 |c|, balance = 550 |c|, |rarr| automatic correction = -90 |c|
 
-Поступила SMS в правильном порядке
+The app got message that starts correct sequence.
 
-6. 13.04.2016, 15:20, списание = -100 |c|, баланс = 400 |c|, |rarr| автокорректировка = 0 |c|, автокорректировки 2 - 5 удалены
+6. 13.04.2016, 15:20, expense = -100 |c|, balance = 400 |c|, |rarr| automatic correction  = 0 |c|, automatic corrections  2 --- 5 removed
 
-Создание новой настройки импорта
---------------------------------
+New Custom Import Tune
+----------------------
 
-На момент написания руководства приложение имеет более 160 готовых настроек импорта бля банков различных стран.
-Конечно, это не очень много, однако Вы с легкостью можете добавить настройку импорта для своего банка.
-Поверьте, это совсем не сложно.
+At this moment |bb| has more than 160 ready to use import tune for world wide financial institutions.
+It is not to match of course. But you can create an import tune by yourself with little effort.
+It is very easy to do.
 
 .. image:: images/notificationsimporttunes-010-select-directories.png
   :width: 25%
@@ -68,94 +66,97 @@
 .. image:: images/notificationsimporttunes-030-select-new.png
   :width: 25%
 
-|property_name| новой настройки может быть любым. Конечно, лучше чтобы название совпадало с
-названием банка или платежной системы.
+|property_name| for new setting can be different. It would be nice to make a name th same as
+financial institution.
 
-|property_import_tune_restriction_by_sender| (номерами или именами отправителей SMS, идентификаторами пакетов push-уведомлений)
-используется в редких случаях, когда приложение не может корректно определить счет. Оно отрабатывает раньше
-подбора счета, ограничивая выбор счета только среди счетов с подходящей настройкой импорта.
+|property_import_tune_restriction_by_sender| is only used in quite unique cases when the app is not able
+to identify account. That restriction fires before the app looking for an account by identity making list
+of accounts shorter.
 
-Например, пусть в приложении занесено два счета
-  #. РокетБанк, идентификатор ru.rocketbank.r2d2, настройка импорта РокетБанк;
-  #. ВТБ, идентификатор \*\*\*1234, настройка импорта ВТБ.
+Let the app has two accounts, for example
 
-РокетБанк, отправитель ru.rocketbank.r2d2, присылает уведомления о зачислении средств в виде
+  #. RocketBank, the identity is ru.rocketbank.r2d2, the import tune is RocketBank;
+  #. VTB, the identity is \*\*\*1234, the import tune is VTB.
+
+RocketBank, the sender is ru.rocketbank.r2d2, sends notification about revenue as
 ::
 
-  Операция >> +18 000 руб.
-  Пополнение с карты «ВТБ-24 ***1234»
+  Transaction >> +1 800 USD.
+  Source card is «VTB ***1234»
 
-В этом уведомлении нет идентификатора счета, зато указан счет-источник перевода. Если ограничение не указано,
-то приложение не может корректно выбрать счет, т.к. подходят оба счета.
+There is no identity in this notification but there is the transfer source account number. Without
+restriction by sender the app can not find the RocketBank account, because both accounts
+RocketBank and VTB are suitable.
 
-Если задано ограничение ru.rocketbank.r2d2, то приложение по совпадению отправителя и заданного ограничения
-находит настройку импорта РокетБанк. Эта настройка указана только в одном счете, поэтому приложение правильно выбирает
-счет РокетБанк.
+Since the restriction is on, the app finds RocketBank import tune by sender ru.rocketbank.r2d2.
+Only RocketBank account uses that setting, so the app selects RocketBank account correctly.
 
-Основные параметры импорта задаются ключевыми фразами. Каждый параметр может содержать несколько ключевых фраз.
-Ключевая фраза может содержать пробелы, между собой ключевые фразы должны быть разделены запятыми.
+The basic options of the import are established by key phrases. An option may have one or more
+comma separated key phrases.
 
-|property_import_tune_keywords_in_out| определяют знак операции. Если знак операции не определен, то импорт такой операции невозможен.
+|property_import_tune_keywords_in_out| define transaction sign. The import is not possible when
+sign is undefined.
 
-|property_import_tune_keywords_transfer| сигнализируют приложению о том, что нужно создать не одну, а две операции. Направление
-перевода зависит от знака операции.
+|property_import_tune_keywords_transfer| indicate to the app two transactions instead one required.
+The transfer direction depends on the transaction sign.
 
-Например, пусть:
-  #. Ключевые фразы для доходов: "пополнение наличными,кредит,поступление"
-  #. Ключевые фразы для переводов: "пополнение наличными"
-  #. Идентификатор счета Карта: Visa2900
-  #. Ключевые фразы счета Наличные: ATM
+Let the setup be, for example, as:
 
-От банка поступило SMS:
+  #. Revenues key phrases: "cash deposits,credit"
+  #. Transfers key phrases: "cash deposits"
+  #. Account Card identity: Visa2900
+  #. Account Cash key phrases: "ATM"
+
+Bank sends notification:
 ::
 
- Karta Visa2900. Пополнение наличными 2000.00 RUR ATM .Ostatok:2740.26 RUR. 25/03/14,15:00:00.
+ Card Visa2900. Cash deposits 200.00 USD ATM. Balance: 2740.26 USD. 25/03/14,15:00:00.
 
-В результате программа создаст две операции:
-  #. Операцию зачисления на счет Карта;
-  #. Операцию списания со счета Наличные.
+As a result, the app will create two transactions:
+
+  #. Revenue transaction for Card account;
+  #. Expense transaction for Cash account.
 
 .. image:: images/notificationsimporttunes-040-import-tune.png
   :width: 25%
 .. image:: images/notificationsimporttunes-050-import-tune-2.png
   :width: 25%
 
-Иногда бывает так, что некоторые уведомления содержат баланс, некоторые --- нет. Соответствующие ключевые фразы
-подскажут приложению, когда нужно определять баланс, а когда --- нет.
+Sometimes certain notifications have a balance and certain have not. Special
+key phrases help the app to understand when is case to calculate balance and when is not.
 
-Банковские сообщения о том, что не может быть выполнена та или иная операция носят информационный характер,
-однако содержат ключевые фразы для доходов или расходов. Ключевые фразы в параметре |property_import_tune_keywords_skip| позволяют
-прервать обработку импорта уведомления.
+Sometimes notification is for information only but contains revenue or expense key phrases.
+|property_import_tune_keywords_skip| key phrases makes possible to cancel import.
 
-Например:
-  #. Ключевые фразы для зачисления: "пополнение наличными,кредит,поступление"
-  #. Ключевые фразы для неудачной операции: "ошибка"
-  #. Идентификатор счета Карта: Visa2900
+Example
 
-От банка поступило SMS:
+  #. Revenues key phrases: "cash deposits,credit"
+  #. Skip transaction key phrases: "error"
+  #. Account Card identity: Visa2900
+
+Bank sends notification:
 ::
 
- Karta Visa2900. Пополнение наличными 2000.00 RUR ATM .Ostatok:740.26 RUR. Произошла ошибка. 25/03/14,15:00:00.
+ Card Visa2900. Cash deposits 200.00 USD ATM. Balance: 2740.26 USD. An error occurred. 25/03/14,15:00:00.
 
-В результате программа не создаст операцию зачисления средств на счет Карта. И это будет соответствовать действительности,
-т.к. по какой-то причине банкомат вернул деньги, вместо зачисления на счет.
+As result, the app will not make a transaction. And it is the case, because ATM have made a money back not
+a cash deposits.
 
-|property_import_tune_position_amount| указывает программе на наиболее вероятное
-расположение суммы. В процессе разбора уведомления приложение примет окончательное решение.
+|property_import_tune_position_amount| is the most probable place of the amount. Final
+decision is up to the app.
 
-|property_import_tune_position_balance| указывает приложению на наиболее вероятное
-расположение баланса. Также как и в случае с суммой операции, в процессе разбора уведомления
-приложение самостоятельно примет окончательное решение.
+|property_import_tune_position_balance| is the most probable place of the balance. Final
+decision is up to the app too.
 
-Если все уведомления банка не содержат информацию о балансе, то следует указать "-1".
+Put -1 when where is no balance in notifications at all.
 
-Если задана позиция баланса, отличная от "-1", то приложение будет игнорировать все сообщения, в которых нет баланса.
+The app skips all notification without balance when |property_import_tune_position_balance| is not equal -1.
+But you can specify key phrase to underline when is app have to expect balance and when have not to.
 
-Сумма операции и значение баланса используются для расчета курса операции, комиссий и автоматических корректировок.
+Transaction amount and balance are used to calculate currency rate, commission, and correction.
 
-Для правильной работы программы необходимо, чтобы рядом с суммой была указана валюта. Валюта может быть указана как
-слева от суммы так и справа. Для подбора валюты используются название и ключевые слова, указанные для каждой валюты
-в справочнике Валюты.
+Near the money amount of transaction should be placed a currency. Left of or right of, it does not matter.
+Currency names and keywords are the glue for the app find it out.
 
-Однако некоторые банки не всегда указывают валюту, например, Росбанк. В этом случае отметьте флажок
-|property_import_tune_no_currency|. В этом случае программа будет использовать валюту счета.
+Certain financial institutions not always put currency in notifications. Use
+|property_import_tune_no_currency| in that case and the app will use the currency of account.

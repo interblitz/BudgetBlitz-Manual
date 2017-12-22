@@ -1,56 +1,51 @@
 .. _chapter-supported-banks:
 
-Поддерживaемые банки
-====================
+Ready to use Financial Institutes
+=================================
 
-Maldives
---------
+Belarus
+-------
 
-BML
+BPSSberbank
 
-Беларусь
---------
+BelVneshEkonomBank
 
-БПС-Сбербанк
+Belagroprombank
 
-БелВнешЭкономБанк
+Belarusbank
 
-Белагропромбанк
+Belgazprombank
 
-Беларусбанк
+Belinvestbank
 
-Белгазпромбанк
+Belrosbank
 
-Белинвестбанк
+MTBank
 
-Белросбанк
+Priorbank
 
-МТБанк
+Houm Kredit Belarus
 
-Приорбанк
-
-Хоум Кредит Беларусь
-
-Бразилия
---------
+Brazil
+------
 
 Banco do Brasil
 
-Itaú Unibanco
+Ita Unibanco
 
-Венгрия
+Canada
+------
+
+ICICI Bank
+
+Hungary
 -------
 
 CIB BANK
 
-OTP Bank - Simple
+OTP Bank  Simple
 
-Вьетнам
--------
-
-Australia and New Zealand Banking Group
-
-Индия
+India
 -----
 
 Central Bank of India
@@ -59,29 +54,22 @@ Deutsche Bank
 
 State Bank of India
 
-Индонезия
+Indonesia
 ---------
 
 Commonwealth Bank
 
-Канада
-------
+Maldives
+--------
 
-ICICI Bank
+BML
 
-Объединенные Арабские Эмираты
------------------------------
-
-Emirates Islamic bank
-
-Emirates NBD
-
-Польша
+Poland
 ------
 
 Bank Millennium SA
 
-Россия
+Russia
 ------
 
 AnyBalance
@@ -94,220 +82,281 @@ Modulbank
 
 QIWI
 
-SDM-Bank
+SDMBank
 
-АКИБАНК
+AKIBANK
 
-АМТ Банк
+AMT Bank
 
-Абсолют Банк
+Absolyut Bank
 
-Авангард
+Avangard
 
-АйМаниБанк
+AyManiBank
 
-АкБарс
+AkBars
 
-Альфа-Банк
+AlfaBank
 
-БКС БАНК
+BKS BANK
 
-Балтийский Банк
+Baltiyskiy Bank
 
-Банк Европейский
+Bank Evropeyskiy
 
-Банк Москвы
+Bank Moskvi
 
-Банк Петрокоммерц
+Bank Petrokommerts
 
-Банк Приморье
+Bank Primore
 
-Банк Санкт-Петербург
+Bank SanktPeterburg
 
-Банк Советский
+Bank Sovetskiy
 
-Банк Точка
+Bank Tochka
 
-Банк Транспортный
+Bank Transportniy
 
-Банк УРАЛСИБ
+Bank URALSIB
 
-Банк Финсервис
+Bank Finservis
 
-Банк24.ru
+Bankru
 
-Барклайс-Банк
+BarklaysBank
 
-Белгородсоцбанк
+Belgorodsotsbank
 
-Бинбанк
+Binbank
 
-ВТБ 24
+VTB
 
-Внешпромбанк
+VUZBank
 
-Возрождение Банк
+Vneshprombank
 
-Восточный экспресс
+Vozrozhdenie Bank
 
-Всероссийский банк развития регионов
+Vostochniy ekspress
 
-Вятка-банк
+Vserossiyskiy bank razvitiya regionov
 
-ГЛОБЭКСБАНК
+Vyatkabank
 
-ГУТА Банк
+GLOBEKSBANK
 
-Газпромбанк
+GUTA Bank
 
-Газпромбанк Доп карта
+Gazprombank
 
-Дальневосточный Банк
+Gazprombank Dop karta
 
-Европлан
+Dalnevostochniy Bank
 
-ЕвроситиБанк
+Evroplan
 
-Екатеринбургский Муниципальный Банк
+EvrositiBank
 
-Запсибкомбанк
+Ekaterinburgskiy Munitsipalniy Bank
 
-Инвестбанк
+Zapsibkombank
 
-Интеркоммерц
+Investbank
 
-Интерпрогрессбанк
+Interkommerts
 
-Кедр
+Interprogressbank
 
-Кольцо Урала
+Kedr
 
-КредитЕвропаБанк
+Koltso Urala
 
-Кукуруза
+KreditEvropaBank
 
-Липецккомбанк
+Kukuruza
 
-ЛокоБанк
+Lipetskkombank
 
-МДМ Банк
+LokoBank
 
-МИНБанк
+MDM Bank
 
-МТС банк
+MINBank
 
-Мастербанк
+MTS bank
 
-Меткомбанк
+Masterbank
 
-Московский кредитный
+Metkombank
 
-Москомприватбанк
+Moskovskiy kreditniy
 
-НБ Траст
+Moskomprivatbank
 
-Нефтепромбанк
+NB Trast
 
-Новый Символ
+Nefteprombank
 
-Номос Банк
+Noviy Simvol
 
-ОТП Банк
+Nomos Bank
 
-Первый Республиканский Банк
+OTP Bank
 
-Почта Банк
+Perviy Respublikanskiy Bank
 
-Промсвязьбанк
+Pochta Bank
 
-Райффайзен Банк
+Promsvyazbank
 
-Региональный банк развития
+Rayffayzen Bank
 
-Рокетбанк
+Regionalniy bank razvitiya
 
-РосЕвроБанк
+Roketbank
 
-Росбанк
+RosEvroBank
 
-РоссельхозБанк
+Rosbank
 
-Россия
+RosselhozBank
 
-РостФинанс
+Rossiya
 
-Русский Стандарт
+RostFinans
 
-СКБ-Банк
+Russkiy Standart
 
-СМП Банк
+SKBBank
 
-Сбер.книжка
+SMP Bank
 
-Сбербанк России
+Sberknizhka
 
-Сбербанк-Maestro Поволжье
+Sberbank Rossii
 
-Связной Банк
+SberbankMaestro Povolzhe
 
-Связь-Банк
+Svyaznoy Bank
 
-Севергазбанк
+SvyazBank
 
-Ситибанк
+Severgazbank
 
-Собинбанк
+Sitibank
 
-Солидарность
+Sobinbank
 
-Сургутнефтегазбанк
+Solidarnost
 
-ТААТТА
+Surgutneftegazbank
 
-Татфондбанк
+TAATTA
 
-Тачбанк
+Tatfondbank
 
-Тинькофф
+Tachbank
 
-ТрансКредитБанк
+Tinkoff
 
-Трастбанк
+TransKreditBank
 
-Урал ФД
+Trastbank
 
-УралПромБанк
+Ural FD
 
-УралТрансБанк
+UralPromBank
 
-Уральский банк реконструкции и развития
+UralTransBank
 
-ФК Открытие (бывш. НОМОС-Банк)
+Uralskiy bank rekonstruktsii i razvitiya
 
-ФОНДСЕРВИСБАНК
+FK Otkritie bivsh NOMOSBank
 
-Ханты-Мансийский Банк
+FONDSERVISBANK
 
-Хоум Кредит
+HantiMansiyskiy Bank
 
-Центр-инвест
+Houm Kredit
 
-Челиндбанк
+Tsentrinvest
 
-Челябинвестбанк
+Chelindbank
 
-Экспресс
+Chelyabinvestbank
 
-ЭнергоМашБанк
+Ekspress
 
-Юниаструм Банк
+EnergoMashBank
 
-Юникредит Банк
+Yuniastrum Bank
 
-Яндекс.Деньги
+Yunikredit Bank
 
-Соединенные Штаты
------------------
+YandeksDengi
+
+Thailand
+--------
+
+KASIKORNBANK
+
+Ukraine
+-------
+
+VAB Bank
+
+ABank
+
+AlfaBank
+
+AlfaBank Ukraina
+
+BROKBIZNESBANK
+
+Dongorbank
+
+Ekspressbank
+
+Industrial
+
+KREDOBANK
+
+Mihaylvskiy
+
+OTP Bank
+
+OschadBank
+
+PUMB
+
+Petrokommerts Ukraina
+
+PrivatBank
+
+ProKreditBank
+
+Prominvestbank
+
+Rayffayzenbank Aval
+
+Sberbank Rossii v Ukraine
+
+UkrSibBank
+
+Ukreksmbank
+
+Ukrsotsbank
+
+United Arab Emirates
+--------------------
+
+Emirates Islamic bank
+
+Emirates NBD
+
+United States
+-------------
 
 First National Bank
 
@@ -319,57 +368,12 @@ Town Bank
 
 UniBank
 
-Таиланд
--------
-
-KASIKORNBANK
-
-Узбекистан
+Uzbekistan
 ----------
 
 Uzcard
 
-Украина
+Vietnam
 -------
 
-VAB Банк
-
-Альфа-Банк
-
-Альфа-Банк Украина
-
-БРОКБИЗНЕСБАНК
-
-Донгорбанк
-
-Експресс-банк
-
-Индустриал
-
-КРЕДОБАНК
-
-Михайлівський
-
-ОТП Банк
-
-ОщадБанк
-
-ПУМБ
-
-Петрокоммерц Украина
-
-ПриватБанк
-
-ПроКредитБанк
-
-Проминвестбанк
-
-Райффайзенбанк Аваль
-
-Сбербанк России в Украине
-
-УкрСибБанк
-
-Укрексімбанк»
-
-Укрсоцбанк
+Australia and New Zealand Banking Group

@@ -7,6 +7,7 @@
 .. toctree::
    :maxdepth: 2
 
+   notations
    preface
    about
    intro

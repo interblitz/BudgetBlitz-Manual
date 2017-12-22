@@ -1,22 +1,20 @@
 .. include:: termins.rst
 .. _chapter_api:
 
-Интеграция со сторонними приложениями
-=====================================
+API
+===
 
-|бб| можно интегрировать с другими приложениями. Например, можно совместить приложение с голосовым
-ассистентом и просто надиктовывать операции или автоматизировать создание новых операций при помощи
-приложения `Tasker`_.
+You can integrate |bb| with other applications. For example, you can connect |bb|
+with a voice assistant and create transactions by voice. Another hint is to create
+transactions using `Tasker`_.
 
 .. _`Tasker`: https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm
 
-Для этих целей в приложении реализован простой API. Чтобы создать новую операцию в |бб| достаточно
-отправить широковещательный интент |var_intent_convert_text_to_transaction|. Получив такой
-интент, приложение проанализирует сообщение и создаст новую операцию по алгоритму, аналогичному распознавания SMS
-и push-уведомлений.
+To create a new transaction you just need to send |var_intent_convert_text_to_transaction| broadcast intent.
+Since intent received the app analyze it and create new transaction using notifications detection algorithm.
 
-Интент должен содержать параметры, которые передаются extras:
+Intent must provide parameters by the extra section:
 
-#. |var_timestampMillis|: Тип long, дата и время новой операции в миллисекундах. Значение может быть не указано, тогда используются текущие дата и время.
-#. |var_address|: Тип String, адресат сообщения, может быть не указан.
-#. |var_message|: Тип String, текстовое сообщение, из которого приложение создаст новую операцию. Сообщение по своей структуре должно быть аналогично SMS. Обязательный параметр.
+#. |var_timestampMillis|: Type of long, date and time of a new transaction in milliseconds. Current date and time used when empty.
+#. |var_address|: Type of String, sender of the message, can be empty.
+#. |var_message|: Type of String, message like a notification to create a new transaction, required.

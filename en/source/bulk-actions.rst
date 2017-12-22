@@ -1,18 +1,17 @@
 .. include:: termins.rst
 .. _chapter_bulk_actions:
 
-Действия с группами объектов
-============================
+Bulk Actions
+============
 
-|бб| позволяет выполнять действия сразу со множеством объектов. В качестве примера можно привести замену
-статьи сразу для нескольких операций. Групповые действия можно выполнять не только с операциями, но и с
-любыми справочниками.
+|bb| admits to make actions under the set of objects. For example you can change a category
+in several transactions at once. Bulk actions are supported by any directories too.
 
-Выбор объектов
---------------
+Objects Selection
+-----------------
 
-Разберем выбор нескольких объектов на примере списка операций. Точно такие же действия можно выполнить в
-любом справочнике.
+In the example below you can see multiply selection at the transactions list. Same actions can be done in
+any directory.
 
 .. image:: images/bulkactions-010-transactions.png
   :width: 25%
@@ -21,51 +20,50 @@
 .. image:: images/bulkactions-030-transactions-checked.png
   :width: 25%
 
-Первом делом следует открыть список операций. Затем отметим галочками нужные операции. Если необходимо выбрать все
-операции, то достаточно отметить любую операцию из списка, а затем в панели действий выбрать |button_select_all|.
+Open transactions list first of all. Then select required transactions.
+To select all transactions just select one and press |button_select_all| from the top menu.
 
-Редактирование
---------------
+Editing
+-------
 
-Для редактирования выбранных операций следует нажать |button_edit|. Приложение откроет диалог, в котором
-указано количество выбранных элементов и поля, которые в этих элементах можно изменить. Так, для операций можно изменить
-дату и время, примечаний, аналитики и пр. поля. Изменения применяются только для модифицированных в диалоге редактирования
-полей.
+Press |button_edit| button to edit selected transactions. You will see the dialog that
+contains amount of objects and properties available to change. Modifications are applied
+only for changed properties.
 
 .. image:: images/bulkactions-040-transactions-edit.png
   :width: 25%
 .. image:: images/bulkactions-050-transactions-edit-dialog.png
   :width: 25%
 
-Удаление
+Deleting
 --------
 
-Для удаления выбранных операций следует нажать |button_delete|. После подтверждения приложение удалит выбранные элементы.
+Press |button_delete| to delete selected transactions. Since confirmed the app will delete
+selected items.
 
 .. image:: images/bulkactions-060-transactions-delete.png
   :width: 25%
 .. image:: images/bulkactions-070-transactions-delete-dialog.png
   :width: 25%
 
-Фильтр
-------
+Filters
+-------
 
-На основании нескольких элементов можно создать фильтр. Это удобно, когда например, необходимо увидеть все операции с
-такими же как и отмеченных операций, статьями, контрагентами, проектами или персонами. В поля фильтра сразу будут скопированы
-значения из выбранных операций, останется лишь отметить нужные поля отбора галочками.
+You can make a filter based on selected items. It is convenient when you want, for example,
+to see all transactions with the same dimensions as selected ones.
 
-Для создания фильтра на основании выбранных элементов следует нажать |button_filter|.
+Press |button_filter| to make a filter.
 
 .. image:: images/bulkactions-080-transactions-filter.png
   :width: 25%
 .. image:: images/bulkactions-090-transactions-filter-dialog.png
   :width: 25%
 
-Повторная отправка объектов при обмене
---------------------------------------
+Repetitive Sending Under Teamwork
+---------------------------------
 
-Иногда в случае коллективной работы необходимо повторить отправку операции или элементов справочника. Для этого служит
-пункт меню |menu_send_on_exchange|.
+Sometimes there would be a necessity to send transaction or directory item again when teamwork used.
+Press |menu_send_on_exchange| menu item to do that.
 
 .. image:: images/bulkactions-100-transactions-more.png
   :width: 25%
@@ -74,14 +72,14 @@
 .. image:: images/bulkactions-120-transactions-exchange-send-done.png
   :width: 25%
 
-Экспорт в CSV и OFX
--------------------
+CSV and OFX Export
+------------------
 
-Выделенные операции можно экспортировать в файлы формата CSV и OFX, используя пункты меню |menu_export_csv|
-и |menu_export_ofx|. В отличие от операций, элементы справочников можно экспортировать только в файлы формата
-CSV.
+You can export selected transactions to CSV and OFX files. Press |menu_export_csv|
+and |menu_export_ofx| to do that. In contrast to transactions directory items
+can be exported to a CSV file only.
 
-.. note:: Экспорт операций в OFX доступен только в версии Pro.
+.. note:: Export transaction to an OFX file is available in the Pro version only.
 
 .. image:: images/bulkactions-130-transactions-export-csv.png
   :width: 25%
@@ -90,15 +88,14 @@ CSV.
 .. image:: images/bulkactions-160-transactions-export-ofx-done.png
   :width: 25%
 
-Отправка исходных данных разработчику
--------------------------------------
+Sending Source Data to Developer
+--------------------------------
 
-Иногда требуется помощь разработчика для выяснения причин того или иного поведения приложения. В этих
-случаях для анализа обычно требуются исходные данные.
+Sometime you need a help to understand what is going on in the app. Usually in
+order to get a help it is required to show source data to the developer.
 
-Отправить исходные данные можно через пункт меню |menu_sent_to_developer|. Перед отправкой
-приложение откроет предварительный просмотр письма и Вы можете увидеть и отредактировать содержание
-отправляемых данных. Таким образом можно избежать передачи конфиденциальной информации.
+Press |menu_sent_to_developer| menu item to send select objects. You will
+see a letter before sending, so you will be able to edit some data.
 
 .. image:: images/bulkactions-170-transactions-developer-send.png
   :width: 25%

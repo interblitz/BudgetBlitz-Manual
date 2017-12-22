@@ -7,6 +7,7 @@ Budget Blitz: User manual
 .. toctree::
    :maxdepth: 2
 
+   notations
    preface
    about
    intro
@@ -17,7 +18,7 @@ Budget Blitz: User manual
    account-identities
    notifications
    import
-   teamwork
+
    reports
    bulk-actions
    shortcuts
@@ -29,6 +30,8 @@ Budget Blitz: User manual
    service
    banks
    glossary
+
+..   teamwork
 
 Indices and tables
 ==================

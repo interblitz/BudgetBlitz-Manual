@@ -1,16 +1,17 @@
 .. include:: termins.rst
 .. _chapter_transactions:
 
-Финансовые операции
-===================
+Transactions
+============
 
-Введение
---------
+Introduction
+------------
 
-Любые изменения денежных средств учитываются при помощи операций. Ввод начальных остатков,
-изменение кредитного лимита, списание или зачисление средств, снятие наличных в банкомате или
-что-то другое --- все это отражается при помощи операций. Такой
-подход является наиболее гибким и позволяет хранить историю всех движений.
+Transactions are used to account any changes in funds. So use a transaction when you need to
+enter an initial balance, change a credit limit, store crediting or debiting funds,
+store cash withdrawal at ATM, or something else. This approach is most versatile. The history of
+all movements will be stored due to that approach and you will be able to recall any transaction
+you need.
 
 .. image:: images/transactions-010-transactions.png
   :width: 25%
@@ -19,7 +20,7 @@
 .. image:: images/transactions-016-transactions-bottom-sheet-open.png
   :width: 25%
 
-В список операций можно использовать фильтр, который находится в подвале. Также доступен быстрый выбор периода.
+You can use filters and fast time range selection at the transactions list.
 
 .. image:: images/transactions-017-transactions-dates-range-swipe.png
   :width: 25%
@@ -28,27 +29,26 @@
 .. image:: images/transactions-020-transaction.png
   :width: 25%
 
+Transaction has to be one of revenue or expense. There is no special option just put positive
+or negative amount. For transfer use categories with |property_category_eliminable| option.
+Since installed the app contains |item_category_transfer| category you may apply to.
 
-Операция может быть доходной или расходной. Специального признака для вида операции нет, достаточно указать
-положительную или отрицательную сумму. Если операция является переводом, то в ней необходимо выбрать статью
-с признаком |property_category_eliminable|. Сразу после установки приложение содержит статью |item_category_transfer|,
-которую можно использовать при переводах.
+For a foreign transaction you should put a currency and it's rate. This rate can be different from
+a rate stored in the |meta_dir_currencies| directory. The app by itself calculates currency and rate
+for transactions imported from SMS and push notifications.
 
-Если операция выполнена в валюте, то следует указать валюту и курс валюты операции. Этот курс может отличаться
-от курса валюты в справочнике валют. Если операция создается в результате импорта SMS или push-уведомлений, то
-курс и валюта определяются автоматически.
+Use transaction dimensions, categories, payers, payees, projects, and persons to get a comprehensive
+funds accounting.
 
-Для подробного финансового учета следует правильно указывать статьи, проекты, плательщиков, получателей и персон.
-
-Сплиты
+Splits
 ------
 
-Любую операцию можно разбить на несколько, такая операция называется :term:`сплит`. Использовать сплиты удобно, например,
-для классификации покупок в супермаркете, когда часть затрат, предположим, ушла на питание дома, часть --- на
-хозяйственные товары. Конечно, это далеко не единственный пример использования сплитов.
+You can divide transaction for details. It is often called as make a :term:`split`.
+When you have a check in a supermarket it is convenient to make a split to store
+food costs, household goods costs, and so on. Of course it is far from the only case.
 
-При редактировании сумма первой части сплита автоматически пересчитывается с учетом новых частей так, чтобы
-общая сумма операции оставалась неизменной. Для удаления части сплита, достаточно указать сумму равную 0.
+The app always calculates first part of a split by itself. Just put amounts of others.
+Put zero amount to remove redundant part.
 
 .. image:: images/transactionsplit-010-select-transaction.png
   :width: 25%
@@ -61,32 +61,33 @@
 .. image:: images/transactionsplit-050-transaction-details-row-first.png
   :width: 25%
 
-Планируемые операции
+Planned Transactions
 --------------------
 
-Операции могут быть фактическими или планируемыми. Планируемая операция отмечается флажком План. Такие операции
-учитываются в планируемом движении денежных средств до того момента пока не перестанут быть актуальными.
-Актуальность определяется по дате и времени операции. Планировать можно любые операции: расходы, доходы,
-возврат долгов, накопления и др. В дальнейшем можно сравнить фактические и планируемые операции при помощи отчетов.
+Transactions are one of actual or planned. The option |property_transaction_planned| is used
+for a planned transaction. The app takes into account planned transaction until they have expired.
+A date and time of a transaction is a key for expiration. You can plan any funds movement,
+expenses, revenues, debts, credits, and so on. Reports will help you to
+compare actuals and plans.
 
 .. image:: /images/transactionplan-010-transaction-set-plan.png
   :width: 25%
 
-Ручные переводы
----------------
+Manual Transfers
+----------------
 
-Переводы отражаются в приложении двумя операциями. В карточки операции предусмотрен быстрый и удобный способ
-создания перевода вручную. Чтобы создать новый перевод:
+The app store transfer within two transaction. There is a fast and convenient way to make
+a transfer from a transaction card.
 
-#. Создайте операцию, укажите сумму.
-#. В панели инструментов выберите Создать перевод.
-#. Откроется карточка второй операций, в ней уже будет установлена сумма с противоположным знаком.
-#. Укажите счет-получатель. После выбора счета, приложение автоматически установит комментарий и статью.
-#. При необходимости отредактируйте остальные реквизиты операции.
-#. Сохраните операцию.
-#. Приложение автоматически обновит комментарий и статью в исходной операции.
-#. Сохраните исходную операцию.
-#. Приложение автоматически обновит главный экран, сумма переводов отразится в соответствующей строке.
+#. Make a new transaction and put an amount.
+#. At the top toolbar select the |button_tranfer| button.
+#. You will have a new target transaction card with a opposite amount sign.
+#. Select target account and the app will make the rest, put a commentary and a category.
+#. Edit other options if you want to.
+#. Save the target transaction.
+#. The app will update a commentary and a category at the source transaction.
+#. Save the source transaction.
+#. You will see transfers amount at the main screen.
 
 .. image:: images/transactionstransfer-010-create-transaction.png
   :width: 25%
@@ -103,14 +104,16 @@
 .. image:: images/transactionstransfer-070-transfer-result.png
   :width: 25%
 
-В настоящий момент переводы сохраняются в виде двух не связанных между с собой операций. Не забывайте отредактировать
-обе операции при необходимости.
+At this moment source and target transactions are not connected to each other.
+Do not forget to edit both ones in future.
 
-Постоянные операции
--------------------
+Recurring Transactions
+----------------------
 
-Многие операции могут повторяться с некоторой периодичностью. Такие операции называются постоянными. Обычно постоянные
-операции используют при планировании, однако такие операции могут быть также и фактическими.
+Many transactions happen with some frequency. Usually recurring transactions
+are planned but sometimes actual too.
+
+You can establish a custom frequency for recurring transactions.
 
 .. image:: images/recurringtransactions-010-select-directories.png
   :width: 25%

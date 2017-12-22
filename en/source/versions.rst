@@ -1,65 +1,62 @@
 .. include:: termins.rst
 .. _chapter_versions:
 
-Отличия между версиями
-======================
+Difference Between Versions
+===========================
 
-.. list-table:: Отличия между версиями
+.. list-table:: Difference between versions
    :widths: 25 10 5
    :header-rows: 1
    :class: longtable
 
    * -
-     - Версия Free
-     - Версия Pro
-   * - Финансовый учет
+     - Free version
+     - Pro version
+   * - Accounting
      - +
      - +
-   * - Планирование
+   * - Planning
      - +
      - +
-   * - Отчеты
+   * - Reports
      - +
      - +
-   * - Импорт SMS, OFX, CSV
+   * - SMS, OFX, CSV import
      - +
      - +
-   * - Импорт Push уведомлений
+   * - Push notifications import
      -
      - +
-   * - Дополнительный анализ SMS с паролями подтверждения операции
+   * - Additional SMS that confirms transaction and contains pins, passwords, etc import
      -
      - +
-   * - Дополнительный импорт данных из SMS с детализацией платежа (две SMS для одной операции)
+   * - Additional SMS that contains transaction details when transaction has more than one SMS import
      -
      - +
-   * - Экспорт OFX
+   * - OFX export
      -
      - +
-   * - Коллективная работа
-     - Только передача данных
+   * - Teamwork
+     - Sending data only
      - +
-   * - Коллективная работа
-     - Только 50 операций
+   * - Remote access
+     - 50 transactions
      - +
-   * - Напоминания о предстоящих платежах
+   * - Notifications about upcoming payments
      -
      - +
-   * - Создание ярлыков с настройками для быстрого открытия отчетов
+   * - Shortcuts
      -
      - +
-   * - Использование фильтров в виджетах (виджет как отчет)
+   * - Widgets as reports
      -
      - +
-   * - Автоматическое резервное копирование по расписанию
+   * - Automatic backups
      -
      - +
-   * - Шифрование резервных копий
+   * - Backups encryption
      -
      - +
-   * - Отчетность для программы 1С:Предприятие 8.2, 8.3
-     -
-     - +
-   * - Техническая поддержка
+   * - Support
      - +
      - +

@@ -1,22 +1,22 @@
 .. include:: termins.rst
 .. _chapter_widgets:
 
-Виджеты и шаблоны
-=================
+Widgets and Templates
+=====================
 
-Виджеты
+Widgets
 -------
 
-|бб| содержит удобный виджет для отображения фактических остатков, оборотов и быстрого создания новой операции.
+|bb| has the convenient widget to show actual balance, turnovers and to create new transaction.
 
 .. image:: images/widget-480.png
   :width: 25%
   :align: center
 
-Виджет доступен в различных размерах, 1x1, 1x2 и 1x4 ячейки. Оформление виджета совпадает с темой приложения.
+Available size of widget are 1x1, 1x2, and 1x4. The widget theme and the app theme are equals.
 
-Благодаря гибким настройкам виджет можно использовать не только как сводку, но и как краткий отчет или шаблон
-новой операции. Примеры будут рассмотрены ниже.
+You can use widget not only like a financial highlights. Other ways of usage are short report
+and template of new transaction.
 
 .. image:: images/widgets-005-widget-available.png
   :width: 25%
@@ -25,55 +25,53 @@
 .. image:: images/widgets-020-widget-settings.png
   :width: 25%
 
-После создания в виджете отображаются текущий остаток и движения денежных средств в основной валюте за текущий день.
-Для изменения этих настроек служит кнопка |button_settings|.
+A new widget contains a balance and turnovers for the current day. Press |button_settings|
+to modify widget.
 
-В разделе |section_view| можно задать основные параметры виджета.
+The |section_view| section has main widget options.
 
-|property_name| удобно использовать, если на экран выведено несколько виджетов. При желании можно оставить это поле
-пустым.
+Use the |property_name| when you have more than one widget. You can keep it empty if you want to.
 
-|property_portfolio_types|, |property_portfolios| и |property_accounts| служат для базового ограничения отображаемой в
-виджете информации. Можно указать один из параметров или их комбинацию. В разных экземплярах виджета могут использоваться
-разные ограничения. Так, например, на экран можно вывести два виджета, один будет показывать информацию по одному счету,
-другой --- по другому.
+Use the |property_portfolio_types|, the |property_portfolios| and the |property_accounts| options
+to restrict information of widget. You can put one or more values. Different widgets
+can have different options. For example you can have two widgets, one for
+certain account, and another for another one.
 
-|property_show_balance|  служит для включения и отключения расчета баланса, также можно конкретизировать как именно
-рассчитывать баланс, с учетом кредитного лимита или без. По умолчанию кредитный лимит не учитывается в балансе, т.е. для
-кредитных карт отображается отрицательный остаток.
+Use the |property_show_balance| to set balance visibility on or off. Also you can specify
+whether credit limit is ignored or not when balance is calculated.
+Balance is free of credit limit by default and for credit cards
+you will have a negative balance.
 
 .. image:: images/widgets-030-widget-settings-2.png
   :width: 25%
 .. image:: images/widgets-040-widget-settings-apply.png
   :width: 25%
 
-Использование виджетов в качестве шаблонов операций
----------------------------------------------------
+Using Widgets as Transaction Templates
+--------------------------------------
 
-Виджет содержит кнопку |button_new_transaction| . Эта кнопка доступна после того, как в настройках будет указан счет для
-создания новых операций. При желании можно указать сумму новой операции, которая будет автоматически установлена
-при открытии карточки новой операции.
+The |button_new_transaction| button is available in the widget since account for new transactions specified in
+settings. Also you can set an amount for new transaction. That amount will be copied to a new transaction.
 
-Также в новую операцию будут скопированы значения фильтров.
+Values of a filter will be copied to a new transaction as well.
 
-Таким образом, задав счет, сумму и фильтры, возможно использовать виджет для создания новой операции по шаблону. Все
-поля новой операции будут сразу заполнены.
+Thus, you can use widget like a new transaction template.
 
-.. note:: Использование виджетов для создания новых операций по шаблону доступно в версии Pro. В версии Free доступно создание новых операций без заполнения по шаблону.
+.. note:: Templates are available in the Pro version. Free version ignores an amount and values of filter.
 
-Использование виджетов в качестве отчетов
------------------------------------------
+Using Widgets as Reports
+------------------------
 
-Гибкие настройки позволяют использовать виджеты в качестве отчетов с заранее сохраненными настройками. Для этого
-служат параметры расположенные в разделе |section_filter|.
+Since widget has flexible settings you can use it as a report with persistent settings. The
+|section_filter| section is the key.
 
-.. note:: Использование виджетов в качестве отчетов доступно в версии Pro
+.. note:: Widgets as reports are available in the Pro version.
 
-Пример использования виджета в качестве отчета
-----------------------------------------------
+Widgets as Reports Example
+--------------------------
 
-Рассмотрим в качестве примера настройку виджета для отображения расходов на общественный транспорт в течение текущего месяца.
-Откроем настройки виджета и зададим название |value_public_transport|.
+Let us make a widget setup to show public transport expenses during current month.
+Open widget settings and put the |value_public_transport| name.
 
 .. image:: images/widgets-050-widget-example-set-name.png
   :width: 25%
@@ -82,10 +80,7 @@
 .. image:: images/widgets-070-widget-example-select-period-apply.png
   :width: 25%
 
-Общее количество потраченных денежных средств на общественный транспорт с начала ведения учета нас не интересует,
-поэтому отключим отображение баланса.
-
-В качестве периода выберем текущий месяц.
+Set balance off, because we do not need to see totals. Select current month as the time range.
 
 .. image:: images/widgets-080-widget-example-select-budget-item.png
   :width: 25%
@@ -94,19 +89,18 @@
 .. image:: images/widgets-100-widget-example-settings-apply.png
   :width: 25%
 
-В настройках фильтра зададим статью |item_category_public_transport| и сохраним настройку.
+Set the |item_category_public_transport| category and save settings.
 
 .. image:: images/widgets-110-widget-example.png
   :width: 25%
 
-Теперь виджет отображает движения только по статье |item_category_public_transport| за текущий месяц, мы видим
-конкретную сумму расходов и два счета, с которых оплачивался транспорт.
+Now you can see turnovers under |item_category_public_transport| category for the current month,
+expenses amount, and accounts that are the source of payments.
 
-Пример использования виджета в качестве шаблона
------------------------------------------------
+Widgets as Templates Example
+----------------------------
 
-Теперь изменим настройки виджета так, чтобы мы могли не только видеть расходы, но и быстро их создавать. Для
-этого снова откроем настройки.
+Now, modify settings the way you can fast create expenses. Open the setting to do that.
 
 .. image:: images/widgets-120-widget-example-select-account.png
   :width: 25%
@@ -115,8 +109,7 @@
 .. image:: images/widgets-150-widget-example-select-amount-value.png
   :width: 25%
 
-Зададим счет, с которого чаще всего будет происходить оплата транспорта. После этого укажем сумму, которая будет
-подставлена в новую операцию.
+Set the account you will pay often for public transport. Also put the most frequent amount.
 
 .. image:: images/widgets-160-widget-example-select-amount-value-2.png
   :width: 25%
@@ -125,13 +118,13 @@
 .. image:: images/widgets-180-widget-example-transaction-new.png
   :width: 25%
 
-Сохраним настройки. Теперь в виджете появилась кнопка добавления новой операции.
+Save settings. Now the button to create new transaction appeared.
 
 .. image:: images/widgets-190-widget-example-transaction.png
   :width: 25%
 
-Добавляем новую операцию из виджета. Видно, что в новой операции автоматически заполнились счета, сумма и статья. Осталось
-только сохранить новую операцию.
+Create new transaction and you will see one contains the account, the amount and the category already.
+All you have left to do is save the new transaction.
 
-Аналогичным образом можно задать контрагентов, проекты и персоны, которые будут подставлены в новую операцию. Для каждого
-шаблона следует создать свой виджет.
+Using same way you can put payer, payee, project, and person for a new transaction. Each new
+template should have a new widget.

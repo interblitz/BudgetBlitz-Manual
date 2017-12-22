@@ -1,49 +1,52 @@
-How it works
+.. include:: termins.rst
+
+How It Works
 ============
 
-Funds accounting
+Funds Accounting
 ----------------
 
-Transactions are used to account all movement of funds. Each transaction has
-for dimension that is category, project, payer or payee, person. Операции могут быть
-фактическими или плановыми, разовыми или постоянными. Постоянные операции повторяются с заданной периодичностью, как правило
-такие операции являются плановыми, но также могут быть и фактическими.
+|бб| uses transactions to store all movement of funds. Each transaction has
+four dimensions category, project, payer or payee, and person. Transactions can be
+actual or planned and onetime or recurring. Recurring transactions have own customizable frequency. Generally
+this ones are planned but it is possible to make actual recurring transactions too.
 
-Любую операцию можно разбить на несколько подопераций, такая операция называется сплитом, см. :term:`сплит`.
+Any transaction can be split for details. These transactions are called split, see. :term:`split`.
 
-Структура справочников
-----------------------
+Directories Structure
+---------------------
 
-Операции принадлежат определенному счету. Это может быть банковский счет, счет с электронными деньгами, наличные в портмоне,
-или что-то другое. Каждый счет имеет свою валюту, которая может отличаться от валюты операции.
+Each transaction has own account. It can be account of a financial institution, or e-money account, or cash,
+or something else. Each transaction has own currency that may be differ from account currency.
 
-В свою очередь, все счета разбиты по портфелям. Каждый портфель также имеет свою валюту, которая может отличаться от валюты счета.
+In its turn each account belongs to a portfolio. Each portfolio has own currency that may be differ from account currency also.
 
-Но это еще не все. Портфели разбиты по типам портфелям. Тип портфеля можно считать аналогом организации.
-Если Вы ведете только домашнюю бухгалтерию, то у Вас будет только один тип портфеля --- персональный. Если Вы
-дополнительно ведете учет в организации, то два --- персональный и малый бизнес. В некоторых случаях типов
-портфелей может быть и больше.
+But that's not all. Portfolios have a type. It may be considered as a kind of activity. You will have only one
+personal type of portfolio for personal finances. But when you a have a business then personal and
+business portfolio types will be in use. For some special cases more than two portfolio types can be used.
 
-Статьи, контрагенты, проекты и персоны привязаны к типу портфеля. Схематично все справочники можно представить на рисунке:
+Category, project, payer or payee, and person connected to the portfolio type. It is not really
+complex as you can see on the chart below:
 
 .. image:: images/directories_structure_en.png
   :width: 75%
   :align: center
 
-.. note:: Любой справочник можно отредактировать. Например, можно добавить валюту, статью и т.п. Нет никаких ограничений!
+.. note:: You can edit any directory. For example, add a currency, a category or something else. There are no restrictions!
 
-Отличие между плательщиками (получателями) и персонами
-------------------------------------------------------
+Difference Between Contractors and Persons
+------------------------------------------
 
-Под плательщиками и получателями в программе понимается вторая сторона в денежной операции. Часто это сторону называют
-контрагентом. Операции не может быть без контрагента, исключение составляет перевод между своими счетами. Если Вы даете, например,
-ребенку некую сумму денег, то ребенок является контрагентом и должен быть занесен в справочник плательщиков / получателей.
+Contrary part of transaction is payer or payee. This is often called a contractor. Only transfer transactions
+have no contractor. All other transactions have. For example your child is contractor
+when you give him or her some money. So you should put him or her to the |meta_dir_contractors| directory.
 
-Персоны, а также категории (статьи) и проекты являются расшифровкой операции. Так например, если Вы покупаете, одежду для
-ребенка в магазине, то контрагентом является магазин, а ребенок в этой операции --- персоной.
+Persons are transaction details as well as categories and projects. For a example a shop is the contractor
+and your child is the person when you buy clothes to your child.
 
-Контрагенты и персоны можно связать между собой. Для этого в карточке контрагента можно выбрать конкретную персону. Тогда,
-при выборе контрагента, в операцию также будет попадать и указанная персона. Например, ребенок будет и контрагентом и персоной.
+There is an option to connect contractor and person. To do so just define a person in a card
+of contractor. After that the person will be selected within the contractor. For instance, in order
+to combine both examples above, you should consider the child as the contractor and the person at the same time.
 
-Настроив учет таким образом, можно увидеть общую сумму потраченную на содержание ребенка (аналитика по персоне)
-и отдельно сумму денежных средств непосредственно переданных ребенку (аналитика по контрагенту).
+As the result, you will see total child expenses using a person filter and total
+money delivered to the child using a contractor filter.

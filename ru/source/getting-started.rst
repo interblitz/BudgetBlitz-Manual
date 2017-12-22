@@ -82,7 +82,7 @@
 ----------------------------
 
 Перед импортом ранее полученных уведомлений от банков проверьте настройки счетов согласно главе :ref:`chapter-account-identities`. Затем нажмите |button_sms_import_items|
-в разделе Импорт или выберите пункт меню |menu_actions_import_sms_import_items|, укажите счет
+в разделе |section_import| или выберите пункт меню |menu_actions_import_sms_import_items|, укажите счет
 и импортируйте SMS. Подробней процесс импорта разобран в главе :ref:`chapter_import` и `вопросах и ответах`_.
 
 .. _`вопросах и ответах`: http://qa.bbmoney.biz/ru/index.php?qa=13&qa_1=%D0%BA%D0%B0%D0%BA-%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E-%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-sms&show=13#q13

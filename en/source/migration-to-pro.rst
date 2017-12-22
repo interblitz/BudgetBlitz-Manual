@@ -1,12 +1,13 @@
 .. include:: termins.rst
 .. _chapter_migration_to_pro:
 
-Переход на версию Pro
-=====================
+Migration to Pro Version
+========================
 
-Переход выполняется в два этапа. Сначала нужно подготовить данные вашей версии, а затем загрузить их в новую версию программы. Предварительно убедитесь что SD карта подключена к мобильному устройству и на ней достаточно свободного места.
+There are two stage of migration, prepare data in old version and loading it into a new one.
+It is very easy to do.
 
-#. Загрузите версию Free;
-#. В главном меню выберите Экспорт - В версию Pro;
-#. Загрузите версию Pro;
-#. В главном меню выберите Импорт - Из версии Free.
+#. Start Free version;
+#. At the main screen press |menu_actions_export_pro|;
+#. Start Pro version;
+#. At the main screen press |menu_actions_import_free|.

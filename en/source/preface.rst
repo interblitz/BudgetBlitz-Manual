@@ -3,23 +3,23 @@
 Preface
 =======
 
-It would be nice to draw your attention to the common issue of a |бб| user. It is the hight entry level.
-That means that user should have a some time for studying the application. Therefore please schedule a time
-and it will not be lost for nothing. Most of users say that they do not regret about time spent.
+It would be nice to draw your attention to the common issue of a |бб| user. It is the high entry level.
+That means a user should have some time for studying the application. Therefore please schedule a time
+and it will not be lost for nothing. Most users say they do not regret about time spent.
 
 Introduction
 ------------
 
-User manual will help you to get started with app |бб|. The guide is not exhaustive but it is constantly
-supplemented and developed along with the application. comments and suggestions are welcome,
-see. `Feed back`_.
+User manual will help you to get started with the app |бб|. The guide is not exhaustive but it is constantly
+supplemented and developed along with the application. Comments and suggestions are welcome,
+see. `Feedback`_.
 
-Additional sources
+Additional Sources
 ------------------
 
-Russian language questions and answers: http://qa.bbmoney.biz/ru/
+Questions and answers in English: http://qa.bbmoney.biz/en/
 
-English language questions and answers: http://qa.bbmoney.biz/en/
+Questions and answers in Russian: http://qa.bbmoney.biz/ru/
 
 4PDA discussion: http://4pda.ru/forum/index.php?showtopic=658215
 
@@ -27,15 +27,17 @@ Previous user manual: http://interblitz.biz/projects/blitz-0035/wiki/User_manual
 
 .. Предыдущее руководство для новичков: http://bbmoney.biz.ru/assets/budgetblitz-manual.pdf
 
-User manual editions
+User Manual Editions
 --------------------
 
-HTML: http://bbmoney.biz/ru/manual/index.html
+HTML: http://bbmoney.biz/en/manual/index.html
 
-PDF: http://bbmoney.biz/ru/assets/budgetblitz-user-manual.pdf
+PDF: http://bbmoney.biz/en/assets/budgetblitz-user-manual.pdf
 
-Feed back
----------
+.. _section_feedback:
+
+Feedback
+--------
 
 Author: Basin Michael
 

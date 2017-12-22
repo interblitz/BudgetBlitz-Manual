@@ -4,7 +4,8 @@
 About
 =====
 
-The app |бб| is used for accounting and planning:
+|бб| is used for accounting and planning:
+
   * personal finances;
   * very small business finances;
   * small business finances.
@@ -17,14 +18,15 @@ The app |бб| is used for accounting and planning:
   :width: 25%
 
 ------------
-Key features
+Key Features
 ------------
+
 Combining the accounting of personal finances and finances of a company.
 
-Comprehensive accounting of finances --- categories, contractors (payers and recipients), persons, projects are supported.
+Comprehensive accounting of finances, i.e. categories, payers and payees, persons, projects are supported.
 
-Automatic recognition of SMS and Push notifications of banks --- amounts,commissions, categories, projects, persons,
-payees and payers selection, automatic balance adjustment, 160+ banks of different countries supported,
+Automatic recognition of SMS and push notifications coming from financial institutions. Amounts, commissions, categories, projects, persons,
+payers and payees detection, automatic balance adjustment, 160+ banks of different countries supported,
 see. :ref:`chapter-supported-banks`.
 
 Financial highlights on the main screen.
@@ -37,44 +39,44 @@ Distributed teamwork with customizable access rights.
 
 PC web browser driven client.
 
-API for getting transaction from other applications.
+API for receiving transactions from other applications.
 
 Various financial reports.
 
---------------------------------------------
-Interesting solutions implemented in the app
---------------------------------------------
+---------------------------------
+Interesting Solutions Implemented
+---------------------------------
 
-Banks SMS and push notifications detection subsystem
+Banks SMS and push notifications detection subsystem:
 
-  *  Automatic category, contractor, person, project recognition;
+  *  Automatic category, payer and payee, person, project recognition;
 
-  *  Convenient key phrases selection from SMS and push notifications immediately;
+  *  Convenient key phrases selection immediately from SMS and push notifications;
 
-  *  Automatic calculation of rates for currency transactions;
+  *  Automatic calculation of rates for foreign transactions;
 
   *  Automatic detection of transfers between accounts;
 
-  *  Option to create custom SMS and push notifications import tune.
+  *  Option to create custom SMS and push notifications import tune in order to support new banks.
 
-Reports subsystem
+Reports subsystem:
 
-  *  Simplified OLAP technology is used for the reports;
+  *  Simplified OLAP technology is used for reports;
 
-  *  Drilldown reports feature supported;
+  *  Drilldown feature supported;
 
-  *  App widgets are used for brief reports ;
+  *  App widgets are used for brief reports;
 
-  *  Shortcuts with predefined settings for reports are supported.
+  *  Shortcuts with predefined settings for reports.
 
-Teamwork subsystem
+Teamwork subsystem:
 
-  *  Data exchange is used, no registration, no common database, each team member has it own database.
+  *  Data exchange is used, no registration, no common database, each team member has own database.
 
-  *  Flexible system for setting rights and data areas for exchange. You can synchronize transactions between team members for only one account, a project, and so on.
+  *  Flexible system of rights and data areas for exchange. You can synchronize transactions between team members for only one account, a project, and so on.
 
   *  Unlimited number of team members.
 
-PC access subsystem
+PC access subsystem:
 
   *  Windows, Linux, Mac, etc are supported by PC client. All you need is modern browser. Internet Explorer 8+, Google Chrome, Apple Safari, Mozilla Firefox, Opera supported.

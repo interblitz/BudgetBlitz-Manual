@@ -1,24 +1,24 @@
 .. include:: termins.rst
 .. _chapter_directories:
 
-Справочники
+Directories
 ===========
 
-Любой справочник можно открыть из панели быстрых кнопок или меню Действия в зависимости от того,
-какой экран открыт в данный момент
+Directories are available from the top menu or from the |menu_actions_directories| menu.
+It depends on the current screen.
 
 .. image:: images/directories-010-select-directories.png
   :width: 25%
 .. image:: images/directories-020-menu-directories.png
   :width: 25%
 
-Типы портфелей
---------------
+Portfolio Types
+---------------
 
-Типы портфелей служат для разделения аналитик между портфелями. Например для персонального портфеля
-может использоваться один набор статей, а для малого бизнеса совсем другой.
-Тип портфеля учитывается при подборе аналитик (статей, проектов, плательщиков, получателей, персон) в
-момент редактирования операции.
+Portfolio types are used to separate dimensions between your activities. For example, one set of
+categories is used for personal finance and another set is used for business finances. When you
+edit a transaction its dimensions (category,  payer or payee, project, and person) correspond
+to the certain type of portfolio.
 
 .. image:: images/directories-030-types-of-portfolio.png
   :width: 25%
@@ -27,46 +27,45 @@
 .. image:: images/directories-050-accounts.png
   :width: 25%
 
-Следует обратить внимание на портфель |item_universal|. В старых версиях этот портфель называется |item_category_empty|.
-Аналитики этого портфеля доступны для использования в любом другом портфеле. Например, статья |item_category_transfer|
-принадлежит портфелю |item_universal| и может быть выбрана в любой операции вне зависимости от выбранного счета и
-связанного с ним типа портфеля.
+It will be useful to pay attention to the |item_universal| type of portfolio. Its name is |item_category_empty|
+for old versions. Dimensions of this type of portfolio are always available. For example |item_category_transfer|
+category can be selected in any transaction regardless selected account and connected portfolio type.
 
-.. note:: Аналитики портфеля |item_universal| доступны для всех счетов
+.. note:: Dimensions of the |item_universal| type of portfolio are always available
 
-Портфели
+Portfolios
+----------
+
+Portfolio is a group of accounts. Portfolio has own currency. The |бб| uses a portfolio currency
+to show financial highlights. Use the |meta_dir_currencies| directory to apply currency rates.
+
+Accounts
 --------
 
-Справочник Портфели служит для группировки счетов. Каждый портфель имеет свои валюту. Итоги и движения по портфелю
-будут отображаться в указанной валюте исходя из курсов справочника Валюты.
+Account is a bank account, debit or credit card, investment account, cash, or something else.
+Account has own currency. It may be differ from a currency of portfolio.
 
-Счета
------
+Identity of an account is used for transactions import, see :ref:`chapter_import`.
+You can put several identities. Use the comma to separate one identity from another.
+Usually card or account number is used for identity. Phone number, or SMS sander name,
+or identity of push notifications package can be considered as identity as well.
 
-Счетом может быть банковский счет или карта, металлический счет,
-наличные и пр. Каждый счет имеет свою валюту, которая может отличаться от валюты портфеля.
+Key phrases are also used for transactions import. For transfers source account is detected by identity
+and target account is detected by key phrases. Key phrases are used for transfers only.
 
-Идентификатор счета используется при импорте данных, см. :ref:`chapter_import`. Можно указать несколько
-идентификаторов, разделенных запятой. Идентификатором может также служить телефонный номер, короткое имя отправителя SMS
-или идентификатор пакета Push уведомлений.
-
-Ключевые слова счета также используются при импорте SMS. В случае операций перевода счет, найденный по идентификатору
-является отправителем, а счет найденный по ключевым словам --- получателем. Перевод может быть как положительным
-(зачисление), так и отрицательным (списание). Ключевые слова используются только для переводов.
-
-Например, от банка поступило SMS:
+For example you have SMS from bank:
 ::
 
-  Karta Visa2900. Proizvedeno snyatie 2000.00 RUR ATM .Ostatok:274.26 RUR. 25/03/14,15:00:00.
+  Visa2900 card. Cash withdraw 200.00 USD ATM 5412. Balance: 274.26 USD. 25/03/14,15:00:00.
 
-В этом случае Visa2900 является идентификатором счета Карта, ATM --- ключевой фразой счета Наличные. При импорте SMS приложение создаст
-две операции --- операцию списания для счета Карта и операцию зачисления для счета Наличные.
+Visa2900 is identity of the |item_card| account, ATM is the key phrase for the |item_cash| account.
+Since SMS pushed the app |bb| will create two transactions, debit transaction on |item_card| account
+and credit transaction on |item_cash| account.
 
-Настройка импорта SMS определяет как именно будут распознаваться операции.
-Подробнее о настройках импорта SMS см. :ref:`chapter_notifications`.
+SMS import tune establishes the algorithm of transactions detection. See more details in the :ref:`chapter_notifications`.
 
-Значения по умолчанию, заданные для проектов, контрагентов и персон, будут использоваться при создании операций. При
-импорте и обмене данными приложение также использует эти значения.
+Default values of payers and payees, projects and persons are used when you create transaction
+and import transactions, Also the app uses this values for teamwork on data exchange.
 
 .. image:: images/directories-055-accounts-continue.png
   :width: 25%
@@ -75,57 +74,63 @@
 .. image:: images/directories-070-contractors.png
   :width: 25%
 
-Статьи
-------
+Categories
+----------
 
-Справочник Статьи является основным при классификации операций. Выбранная статья влияет на то, как будет учитываться
-операция на главном экране, в отчетах и списке операций. В зависимости от признаков статья может быть доходной, расходной,
-технической, переводной и архивной.
+|meta_dir_categories| directory plays the main role for the classification of transactions.
+A category may a set of options,
+|property_category_income|, |property_category_outcome|, |property_category_summary|,
+technical, |property_category_eliminable| and  |property_category_archived_femail|.
 
-Признаки Доходная и Расходная влияют на сортировку статей при редактировании операции. Для доходный операций сначала
-будут отображаться доходные операции, затем расходные и наоборот.
+Categories sorting order under transaction editing depends on
+|property_category_income| and |property_category_outcome| options. For a revenue transaction
+revenue categories are placed at the beginning and then expense ones placed and vice versa.
 
-Статья может не быть ни доходной ни расходной. В этом случае статья считается технической. В качестве примера использования
-технической статьи можно привести операцию изменения кредитного лимита на карте Сбербанка.
-Движение денег для владельца карты в такой операции нет, но сумма на карте увеличивается или уменьшается.
-Для такой операции следует выбрать техническую статью. Подробней  ввод кредитного лимита
-рассмотрен в `вопросах и ответах (Как задать кредитный лимит)`_.
+A category may be neither revenue nor expense. In that case the category is technical. For instance
+technical category is used for credit limit changing. For that transaction there is no money turnovers
+for a card owner but nevertheless balance is changed. See more details about credit limit at
+`questions and answers (How to setup credit limit for new or existed account?)`_.
 
-.. _`вопросах и ответах (Как задать кредитный лимит)`: http://qa.bbmoney.biz/ru/index.php?qa=93&qa_1=%D0%B7%D0%B0%D0%B4%D0%B0%D1%82%D1%8C-%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D1%8B%D0%B9-%D0%BB%D0%B8%D0%BC%D0%B8%D1%82-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%BE%D0%BC%D1%83-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8
+.. _`questions and answers (How to setup credit limit for new or existed account?)`: http://qa.bbmoney.biz/en/index.php?qa=27&qa_1=how-to-setup-credit-limit-for-new-or-existed-account
 
-По суммируемым статьям можно увидеть баланс в отчетах Долги и Исполнение плана.
+Since a category has |property_category_summary| option you can use |meta_report_debts| and |meta_report_plan_implementation|
+reports to get there balance.
 
-Статья может иметь признак исключаемой из портфеля. Такие статьи обычно используются в операциях,
-которые не изменяют остатка внутри портфеля. Если у статьи установлен такой признак,
-то все движения по этой статье не будут влиять на сумму движений денежных средств за период.
-В списке операций итоги по таким статьям выводятся отдельно.
+Sometimes you need to eliminate transactions from revenues and expenses. Usually it is
+transfer transactions. Use categories with |property_category_eliminable| option for them.
+The app has standalone totals at the main screen and transactions list for transfers and other transaction with
+categories with |property_category_eliminable| option.
 
-Ключевые фразы используются для подбора при импорте данных. Можно указать несколько ключевых фраз, разделенных запятой,
+The app uses key phrases to find an item when importing transactions. You can set several
+comma separated key phrases.
 
-В операции может быть указано несколько статей.
+It is possible to define several categories for a transaction.
 
-Справочник автоматически заполняется при установке приложения, однако Вы можете отредактировать его на свой вкус.
+Once the app installed the directory of categories has default items. It's up to you edit, add, or delete them.
 
-Плательщики и получатели
-------------------------
+Payers and Payees
+-----------------
 
-Под плательщиками и получателями в программе понимается вторая сторона в денежной операции. Часто это сторону называют
-контрагентом. Без контрагента операции не может быть (за исключением перевода между своими счетами). В операции может быть
-указан только один контрагент.
+Contrary part of transaction is payer or payee. This is often called a contractor. Only transfer transactions
+have no contractor. Bat all other transactions have. Transaction have only one contractor.
 
-Проекты
+Projects
+--------
+
+You can use projects to account vacations, startups, housing projects and so on.
+Transaction may have several projects.
+
+The app uses key phrases to find an item when importing transactions. You can set several
+comma separated key phrases.
+
+Persons
 -------
 
-Проектом может быть, например, отпуск, строительство дома, стартап и т.п. В операции может быть указано несколько проектов.
+You can use persons to account family members, company staffers and so on.
+Transaction may have several projects.
 
-Ключевые фразы используются для подбора при импорте данных. Можно указать несколько ключевых фраз, разделенных запятой.
-
-Персоны
--------
-
-В справочник Персоны можно указать членов семьи или сотрудников предприятия. В операции может быть указано несколько персон.
-
-Ключевые фразы используются для подбора при импорте данных. Можно указать несколько ключевых фраз, разделенных запятой.
+The app uses key phrases to find an item when importing transactions. You can set several
+comma separated key phrases.
 
 .. image:: images/directories-080-projects.png
   :width: 25%
@@ -134,12 +139,14 @@
 .. image:: images/directories-100-currencies.png
   :width: 25%
 
-Валюты
-------
+Currencies
+----------
 
-Сразу после установки приложение содержит практически все мировые валюты. При необходимости, Вы можете добавить в справочник новую валюту.
+Once the app installed it contains almost all world currencies. Of course you can add a new one.
 
-Итоговые значения в разрезе портфелей рассчитываются согласно курсам валют. Курсы валют можно указывать вручную или
-загружать из интернет-источников. В зависимости от настроек курсы валют загружаются из следующих источников:
-Центральный Банк РФ (валюты и драг. металлы), Центральный Европейский Банк, банк Канады, Национальный Банк Республики Беларусь,
-Национальный Банк Республики Казахстан, банк Израиля, BitPay (котировки валют относительно BTC), Poloniex (биржа крипто-валют).
+Currency rates are used for calculate financial highlights. You can set rates manually
+or load from internet resources. Available sources are European Central Bank,
+Russian Central Bank (currencies and metals), Bank of Canada, National Bank of the Republic of Belarus,
+National Bank of the Republic of Kazakhstan, Bank of Israel, BitPay (BTC rates), Poloniex (cryptocurrencies trading market).
+
+Let author know if you need more, see :ref:`section_feedback`.

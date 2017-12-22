@@ -1,13 +1,12 @@
 .. include:: termins.rst
 .. _chapter_reports:
 
-Отчеты
-======
+Reports
+=======
 
-Любой отчет можно открыть из панели быстрых кнопок. Каждый отчет имеет возможность фильтрации,
-группировки исходных данных и сохранения выбранных параметров. Функции
-управления отчетом располагаются в нижней части экрана. При открытии отчета из списка или
-другого отчета наследуются установленные фильтры.
+The top menu is the place where reports are available. Each report has the options to filter,
+grouping and saving of settings. Use the bottom sheet to manage a report.
+When you open a report from the transactions list or another report filter inherits.
 
 .. image:: images/reports-010-select-reports.png
   :width: 25%
@@ -21,17 +20,16 @@
 .. image:: images/reports-027-report-select-group.png
   :width: 25%
 
-Из отчета всегда можно открыть исходные операции, чтобы понять из чего состоит та или иная цифра.
+You can always drill down from row of report to look at source transactions.
 
-Также для отчетов можно создавать ярлыки для быстрого доступа к отчетам с заранее подготовленными параметрами.
-Ярлыки запускаются из окна оболочки Android.
+Also it is possible to make shortcuts for having fast access to a report with predefined settings.
+Once you have created shortcuts, they are available from the Android launcher screens.
 
-Расписание платежей
--------------------
+Payment Schedule
+----------------
 
-Отчет предназначен для планирования предстоящих операций. Расписание отображает не только плановые, но и фактические
-операции, если они находятся в выбранном периоде. Например, можно увидеть не только сколько запланировано расходов
-на текущую неделю, но и сколько расходов уже оплачено.
+The report is intended to display upcoming payments planning. The schedule contains planned and actual transactions
+of the current time range. Hence, you can see not only planned but remunerated transactions as well.
 
 .. image:: images/reports-030-payments-schedule.png
   :width: 25%
@@ -40,30 +38,34 @@
 .. image:: images/reports-050-turnovers.png
   :width: 25%
 
-План-факт
+Plan vs. Actual
+---------------
+
+.. описательная часть отличается от оригинала, т.к. из-за отличий в сортировке
+.. отчетов невозможно сделать одинаковые скриншоты
+
+The report is intended to show deviations between planned and actual transactions of the current time range.
+Top row is an actuals and next row is a plan. For example, you can see that there is unplanned credit
+transaction under |item_category_credit| category, and planned amount
+under |item_category_clothes| category is remunerated.
+
+You can get the report grouped by dimensions and periods as well.
+
+Turnovers
 ---------
 
-Отчет служит для выявления отклонений между запланированными и фактическими движениями в заданном периоде. Так, например,
-из отчета видно, что по статье |item_category_rental_income| прошло внеплановое поступление денежных средств, а по статье |item_category_salary|
-запланированные денежные средства еще не поступили.
+The report is intended to analyze aggregated turnovers of the current time range.
+For example, you can see that there are a credit transaction under |item_category_credit| category,
+debit transaction under |item_category_pocket_expenses| one, and so on.
 
-Отчет можно сформировать как в разрезе аналитик, так и в разрезе периодов.
+The report is able to show actual and planned transaction as well. The report displays actual transactions
+by default.
 
-Обороты
--------
+Totals and Turnovers
+--------------------
 
-Отчет служит для просмотра агрегированных движений в заданном периоде. Так, например,
-из отчета видно, что по статье |item_category_rental_income| было поступление денежных средств, по статье :|item_category_pocket_expenses|
-было списание и т.д.
-
-Отчет можно формировать как по фактическим, так и по планируемым операциям. По умолчанию отчет формируется
-по фактическим операциям.
-
-Остатки и обороты
------------------
-
-Отчет служит для просмотра начальных, конечных остатков и агрегированных движений в заданном периоде. Отчет формируется
-только по фактическим операциям.
+The report is intended to analyze opening, closing balances and aggregated turnovers of the current time range.
+The report is based on actual transactions only.
 
 .. image:: images/reports-060-totals-turnovers.png
   :width: 25%
@@ -72,34 +74,37 @@
 .. image:: images/reports-080-debts.png
   :width: 25%
 
-Планируемые остатки и обороты
------------------------------
+Planned Totals and Turnovers
+----------------------------
 
-Отчет служит для просмотра начальных, конечных остатков и агрегированных планируемых движений в заданном периоде. Отчет формируется
-только по планируемым операциям.
+The report is intended to analyze opening, closing balances and aggregated turnovers of the current time range.
+The report is based on planned transactions only.
 
-Долги
+Debts
 -----
 
-Отчет формируется по операциями, которые содержат статьи с признаком |property_category_summary| и при этом являются
-одновременно и доходными и расходными. Суммы таких операций складываются, отчет показывает начальный, конечный
-остатки и движения за выбранный период. Нулевые суммы скрываются.
+The report is based on transactions that contain categories having |property_category_summary|,
+|property_category_income|, and |property_category_outcome| options are on. The report
+shows opening, closing balances and aggregated turnovers. Zero amounts are hidden.
 
-Так, например, из отчета видно, что по статье |item_category_credit| на начало периода не было остатка. Затем
-в течение периода было зачисление, т.е. был получен кредит. Погашения кредита не было, поэтому конечный
-остаток совпадает с суммой зачисления.
+For example, you can see that |item_category_credit| category has no opening balance.
+During the time range there was a loan transactions. And there was no repayment because
+closing balance is equal to the credit amount.
 
-Исполнение плана
-----------------
+Plan Implementation
+-------------------
 
-Отчет Исполнение плана формируется по плановым и фактическим операциями, которые содержат статьи с
-признаком |property_category_summary| и являются либо доходными, либо расходными. Из суммы плановых операций вычитается
-сумма фактических, отчет также показывает начальный, конечный остатки и движения за выбранный период.
-Нулевые суммы скрываются.
+The report is based on planned and actual transactions that contain categories having
+|property_category_summary| option is on, and one of |property_category_income|
+and |property_category_outcome| options only is on. The report evaluates a total
+amount of planned transactions and deduct a total amount of actual transactions.
+|meta_report_plan_implementation| shows opening,
+closing balances and aggregated turnovers. Zero amounts are hidden.
 
-Так, например, из отчета видно, что по статье |item_category_salary| на начало периода есть остаток плана, т.е. фактическая сумма
-движений по статье |item_category_salary| меньше запланированной. По этой статье также в течение выбранного периода запланировано
-поступление денежных средств. Однако фактического движения не было.
+For example, you can see that |item_category_salary| category has the opening balance.
+Hence, it is not completed, i.e. actual amount is less than planned.
+Also it is expected an actual credit transaction. But there is no
+actual transaction yet.
 
 .. image:: images/reports-090-plan-implementation.png
   :width: 25%
@@ -108,24 +113,23 @@
 .. image:: images/reports-110-bars.png
   :width: 25%
 
-Распределение оборотов
-----------------------
+Distribution of Turnovers
+-------------------------
 
-Диаграмма служит для анализа распределения движений денежных средств. Отчет имеет два режима формирования ---
-по расходам и по доходам. Иногда не все названия помещаются на экране или накладываются друг на друга. Чтобы
-увидеть такие значения, просто вращайте график против часовой стрелки.
+The chart is intended to analyze turnovers distribution by dimension and time ranges. You can view
+expenses or revenues separately. Rotate chart counterclockwise when names are not fully shown.
 
-Изменение оборотов
-------------------
+Changes in Turnovers
+--------------------
 
-График служит для анализа и выявления тенденций движений денежных средств. В положительной части графика отображаются доходы,
-в отрицательной --- расходы.
+The chart is intended to analyze tends of turnovers. Positive part of the chart contains
+credits and negative part contains debits.
 
-Изменение остатков
-------------------
+Changes in Totals
+-----------------
 
-График служит для анализа и выявления тенденций в изменениях остатков денежных средств. Возможно одновременное отображение
-фактических и планируемых остатков.
+The chart is intended to analyze how totals change within the time range. At the same time
+it is possible to look at actual and planned totals.
 
 .. image:: images/reports-120-lines.png
   :width: 25%

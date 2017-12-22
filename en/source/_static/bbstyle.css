@@ -1,0 +1,43 @@
+.bbspinner, .bbbutton {
+    font-family: sans-serif;
+	-webkit-box-shadow: 1px 1px 1px 1px #000000; 
+	box-shadow: 1px 1px 1px 1px #000000;
+   padding:3px;
+}
+
+.bbspinner:after {
+    content: " \25be"
+}
+
+.bbmeta, .bbitem {
+     font-family: sans-serif;
+	 -webkit-border-radius: 5px 5px 5px 5px;
+	 border-radius: 5px 5px 5px 5px;
+	 border: 1px solid gray;
+   padding:3px;
+}
+
+.bbmeta {
+    background: #EEEEEE;
+}
+
+.bbsection {
+	text-decoration: underline;
+}
+
+.bbproperty {
+	font-family: sans-serif;
+	font-style: italic;
+}
+
+.bbvalue {
+	font-family: sans-serif;
+	font-style: italic;
+   letter-spacing: 2px;
+}
+
+.bbvar {
+	font-family: sans-serif;
+	font-weight: 700;
+}
+

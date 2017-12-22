@@ -1,12 +1,11 @@
 .. include:: termins.rst
 .. _chapter_remote_access:
 
-Удаленный доступ
-================
+Remote access
+=============
 
-|бб| включает в себя клиента для персональных компьютеров. Клиент работает на операционных системах
-Windows, Linux, Mac и пр. Все что нужно для работы --- это современный браузер. Поддерживаются Internet
-Explorer 8+, Google Chrome, Apple Safari, Mozilla Firefox, Opera.
+Since installed |bb| has the PC client. It supports Windows, Linux, Mac, etc. All you need is
+a modern browser, Internet Explorer 8+, Google Chrome, Apple Safari, Mozilla Firefox, or Opera.
 
 .. image:: images/remoteaccess-010-remote-access-enable.png
   :width: 25%
@@ -15,8 +14,8 @@ Explorer 8+, Google Chrome, Apple Safari, Mozilla Firefox, Opera.
 .. image:: images/remoteaccess-030-remote-access-disable.png
   :width: 25%
 
-Активация клиента выполняется из главного экрана. После включения программа выводит сообщение с инструкцией
-по доступу к данным с персонального компьютера. Одновременно появляется значок дисплей в строке всплывающих
-сообщение, напоминающий о том что связь с ПК включена.
+Activate client from the main screen. After the PC access get started the app will show
+the brief guide how to run client on your PC. At the same time you can see the display sign
+at the Android top bar.
 
-Клиент для ПК имеет широкие возможности по формированию отчетов и графиков, позволяет выводить их на печать.
+PC client contains ready to print reports and charts.

@@ -1,11 +1,11 @@
 .. include:: termins.rst
 .. _chapter_service:
 
-Сервисное обслуживание
-======================
+Service
+=======
 
-Как правило приложение |бб| не требует сервисного обслуживания. Тем не менее, если Вы замечаете
-падение скорости работы программы, то запуск сервисных операций может решить проблему.
+Generally the app |bb| do not need any service. But when you notice
+the app becomes slower service actions can help.
 
 .. image:: images/service-010-select-actions.png
   :width: 25%
@@ -14,17 +14,18 @@
 .. image:: images/service-030-select-iitems.png
   :width: 25%
 
-Сжатие данных освобождает захваченное и неиспользуемое место в памяти, дефрагментирует таблицы и индексы.
-Это способствует увеличению производительность работы приложения. Технически, сжатие данных вызывает команду `VACUUM`_.
+Shrinking database frees unused space, rebuilds the database file, repacking it into a minimal
+amount of disk space. This contributes to speed up the app. Shrinking database runs
+`VACUUM`_ command.
 
 .. _`VACUUM`: https://sqlite.org/lang_vacuum.html
 
-Сжатие данных работает только с базой данных и не удаляет файлы, которые также могут располагаться в данных приложения.
+Shrinking does not affect to files that app contains except database.
 
-Переиндексация может помочь в случае резкого падения производительности. Технически, переиндексация данных вызывает
-команду `REINDEX`_.
+Reindexing database is useful when you notice drastic drop in of the app performance.
+Reindexing runs `REINDEX`_ command.
 
 .. _`REINDEX`: https://sqlite.org/lang_reindex.html
 
 .. warning::
-   Не забывайте делать резервные копии, особенно перед выполнением сервисных операций. Если установлен пароль шифрования, то обязательно убедитесь, что Вы его помните. Иначе восстановить данные из резервной копии будет невозможно.
+  Do not forget making backups, especially before service. Ensure you remember encryption password if you have. Otherwise restoring data could be impossible.

@@ -1,34 +1,37 @@
 .. include:: termins.rst
 .. _chapter-account-identities:
 
-Настройка счетов для импорта SMS и push-уведомлений
-===================================================
+Account Settings for Notifications Import
+=========================================
 
-Выбор идентификатора
---------------------
+Identity Choosing
+-----------------
 
-Перед импортом SMS и Push-уведомлений в карточке счета необходимо указать идентификатор. Это нужно для того,
-чтобы приложение смогло определить, какому счету принадлежит импортируемая операция. Обычно банки
-указывают  в сообщениях последние четыре цифры карты. Именно их лучше всего указать в качестве идентификатора счета.
+You have to put an identity at the account card before import SMS or push notifications.
+This will ensure detection of an account for a transaction. Usually financial institutions
+put last four digits of a card number to a notification. So use them as a card identity.
 
-Например, в сообщении вида
+For a example, for the SMS
 ::
 
-  VISA1234: 08.08.13 14:05 oplata uslug 5000.00 rub. dostupno 1000.00 rub.
+  VISA1234: 08.08.13 14:05 payment 500.00 USD. balance 1000.00 USD.
 
-в качестве идентификатора следует выбрать VISA1234. Бывает так, что в сообщении банка номер карты или счета не указан.
-Например в сообщении вида
+you should choose VISA1234 as a card identity. Some financial institutions do not put
+digits of an account or card number into notifications. For example, in the SMS
 ::
 
- Операция >> -6000 руб.	Atm-msk-001
+ Transaction >> -600 USD.	Atm-nyc-001
 
-невозможно выбрать идентификатор. В этом случае следует указать отправителя сообщения. Для SMS это будет номер или
-имя. Например, Сбербанк отправляет все сообщения с номера 900. Для Push-уведомлений отправителем является идентификатор пакета.
-Например, для РокетБанка это ru.rocketbank.r2d2.
+there is no way to find out an identity. Well, in that case you should use
+sender name or number. For example, short number for Sberbank is 900.
+For push notifications sender is a package identity. For example,
+ru.rocketbank.r2d2 is the package identity for RocketBank.
 
-Чтобы задать идентификатор, откройте карточку счета. Перейдите к полю Идентификатор счета или карты и выберите его из любого
-сообщения банка. Если Вы хотите указать отправителя, то отредактируйте идентификатор вручную.
-Также укажите настройку для Вашего банка.
+Open the card of an account in order to setup identity. Press |spinner_account_identity| and
+select identity from a financial institution message. Put the identity by hands
+if you want to use sender or package identity.
+
+Also do not forget to select an import tune for your financial institution.
 
 .. image:: images/accountidenties-005-select-references.png
   :width: 25%
@@ -44,21 +47,25 @@
 .. image:: images/accountidenties-040-set-identity.png
   :width: 25%
 
-Выбор ключевой фразы для перевода
+Key Phrase Choosing for Transfers
 ---------------------------------
 
-Приложение может автоматически создавать переводы на основании сообщения банка. Например, при получении сообщения вида
+The app |bb| can create transfer transactions based upon financial institution messages. For example, when you
+have an SMS
 ::
 
-  VISA1234: 08.08.13 14:05 выдача наличных 2000.00р. ATM 10010001 Баланс 500.00 rub.
+  VISA1234: 08.08.13 14:05 cash withdrawal 200.00 USD. ATM 10010001 bal 500.00 USD.
 
-приложение может создать не только списание на 2000.00 руб. со счета VISA1234, но и поступление на счет Наличные. Для этого в карточке
-счета Наличные следует задать ключевые фразы, по которым приложение будет идентифицировать этот счет. Для приведенного примера
-это может быть `выдача наличных` или `ATM`.
+then the app is able to create expense transaction for the VISA1234 account and revenue transaction
+for a cash account. All you need is to set key phrases for the cash account. The app will
+use this key phrases to find out the one. For example, key phrases above may be one of "cash withdrawal" or
+"ATM".
 
-.. note:: Для автоматического создания переводов необходимо также, чтобы приложение смогло правильно идентифицировать операцию как перевод. См. Настройки импорта.
+.. note:: It is also necessary to ensure the app is able to identify a transaction as transfer, see :ref:`chapter_notifications`.
 
-Чтобы задать ключевую фразу, откройте карточку счета. Перейдите к полю Ключевые слова и выберите его их сообщения банка. Также, при необходимости, можно отредактировать фразы вручную.
+Open the card of an account in order to setup key phrases. Press |spinner_key_phrases| and
+select ones from a financial institution message. Also put key phrases by hands
+if you want to.
 
 .. image:: images/accountidenties-050-open-cash-account.png
   :width: 25%
@@ -67,8 +74,8 @@
 .. image:: images/accountidenties-070-set-keywords.png
   :width: 25%
 
-Обычно для счетов, по которым приходят уведомления, поле |property_keywords| остается пустым и наоборот, в наличных счетах
-остается пустым поле |property_identity|. Однако есть случаи, когда для счетов используются оба поля. В качестве примера можно привести настройку
-импорта сообщений РокетБанка_.
+Usually accounts having notifications have empty |property_keywords| property and cash accounts
+have empty |property_identity| property vice versa. But there are rare cases when both ones are used. See Rocketbank_
+notifications import setting.
 
-.. _РокетБанка: http://qa.bbmoney.biz/ru/index.php?qa=67&qa_1=%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C-%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82-%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9-%D1%80%D0%BE%D0%BA%D0%B5%D1%82%D0%B1%D0%B0%D0%BD%D0%BA%D0%B0&show=68#a68
+.. _Rocketbank: http://qa.bbmoney.biz/ru/index.php?qa=67&qa_1=%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C-%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82-%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9-%D1%80%D0%BE%D0%BA%D0%B5%D1%82%D0%B1%D0%B0%D0%BD%D0%BA%D0%B0&show=68#a68
