@@ -99,6 +99,8 @@
 .. |meta_dir_currencies|                      replace:: :bbmeta:`Валюты`
 .. |meta_dir_categories|                      replace:: :bbmeta:`Статьи`
 .. |meta_dir_accounts|                        replace:: :bbmeta:`Счета`
+.. |meta_dir_nodes|                           replace:: :bbmeta:`Узлы обмена`
+.. |meta_dir_scopes|                          replace:: :bbmeta:`Области данных`
 .. |meta_report_turnovers|                    replace:: :bbmeta:`Обороты`
 .. |meta_report_debts|                        replace:: :bbmeta:`Долги`
 .. |meta_report_plan_implementation|          replace:: :bbmeta:`Исполнение плана`

@@ -25,7 +25,7 @@
      - +
      - +
    * - Импорт Push уведомлений
-     -
+     - 15 в месяц
      - +
    * - Дополнительный анализ SMS с паролями подтверждения операции
      -
@@ -63,3 +63,12 @@
    * - Техническая поддержка
      - +
      - +
+
+Перейти на Google Play:
+
+`Версия Free`_
+
+`Версия Pro`_
+
+.. _`Версия Free`: https://play.google.com/store/apps/details?id=biz.interblitz.budgetfree
+.. _`Версия Pro`: https://play.google.com/store/apps/details?id=biz.interblitz.budgetpro

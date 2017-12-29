@@ -99,6 +99,8 @@
 .. |meta_dir_currencies|                      replace:: :bbmeta:`Currencies`
 .. |meta_dir_categories|                      replace:: :bbmeta:`Categories`
 .. |meta_dir_accounts|                        replace:: :bbmeta:`Accounts`
+.. |meta_dir_nodes|                           replace:: :bbmeta:`Exchange nodes`
+.. |meta_dir_scopes|                          replace:: :bbmeta:`Data scopes`
 .. |meta_report_turnovers|                    replace:: :bbmeta:`Turnovers`
 .. |meta_report_debts|                        replace:: :bbmeta:`Debts and credits`
 .. |meta_report_plan_implementation|          replace:: :bbmeta:`Plan implementation`

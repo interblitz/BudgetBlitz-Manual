@@ -1,44 +1,48 @@
 .. include:: termins.rst
 .. _chapter_teamwork:
 
-Коллективная работа
-===================
+Teamwork
+========
 
-Введение
---------
+Introduction
+------------
 
-|бб| позволяет вести совместный учет доходов и расходов. Вот несколько примеров:
+|bb| ensures the collaborative accounting of revenues and expenses. Here are a few examples:
 
-#. Полная синхронизация между устройствами;
-#. Совместный финансовый учет только по выбранным счетам, проектам, персонам, контрагентам или даже статьям;
-#. Сбор данных на одном устройстве, в случае, когда, скажем, родители отслеживают расходы детей.
+#. Full synchronization between devices;
+#. Collaborative financial accounting restricted by selected accounts, projects, persons, payers, payees, or even categories;
+#. Collecting data on a single device, in a case of, for example, parents track children expenses.
 
-Любое устройство, на котором установлена программа, может стать узлом обмена (см. :term:`узел обмена`) и получать или передавать изменения. Каждый узел обмена может обмениваться информацией с другими узлами.
+Any device can become an exchange node, see :term:`exchange node` and receive or transmit changes.
+Each exchange node can communicate with other ones.
 
-.. note:: Версия Free может передавать, но не может принимать сообщения. Версия Pro не содержит ограничений.
+.. note:: Free version can transmit messages only. The Pro version has no restrictions.
 
-Программа имеет гибкие настройки, регулирующие процесс обмена. Так например, можно разрешить принимать только новые операции от одного узла, и запретить принимать измененные. Для каждого узла обмена действуют свои настройки.
+The app has flexible settings to control exchange. For example, you can allow to accept only new transactions
+from one node, and forbid modified ones. Each node has own settings.
 
-В целях повышения безопасности все сообщения между узлами шифруются, для каждого узла можно задать свой пароль, который будет использоваться для шифрования / дешифрования передаваемой информации.
+Messages between nodes are encrypted in order to improve safety. For each node you can specify
+own password that will be used for encryption and decryption of a transmitted information.
 
-Для совместной работы не требуется учетная запись Dropbox или других сервисов.
+Collaboration does not require Dropbox account or other ones.
 
-Начало работы
--------------
+Getting Started
+---------------
 
-Выбор исходных данных
-~~~~~~~~~~~~~~~~~~~~~
+Initial Database
+~~~~~~~~~~~~~~~~
+Suppose that Alice and Bob want to use a collaborative financial accounting.
+Then, they need to decide what is the best suited case:
 
-Предположим, что Алиса и Боб хотят вести совместный финансовый учет. Предварительно, им нужно определиться какая ситуация для них ближе:
+#. At the beginning Alice and Bob will have similar database.
+#. Alice and Bob already use the app, they do not want to combine their databases, and plan to synchronize selected accounts only.
 
-#. В начале работы у Алисы и Боба будут одинаковые данные.
-#. Алиса и/или Боб уже давно ведут учет и не хотят объединять все данные, а планируют синхронизировать лишь отдельные счета.
+For the first case Alice or Bob, let it be Alice, makes a backup. Further, Alice gives the
+backup to Bob and he restores database on his device. Now Alice and Bob have similar database.
+The teamwork requires databases have different identities. Hence, Bob generates new identity
+for his database.
 
-В первом случае Алиса или Боб (для определенности пусть это будет Алиса) делает резервную копию данных. Затем Алиса передает резервную
-копию данных Бобу и тот восстанавливает ее у себя на устройстве. Теперь у Алисы и Боба идентичные базы данных. Для корректной работы обмена
-необходимо, что идентификаторы баз данных различались, поэтому Боб выполняет дополнительную сервисную операцию, формирует новый идентификатор на своем устройстве.
-
-.. note:: После восстановления данных из резервной копии для нового узла обмена необходимо сформировать новый идентификатор.
+.. note:: Ii is required to make a new database identity when database restored from backup of another teamwork member.
 
 .. image:: images/exchangenewid-005-select-actions.png
   :width: 25%
@@ -51,17 +55,16 @@
 .. image:: images/exchangenewid-040-select-new-id.png
   :width: 25%
 
-Теперь Алиса и Боб готовы к настройке обмена.
+Now Alice and Bob are ready for next steps.
 
-Во втором случае никаких предварительных действий совершать не нужно. Алиса и Боб сразу готовы к настройке обмена.
+In the second case there is no need to preliminary actions. Alice and Bob are ready for next steps at once.
 
-Обмен идентификаторами
+Identities Interchange
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Для работы обмена Алисе и Бобу необходимо обменяться идентификаторами узлов обмена и сохранить их в справочнике узлов.
-Для этого Алиса открывает список узлов обмена (|menu_actions_exchange_nodes|). В справочнике
-узлов обмена Алиса выбирает пункт меню |menu_send_identity| и отправляет идентификатор своего узла
-по электронной почте Бобу.
+The most important step under preparing teamwork is an identities interchange. To do that
+Alice opens |meta_dir_nodes| directory using |menu_actions_exchange_nodes| menu. Then,
+Alice presses |menu_send_identity| and sends identity to Bob by email.
 
 .. image:: images/exchangesendid-005-select-actions.png
   :width: 25%
@@ -76,7 +79,8 @@
 .. image:: images/exchangesendid-050-mail-id.png
   :width: 25%
 
-Боб принимает сообщение, создает новый узел обмена, указывает название и копирует полученный идентификатор. После этого отправляет свой идентификатор Алисе.
+Bob receives the message, creates new exchange node putting the name and identity from the message.
+After that he sends his own identity to Alice.
 
 .. image:: images/exchangenewnode-005-select-actions.png
   :width: 25%
@@ -89,12 +93,13 @@
 .. image:: images/exchangenewnode-040-setup_node.png
   :width: 25%
 
-Алиса, в свою очередь, принимает сообщение Боба и создает новый узел обмена с идентификатором, который указан в сообщении Боба.
+Now, there is a turn of Alice to receive Bob message. She creates new node and puts identity
+from the message of Bob.
 
-Включение обмена
-----------------
+Setting Teamwork On
+-------------------
 
-После обмена идентификаторами Алиса и Боб включают в активном профиле синхронизацию данных между узлами обмена.
+When identities interchange completed, Alice and Bob set synchronization on at the app settings.
 
 .. image:: images/exchangeenable-005-select-actions.png
   :width: 25%
@@ -103,88 +108,92 @@
 .. image:: images/exchangeenable-030-check-use-exchange.png
   :width: 25%
 
-Теперь все изменения, которые делает Алиса отправляются Бобу и наоборот. Приложение синхронизирует изменения
-автоматически примерно один раз в пять минут при наличии Wi-Fi или мобильного интернета. Функция синхронизации
-автоматически отключается, если нет интернет-соединения или во время сна устройства. Благодаря этому
-экономится трафик и электроэнергия аккумулятора.
+Now the app sends all changes from the database of Alice to the database of Bob and vice versa.
+The app synchronizes changes every five minutes when Wi-Fi or mobile network is on. Synchronization
+is off when device falls asleep or network is off. This ensures to save network traffic and
+battery power.
 
-Вот точный алгоритм запуска обмена:
+This is how exchange works:
 
-1. После запуска обмена программа проверяет включен экран телефона или нет.
+#. Since exchange started the app checks whether screen is on or not.
 
-  #. Если экран включен, то следующее время срабатывания - через 5 мин. от текущего.
-  #. Если экран выключен, то следующее время срабатывания - через 60 мин. от текущего.
-  #. Оба будильника не имеют права будить телефон.
+   #. Next time to start synchronization is 5 minutes after, if screen is on.
+   #. Next time to start synchronization is 60 minutes after, if screen is off.
+   #. Synchronization is canceled when phone falls asleep.
 
-2. При открытии главного экрана программы выполняется проверка на следующее время срабатывания будильника.
+#. Since main screen started the app checks next time of synchronization.
 
-  #. Если следующее время срабатывания находится в пределах 10 мин. от текущего, то ничего не происходит.
-  #. Если следующее время срабатывания находится в пределах более 10 мин. от текущего, то запускается обмен в фоновом режиме и далее программа определяет следующее время срабатывания по п. 1
+   #. Nothing happen if next time is within 10 minutes.
+   #. Synchronization starts if next time is greater then 10 minutes.
 
-3. Если сети нет, то обмен отключается полностью до следующего появления сети.
+#. Synchronization is off when where is no network until network is on.
 
-При необходимости всегда можно вызвать синхронизацию вручную.
+You can run synchronization by hands if you want to.
 
-Как работает обмен данными
---------------------------
-
-Приложение |бб| ведет журнал изменений справочников и операций. Каждому узлу обмена отправляются изменения,
-которые произошли либо с момента получения предыдущего пакета изменений, либо с момента создания узла.
-Важна последовательность обмена: Алиса отправляет сообщение Бобу, Боб - Алисе и т.д. Если узел обмена Алисы не
-получит ответ Боба, то не будет отправлять следующий пакет изменений до тех пор, пока не придет ответ.
-
-Синхронизация всех элементов справочников выполняется в несколько этапов:
-
-#. синхронизация по уникальному идентификатору;
-#. синхронизация по ключевым фразам или коду;
-#. синхронизация по наименованию.
-
-Каждый следующий шаг синхронизации выполняется в случае, если предыдущий закончился неудачей. Если элемент
-не удалось найти, то программа создает новый, используя при этом значения по умолчанию, указанные в настройке узла.
-
-Синхронизация операций выполняется только по уникальному идентификатору.
-
-Расширенная настройка
----------------------
-
-Алиса и Боб могут ограничить объем передаваемой информации. Есть два варианта задания ограничений:
-
-#. разрешенная область данных;
-#. запрещенная область данных.
-
-Области задаются в справочнике областей данных. Можно указать любую комбинацию счетов, статей, плательщиков и получателей,
-проектов и персон.
-
-В случае, если один и тот же элемент справочника одновременно попадает в разрешенную и запрещенную область, то более
-высокий приоритет имеет запрещенная область.
-
-На основании областей данных формируется список операций, постоянных операций и справочников для передачи узлу обмена.
-
-Алиса и Боб могут ограничить объем принимаемой информации. Можно полностью отказаться принимать новые, измененные или удаленные объекты.
-Или можно конкретизировать какой тип объектов не принимать в случае создания, изменения или удаления.
-
-Настройка передачи данных
+How Synchronization Works
 -------------------------
 
-Для повышения безопасности передачи данных следует указать пароль, которым будут зашифрованы сообщения между узлами обмена. Пароль Алисы должен совпадать с паролем Боба.
+The app |bb| stores every directory items and transactions changes. Node sends changes
+that occur starting from the time last message sent or node created itself. The sequence
+of exchange matters. Alice sends changes to Bob. Then Bob sends changes to Alice and so on.
+The node of Alice will await response from the node of Bob. Thus, the node of Alice will send
+no anymore messages until response from the Bob coming.
 
-Также Алисе и Бобу следует указать какой вид коммуникаций использовать для обмена сообщениями: Wi-Fi и/или мобильный интернет.
+The app synchronizes directories using rules below:
 
-Значения по умолчанию
----------------------
+#. syncing by the unique id;
+#. syncing by key phrases;
+#. syncing by the name.
 
-Справочники на устройствах Алисы и Боба могут не совпадать между собой. Например, Боб уже давно
-ведет финансовый учет, а Алиса только что установила приложение. Боб может создать операцию и указать в ней, например,
-проект, которого нет в узле обмена Алисы. При поступлении сообщения Боба, приложение на устройстве Алисы
-создаст операцию, однако не сможет найти указанный Бобом проект. В этом случае приложение будет использовать
-значение проекта по умолчанию, которое Алиса задала для узла обмена Боба.
+When syncing fails the app goes to the next step. The app will create new item or use default value
+if all steps fail. You can edit default values at the node card.
 
-Перенос данных на новый телефон с сохранением настроек обмена
--------------------------------------------------------------
+Transactions sync by the unique id only.
 
-В случае работающего обмена, переход на новый телефон следует выполнять в порядке:
+Advanced Settings
+-----------------
 
-#. На старом телефоне в настройках выключить синхронизацию.
-#. Сделать резервную копию.
-#. Восстановить резервную копию на новом телефоне.
-#. Включить синхронизацию на новом телефоне.
+Alice and Bob can restrict the amount of information transmitted. There are two types of constraints:
+
+#. permitted data scope;
+
+#. forbidden data scope.
+
+Scopes specified in the |meta_dir_scopes| directory. It is possible to specify any combination of accounts,
+categories, payers, payees, projects, and persons.
+
+Forbidden scope has a higher priority, when the permitted and forbidden data scopes contain
+same item simultaneously.
+
+Transactions, recurring transactions, and directory items to transmit are based upon data scopes.
+
+Alice and Bob can restrict items to receive. For example, Alice can refuse all new, modified
+or removed items. Another case is to specify certain type of directory to refuse.
+
+Data Transfer Settings
+----------------------
+
+To improve the security of data transmission Alice should specify a password that will
+be used to encrypt messages between exchange nodes. Alice's password must match the Bob's one.
+
+Alice also should indicate what type of communications is used for messaging with Bob.
+Available types are Wi-Fi and mobile network.
+
+Default Values
+--------------
+
+Alice and Bob can have a different app content. For example, Bob has a long time using |bb|,
+and Alice has just installed the app. Bob can create transaction and specify, for example,
+a project that Alice does not have. When a message from Bob arrives, Alice's node will
+create a transaction, but could not find a proper project. In that case the app will
+use a default value Alice set to the node of Bob.
+
+Moving Database to a New Device
+-------------------------------
+
+Suppose that Alice decides to move onto new phone. Then, Alice should follow steps:
+
+#. Set synchronization off for an old device.
+#. Make backup.
+#. Restore backup on a new device.
+#. Set synchronization on for a new device.

@@ -25,7 +25,7 @@ Difference Between Versions
      - +
      - +
    * - Push notifications import
-     -
+     - 15 per month
      - +
    * - Additional SMS that confirms transaction and contains pins, passwords, etc import
      -
@@ -60,3 +60,12 @@ Difference Between Versions
    * - Support
      - +
      - +
+
+Google Play:
+
+`Free version`_
+
+`Pro version`_
+
+.. _`Free version`: https://play.google.com/store/apps/details?id=biz.interblitz.budgetfree
+.. _`Pro version`: https://play.google.com/store/apps/details?id=biz.interblitz.budgetpro
