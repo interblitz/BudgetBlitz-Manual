@@ -105,6 +105,9 @@ When identities interchange completed, Alice and Bob set synchronization on at t
   :width: 25%
 .. image:: images/exchangeenable-020-click-on-actions-menu.png
   :width: 25%
+.. image:: images/exchangeenable-025-select-exchange.png
+  :width: 25%
+
 .. image:: images/exchangeenable-030-check-use-exchange.png
   :width: 25%
 

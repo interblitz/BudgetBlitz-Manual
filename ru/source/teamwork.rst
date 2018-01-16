@@ -94,12 +94,15 @@
 Включение обмена
 ----------------
 
-После обмена идентификаторами Алиса и Боб включают в активном профиле синхронизацию данных между узлами обмена.
+После обмена идентификаторами Алиса и Боб включают в настройках синхронизацию данных между узлами обмена.
 
 .. image:: images/exchangeenable-005-select-actions.png
   :width: 25%
 .. image:: images/exchangeenable-020-click-on-actions-menu.png
   :width: 25%
+.. image:: images/exchangeenable-025-select-exchange.png
+  :width: 25%
+
 .. image:: images/exchangeenable-030-check-use-exchange.png
   :width: 25%
 

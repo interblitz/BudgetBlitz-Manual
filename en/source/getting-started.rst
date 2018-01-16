@@ -9,8 +9,7 @@ If you don't like that, you don't have to.  Just remember, any option you like, 
 Basic Customization
 -------------------
 
-Edit basic settings after the first start of |бб|. Use the menu |menu_actions_profile|
-to do that.
+Edit basic settings after the first start of |бб|. 
 
 .. image:: images/gettingstarted-010-main-screen.png
   :width: 25%

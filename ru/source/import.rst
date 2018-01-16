@@ -33,11 +33,14 @@
   :width: 25%
 .. image:: images/updateimporttunes-080-select-active_profile.png
   :width: 25%
+.. image:: images/updateimporttunes-085-select-notifications.png
+  :width: 25%
+  
 .. image:: images/updateimporttunes-090-check-use_exchange_when_wifi.png
   :width: 25%
 
 Возможно, что приложение не покажет доступные настройки импорта уведомлений. В этом случае проверьте, что
-в активном профиле включен обмен настройками импорта SMS.
+в настройках включен обмен настройками импорта SMS.
 
 SMS и Push уведомления
 ----------------------

@@ -33,10 +33,13 @@ The app will show available update, also it is possible to download new ones her
   :width: 25%
 .. image:: images/updateimporttunes-080-select-active_profile.png
   :width: 25%
+.. image:: images/updateimporttunes-085-select-notifications.png
+  :width: 25%
+
 .. image:: images/updateimporttunes-090-check-use_exchange_when_wifi.png
   :width: 25%
 
-But may be you will see nothing. Check the import tunes exchange is on at the active profile.
+But may be you will see nothing. Check the import tunes exchange is on at settings.
 
 SMS and Push Notifications
 --------------------------
