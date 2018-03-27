@@ -88,6 +88,22 @@ can be exported to a CSV file only.
 .. image:: images/bulkactions-160-transactions-export-ofx-done.png
   :width: 25%
 
+Connecting of transactions
+--------------------------
+
+Sometimes one wants to additionally connect transactions to have a real transfer. For a
+example, you may want to connect two separate transactions when transfer was created by hands or
+as a result of an import. To get transactions connected just check at least one transaction and
+run the operation and the app will find and connect complement transactions automatic.
+
+.. image:: images/bulkactions-190-transactions-connect.png
+  :width: 25%
+
+.. note::
+  Starting from the version 6 both transactions are automatic connecting when transfer is
+  made by hands, thus there is no need to additionally connect these transactions. Connecting
+  transactions are marked by a special icon.
+
 Sending Source Data to Developer
 --------------------------------
 

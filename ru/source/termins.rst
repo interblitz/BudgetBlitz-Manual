@@ -88,6 +88,8 @@
 .. |property_import_tune_position_balance|    replace:: :bbproperty:`Позиция остатка операции среди числовых значений`
 .. |property_import_tune_no_currency|         replace:: :bbproperty:`Иногда валюта платежа может быть не указана`
 .. |property_transaction_planned|             replace:: :bbproperty:`План`
+.. |property_budget_types_share|              replace:: :bbproperty:`Совместное использование`
+.. |property_budget_types_mark_foreign_transactions|  replace:: :bbproperty:`Выделение операций при совместном использовании как агентские`
 
 .. |var_intent_convert_text_to_transaction|   replace:: :bbvar:`biz.interblitz.intent.CONVERT_TEXT_TO_NEW_TRANSACTION`
 .. |var_timestampMillis|                      replace:: :bbvar:`timestampMillis`
@@ -118,6 +120,7 @@
 .. |item_category_transfer|                   replace:: :bbitem:`Перевод`
 .. |item_category_rental_income|              replace:: :bbitem:`Доходы от аренды`
 .. |item_category_salary|                     replace:: :bbitem:`Зарплата`
+.. |item_category_salary_out|                 replace:: :bbitem:`Выплата зарплаты`
 .. |item_category_pocket_expenses|            replace:: :bbitem:`Карманные расходы`
 .. |item_category_public_transport|           replace:: :bbitem:`Общественный транспорт`
 .. |item_turnovers_one_account|               replace:: :bbitem:`Обороты по одному счету`

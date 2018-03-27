@@ -76,17 +76,14 @@ compare actuals and plans.
 Manual Transfers
 ----------------
 
-The app store transfer within two transaction. There is a fast and convenient way to make
+The app stores transfer within two transactions. There is a fast and convenient way to make
 a transfer from a transaction card.
 
 #. Make a new transaction and put an amount.
-#. At the top toolbar select the |button_tranfer| button.
-#. You will have a new target transaction card with a opposite amount sign.
-#. Select target account and the app will make the rest, put a commentary and a category.
+#. Select the |button_tranfer| button near the source account.
+#. Select target account and the app will make the rest.
 #. Edit other options if you want to.
 #. Save the target transaction.
-#. The app will update a commentary and a category at the source transaction.
-#. Save the source transaction.
 #. You will see transfers amount at the main screen.
 
 .. image:: images/transactionstransfer-010-create-transaction.png
@@ -97,9 +94,9 @@ a transfer from a transaction card.
   :width: 25%
 .. image:: images/transactionstransfer-040-transaction-select-transfer-account.png
   :width: 25%
-.. image:: images/transactionstransfer-050-transaction-edit-savet-target.png
+.. image:: images/transactionstransfer-045-transaction-select-transfer-account.png
   :width: 25%
-.. image:: images/transactionstransfer-060-transaction-save-source.png
+.. image:: images/transactionstransfer-050-transaction-edit-save.png
   :width: 25%
 .. image:: images/transactionstransfer-070-transfer-result.png
   :width: 25%

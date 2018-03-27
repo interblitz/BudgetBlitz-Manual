@@ -88,6 +88,8 @@
 .. |property_import_tune_position_balance|    replace:: :bbproperty:`Balance position among digital values`
 .. |property_import_tune_no_currency|         replace:: :bbproperty:`Payment currency may be omitted sometimes`
 .. |property_transaction_planned|             replace:: :bbproperty:`Planned`
+.. |property_budget_types_share|              replace:: :bbproperty:`Share`
+.. |property_budget_types_mark_foreign_transactions|  replace:: :bbproperty:`Mark shared transactions`
 
 .. |var_intent_convert_text_to_transaction|   replace:: :bbvar:`biz.interblitz.intent.CONVERT_TEXT_TO_NEW_TRANSACTION`
 .. |var_timestampMillis|                      replace:: :bbvar:`timestampMillis`
@@ -119,6 +121,7 @@
 .. |item_category_transfer|                   replace:: :bbitem:`Transfer`
 .. |item_category_rental_income|              replace:: :bbitem:`Rental income`
 .. |item_category_salary|                     replace:: :bbitem:`Salary, wages`
+.. |item_category_salary_out|                 replace:: :bbitem:`Wages payment`
 .. |item_category_pocket_expenses|            replace:: :bbitem:`Pocket expenses`
 .. |item_category_public_transport|           replace:: :bbitem:`Public transport`
 .. |item_turnovers_one_account|               replace:: :bbitem:`One account turnovers`

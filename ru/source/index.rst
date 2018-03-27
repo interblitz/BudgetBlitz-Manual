@@ -15,6 +15,7 @@
    main-screen
    directories
    transactions
+   shared-transactions
    account-identities
    notifications
    import
