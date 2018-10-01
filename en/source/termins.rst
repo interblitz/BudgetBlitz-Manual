@@ -57,8 +57,10 @@
 .. |button_settings|                          replace:: :bbbutton:`Settings`
 .. |button_new_transaction|                   replace:: :bbbutton:`New transaction`
 .. |button_tranfer|                           replace:: :bbbutton:`Transfer`
+.. |button_reminders|                         replace:: :bbbutton:`Reminders`
+.. |button_reminders_run|                     replace:: :bbbutton:`Run`
 
-.. |spinner_list_view_settings|               replace:: :bbspinner:`Listview settings`
+.. |spinner_list_view_settings|               replace:: :bbspinner:`Report settings`
 .. |spinner_filter|                           replace:: :bbspinner:`Filter`
 .. |spinner_account_identity|                 replace:: :bbspinner:`Account number or card ID`
 .. |spinner_key_phrases|                      replace:: :bbspinner:`Key phrases`
@@ -103,6 +105,7 @@
 .. |meta_dir_accounts|                        replace:: :bbmeta:`Accounts`
 .. |meta_dir_nodes|                           replace:: :bbmeta:`Exchange nodes`
 .. |meta_dir_scopes|                          replace:: :bbmeta:`Data scopes`
+.. |meta_dir_reminders|                       replace:: :bbmeta:`Reminders`
 .. |meta_report_turnovers|                    replace:: :bbmeta:`Turnovers`
 .. |meta_report_debts|                        replace:: :bbmeta:`Debts and credits`
 .. |meta_report_plan_implementation|          replace:: :bbmeta:`Plan implementation`

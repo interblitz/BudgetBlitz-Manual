@@ -21,6 +21,7 @@
    import
    teamwork
    reports
+   reminders
    bulk-actions
    shortcuts
    widgets

@@ -57,8 +57,10 @@
 .. |button_settings|                          replace:: :bbbutton:`Настройка`
 .. |button_new_transaction|                   replace:: :bbbutton:`Новая операция`
 .. |button_tranfer|                           replace:: :bbbutton:`Перевод`
+.. |button_reminders|                         replace:: :bbbutton:`Напоминания`
+.. |button_reminders_run|                     replace:: :bbbutton:`Выполнить`
 
-.. |spinner_list_view_settings|               replace:: :bbspinner:`Настройки списка`
+.. |spinner_list_view_settings|               replace:: :bbspinner:`Настройки отчета`
 .. |spinner_filter|                           replace:: :bbspinner:`Фильтр`
 .. |spinner_account_identity|                 replace:: :bbspinner:`Идентификатор счета или карты`
 .. |spinner_key_phrases|                      replace:: :bbspinner:`Ключевые слова`
@@ -103,9 +105,11 @@
 .. |meta_dir_accounts|                        replace:: :bbmeta:`Счета`
 .. |meta_dir_nodes|                           replace:: :bbmeta:`Узлы обмена`
 .. |meta_dir_scopes|                          replace:: :bbmeta:`Области данных`
+.. |meta_dir_reminders|                       replace:: :bbmeta:`Напоминания`
 .. |meta_report_turnovers|                    replace:: :bbmeta:`Обороты`
 .. |meta_report_debts|                        replace:: :bbmeta:`Долги`
 .. |meta_report_plan_implementation|          replace:: :bbmeta:`Исполнение плана`
+
 
 .. |item_personal|                            replace:: :bbitem:`Персональный`
 .. |item_small_business|                      replace:: :bbitem:`Малый бизнес`

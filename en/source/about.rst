@@ -43,6 +43,8 @@ API for receiving transactions from other applications.
 
 Various financial reports.
 
+Reports driven notifications.
+
 ---------------------------------
 Interesting Solutions Implemented
 ---------------------------------
@@ -68,6 +70,8 @@ Reports subsystem:
   *  App widgets are used for brief reports;
 
   *  Shortcuts with predefined settings for reports.
+
+  *  Reports driven notifications, access to the prepared report from notification.
 
 Teamwork subsystem:
 

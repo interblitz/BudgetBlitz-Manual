@@ -45,6 +45,9 @@ Difference Between Versions
    * - Notifications about upcoming payments
      -
      - +
+   * - Reports driven notifications
+     -
+     - +
    * - Shortcuts
      -
      - +
