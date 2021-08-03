@@ -100,10 +100,10 @@ Since column names are placed at another row they are valid for next rows.
      - Name, number, or identity of the account
    * - date
      - No
-     - Date of the transaction, supported formates: "dd'd'MM'd'yyyy" (for example, 01d01d2017), "yyyy'd'MM'd'dd" (for example, 2017d01d01), "yyyyMMddHHmmss", "yyyyMMddHHmm", "yyyyMMdd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm", "yyyy-MM-dd", "dd-MM-yyyy HH:mm:ss", "dd-MM-yyyy HH:mm", "dd-MM-yyyy", "dd.MM.yyyy HH:mm:ss", "dd.MM.yyyy HH:mm", "dd.MM.yyyy"
+     - Date of the transaction, supported formats: "dd'd'MM'd'yyyy" (for example, 01d01d2017), "yyyy'd'MM'd'dd" (for example, 2017d01d01), "yyyyMMddHHmmss", "yyyyMMddHHmm", "yyyyMMdd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm", "yyyy-MM-dd", "dd-MM-yyyy HH:mm:ss", "dd-MM-yyyy HH:mm", "dd-MM-yyyy", "dd.MM.yyyy HH:mm:ss", "dd.MM.yyyy HH:mm", "dd.MM.yyyy"
    * - time
      - No
-     - Time of the transaction, supported formates: "HH:mm:ss", "HH:mm", "HHmmss", "HHmm"
+     - Time of the transaction, supported formats: "HH:mm:ss", "HH:mm", "HHmmss", "HHmm"
    * - amount
      - Yes
      - Transaction amount, can have a currency and digits delimiters, fixed point should be point or comma
@@ -130,9 +130,16 @@ Since column names are placed at another row they are valid for next rows.
      - Note
    * - planned, plan
      - No
-     - Actual = 1, or planned = 1, default value is actual
+     - Actual (0) or planned (1), default value is 0
+   * - detail, split
+     - No
+     - Transaction (0) or detail of transaction (1). default value is 0
 
-The row is canceled when mandatory columns are empty. To start the import
+The row is canceled when mandatory columns are empty.
+
+If the row contains not all mandatory columns, but amount column is not empty, then app creates split transaction. This is like column detail contains value 1.
+
+To start the import
 
 #. Open the import dialog.
 #. Select a file.
