@@ -97,6 +97,21 @@
 .. |var_timestampMillis|                      replace:: :bbvar:`timestampMillis`
 .. |var_address|                              replace:: :bbvar:`address`
 .. |var_message|                              replace:: :bbvar:`message`
+.. |var_action_api_event_ITEM_ONCHANGE|       replace:: :bbvar:`{biz.interblitz.budget{free/pro}.api.event.ITEM_ONCHANGE`
+.. |var_collection|                           replace:: :bbvar:`collection`
+.. |var_id|                                   replace:: :bbvar:`id`
+.. |var_notification|                         replace:: :bbvar:`notification`
+.. |var_amount|                               replace:: :bbvar:`amount`
+.. |var_currency|                             replace:: :bbvar:`currency`
+.. |var_intent_api_request|                   replace:: :bbvar:`biz.interblitz.service.ApiReceiver`
+.. |var_action_api_request|                   replace:: :bbvar:`{biz.interblitz.budget{free/pro}.api.request`
+.. |var_method|                               replace:: :bbvar:`method`
+.. |var_path|                                 replace:: :bbvar:`path`
+.. |var_body|                                 replace:: :bbvar:`body`
+.. |var_package|                              replace:: :bbvar:`package`
+.. |var_class|                                replace:: :bbvar:`class`
+.. |var_action_api_response|                  replace:: :bbvar:`{biz.interblitz.budget{free/pro}.api.response`
+.. |var_response|                             replace:: :bbvar:`response`
 
 .. |meta_dir_sms_import_tunes|                replace:: :bbmeta:`Настройки импорта SMS`
 .. |meta_dir_contractors|                     replace:: :bbmeta:`Плательщики и получатели`
