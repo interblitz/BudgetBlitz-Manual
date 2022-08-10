@@ -1,0 +1,140 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service &#8212; Budget Blitz 2.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ready to use Financial Institutes" href="banks.html" />
+    <link rel="prev" title="Migration to Pro Version" href="migration-to-pro.html" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-17679631-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="banks.html" title="Ready to use Financial Institutes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="migration-to-pro.html" title="Migration to Pro Version"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Service</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="service">
+<span id="chapter-service"></span><h1>Service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h1>
+<p>Generally the app Budget Blitz for Android do not need any service. But when you notice
+the app becomes slower service actions can help.</p>
+<a class="reference internal image-reference" href="_images/service-010-select-actions.png"><img alt="_images/service-010-select-actions.png" src="_images/service-010-select-actions.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/service-020-select-service.png"><img alt="_images/service-020-select-service.png" src="_images/service-020-select-service.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/service-030-select-iitems.png"><img alt="_images/service-030-select-iitems.png" src="_images/service-030-select-iitems.png" style="width: 25%;" /></a>
+<p>Shrinking database frees unused space, rebuilds the database file, repacking it into a minimal
+amount of disk space. This contributes to speed up the app. Shrinking database runs
+<a class="reference external" href="https://sqlite.org/lang_vacuum.html">VACUUM</a> command.</p>
+<p>Shrinking does not affect to files that app contains except database.</p>
+<p>Reindexing database is useful when you notice drastic drop in of the app performance.
+Reindexing runs <a class="reference external" href="https://sqlite.org/lang_reindex.html">REINDEX</a> command.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not forget making backups, especially before service. Ensure you remember encryption password if you have. Otherwise restoring data could be impossible.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="migration-to-pro.html"
+                          title="previous chapter">Migration to Pro Version</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="banks.html"
+                          title="next chapter">Ready to use Financial Institutes</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="banks.html" title="Ready to use Financial Institutes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="migration-to-pro.html" title="Migration to Pro Version"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Service</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017 - 2021, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+</div>
+
+  </body>
+</html>

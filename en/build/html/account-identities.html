@@ -1,0 +1,190 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Settings for Notifications Import &#8212; Budget Blitz 2.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Import SMS and Push Notifications Setting" href="notifications.html" />
+    <link rel="prev" title="Transactions" href="transactions.html" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-17679631-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="notifications.html" title="Advanced Import SMS and Push Notifications Setting"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="transactions.html" title="Transactions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Account Settings for Notifications Import</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="account-settings-for-notifications-import">
+<span id="chapter-account-identities"></span><h1>Account Settings for Notifications Import<a class="headerlink" href="#account-settings-for-notifications-import" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="identity-choosing">
+<h2>Identity Choosing<a class="headerlink" href="#identity-choosing" title="Permalink to this headline">¶</a></h2>
+<p>You have to put an identity at the account card before import SMS or push notifications.
+This will ensure detection of an account for a transaction. Usually financial institutions
+put last four digits of a card number to a notification. So use them as a card identity.</p>
+<p>For a example, for the SMS</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VISA1234</span><span class="p">:</span> <span class="mf">08.08</span><span class="o">.</span><span class="mi">13</span> <span class="mi">14</span><span class="p">:</span><span class="mi">05</span> <span class="n">payment</span> <span class="mf">500.00</span> <span class="n">USD</span><span class="o">.</span> <span class="n">balance</span> <span class="mf">1000.00</span> <span class="n">USD</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>you should choose VISA1234 as a card identity. Some financial institutions do not put
+digits of an account or card number into notifications. For example, in the SMS</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Transaction</span> <span class="o">&gt;&gt;</span> <span class="o">-</span><span class="mi">600</span> <span class="n">USD</span><span class="o">.</span>       <span class="n">Atm</span><span class="o">-</span><span class="n">nyc</span><span class="o">-</span><span class="mi">001</span>
+</pre></div>
+</div>
+<p>there is no way to find out an identity. Well, in that case you should use
+sender name or number. For example, short number for Sberbank is 900.
+For push notifications sender is a package identity. For example,
+ru.rocketbank.r2d2 is the package identity for RocketBank.</p>
+<p>Open the card of an account in order to setup identity. Press <span class="bbspinner">Account number or card ID</span> and
+select identity from a financial institution message. Put the identity by hands
+if you want to use sender or package identity.</p>
+<p>Also do not forget to select an import tune for your financial institution.</p>
+<a class="reference internal image-reference" href="_images/accountidenties-005-select-references.png"><img alt="_images/accountidenties-005-select-references.png" src="_images/accountidenties-005-select-references.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/accountidenties-010-select-accounts.png"><img alt="_images/accountidenties-010-select-accounts.png" src="_images/accountidenties-010-select-accounts.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/accountidenties-020-open-card-account.png"><img alt="_images/accountidenties-020-open-card-account.png" src="_images/accountidenties-020-open-card-account.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/accountidenties-030-scroll-to-identity.png"><img alt="_images/accountidenties-030-scroll-to-identity.png" src="_images/accountidenties-030-scroll-to-identity.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/accountidenties-035-select-identity.png"><img alt="_images/accountidenties-035-select-identity.png" src="_images/accountidenties-035-select-identity.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/accountidenties-040-set-identity.png"><img alt="_images/accountidenties-040-set-identity.png" src="_images/accountidenties-040-set-identity.png" style="width: 25%;" /></a>
+</div>
+<div class="section" id="key-phrase-choosing-for-transfers">
+<h2>Key Phrase Choosing for Transfers<a class="headerlink" href="#key-phrase-choosing-for-transfers" title="Permalink to this headline">¶</a></h2>
+<p>The app Budget Blitz for Android can create transfer transactions based upon financial institution messages. For example, when you
+have an SMS</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VISA1234</span><span class="p">:</span> <span class="mf">08.08</span><span class="o">.</span><span class="mi">13</span> <span class="mi">14</span><span class="p">:</span><span class="mi">05</span> <span class="n">cash</span> <span class="n">withdrawal</span> <span class="mf">200.00</span> <span class="n">USD</span><span class="o">.</span> <span class="n">ATM</span> <span class="mi">10010001</span> <span class="n">bal</span> <span class="mf">500.00</span> <span class="n">USD</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>then the app is able to create expense transaction for the VISA1234 account and revenue transaction
+for a cash account. All you need is to set key phrases for the cash account. The app will
+use this key phrases to find out the one. For example, key phrases above may be one of “cash withdrawal” or
+“ATM”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is also necessary to ensure the app is able to identify a transaction as transfer, see <a class="reference internal" href="notifications.html#chapter-notifications"><span class="std std-ref">Advanced Import SMS and Push Notifications Setting</span></a>.</p>
+</div>
+<p>Open the card of an account in order to setup key phrases. Press <span class="bbspinner">Key phrases</span> and
+select ones from a financial institution message. Also put key phrases by hands
+if you want to.</p>
+<a class="reference internal image-reference" href="_images/accountidenties-050-open-cash-account.png"><img alt="_images/accountidenties-050-open-cash-account.png" src="_images/accountidenties-050-open-cash-account.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/accountidenties-060-scroll-to-keywords.png"><img alt="_images/accountidenties-060-scroll-to-keywords.png" src="_images/accountidenties-060-scroll-to-keywords.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/accountidenties-070-set-keywords.png"><img alt="_images/accountidenties-070-set-keywords.png" src="_images/accountidenties-070-set-keywords.png" style="width: 25%;" /></a>
+<p>Usually accounts having notifications have empty <span class="bbproperty">Keywords</span> property and cash accounts
+have empty <span class="bbproperty">Number</span> property vice versa. But there are rare cases when both ones are used. See <a class="reference external" href="http://qa.bbmoney.biz/ru/index.php?qa=67&amp;qa_1=%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C-%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82-%D1%83%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9-%D1%80%D0%BE%D0%BA%D0%B5%D1%82%D0%B1%D0%B0%D0%BD%D0%BA%D0%B0&amp;show=68#a68">Rocketbank</a>
+notifications import setting.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Account Settings for Notifications Import</a><ul>
+<li><a class="reference internal" href="#identity-choosing">Identity Choosing</a></li>
+<li><a class="reference internal" href="#key-phrase-choosing-for-transfers">Key Phrase Choosing for Transfers</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="transactions.html"
+                          title="previous chapter">Transactions</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="notifications.html"
+                          title="next chapter">Advanced Import SMS and Push Notifications Setting</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="notifications.html" title="Advanced Import SMS and Push Notifications Setting"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="transactions.html" title="Transactions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Account Settings for Notifications Import</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017 - 2021, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+</div>
+
+  </body>
+</html>

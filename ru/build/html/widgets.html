@@ -1,0 +1,224 @@
+
+
+<!doctype html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Виджеты и шаблоны &#8212; Документация Блиц Бюджет 2.7</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="author" title="Об этих документах" href="about.html" />
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Удаленный доступ" href="remote-access.html" />
+    <link rel="prev" title="Настройки отчетов и ярлыки" href="shortcuts.html" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-17679631-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="remote-access.html" title="Удаленный доступ"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="shortcuts.html" title="Настройки отчетов и ярлыки"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Виджеты и шаблоны</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="chapter-widgets">
+<span id="id1"></span><h1>Виджеты и шаблоны<a class="headerlink" href="#chapter-widgets" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id2">
+<h2>Виджеты<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Блиц Бюджет для Android содержит удобный виджет для отображения фактических остатков, оборотов и быстрого создания новой операции.</p>
+<a class="reference internal image-reference" href="_images/widget-480.png"><img alt="_images/widget-480.png" class="align-center" src="_images/widget-480.png" style="width: 25%;" /></a>
+<p>Виджет доступен в различных размерах, 1x1, 1x2 и 1x4 ячейки. Оформление виджета совпадает с темой приложения.</p>
+<p>Благодаря гибким настройкам виджет можно использовать не только как сводку, но и как краткий отчет или шаблон
+новой операции. Примеры будут рассмотрены ниже.</p>
+<a class="reference internal image-reference" href="_images/widgets-005-widget-available.png"><img alt="_images/widgets-005-widget-available.png" src="_images/widgets-005-widget-available.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/widgets-010-widget-settings-open.png"><img alt="_images/widgets-010-widget-settings-open.png" src="_images/widgets-010-widget-settings-open.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/widgets-020-widget-settings.png"><img alt="_images/widgets-020-widget-settings.png" src="_images/widgets-020-widget-settings.png" style="width: 25%;" /></a>
+<p>После создания в виджете отображаются текущий остаток и движения денежных средств в основной валюте за текущий день.
+Для изменения этих настроек служит кнопка <span class="bbbutton">Настройка</span>.</p>
+<p>В разделе <span class="bbsection">Вид</span> можно задать основные параметры виджета.</p>
+<p><span class="bbproperty">Наименование</span> удобно использовать, если на экран выведено несколько виджетов. При желании можно оставить это поле
+пустым.</p>
+<p><span class="bbproperty">Типы портфелей</span>, <span class="bbproperty">Портфели</span> и <span class="bbproperty">Счета</span> служат для базового ограничения отображаемой в
+виджете информации. Можно указать один из параметров или их комбинацию. В разных экземплярах виджета могут использоваться
+разные ограничения. Так, например, на экран можно вывести два виджета, один будет показывать информацию по одному счету,
+другой — по другому.</p>
+<p><span class="bbproperty">Отображать баланс</span>  служит для включения и отключения расчета баланса, также можно конкретизировать как именно
+рассчитывать баланс, с учетом кредитного лимита или без. По умолчанию кредитный лимит не учитывается в балансе, т.е. для
+кредитных карт отображается отрицательный остаток.</p>
+<a class="reference internal image-reference" href="_images/widgets-030-widget-settings-2.png"><img alt="_images/widgets-030-widget-settings-2.png" src="_images/widgets-030-widget-settings-2.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/widgets-040-widget-settings-apply.png"><img alt="_images/widgets-040-widget-settings-apply.png" src="_images/widgets-040-widget-settings-apply.png" style="width: 25%;" /></a>
+</div>
+<div class="section" id="id3">
+<h2>Использование виджетов в качестве шаблонов операций<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Виджет содержит кнопку <span class="bbbutton">Новая операция</span>. Эта кнопка доступна после того, как в настройках будет указан счет для
+создания новых операций. При желании можно указать сумму новой операции, которая будет автоматически установлена
+при открытии карточки новой операции.</p>
+<p>Также в новую операцию будут скопированы значения фильтров.</p>
+<p>Таким образом, задав счет, сумму и фильтры, возможно использовать виджет для создания новой операции по шаблону. Все
+поля новой операции будут сразу заполнены.</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Использование виджетов для создания новых операций по шаблону доступно в версии Pro. В версии Free доступно создание новых операций без заполнения по шаблону.</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Использование виджетов в качестве отчетов<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Гибкие настройки позволяют использовать виджеты в качестве отчетов с заранее сохраненными настройками. Для этого
+служат параметры расположенные в разделе <span class="bbsection">Фильтр</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Использование виджетов в качестве отчетов доступно в версии Pro</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Пример использования виджета в качестве отчета<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Рассмотрим в качестве примера настройку виджета для отображения расходов на общественный транспорт в течение текущего месяца.
+Откроем настройки виджета и зададим название <span class="bbvalue">Общественный транспорт</span>.</p>
+<a class="reference internal image-reference" href="_images/widgets-050-widget-example-set-name.png"><img alt="_images/widgets-050-widget-example-set-name.png" src="_images/widgets-050-widget-example-set-name.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/widgets-060-widget-example-select-period.png"><img alt="_images/widgets-060-widget-example-select-period.png" src="_images/widgets-060-widget-example-select-period.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/widgets-070-widget-example-select-period-apply.png"><img alt="_images/widgets-070-widget-example-select-period-apply.png" src="_images/widgets-070-widget-example-select-period-apply.png" style="width: 25%;" /></a>
+<p>Общее количество потраченных денежных средств на общественный транспорт с начала ведения учета нас не интересует,
+поэтому отключим отображение баланса.</p>
+<p>В качестве периода выберем текущий месяц.</p>
+<a class="reference internal image-reference" href="_images/widgets-080-widget-example-select-budget-item.png"><img alt="_images/widgets-080-widget-example-select-budget-item.png" src="_images/widgets-080-widget-example-select-budget-item.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/widgets-090-widget-example-select-budget-item-apply.png"><img alt="_images/widgets-090-widget-example-select-budget-item-apply.png" src="_images/widgets-090-widget-example-select-budget-item-apply.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/widgets-100-widget-example-settings-apply.png"><img alt="_images/widgets-100-widget-example-settings-apply.png" src="_images/widgets-100-widget-example-settings-apply.png" style="width: 25%;" /></a>
+<p>В настройках фильтра зададим статью <span class="bbitem">Общественный транспорт</span> и сохраним настройку.</p>
+<a class="reference internal image-reference" href="_images/widgets-110-widget-example.png"><img alt="_images/widgets-110-widget-example.png" src="_images/widgets-110-widget-example.png" style="width: 25%;" /></a>
+<p>Теперь виджет отображает движения только по статье <span class="bbitem">Общественный транспорт</span> за текущий месяц, мы видим
+конкретную сумму расходов и два счета, с которых оплачивался транспорт.</p>
+</div>
+<div class="section" id="id6">
+<h2>Пример использования виджета в качестве шаблона<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Теперь изменим настройки виджета так, чтобы мы могли не только видеть расходы, но и быстро их создавать. Для
+этого снова откроем настройки.</p>
+<a class="reference internal image-reference" href="_images/widgets-120-widget-example-select-account.png"><img alt="_images/widgets-120-widget-example-select-account.png" src="_images/widgets-120-widget-example-select-account.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/widgets-140-widget-example-select-amount.png"><img alt="_images/widgets-140-widget-example-select-amount.png" src="_images/widgets-140-widget-example-select-amount.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/widgets-150-widget-example-select-amount-value.png"><img alt="_images/widgets-150-widget-example-select-amount-value.png" src="_images/widgets-150-widget-example-select-amount-value.png" style="width: 25%;" /></a>
+<p>Зададим счет, с которого чаще всего будет происходить оплата транспорта. После этого укажем сумму, которая будет
+подставлена в новую операцию.</p>
+<a class="reference internal image-reference" href="_images/widgets-160-widget-example-select-amount-value-2.png"><img alt="_images/widgets-160-widget-example-select-amount-value-2.png" src="_images/widgets-160-widget-example-select-amount-value-2.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/widgets-170-widget-example-settings-apply.png"><img alt="_images/widgets-170-widget-example-settings-apply.png" src="_images/widgets-170-widget-example-settings-apply.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/widgets-180-widget-example-transaction-new.png"><img alt="_images/widgets-180-widget-example-transaction-new.png" src="_images/widgets-180-widget-example-transaction-new.png" style="width: 25%;" /></a>
+<p>Сохраним настройки. Теперь в виджете появилась кнопка добавления новой операции.</p>
+<a class="reference internal image-reference" href="_images/widgets-190-widget-example-transaction.png"><img alt="_images/widgets-190-widget-example-transaction.png" src="_images/widgets-190-widget-example-transaction.png" style="width: 25%;" /></a>
+<p>Добавляем новую операцию из виджета. Видно, что в новой операции автоматически заполнились счета, сумма и статья. Осталось
+только сохранить новую операцию.</p>
+<p>Аналогичным образом можно задать контрагентов, проекты и персоны, которые будут подставлены в новую операцию. Для каждого
+шаблона следует создать свой виджет.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Виджеты и шаблоны</a><ul>
+<li><a class="reference internal" href="#id2">Виджеты</a></li>
+<li><a class="reference internal" href="#id3">Использование виджетов в качестве шаблонов операций</a></li>
+<li><a class="reference internal" href="#id4">Использование виджетов в качестве отчетов</a></li>
+<li><a class="reference internal" href="#id5">Пример использования виджета в качестве отчета</a></li>
+<li><a class="reference internal" href="#id6">Пример использования виджета в качестве шаблона</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Предыдущий раздел</h4>
+    <p class="topless"><a href="shortcuts.html"
+                          title="предыдущая глава">Настройки отчетов и ярлыки</a></p>
+  </div>
+  <div>
+    <h4>Следующий раздел</h4>
+    <p class="topless"><a href="remote-access.html"
+                          title="следующая глава">Удаленный доступ</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="remote-access.html" title="Удаленный доступ"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="shortcuts.html" title="Настройки отчетов и ярлыки"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Виджеты и шаблоны</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017 - 2021, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+</div>
+
+  </body>
+</html>

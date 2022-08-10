@@ -1,0 +1,301 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teamwork &#8212; Budget Blitz 2.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Reports" href="reports.html" />
+    <link rel="prev" title="Data Import" href="import.html" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-17679631-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="reports.html" title="Reports"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="import.html" title="Data Import"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Teamwork</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="teamwork">
+<span id="chapter-teamwork"></span><h1>Teamwork<a class="headerlink" href="#teamwork" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Budget Blitz for Android ensures the collaborative accounting of revenues and expenses. Here are a few examples:</p>
+<ol class="arabic simple">
+<li><p>Full synchronization between devices;</p></li>
+<li><p>Collaborative financial accounting restricted by selected accounts, projects, persons, payers, payees, or even categories;</p></li>
+<li><p>Collecting data on a single device, in a case of, for example, parents track children expenses.</p></li>
+</ol>
+<p>Any device can become an exchange node, see <a class="reference internal" href="glossary.html#term-exchange-node"><span class="xref std std-term">exchange node</span></a> and receive or transmit changes.
+Each exchange node can communicate with other ones.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Free version can transmit messages only. The Pro version has no restrictions.</p>
+</div>
+<p>The app has flexible settings to control exchange. For example, you can allow to accept only new transactions
+from one node, and forbid modified ones. Each node has own settings.</p>
+<p>Messages between nodes are encrypted in order to improve safety. For each node you can specify
+own password that will be used for encryption and decryption of a transmitted information.</p>
+<p>Collaboration does not require Dropbox account or other ones.</p>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="initial-database">
+<h3>Initial Database<a class="headerlink" href="#initial-database" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that Alice and Bob want to use a collaborative financial accounting.
+Then, they need to decide what is the best suited case:</p>
+<ol class="arabic simple">
+<li><p>At the beginning Alice and Bob will have similar database.</p></li>
+<li><p>Alice and Bob already use the app, they do not want to combine their databases, and plan to synchronize selected accounts only.</p></li>
+</ol>
+<p>For the first case Alice or Bob, let it be Alice, makes a backup. Further, Alice gives the
+backup to Bob and he restores database on his device. Now Alice and Bob have similar database.
+The teamwork requires databases have different identities. Hence, Bob generates new identity
+for his database.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ii is required to make a new database identity when database restored from backup of another teamwork member.</p>
+</div>
+<a class="reference internal image-reference" href="_images/exchangenewid-005-select-actions.png"><img alt="_images/exchangenewid-005-select-actions.png" src="_images/exchangenewid-005-select-actions.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangenewid-010-select-exchange.png"><img alt="_images/exchangenewid-010-select-exchange.png" src="_images/exchangenewid-010-select-exchange.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangenewid-020-select-exchange_nodes.png"><img alt="_images/exchangenewid-020-select-exchange_nodes.png" src="_images/exchangenewid-020-select-exchange_nodes.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangenewid-030-select-actions.png"><img alt="_images/exchangenewid-030-select-actions.png" src="_images/exchangenewid-030-select-actions.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangenewid-040-select-new-id.png"><img alt="_images/exchangenewid-040-select-new-id.png" src="_images/exchangenewid-040-select-new-id.png" style="width: 25%;" /></a>
+<p>Now Alice and Bob are ready for next steps.</p>
+<p>In the second case there is no need to preliminary actions. Alice and Bob are ready for next steps at once.</p>
+</div>
+<div class="section" id="identities-interchange">
+<h3>Identities Interchange<a class="headerlink" href="#identities-interchange" title="Permalink to this headline">¶</a></h3>
+<p>The most important step under preparing teamwork is an identities interchange. To do that
+Alice opens <span class="bbmeta">Exchange nodes</span> directory using <span class="menuselection">Actions ‣ Data synchronization ‣  Exchange nodes</span> menu. Then,
+Alice presses <span class="menuselection">Share ID</span> and sends identity to Bob by email.</p>
+<a class="reference internal image-reference" href="_images/exchangesendid-005-select-actions.png"><img alt="_images/exchangesendid-005-select-actions.png" src="_images/exchangesendid-005-select-actions.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangesendid-010-select-exchange.png"><img alt="_images/exchangesendid-010-select-exchange.png" src="_images/exchangesendid-010-select-exchange.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangesendid-020-select-exchange_nodes.png"><img alt="_images/exchangesendid-020-select-exchange_nodes.png" src="_images/exchangesendid-020-select-exchange_nodes.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangesendid-030-select-actions.png"><img alt="_images/exchangesendid-030-select-actions.png" src="_images/exchangesendid-030-select-actions.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangesendid-040-select-share-id.png"><img alt="_images/exchangesendid-040-select-share-id.png" src="_images/exchangesendid-040-select-share-id.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangesendid-050-mail-id.png"><img alt="_images/exchangesendid-050-mail-id.png" src="_images/exchangesendid-050-mail-id.png" style="width: 25%;" /></a>
+<p>Bob receives the message, creates new exchange node putting the name and identity from the message.
+After that he sends his own identity to Alice.</p>
+<a class="reference internal image-reference" href="_images/exchangenewnode-005-select-actions.png"><img alt="_images/exchangenewnode-005-select-actions.png" src="_images/exchangenewnode-005-select-actions.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangenewnode-010-select-exchange.png"><img alt="_images/exchangenewnode-010-select-exchange.png" src="_images/exchangenewnode-010-select-exchange.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangenewnode-020-select-exchange_nodes.png"><img alt="_images/exchangenewnode-020-select-exchange_nodes.png" src="_images/exchangenewnode-020-select-exchange_nodes.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangenewnode-030-click-fab.png"><img alt="_images/exchangenewnode-030-click-fab.png" src="_images/exchangenewnode-030-click-fab.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangenewnode-040-setup_node.png"><img alt="_images/exchangenewnode-040-setup_node.png" src="_images/exchangenewnode-040-setup_node.png" style="width: 25%;" /></a>
+<p>Now, there is a turn of Alice to receive Bob message. She creates new node and puts identity
+from the message of Bob.</p>
+</div>
+</div>
+<div class="section" id="setting-teamwork-on">
+<h2>Setting Teamwork On<a class="headerlink" href="#setting-teamwork-on" title="Permalink to this headline">¶</a></h2>
+<p>When identities interchange completed, Alice and Bob set synchronization on at the app settings.</p>
+<a class="reference internal image-reference" href="_images/exchangeenable-005-select-actions.png"><img alt="_images/exchangeenable-005-select-actions.png" src="_images/exchangeenable-005-select-actions.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangeenable-020-click-on-actions-menu.png"><img alt="_images/exchangeenable-020-click-on-actions-menu.png" src="_images/exchangeenable-020-click-on-actions-menu.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangeenable-025-select-exchange.png"><img alt="_images/exchangeenable-025-select-exchange.png" src="_images/exchangeenable-025-select-exchange.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/exchangeenable-030-check-use-exchange.png"><img alt="_images/exchangeenable-030-check-use-exchange.png" src="_images/exchangeenable-030-check-use-exchange.png" style="width: 25%;" /></a>
+<p>Now the app sends all changes from the database of Alice to the database of Bob and vice versa.
+The app synchronizes changes every five minutes when Wi-Fi or mobile network is on. Synchronization
+is off when device falls asleep or network is off. This ensures to save network traffic and
+battery power.</p>
+<p>This is how exchange works:</p>
+<ol class="arabic simple">
+<li><p>Since exchange started the app checks whether screen is on or not.</p>
+<ol class="arabic simple">
+<li><p>Next time to start synchronization is 5 minutes after, if screen is on.</p></li>
+<li><p>Next time to start synchronization is 60 minutes after, if screen is off.</p></li>
+<li><p>Synchronization is canceled when phone falls asleep.</p></li>
+</ol>
+</li>
+<li><p>Since main screen started the app checks next time of synchronization.</p>
+<ol class="arabic simple">
+<li><p>Nothing happen if next time is within 10 minutes.</p></li>
+<li><p>Synchronization starts if next time is greater then 10 minutes.</p></li>
+</ol>
+</li>
+<li><p>Synchronization is off when where is no network until network is on.</p></li>
+</ol>
+<p>You can run synchronization by hands if you want to.</p>
+</div>
+<div class="section" id="how-synchronization-works">
+<h2>How Synchronization Works<a class="headerlink" href="#how-synchronization-works" title="Permalink to this headline">¶</a></h2>
+<p>The app Budget Blitz for Android stores every directory items and transactions changes. Node sends changes
+that occur starting from the time last message sent or node created itself. The sequence
+of exchange matters. Alice sends changes to Bob. Then Bob sends changes to Alice and so on.
+The node of Alice will await response from the node of Bob. Thus, the node of Alice will send
+no anymore messages until response from the Bob coming.</p>
+<p>The app synchronizes directories using rules below:</p>
+<ol class="arabic simple">
+<li><p>syncing by the unique id;</p></li>
+<li><p>syncing by key phrases;</p></li>
+<li><p>syncing by the name.</p></li>
+</ol>
+<p>When syncing fails the app goes to the next step. The app will create new item or use default value
+if all steps fail. You can edit default values at the node card.</p>
+<p>Transactions sync by the unique id only.</p>
+</div>
+<div class="section" id="advanced-settings">
+<h2>Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permalink to this headline">¶</a></h2>
+<p>Alice and Bob can restrict the amount of information transmitted. There are two types of constraints:</p>
+<ol class="arabic simple">
+<li><p>permitted data scope;</p></li>
+<li><p>forbidden data scope.</p></li>
+</ol>
+<p>Scopes specified in the <span class="bbmeta">Data scopes</span> directory. It is possible to specify any combination of accounts,
+categories, payers, payees, projects, and persons.</p>
+<p>Forbidden scope has a higher priority, when the permitted and forbidden data scopes contain
+same item simultaneously.</p>
+<p>Transactions, recurring transactions, and directory items to transmit are based upon data scopes.</p>
+<p>Alice and Bob can restrict items to receive. For example, Alice can refuse all new, modified
+or removed items. Another case is to specify certain type of directory to refuse.</p>
+</div>
+<div class="section" id="data-transfer-settings">
+<h2>Data Transfer Settings<a class="headerlink" href="#data-transfer-settings" title="Permalink to this headline">¶</a></h2>
+<p>To improve the security of data transmission Alice should specify a password that will
+be used to encrypt messages between exchange nodes. Alice’s password must match the Bob’s one.</p>
+<p>Alice also should indicate what type of communications is used for messaging with Bob.
+Available types are Wi-Fi and mobile network.</p>
+</div>
+<div class="section" id="default-values">
+<h2>Default Values<a class="headerlink" href="#default-values" title="Permalink to this headline">¶</a></h2>
+<p>Alice and Bob can have a different app content. For example, Bob has a long time using Budget Blitz for Android,
+and Alice has just installed the app. Bob can create transaction and specify, for example,
+a project that Alice does not have. When a message from Bob arrives, Alice’s node will
+create a transaction, but could not find a proper project. In that case the app will
+use a default value Alice set to the node of Bob.</p>
+</div>
+<div class="section" id="moving-database-to-a-new-device">
+<h2>Moving Database to a New Device<a class="headerlink" href="#moving-database-to-a-new-device" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that Alice decides to move onto new phone. Then, Alice should follow steps:</p>
+<ol class="arabic simple">
+<li><p>Set synchronization off for an old device.</p></li>
+<li><p>Make backup.</p></li>
+<li><p>Restore backup on a new device.</p></li>
+<li><p>Set synchronization on for a new device.</p></li>
+</ol>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Teamwork</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#initial-database">Initial Database</a></li>
+<li><a class="reference internal" href="#identities-interchange">Identities Interchange</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#setting-teamwork-on">Setting Teamwork On</a></li>
+<li><a class="reference internal" href="#how-synchronization-works">How Synchronization Works</a></li>
+<li><a class="reference internal" href="#advanced-settings">Advanced Settings</a></li>
+<li><a class="reference internal" href="#data-transfer-settings">Data Transfer Settings</a></li>
+<li><a class="reference internal" href="#default-values">Default Values</a></li>
+<li><a class="reference internal" href="#moving-database-to-a-new-device">Moving Database to a New Device</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="import.html"
+                          title="previous chapter">Data Import</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="reports.html"
+                          title="next chapter">Reports</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="reports.html" title="Reports"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="import.html" title="Data Import"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Teamwork</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017 - 2021, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+</div>
+
+  </body>
+</html>

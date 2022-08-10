@@ -1,0 +1,119 @@
+.. include:: termins.rst
+.. _chapter_transactions:
+
+Финансовые операции
+===================
+
+Введение
+--------
+
+Любые изменения денежных средств учитываются при помощи операций. Ввод начальных остатков,
+изменение кредитного лимита, списание или зачисление средств, снятие наличных в банкомате или
+что-то другое --- все это отражается при помощи операций. Такой
+подход является наиболее гибким и позволяет хранить историю всех движений.
+
+.. image:: images/transactions-010-transactions.png
+  :width: 25%
+.. image:: images/transactions-015-transactions-bottom-sheet-opening.png
+  :width: 25%
+.. image:: images/transactions-016-transactions-bottom-sheet-open.png
+  :width: 25%
+
+В списке операций можно использовать фильтр, который находится в подвале. Также доступен быстрый выбор периода.
+
+.. image:: images/transactions-017-transactions-dates-range-swipe.png
+  :width: 25%
+.. image:: images/transactions-018-transactions-dates-range-spinner.png
+  :width: 25%
+.. image:: images/transactions-020-transaction.png
+  :width: 25%
+
+
+Операция может быть доходной или расходной. Специального признака для вида операции нет, достаточно указать
+положительную или отрицательную сумму. Если операция является переводом, то в ней необходимо выбрать статью
+с признаком |property_category_eliminable|. Сразу после установки приложение содержит статью |item_category_transfer|,
+которую можно использовать при переводах.
+
+Если операция выполнена в валюте, то следует указать валюту и курс валюты операции. Этот курс может отличаться
+от курса валюты в справочнике валют. Если операция создается в результате импорта SMS или push-уведомлений, то
+курс и валюта определяются автоматически.
+
+Для подробного финансового учета следует правильно указывать статьи, проекты, плательщиков, получателей и персон.
+
+Сплиты
+------
+
+Любую операцию можно разбить на несколько, такая операция называется :term:`сплит`. Использовать сплиты удобно, например,
+для классификации покупок в супермаркете, когда часть затрат, предположим, ушла на питание дома, часть --- на
+хозяйственные товары. Конечно, это далеко не единственный пример использования сплитов.
+
+При редактировании сумма первой части сплита автоматически пересчитывается с учетом новых частей так, чтобы
+общая сумма операции оставалась неизменной. Для удаления части сплита, достаточно указать сумму равную 0.
+
+.. image:: images/transactionsplit-010-select-transaction.png
+  :width: 25%
+.. image:: images/transactionsplit-020-transaction-details.png
+  :width: 25%
+.. image:: images/transactionsplit-030-transaction-edit-detail.png
+  :width: 25%
+.. image:: images/transactionsplit-040-transaction-details-row-second.png
+  :width: 25%
+.. image:: images/transactionsplit-050-transaction-details-row-first.png
+  :width: 25%
+
+Планируемые операции
+--------------------
+
+Операции могут быть фактическими или планируемыми. Планируемая операция отмечается флажком |property_transaction_planned|. Такие операции
+учитываются в планируемом движении денежных средств до того момента пока не перестанут быть актуальными.
+Актуальность определяется по дате и времени операции. Планировать можно любые операции: расходы, доходы,
+возврат долгов, накопления и др. В дальнейшем можно сравнить фактические и планируемые операции при помощи отчетов.
+
+.. image:: /images/transactionplan-010-transaction-set-plan.png
+  :width: 25%
+
+Ручные переводы
+---------------
+
+Переводы отражаются в приложении двумя операциями. В карточке операции предусмотрен быстрый и удобный способ
+создания перевода вручную. Чтобы создать новый перевод:
+
+#. Создайте операцию, укажите сумму.
+#. Нажмите |button_tranfer| рядом со счетом-источником.
+#. Укажите счет-получатель.
+#. При необходимости отредактируйте остальные реквизиты операции.
+#. Сохраните операцию.
+#. Приложение автоматически обновит главный экран, сумма переводов отразится в соответствующей строке.
+
+.. image:: images/transactionstransfer-010-create-transaction.png
+  :width: 25%
+.. image:: images/transactionstransfer-020-transaction-edit.png
+  :width: 25%
+.. image:: images/transactionstransfer-030-transaction-select-transfer.png
+  :width: 25%
+.. image:: images/transactionstransfer-040-transaction-select-transfer-account.png
+  :width: 25%
+.. image:: images/transactionstransfer-045-transaction-select-transfer-account.png
+  :width: 25%
+.. image:: images/transactionstransfer-050-transaction-edit-save.png
+  :width: 25%
+.. image:: images/transactionstransfer-070-transfer-result.png
+  :width: 25%
+
+Переводы сохраняются в виде двух связанных между с собой операций. При удалении одной
+операции автоматически удаляется вторая.
+
+Постоянные операции
+-------------------
+
+Многие операции могут повторяться с некоторой периодичностью. Такие операции называются постоянными. Обычно постоянные
+операции используют при планировании, однако такие операции могут быть также и фактическими.
+
+.. image:: images/recurringtransactions-010-select-directories.png
+  :width: 25%
+.. image:: images/recurringtransactions-020-select-recurring-transactions.png
+  :width: 25%
+.. image:: images/recurringtransactions-030-select-transaction.png
+  :width: 25%
+.. image:: images/recurringtransactions-040-reccuring-transaction.png
+  :width: 25%

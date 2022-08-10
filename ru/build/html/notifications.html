@@ -1,0 +1,267 @@
+
+
+<!doctype html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Расширенная настройка импорта SMS и push-уведомлений &#8212; Документация Блиц Бюджет 2.7</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="author" title="Об этих документах" href="about.html" />
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Импорт данных" href="import.html" />
+    <link rel="prev" title="Настройка счетов для импорта SMS и push-уведомлений" href="account-identities.html" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-17679631-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             accesskey="I">указатель</a></li>
+        <li class="right" >
+          <a href="import.html" title="Импорт данных"
+             accesskey="N">вперёд</a> |</li>
+        <li class="right" >
+          <a href="account-identities.html" title="Настройка счетов для импорта SMS и push-уведомлений"
+             accesskey="P">назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Расширенная настройка импорта SMS и push-уведомлений</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sms-push">
+<span id="chapter-notifications"></span><h1>Расширенная настройка импорта SMS и push-уведомлений<a class="headerlink" href="#sms-push" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id1">
+<h2>Алгоритм распознавания уведомлений<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Основную роль при импорте SMS и push-уведомлений играет настройка импорта. Именно от нее зависит
+как приложение распознает операцию, будет ли операция доходной, расходной или переводом, нужно ли
+рассчитать баланс и курс операции и т.д.</p>
+<p>Алгоритм распознавания операции показан на рис ниже.</p>
+<a class="reference internal image-reference" href="_images/sms-import-algorithm-ru.png"><img alt="_images/sms-import-algorithm-ru.png" class="align-center" src="_images/sms-import-algorithm-ru.png" style="width: 75%;" /></a>
+<p>При поступлении нового уведомление приложение пытается определить счет исходя из идентификаторов,
+которые указаны в справочнике <span class="bbmeta">Счета</span>. Если счет найден и он является единственным, то приложение
+загружает связанную со счетом настройку импорта.</p>
+<p>Далее, на основании настройки выполняется классификация типа операции — доходная, расходная или перевод.
+Для переводов приложение пытается подобрать счет-получатель исходя из ключевых фраз,
+которые указаны в справочнике счетов. Если корреспондирующий счет найден и он является единственным, то
+приложение создаст вторую операцию и перевод будет завершенным.</p>
+<p>Следующий этап — определение аналитик. По соответствующим ключевым фразам приложение пытается подобрать
+контрагента, статью, проект и персону. Если какую-либо из
+аналитик не удалось подобрать, то используются значения по умолчанию.</p>
+<p>Наконец, приложение вычисляет сумму и баланс после операции. Если баланс по данным приложения не совпадает
+с указанным в тексте уведомления, то могут быть созданы дополнительные операции комиссии, корректировки баланса
+или же будет рассчитан курс операции. Это зависит от контекста и валюты операции.</p>
+<p>Иногда бывает так, что уведомления приходят не в том порядке, как были совершены операции. В этом случае приложение
+будет создавать автоматические корректировки баланса до тех пор, пока порядок не восстановится. После восстановления
+правильного порядка приложение по возможности удалит лишние корректировки.</p>
+<p>Например:</p>
+<ol class="arabic simple">
+<li><p>13.04.2016, 10:00, остаток = 1000 руб.</p></li>
+</ol>
+<p>Пришли SMS в неправильном порядке (правильный порядок: 4, 3, 5, 2)</p>
+<ol class="arabic simple" start="2">
+<li><p>13.04.2016, 15:00, списание = -50 руб., баланс = 500 руб., → автокорректировка = -450 руб.</p></li>
+<li><p>13.04.2016, 15:05, списание = -90 руб., баланс = 800 руб., → автокорректировка = +390 руб.</p></li>
+<li><p>13.04.2016, 15:10, списание = -110 руб., баланс = 890 руб., → автокорректировка = +200 руб.</p></li>
+<li><p>13.04.2016, 15:15, списание = -250 руб., баланс = 550 руб., → автокорректировка = -90 руб.</p></li>
+</ol>
+<p>Поступила SMS в правильном порядке</p>
+<ol class="arabic simple" start="6">
+<li><p>13.04.2016, 15:20, списание = -100 руб., баланс = 400 руб., → автокорректировка = 0 руб., автокорректировки 2 - 5 удалены</p></li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>Создание новой настройки импорта<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<p>На момент написания руководства приложение имеет более 160 готовых настроек импорта для банков различных стран.
+Конечно, это не очень много, однако Вы с легкостью можете добавить настройку импорта для своего банка.
+Поверьте, это совсем не сложно.</p>
+<a class="reference internal image-reference" href="_images/notificationsimporttunes-010-select-directories.png"><img alt="_images/notificationsimporttunes-010-select-directories.png" src="_images/notificationsimporttunes-010-select-directories.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/notificationsimporttunes-020-select-import-tunes.png"><img alt="_images/notificationsimporttunes-020-select-import-tunes.png" src="_images/notificationsimporttunes-020-select-import-tunes.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/notificationsimporttunes-030-select-new.png"><img alt="_images/notificationsimporttunes-030-select-new.png" src="_images/notificationsimporttunes-030-select-new.png" style="width: 25%;" /></a>
+<p><span class="bbproperty">Наименование</span> новой настройки может быть любым. Конечно, лучше чтобы название совпадало с
+названием банка или платежной системы.</p>
+<p><span class="bbproperty">Ограничение по отправителю</span> (номерами или именами отправителей SMS, идентификаторами пакетов push-уведомлений)
+используется в редких случаях, когда приложение не может корректно определить счет. Оно отрабатывает раньше
+подбора счета, ограничивая выбор счета только среди счетов с подходящей настройкой импорта.</p>
+<dl class="simple">
+<dt>Например, пусть в приложении занесено два счета</dt><dd><ol class="arabic simple">
+<li><p>РокетБанк, идентификатор ru.rocketbank.r2d2, настройка импорта РокетБанк;</p></li>
+<li><p>ВТБ, идентификатор ***1234, настройка импорта ВТБ.</p></li>
+</ol>
+</dd>
+</dl>
+<p>РокетБанк, отправитель ru.rocketbank.r2d2, присылает уведомления о зачислении средств в виде</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Операция &gt;&gt; +18 000 руб.
+Пополнение с карты «ВТБ-24 ***1234»
+</pre></div>
+</div>
+<p>В этом уведомлении нет идентификатора счета, зато указан счет-источник перевода. Если ограничение не указано,
+то приложение не может корректно выбрать счет, т.к. подходят оба счета.</p>
+<p>Если задано ограничение ru.rocketbank.r2d2, то приложение по совпадению отправителя и заданного ограничения
+находит настройку импорта РокетБанк. Эта настройка указана только в одном счете, поэтому приложение правильно выбирает
+счет РокетБанк.</p>
+<p>Основные параметры импорта задаются ключевыми фразами. Каждый параметр может содержать несколько ключевых фраз.
+Ключевая фраза может содержать пробелы, между собой ключевые фразы должны быть разделены запятыми.</p>
+<p><span class="bbproperty">Ключевые фразы для доходов и расходов</span> определяют знак операции. Если знак операции не определен, то импорт такой операции невозможен.</p>
+<p><span class="bbproperty">Ключевые фразы для перевода</span> сигнализируют приложению о том, что нужно создать не одну, а две операции. Направление
+перевода зависит от знака операции.</p>
+<dl class="simple">
+<dt>Например, пусть:</dt><dd><ol class="arabic simple">
+<li><p>Ключевые фразы для доходов: «пополнение наличными,кредит,поступление»</p></li>
+<li><p>Ключевые фразы для переводов: «пополнение наличными»</p></li>
+<li><p>Идентификатор счета Карта: Visa2900</p></li>
+<li><p>Ключевые фразы счета Наличные: ATM</p></li>
+</ol>
+</dd>
+</dl>
+<p>От банка поступило SMS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Karta</span> <span class="n">Visa2900</span><span class="o">.</span> <span class="n">Пополнение</span> <span class="n">наличными</span> <span class="mf">2000.00</span> <span class="n">RUR</span> <span class="n">ATM</span> <span class="o">.</span><span class="n">Ostatok</span><span class="p">:</span><span class="mf">2740.26</span> <span class="n">RUR</span><span class="o">.</span> <span class="mi">25</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">00.</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>В результате программа создаст две операции:</dt><dd><ol class="arabic simple">
+<li><p>Операцию зачисления на счет Карта;</p></li>
+<li><p>Операцию списания со счета Наличные.</p></li>
+</ol>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/notificationsimporttunes-040-import-tune.png"><img alt="_images/notificationsimporttunes-040-import-tune.png" src="_images/notificationsimporttunes-040-import-tune.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/notificationsimporttunes-050-import-tune-2.png"><img alt="_images/notificationsimporttunes-050-import-tune-2.png" src="_images/notificationsimporttunes-050-import-tune-2.png" style="width: 25%;" /></a>
+<p>Иногда бывает так, что некоторые уведомления содержат баланс, некоторые — нет. Соответствующие ключевые фразы
+подскажут приложению, когда нужно определять баланс, а когда — нет.</p>
+<p>Банковские сообщения о том, что не может быть выполнена та или иная операция носят информационный характер,
+однако содержат ключевые фразы для доходов или расходов. Ключевые фразы в параметре <span class="bbproperty">Пропустить операцию</span> позволяют
+прервать обработку импорта уведомления.</p>
+<dl class="simple">
+<dt>Например:</dt><dd><ol class="arabic simple">
+<li><p>Ключевые фразы для зачисления: «пополнение наличными,кредит,поступление»</p></li>
+<li><p>Ключевые фразы для неудачной операции: «ошибка»</p></li>
+<li><p>Идентификатор счета Карта: Visa2900</p></li>
+</ol>
+</dd>
+</dl>
+<p>От банка поступило SMS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Karta</span> <span class="n">Visa2900</span><span class="o">.</span> <span class="n">Пополнение</span> <span class="n">наличными</span> <span class="mf">2000.00</span> <span class="n">RUR</span> <span class="n">ATM</span> <span class="o">.</span><span class="n">Ostatok</span><span class="p">:</span><span class="mf">740.26</span> <span class="n">RUR</span><span class="o">.</span> <span class="n">Произошла</span> <span class="n">ошибка</span><span class="o">.</span> <span class="mi">25</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">00.</span>
+</pre></div>
+</div>
+<p>В результате программа не создаст операцию зачисления средств на счет Карта. И это будет соответствовать действительности,
+т.к. по какой-то причине банкомат вернул деньги, вместо зачисления на счет.</p>
+<p><span class="bbproperty">Позиция суммы операции среди числовых значений</span> указывает программе на наиболее вероятное
+расположение суммы. В процессе разбора уведомления приложение примет окончательное решение.</p>
+<p><span class="bbproperty">Позиция остатка операции среди числовых значений</span> указывает приложению на наиболее вероятное
+расположение баланса. Также как и в случае с суммой операции, в процессе разбора уведомления
+приложение самостоятельно примет окончательное решение.</p>
+<p>Если все уведомления банка не содержат информацию о балансе, то следует указать «-1».</p>
+<p>Если задана позиция баланса, отличная от «-1», то приложение будет игнорировать все сообщения, в которых нет баланса.
+Тем не менее, при помощи ключевых фраз Вы можете уточнить, в каких случаях надо искать баланс, а когда — нет.</p>
+<p>Сумма операции и значение баланса используются для расчета курса операции, комиссий и автоматических корректировок.</p>
+<p>Для правильной работы программы необходимо, чтобы рядом с суммой была указана валюта. Валюта может быть указана как
+слева от суммы так и справа. Для подбора валюты используются название и ключевые слова, указанные для каждой валюты
+в справочнике Валюты.</p>
+<p>Однако некоторые банки не всегда указывают валюту, например, Росбанк. В этом случае отметьте флажок
+<span class="bbproperty">Иногда валюта платежа может быть не указана</span>. В этом случае программа будет использовать валюту счета.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Расширенная настройка импорта SMS и push-уведомлений</a><ul>
+<li><a class="reference internal" href="#id1">Алгоритм распознавания уведомлений</a></li>
+<li><a class="reference internal" href="#id2">Создание новой настройки импорта</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Предыдущий раздел</h4>
+    <p class="topless"><a href="account-identities.html"
+                          title="предыдущая глава">Настройка счетов для импорта SMS и push-уведомлений</a></p>
+  </div>
+  <div>
+    <h4>Следующий раздел</h4>
+    <p class="topless"><a href="import.html"
+                          title="следующая глава">Импорт данных</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навигация</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Алфавитный указатель"
+             >указатель</a></li>
+        <li class="right" >
+          <a href="import.html" title="Импорт данных"
+             >вперёд</a> |</li>
+        <li class="right" >
+          <a href="account-identities.html" title="Настройка счетов для импорта SMS и push-уведомлений"
+             >назад</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Расширенная настройка импорта SMS и push-уведомлений</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017 - 2021, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,174 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How It Works &#8212; Budget Blitz 2.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started" href="getting-started.html" />
+    <link rel="prev" title="About" href="about.html" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-17679631-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="getting-started.html" title="Getting Started"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="About"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How It Works</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="how-it-works">
+<h1>How It Works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="funds-accounting">
+<h2>Funds Accounting<a class="headerlink" href="#funds-accounting" title="Permalink to this headline">¶</a></h2>
+<p>Budget Blitz for Android uses transactions to store all movement of funds. Each transaction has
+four dimensions category, project, payer or payee, and person. Transactions can be
+actual or planned and onetime or recurring. Recurring transactions have own customizable frequency. Generally
+this ones are planned but it is possible to make actual recurring transactions too.</p>
+<p>Any transaction can be split for details. These transactions are called split, see. <a class="reference internal" href="glossary.html#term-split"><span class="xref std std-term">split</span></a>.</p>
+</div>
+<div class="section" id="directories-structure">
+<h2>Directories Structure<a class="headerlink" href="#directories-structure" title="Permalink to this headline">¶</a></h2>
+<p>Each transaction has own account. It can be account of a financial institution, or e-money account, or cash,
+or something else. Each transaction has own currency that may be differ from account currency.</p>
+<p>In its turn each account belongs to a portfolio. Each portfolio has own currency that may be differ from account currency also.</p>
+<p>But that’s not all. Portfolios have a type. It may be considered as a kind of activity. You will have only one
+personal type of portfolio for personal finances. But when you a have a business then personal and
+business portfolio types will be in use. For some special cases more than two portfolio types can be used.</p>
+<p>Category, project, payer or payee, and person connected to the portfolio type. It is not really
+complex as you can see on the chart below:</p>
+<a class="reference internal image-reference" href="_images/directories_structure_en.png"><img alt="_images/directories_structure_en.png" class="align-center" src="_images/directories_structure_en.png" style="width: 75%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can edit any directory. For example, add a currency, a category or something else. There are no restrictions!</p>
+</div>
+</div>
+<div class="section" id="difference-between-contractors-and-persons">
+<h2>Difference Between Contractors and Persons<a class="headerlink" href="#difference-between-contractors-and-persons" title="Permalink to this headline">¶</a></h2>
+<p>Contrary part of transaction is payer or payee. This is often called a contractor. Only transfer transactions
+have no contractor. All other transactions have. For example your child is contractor
+when you give him or her some money. So you should put him or her to the <span class="bbmeta">Payers and payees</span> directory.</p>
+<p>Persons are transaction details as well as categories and projects. For a example a shop is the contractor
+and your child is the person when you buy clothes to your child.</p>
+<p>There is an option to connect contractor and person. To do so just define a person in a card
+of contractor. After that the person will be selected within the contractor. For instance, in order
+to combine both examples above, you should consider the child as the contractor and the person at the same time.</p>
+<p>As the result, you will see total child expenses using a person filter and total
+money delivered to the child using a contractor filter.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">How It Works</a><ul>
+<li><a class="reference internal" href="#funds-accounting">Funds Accounting</a></li>
+<li><a class="reference internal" href="#directories-structure">Directories Structure</a></li>
+<li><a class="reference internal" href="#difference-between-contractors-and-persons">Difference Between Contractors and Persons</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="about.html"
+                          title="previous chapter">About</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="getting-started.html"
+                          title="next chapter">Getting Started</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="getting-started.html" title="Getting Started"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="About"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How It Works</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017 - 2021, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+</div>
+
+  </body>
+</html>

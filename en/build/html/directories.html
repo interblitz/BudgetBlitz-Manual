@@ -1,0 +1,247 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Directories &#8212; Budget Blitz 2.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Transactions" href="transactions.html" />
+    <link rel="prev" title="Main Screen" href="main-screen.html" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-17679631-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="transactions.html" title="Transactions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="main-screen.html" title="Main Screen"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Directories</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="directories">
+<span id="chapter-directories"></span><h1>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h1>
+<p>Directories are available from the top menu or from the <span class="menuselection">Actions ‣ Directories</span> menu.
+It depends on the current screen.</p>
+<a class="reference internal image-reference" href="_images/directories-010-select-directories.png"><img alt="_images/directories-010-select-directories.png" src="_images/directories-010-select-directories.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/directories-020-menu-directories.png"><img alt="_images/directories-020-menu-directories.png" src="_images/directories-020-menu-directories.png" style="width: 25%;" /></a>
+<div class="section" id="portfolio-types">
+<h2>Portfolio Types<a class="headerlink" href="#portfolio-types" title="Permalink to this headline">¶</a></h2>
+<p>Portfolio types are used to separate dimensions between your activities. For example, one set of
+categories is used for personal finance and another set is used for business finances. When you
+edit a transaction its dimensions (category,  payer or payee, project, and person) correspond
+to the certain type of portfolio.</p>
+<a class="reference internal image-reference" href="_images/directories-030-types-of-portfolio.png"><img alt="_images/directories-030-types-of-portfolio.png" src="_images/directories-030-types-of-portfolio.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/directories-040-portfolios.png"><img alt="_images/directories-040-portfolios.png" src="_images/directories-040-portfolios.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/directories-050-accounts.png"><img alt="_images/directories-050-accounts.png" src="_images/directories-050-accounts.png" style="width: 25%;" /></a>
+<p>It will be useful to pay attention to the <span class="bbitem">Universal</span> type of portfolio. Its name is <span class="bbitem">00 None</span>
+for old versions. Dimensions of this type of portfolio are always available. For example <span class="bbitem">Transfer</span>
+category can be selected in any transaction regardless selected account and connected portfolio type.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dimensions of the <span class="bbitem">Universal</span> type of portfolio are always available</p>
+</div>
+</div>
+<div class="section" id="portfolios">
+<h2>Portfolios<a class="headerlink" href="#portfolios" title="Permalink to this headline">¶</a></h2>
+<p>Portfolio is a group of accounts. Portfolio has own currency. The Budget Blitz for Android uses a portfolio currency
+to show financial highlights. Use the <span class="bbmeta">Currencies</span> directory to apply currency rates.</p>
+</div>
+<div class="section" id="accounts">
+<h2>Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h2>
+<p>Account is a bank account, debit or credit card, investment account, cash, or something else.
+Account has own currency. It may be differ from a currency of portfolio.</p>
+<p>Identity of an account is used for transactions import, see <a class="reference internal" href="import.html#chapter-import"><span class="std std-ref">Data Import</span></a>.
+You can put several identities. Use the comma to separate one identity from another.
+Usually card or account number is used for identity. Phone number, or SMS sander name,
+or identity of push notifications package can be considered as identity as well.</p>
+<p>Key phrases are also used for transactions import. For transfers source account is detected by identity
+and target account is detected by key phrases. Key phrases are used for transfers only.</p>
+<p>For example you have SMS from bank:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Visa2900</span> <span class="n">card</span><span class="o">.</span> <span class="n">Cash</span> <span class="n">withdraw</span> <span class="mf">200.00</span> <span class="n">USD</span> <span class="n">ATM</span> <span class="mf">5412.</span> <span class="n">Balance</span><span class="p">:</span> <span class="mf">274.26</span> <span class="n">USD</span><span class="o">.</span> <span class="mi">25</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">00.</span>
+</pre></div>
+</div>
+<p>Visa2900 is identity of the <span class="bbitem">Card</span> account, ATM is the key phrase for the <span class="bbitem">Cash</span> account.
+Since SMS pushed the app Budget Blitz for Android will create two transactions, debit transaction on <span class="bbitem">Card</span> account
+and credit transaction on <span class="bbitem">Cash</span> account.</p>
+<p>SMS import tune establishes the algorithm of transactions detection. See more details in the <a class="reference internal" href="notifications.html#chapter-notifications"><span class="std std-ref">Advanced Import SMS and Push Notifications Setting</span></a>.</p>
+<p>Default values of payers and payees, projects and persons are used when you create transaction
+and import transactions, Also the app uses this values for teamwork on data exchange.</p>
+<a class="reference internal image-reference" href="_images/directories-055-accounts-continue.png"><img alt="_images/directories-055-accounts-continue.png" src="_images/directories-055-accounts-continue.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/directories-060-categories.png"><img alt="_images/directories-060-categories.png" src="_images/directories-060-categories.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/directories-070-contractors.png"><img alt="_images/directories-070-contractors.png" src="_images/directories-070-contractors.png" style="width: 25%;" /></a>
+</div>
+<div class="section" id="categories">
+<h2>Categories<a class="headerlink" href="#categories" title="Permalink to this headline">¶</a></h2>
+<p><span class="bbmeta">Categories</span> directory plays the main role for the classification of transactions.
+A category may a set of options,
+<span class="bbproperty">Revenue</span>, <span class="bbproperty">Expense</span>, <span class="bbproperty">Totaling (summary)</span>,
+technical, <span class="bbproperty">Eliminable</span> and  <span class="bbproperty">Archived</span>.</p>
+<p>Categories sorting order under transaction editing depends on
+<span class="bbproperty">Revenue</span> and <span class="bbproperty">Expense</span> options. For a revenue transaction
+revenue categories are placed at the beginning and then expense ones placed and vice versa.</p>
+<p>A category may be neither revenue nor expense. In that case the category is technical. For instance
+technical category is used for credit limit changing. For that transaction there is no money turnovers
+for a card owner but nevertheless balance is changed. See more details about credit limit at
+<a class="reference external" href="http://qa.bbmoney.biz/en/index.php?qa=27&amp;qa_1=how-to-setup-credit-limit-for-new-or-existed-account">questions and answers (How to setup credit limit for new or existed account?)</a>.</p>
+<p>Since a category has <span class="bbproperty">Totaling (summary)</span> option you can use <span class="bbmeta">Debts and credits</span> and <span class="bbmeta">Plan implementation</span>
+reports to get there balance.</p>
+<p>Sometimes you need to eliminate transactions from revenues and expenses. Usually it is
+transfer transactions. Use categories with <span class="bbproperty">Eliminable</span> option for them.
+The app has standalone totals at the main screen and transactions list for transfers and other transaction with
+categories with <span class="bbproperty">Eliminable</span> option.</p>
+<p>The app uses key phrases to find an item when importing transactions. You can set several
+comma separated key phrases.</p>
+<p>It is possible to define several categories for a transaction.</p>
+<p>Once the app installed the directory of categories has default items. It’s up to you edit, add, or delete them.</p>
+</div>
+<div class="section" id="payers-and-payees">
+<h2>Payers and Payees<a class="headerlink" href="#payers-and-payees" title="Permalink to this headline">¶</a></h2>
+<p>Contrary part of transaction is payer or payee. This is often called a contractor. Only transfer transactions
+have no contractor. Bat all other transactions have. Transaction have only one contractor.</p>
+</div>
+<div class="section" id="projects">
+<h2>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h2>
+<p>You can use projects to account vacations, startups, housing projects and so on.
+Transaction may have several projects.</p>
+<p>The app uses key phrases to find an item when importing transactions. You can set several
+comma separated key phrases.</p>
+</div>
+<div class="section" id="persons">
+<h2>Persons<a class="headerlink" href="#persons" title="Permalink to this headline">¶</a></h2>
+<p>You can use persons to account family members, company staffers and so on.
+Transaction may have several projects.</p>
+<p>The app uses key phrases to find an item when importing transactions. You can set several
+comma separated key phrases.</p>
+<a class="reference internal image-reference" href="_images/directories-080-projects.png"><img alt="_images/directories-080-projects.png" src="_images/directories-080-projects.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/directories-090-persons.png"><img alt="_images/directories-090-persons.png" src="_images/directories-090-persons.png" style="width: 25%;" /></a>
+<a class="reference internal image-reference" href="_images/directories-100-currencies.png"><img alt="_images/directories-100-currencies.png" src="_images/directories-100-currencies.png" style="width: 25%;" /></a>
+</div>
+<div class="section" id="currencies">
+<h2>Currencies<a class="headerlink" href="#currencies" title="Permalink to this headline">¶</a></h2>
+<p>Once the app installed it contains almost all world currencies. Of course you can add a new one.</p>
+<p>Currency rates are used for calculate financial highlights. You can set rates manually
+or load from internet resources. Available sources are European Central Bank,
+Russian Central Bank (currencies and metals), Bank of Canada, National Bank of the Republic of Belarus,
+National Bank of the Republic of Kazakhstan, Bank of Israel, BitPay (BTC rates), Poloniex (cryptocurrencies trading market).</p>
+<p>Let author know if you need more, see <a class="reference internal" href="preface.html#section-feedback"><span class="std std-ref">Feedback</span></a>.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Directories</a><ul>
+<li><a class="reference internal" href="#portfolio-types">Portfolio Types</a></li>
+<li><a class="reference internal" href="#portfolios">Portfolios</a></li>
+<li><a class="reference internal" href="#accounts">Accounts</a></li>
+<li><a class="reference internal" href="#categories">Categories</a></li>
+<li><a class="reference internal" href="#payers-and-payees">Payers and Payees</a></li>
+<li><a class="reference internal" href="#projects">Projects</a></li>
+<li><a class="reference internal" href="#persons">Persons</a></li>
+<li><a class="reference internal" href="#currencies">Currencies</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="main-screen.html"
+                          title="previous chapter">Main Screen</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="transactions.html"
+                          title="next chapter">Transactions</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="transactions.html" title="Transactions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="main-screen.html" title="Main Screen"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Directories</a></li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017 - 2021, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    </div>
+<div class="footer">This page uses <a href="http://analytics.google.com/">
+Google Analytics</a> to collect statistics. You can disable it by blocking
+the JavaScript coming from www.google-analytics.com.
+</div>
+
+  </body>
+</html>
