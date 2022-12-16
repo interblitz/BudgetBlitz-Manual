@@ -5,8 +5,9 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Финансовые операции &#8212; Документация Блиц Бюджет 2.7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Финансовые операции &#8212; Документация Блиц Бюджет 2.8</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
@@ -14,7 +15,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/translations.js"></script>
     <script src="_static/bizstyle.js"></script>
     <link rel="author" title="Об этих документах" href="about.html" />
@@ -51,7 +54,7 @@
         <li class="right" >
           <a href="directories.html" title="Справочники"
              accesskey="P">назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.8</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Финансовые операции</a></li> 
       </ul>
     </div>  
@@ -61,10 +64,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="chapter-transactions">
-<span id="id1"></span><h1>Финансовые операции<a class="headerlink" href="#chapter-transactions" title="Ссылка на этот заголовок">¶</a></h1>
-<div class="section" id="id2">
-<h2>Введение<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+  <section id="chapter-transactions">
+<span id="id1"></span><h1>Финансовые операции<a class="headerlink" href="#chapter-transactions" title="Permalink to this heading">¶</a></h1>
+<section id="id2">
+<h2>Введение<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>Любые изменения денежных средств учитываются при помощи операций. Ввод начальных остатков,
 изменение кредитного лимита, списание или зачисление средств, снятие наличных в банкомате или
 что-то другое — все это отражается при помощи операций. Такой
@@ -84,9 +87,9 @@
 от курса валюты в справочнике валют. Если операция создается в результате импорта SMS или push-уведомлений, то
 курс и валюта определяются автоматически.</p>
 <p>Для подробного финансового учета следует правильно указывать статьи, проекты, плательщиков, получателей и персон.</p>
-</div>
-<div class="section" id="id3">
-<h2>Сплиты<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id3">
+<h2>Сплиты<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>Любую операцию можно разбить на несколько, такая операция называется <a class="reference internal" href="glossary.html#term-0"><span class="xref std std-term">сплит</span></a>. Использовать сплиты удобно, например,
 для классификации покупок в супермаркете, когда часть затрат, предположим, ушла на питание дома, часть — на
 хозяйственные товары. Конечно, это далеко не единственный пример использования сплитов.</p>
@@ -97,17 +100,17 @@
 <a class="reference internal image-reference" href="_images/transactionsplit-030-transaction-edit-detail.png"><img alt="_images/transactionsplit-030-transaction-edit-detail.png" src="_images/transactionsplit-030-transaction-edit-detail.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/transactionsplit-040-transaction-details-row-second.png"><img alt="_images/transactionsplit-040-transaction-details-row-second.png" src="_images/transactionsplit-040-transaction-details-row-second.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/transactionsplit-050-transaction-details-row-first.png"><img alt="_images/transactionsplit-050-transaction-details-row-first.png" src="_images/transactionsplit-050-transaction-details-row-first.png" style="width: 25%;" /></a>
-</div>
-<div class="section" id="id4">
-<h2>Планируемые операции<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id4">
+<h2>Планируемые операции<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <p>Операции могут быть фактическими или планируемыми. Планируемая операция отмечается флажком <span class="bbproperty">План</span>. Такие операции
 учитываются в планируемом движении денежных средств до того момента пока не перестанут быть актуальными.
 Актуальность определяется по дате и времени операции. Планировать можно любые операции: расходы, доходы,
 возврат долгов, накопления и др. В дальнейшем можно сравнить фактические и планируемые операции при помощи отчетов.</p>
 <a class="reference internal image-reference" href="_images/transactionplan-010-transaction-set-plan.png"><img alt="_images/transactionplan-010-transaction-set-plan.png" src="_images/transactionplan-010-transaction-set-plan.png" style="width: 25%;" /></a>
-</div>
-<div class="section" id="id5">
-<h2>Ручные переводы<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id5">
+<h2>Ручные переводы<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
 <p>Переводы отражаются в приложении двумя операциями. В карточке операции предусмотрен быстрый и удобный способ
 создания перевода вручную. Чтобы создать новый перевод:</p>
 <ol class="arabic simple">
@@ -127,17 +130,17 @@
 <a class="reference internal image-reference" href="_images/transactionstransfer-070-transfer-result.png"><img alt="_images/transactionstransfer-070-transfer-result.png" src="_images/transactionstransfer-070-transfer-result.png" style="width: 25%;" /></a>
 <p>Переводы сохраняются в виде двух связанных между с собой операций. При удалении одной
 операции автоматически удаляется вторая.</p>
-</div>
-<div class="section" id="id6">
-<h2>Постоянные операции<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id6">
+<h2>Постоянные операции<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
 <p>Многие операции могут повторяться с некоторой периодичностью. Такие операции называются постоянными. Обычно постоянные
 операции используют при планировании, однако такие операции могут быть также и фактическими.</p>
 <a class="reference internal image-reference" href="_images/recurringtransactions-010-select-directories.png"><img alt="_images/recurringtransactions-010-select-directories.png" src="_images/recurringtransactions-010-select-directories.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/recurringtransactions-020-select-recurring-transactions.png"><img alt="_images/recurringtransactions-020-select-recurring-transactions.png" src="_images/recurringtransactions-020-select-recurring-transactions.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/recurringtransactions-030-select-transaction.png"><img alt="_images/recurringtransactions-030-select-transaction.png" src="_images/recurringtransactions-030-select-transaction.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/recurringtransactions-040-reccuring-transaction.png"><img alt="_images/recurringtransactions-040-reccuring-transaction.png" src="_images/recurringtransactions-040-reccuring-transaction.png" style="width: 25%;" /></a>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -179,7 +182,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -196,14 +199,14 @@
         <li class="right" >
           <a href="directories.html" title="Справочники"
              >назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.8</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Финансовые операции</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017 - 2021, Interblitz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+        &#169; Copyright 2017 - 2023, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

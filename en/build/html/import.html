@@ -5,8 +5,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Import &#8212; Budget Blitz 2.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Data Import &#8212; Budget Blitz 2.8 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
@@ -14,7 +15,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/bizstyle.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -50,7 +53,7 @@
         <li class="right" >
           <a href="notifications.html" title="Advanced Import SMS and Push Notifications Setting"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.8 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Data Import</a></li> 
       </ul>
     </div>  
@@ -60,10 +63,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="data-import">
-<span id="chapter-import"></span><h1>Data Import<a class="headerlink" href="#data-import" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="notification-import-tunes">
-<h2>Notification Import Tunes<a class="headerlink" href="#notification-import-tunes" title="Permalink to this headline">¶</a></h2>
+  <section id="data-import">
+<span id="chapter-import"></span><h1>Data Import<a class="headerlink" href="#data-import" title="Permalink to this heading">¶</a></h1>
+<section id="notification-import-tunes">
+<h2>Notification Import Tunes<a class="headerlink" href="#notification-import-tunes" title="Permalink to this heading">¶</a></h2>
 <p>Notification import tunes have the main role in the notifications import. Once
 financial institution changes notification structure the import tunes should be changed too.
 For that case you can download update or modify tunes by yourself, see chapter <a class="reference internal" href="notifications.html#chapter-notifications"><span class="std std-ref">Advanced Import SMS and Push Notifications Setting</span></a>.</p>
@@ -80,9 +83,9 @@ For that case you can download update or modify tunes by yourself, see chapter <
 <a class="reference internal image-reference" href="_images/updateimporttunes-085-select-notifications.png"><img alt="_images/updateimporttunes-085-select-notifications.png" src="_images/updateimporttunes-085-select-notifications.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/updateimporttunes-090-check-use_exchange_when_wifi.png"><img alt="_images/updateimporttunes-090-check-use_exchange_when_wifi.png" src="_images/updateimporttunes-090-check-use_exchange_when_wifi.png" style="width: 25%;" /></a>
 <p>But may be you will see nothing. Check the import tunes exchange is on at settings.</p>
-</div>
-<div class="section" id="sms-and-push-notifications">
-<h2>SMS and Push Notifications<a class="headerlink" href="#sms-and-push-notifications" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sms-and-push-notifications">
+<h2>SMS and Push Notifications<a class="headerlink" href="#sms-and-push-notifications" title="Permalink to this heading">¶</a></h2>
 <p>The app Budget Blitz for Android imports SMS and push notifications by default. But it is possible to import
 certain notification by hands. To do that</p>
 <ol class="arabic simple">
@@ -101,20 +104,20 @@ certain notification by hands. To do that</p>
 <a class="reference internal image-reference" href="_images/manualsmsimport-060-import-sms.png"><img alt="_images/manualsmsimport-060-import-sms.png" src="_images/manualsmsimport-060-import-sms.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/manualsmsimport-070-view-transactions.png"><img alt="_images/manualsmsimport-070-view-transactions.png" src="_images/manualsmsimport-070-view-transactions.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/manualsmsimport-080-view-events.png"><img alt="_images/manualsmsimport-080-view-events.png" src="_images/manualsmsimport-080-view-events.png" style="width: 25%;" /></a>
-</div>
-<div class="section" id="csv-files">
-<h2>CSV files<a class="headerlink" href="#csv-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="csv-files">
+<h2>CSV files<a class="headerlink" href="#csv-files" title="Permalink to this heading">¶</a></h2>
 <p>During <a class="reference external" href="https://en.wikipedia.org/wiki/CSV">CSV</a> file import the app can create new accounts, categories, payers or payees,
 projects, and persons. It depends on your choice.</p>
 <p>The column separator can be one of  “;”, “,”, “|”, “/”, “&quot;. File must be UTF-8 encoded.</p>
 <p>The first row of the file must have column names in English, case does not matter.
 Since column names are placed at another row they are valid for next rows.</p>
-<table class="colwidths-given docutils align-default" id="id1">
+<table class="docutils align-default" id="id1">
 <caption><span class="caption-text">CSV file format</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 12%" />
-<col style="width: 71%" />
+<col style="width: 16.7%" />
+<col style="width: 11.9%" />
+<col style="width: 71.4%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Names</p></th>
@@ -194,9 +197,9 @@ Since column names are placed at another row they are valid for next rows.</p>
 </ol>
 <a class="reference internal image-reference" href="_images/csvimport-030-select-import-csv.png"><img alt="_images/csvimport-030-select-import-csv.png" src="_images/csvimport-030-select-import-csv.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/csvimport-040-select-file-and-options.png"><img alt="_images/csvimport-040-select-file-and-options.png" src="_images/csvimport-040-select-file-and-options.png" style="width: 25%;" /></a>
-</div>
-<div class="section" id="ofx-files">
-<h2>OFX files<a class="headerlink" href="#ofx-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="ofx-files">
+<h2>OFX files<a class="headerlink" href="#ofx-files" title="Permalink to this heading">¶</a></h2>
 <p>Budget Blitz for Android supports import of <a class="reference external" href="https://en.wikipedia.org/wiki/Open_Financial_Exchange">OFX</a> files meet specification starting from 2.1.1.</p>
 <ol class="arabic simple">
 <li><p>Open the import dialog.</p></li>
@@ -208,8 +211,26 @@ Since column names are placed at another row they are valid for next rows.</p>
 </ol>
 <a class="reference internal image-reference" href="_images/ofximport-030-select-import-ofx.png"><img alt="_images/ofximport-030-select-import-ofx.png" src="_images/ofximport-030-select-import-ofx.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/ofximport-040-select-file-and-options.png"><img alt="_images/ofximport-040-select-file-and-options.png" src="_images/ofximport-040-select-file-and-options.png" style="width: 25%;" /></a>
-</div>
-</div>
+</section>
+<section id="electronic-receipts">
+<h2>Electronic receipts<a class="headerlink" href="#electronic-receipts" title="Permalink to this heading">¶</a></h2>
+<p>Budget Blitz for Android supports electronic receipts import. Now available import for Russia and Ukraine. You can request more formats by email.</p>
+<p>To import from other apps:</p>
+<ol class="arabic simple">
+<li><p>Open specific app.</p></li>
+<li><p>Select receipt, link or text data and push Share / Send / Transmit button or some thing like that.</p></li>
+<li><p>Select Budget Blitz for Android as receiver.</p></li>
+<li><p>Follow instructions on a screen.</p></li>
+</ol>
+<p>To import from the clipboard:</p>
+<ol class="arabic simple">
+<li><p>Open import dialog.</p></li>
+<li><p>Paste data from the clipboard.</p></li>
+<li><p>Follow instructions on a screen.</p></li>
+</ol>
+<p>Use events log to identify errors.</p>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -226,6 +247,7 @@ Since column names are placed at another row they are valid for next rows.</p>
 <li><a class="reference internal" href="#sms-and-push-notifications">SMS and Push Notifications</a></li>
 <li><a class="reference internal" href="#csv-files">CSV files</a></li>
 <li><a class="reference internal" href="#ofx-files">OFX files</a></li>
+<li><a class="reference internal" href="#electronic-receipts">Electronic receipts</a></li>
 </ul>
 </li>
 </ul>
@@ -250,7 +272,7 @@ Since column names are placed at another row they are valid for next rows.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -267,14 +289,14 @@ Since column names are placed at another row they are valid for next rows.</p>
         <li class="right" >
           <a href="notifications.html" title="Advanced Import SMS and Push Notifications Setting"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.8 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Data Import</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017 - 2021, Interblitz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+        &#169; Copyright 2017 - 2023, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

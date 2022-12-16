@@ -5,8 +5,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transactions &#8212; Budget Blitz 2.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Transactions &#8212; Budget Blitz 2.8 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
@@ -14,7 +15,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/bizstyle.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -50,7 +53,7 @@
         <li class="right" >
           <a href="directories.html" title="Directories"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.8 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Transactions</a></li> 
       </ul>
     </div>  
@@ -60,10 +63,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="transactions">
-<span id="chapter-transactions"></span><h1>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+  <section id="transactions">
+<span id="chapter-transactions"></span><h1>Transactions<a class="headerlink" href="#transactions" title="Permalink to this heading">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>Transactions are used to account any changes in funds. So use a transaction when you need to
 enter an initial balance, change a credit limit, store crediting or debiting funds,
 store cash withdrawal at ATM, or something else. This approach is most versatile. The history of
@@ -84,9 +87,9 @@ a rate stored in the <span class="bbmeta">Currencies</span> directory. The app b
 for transactions imported from SMS and push notifications.</p>
 <p>Use transaction dimensions, categories, payers, payees, projects, and persons to get a comprehensive
 funds accounting.</p>
-</div>
-<div class="section" id="splits">
-<h2>Splits<a class="headerlink" href="#splits" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="splits">
+<h2>Splits<a class="headerlink" href="#splits" title="Permalink to this heading">¶</a></h2>
 <p>You can divide transaction for details. It is often called as make a <a class="reference internal" href="glossary.html#term-split"><span class="xref std std-term">split</span></a>.
 When you have a check in a supermarket it is convenient to make a split to store
 food costs, household goods costs, and so on. Of course it is far from the only case.</p>
@@ -97,18 +100,18 @@ Put zero amount to remove redundant part.</p>
 <a class="reference internal image-reference" href="_images/transactionsplit-030-transaction-edit-detail.png"><img alt="_images/transactionsplit-030-transaction-edit-detail.png" src="_images/transactionsplit-030-transaction-edit-detail.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/transactionsplit-040-transaction-details-row-second.png"><img alt="_images/transactionsplit-040-transaction-details-row-second.png" src="_images/transactionsplit-040-transaction-details-row-second.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/transactionsplit-050-transaction-details-row-first.png"><img alt="_images/transactionsplit-050-transaction-details-row-first.png" src="_images/transactionsplit-050-transaction-details-row-first.png" style="width: 25%;" /></a>
-</div>
-<div class="section" id="planned-transactions">
-<h2>Planned Transactions<a class="headerlink" href="#planned-transactions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="planned-transactions">
+<h2>Planned Transactions<a class="headerlink" href="#planned-transactions" title="Permalink to this heading">¶</a></h2>
 <p>Transactions are one of actual or planned. The option <span class="bbproperty">Planned</span> is used
 for a planned transaction. The app takes into account planned transaction until they have expired.
 A date and time of a transaction is a key for expiration. You can plan any funds movement,
 expenses, revenues, debts, credits, and so on. Reports will help you to
 compare actuals and plans.</p>
 <a class="reference internal image-reference" href="_images/transactionplan-010-transaction-set-plan.png"><img alt="_images/transactionplan-010-transaction-set-plan.png" src="_images/transactionplan-010-transaction-set-plan.png" style="width: 25%;" /></a>
-</div>
-<div class="section" id="manual-transfers">
-<h2>Manual Transfers<a class="headerlink" href="#manual-transfers" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="manual-transfers">
+<h2>Manual Transfers<a class="headerlink" href="#manual-transfers" title="Permalink to this heading">¶</a></h2>
 <p>The app stores transfer within two transactions. There is a fast and convenient way to make
 a transfer from a transaction card.</p>
 <ol class="arabic simple">
@@ -128,9 +131,9 @@ a transfer from a transaction card.</p>
 <a class="reference internal image-reference" href="_images/transactionstransfer-070-transfer-result.png"><img alt="_images/transactionstransfer-070-transfer-result.png" src="_images/transactionstransfer-070-transfer-result.png" style="width: 25%;" /></a>
 <p>At this moment source and target transactions are not connected to each other.
 Do not forget to edit both ones in future.</p>
-</div>
-<div class="section" id="recurring-transactions">
-<h2>Recurring Transactions<a class="headerlink" href="#recurring-transactions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="recurring-transactions">
+<h2>Recurring Transactions<a class="headerlink" href="#recurring-transactions" title="Permalink to this heading">¶</a></h2>
 <p>Many transactions happen with some frequency. Usually recurring transactions
 are planned but sometimes actual too.</p>
 <p>You can establish a custom frequency for recurring transactions.</p>
@@ -138,8 +141,8 @@ are planned but sometimes actual too.</p>
 <a class="reference internal image-reference" href="_images/recurringtransactions-020-select-recurring-transactions.png"><img alt="_images/recurringtransactions-020-select-recurring-transactions.png" src="_images/recurringtransactions-020-select-recurring-transactions.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/recurringtransactions-030-select-transaction.png"><img alt="_images/recurringtransactions-030-select-transaction.png" src="_images/recurringtransactions-030-select-transaction.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/recurringtransactions-040-reccuring-transaction.png"><img alt="_images/recurringtransactions-040-reccuring-transaction.png" src="_images/recurringtransactions-040-reccuring-transaction.png" style="width: 25%;" /></a>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -181,7 +184,7 @@ are planned but sometimes actual too.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -198,14 +201,14 @@ are planned but sometimes actual too.</p>
         <li class="right" >
           <a href="directories.html" title="Directories"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.8 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Transactions</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017 - 2021, Interblitz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+        &#169; Copyright 2017 - 2023, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

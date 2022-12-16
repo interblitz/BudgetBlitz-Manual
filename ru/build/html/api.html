@@ -5,8 +5,9 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Интеграция со сторонними приложениями &#8212; Документация Блиц Бюджет 2.7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Интеграция со сторонними приложениями &#8212; Документация Блиц Бюджет 2.8</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
@@ -14,7 +15,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/translations.js"></script>
     <script src="_static/bizstyle.js"></script>
     <link rel="author" title="Об этих документах" href="about.html" />
@@ -51,7 +54,7 @@
         <li class="right" >
           <a href="remote-access.html" title="Удаленный доступ"
              accesskey="P">назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.8</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Интеграция со сторонними приложениями</a></li> 
       </ul>
     </div>  
@@ -61,13 +64,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="chapter-api">
-<span id="id1"></span><h1>Интеграция со сторонними приложениями<a class="headerlink" href="#chapter-api" title="Ссылка на этот заголовок">¶</a></h1>
+  <section id="chapter-api">
+<span id="id1"></span><h1>Интеграция со сторонними приложениями<a class="headerlink" href="#chapter-api" title="Permalink to this heading">¶</a></h1>
 <p>Блиц Бюджет для Android можно интегрировать с другими приложениями. Например, можно совместить приложение с голосовым
 ассистентом и просто надиктовывать операции или автоматизировать создание или заполнение новых операций при помощи
 приложения <a class="reference external" href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a>.</p>
-<div class="section" id="id2">
-<h2>Создание операций из текстовой строки<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<section id="id2">
+<h2>Создание операций из текстовой строки<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>Чтобы создать новую операцию в Блиц Бюджет для Android достаточно отправить широковещательный интент. Получив такой
 интент, приложение проанализирует сообщение и создаст новую операцию по алгоритму, аналогичному распознавания SMS
 и push-уведомлений.</p>
@@ -79,23 +82,23 @@
 <li><p><span class="bbvar">address</span>: Тип String, адресат сообщения, может быть не указан.</p></li>
 <li><p><span class="bbvar">message</span>: Тип String, текстовое сообщение, из которого приложение создаст новую операцию. Сообщение по своей структуре должно быть аналогично SMS. Обязательный параметр.</p></li>
 </ol>
-</div>
-<div class="section" id="rest-api">
-<span id="sub-chapter-rest-api"></span><h2>REST API<a class="headerlink" href="#rest-api" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="rest-api">
+<span id="sub-chapter-rest-api"></span><h2>REST API<a class="headerlink" href="#rest-api" title="Permalink to this heading">¶</a></h2>
 <p>Блиц Бюджет для Android поддерживает <a class="reference external" href="https://github.com/interblitz/BudgetBlitz-Api">REST API</a>. API позволяет создавать новые объекты, справочники и операции, а также редактировать и удалять существующие. Используя API
 можно создавать свои дополнения и приложения.</p>
 <p>Для работы с <a class="reference external" href="https://github.com/interblitz/BudgetBlitz-Api">REST API</a> и просмотра документации необходимо включить удаленный доступ, см. <a class="reference internal" href="remote-access.html#chapter-remote-access"><span class="std std-ref">Удаленный доступ</span></a>.
 Документация к API доступна через <a class="reference external" href="https://interblitz.github.io/BudgetBlitz-Api/swagger/">Swagger</a>. После загрузки страницы в адресной строке <a class="reference external" href="https://interblitz.github.io/BudgetBlitz-Api/swagger/">Swagger</a> укажите <a class="reference external" href="http://[server]:[port]/api/v1/docs.json">http://[server]:[port]/api/v1/docs.json</a>.
 В качестве сервера (server) и порта (port) необходимо указать значения, которые выводятся при включении удаленного доступа.</p>
 <p>Примеры приложений можно посмотреть на <a class="reference external" href="https://github.com/interblitz/BudgetBlitz-Api">github.com</a>. В примерах также нужно указать адрес к Блиц Бюджет для Android в виде <a class="reference external" href="http://[server]:[port">http://[server]:[port</a>].</p>
-</div>
-<div class="section" id="intents-api">
-<h2>Intents API<a class="headerlink" href="#intents-api" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="intents-api">
+<h2>Intents API<a class="headerlink" href="#intents-api" title="Permalink to this heading">¶</a></h2>
 <p>Помимо простого API для создания операций из текста Блиц Бюджет для Android предоставляет расширенный Intents API.
 Intents API  состоит из двух частей, событий и запросов данных,.и построен на базе REST API.
 По умолчанию Intents API выключен. В настройках можно указать, какая часть API должна быть включена.</p>
-<div class="section" id="intents-api-1">
-<h3>Intents API: Часть 1, События<a class="headerlink" href="#intents-api-1" title="Ссылка на этот заголовок">¶</a></h3>
+<section id="intents-api-1">
+<h3>Intents API: Часть 1, События<a class="headerlink" href="#intents-api-1" title="Permalink to this heading">¶</a></h3>
 <p>События возникают при записи элементов справочников и операций. При возникновении события Блиц Бюджет для Android отправляет интент тем пакетам,
 которые указаны в настройках. В интенте передается:</p>
 <p>Action = <span class="bbvar">{biz.interblitz.budget{free/pro}.api.event.ITEM_ONCHANGE</span></p>
@@ -112,9 +115,9 @@ Intents API  состоит из двух частей, событий и зап
 <li><p><span class="bbvar">currency</span> - валюта операции</p></li>
 </ol>
 <p>Для получения дополнительных данных, которых нет в интенте, следует отправить запрос.</p>
-</div>
-<div class="section" id="intents-api-2">
-<h3>Intents API: Часть 2, Запросы<a class="headerlink" href="#intents-api-2" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="intents-api-2">
+<h3>Intents API: Часть 2, Запросы<a class="headerlink" href="#intents-api-2" title="Permalink to this heading">¶</a></h3>
 <p>Для запроса данных следует отправить Intent:</p>
 <p>Class = <span class="bbvar">biz.interblitz.service.ApiReceiver</span></p>
 <p>Action = <span class="bbvar">{biz.interblitz.budget{free/pro}.api.request</span></p>
@@ -136,9 +139,9 @@ Intents API  состоит из двух частей, событий и зап
 </ol>
 <p>Параметры <span class="bbvar">method</span>, <span class="bbvar">path</span>, <span class="bbvar">body</span>, <span class="bbvar">collection</span>, <span class="bbvar">response</span> соответствуют REST API. Документация к ним доступна через <a class="reference external" href="https://interblitz.github.io/BudgetBlitz-Api/swagger/">Swagger</a>.
 Подробней см. <a class="reference internal" href="#sub-chapter-rest-api"><span class="std std-ref">REST API</span></a>.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -182,7 +185,7 @@ Intents API  состоит из двух частей, событий и зап
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -199,14 +202,14 @@ Intents API  состоит из двух частей, событий и зап
         <li class="right" >
           <a href="remote-access.html" title="Удаленный доступ"
              >назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.8</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Интеграция со сторонними приложениями</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017 - 2021, Interblitz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+        &#169; Copyright 2017 - 2023, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

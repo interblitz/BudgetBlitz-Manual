@@ -115,6 +115,9 @@
 
 .. |meta_dir_sms_import_tunes|                replace:: :bbmeta:`Настройки импорта SMS`
 .. |meta_dir_contractors|                     replace:: :bbmeta:`Плательщики и получатели`
+.. |meta_dir_projects|                        replace:: :bbmeta:`Проекты`
+.. |meta_dir_persons|                         replace:: :bbmeta:`Персоны`
+.. |meta_dir_locations|                       replace:: :bbmeta:`Места`
 .. |meta_dir_currencies|                      replace:: :bbmeta:`Валюты`
 .. |meta_dir_categories|                      replace:: :bbmeta:`Статьи`
 .. |meta_dir_accounts|                        replace:: :bbmeta:`Счета`

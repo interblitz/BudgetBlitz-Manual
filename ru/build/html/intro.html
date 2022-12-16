@@ -5,8 +5,9 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Как устроено приложение &#8212; Документация Блиц Бюджет 2.7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Как устроено приложение &#8212; Документация Блиц Бюджет 2.8</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
@@ -14,7 +15,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/translations.js"></script>
     <script src="_static/bizstyle.js"></script>
     <link rel="author" title="Об этих документах" href="about.html" />
@@ -51,7 +54,7 @@
         <li class="right" >
           <a href="about.html" title="О приложении"
              accesskey="P">назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.8</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Как устроено приложение</a></li> 
       </ul>
     </div>  
@@ -61,18 +64,18 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="id1">
-<h1>Как устроено приложение<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
-<div class="section" id="id2">
-<h2>Учет денежных средств<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+  <section id="id1">
+<h1>Как устроено приложение<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<section id="id2">
+<h2>Учет денежных средств<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>Все движения денежных средств учитываются при помощи операций (финансовых транзакций). Каждая операция содержит
 четыре аналитики: статья (категория), проект, плательщик (получатель) и персона. Операции могут быть
 фактическими или плановыми, разовыми или постоянными. Постоянные операции повторяются с заданной периодичностью, как правило
 такие операции являются плановыми, но также могут быть и фактическими.</p>
 <p>Любую операцию можно разбить на несколько подопераций, такая операция называется сплитом, см. <a class="reference internal" href="glossary.html#term-0"><span class="xref std std-term">сплит</span></a>.</p>
-</div>
-<div class="section" id="id3">
-<h2>Структура справочников<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id3">
+<h2>Структура справочников<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>Операции принадлежат определенному счету. Это может быть банковский счет, счет с электронными деньгами, наличные в портмоне,
 или что-то другое. Каждый счет имеет свою валюту, которая может отличаться от валюты операции.</p>
 <p>В свою очередь, все счета разбиты по портфелям. Каждый портфель также имеет свою валюту, которая может отличаться от валюты счета.</p>
@@ -86,9 +89,9 @@
 <p class="admonition-title">Примечание</p>
 <p>Любой справочник можно отредактировать. Например, можно добавить валюту, статью и т.п. Нет никаких ограничений!</p>
 </div>
-</div>
-<div class="section" id="id4">
-<h2>Отличие между плательщиками (получателями) и персонами<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id4">
+<h2>Отличие между плательщиками (получателями) и персонами<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <p>Под плательщиками и получателями в программе понимается вторая сторона в денежной операции. Часто это сторону называют
 контрагентом. Операции не может быть без контрагента, исключение составляет перевод между своими счетами. Если Вы даете, например,
 ребенку некую сумму денег, то ребенок является контрагентом и должен быть занесен в справочник <span class="bbmeta">Плательщики и получатели</span>.</p>
@@ -98,8 +101,8 @@
 при выборе контрагента, в операцию также будет попадать и указанная персона. Например, ребенок будет и контрагентом и персоной.</p>
 <p>Настроив учет таким образом, можно увидеть общую сумму потраченную на содержание ребенка (аналитика по персоне)
 и отдельно сумму денежных средств непосредственно переданных ребенку (аналитика по контрагенту).</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -139,7 +142,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -156,14 +159,14 @@
         <li class="right" >
           <a href="about.html" title="О приложении"
              >назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.8</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Как устроено приложение</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017 - 2021, Interblitz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+        &#169; Copyright 2017 - 2023, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

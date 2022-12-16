@@ -5,8 +5,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How It Works &#8212; Budget Blitz 2.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>How It Works &#8212; Budget Blitz 2.8 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
@@ -14,7 +15,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/bizstyle.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -50,7 +53,7 @@
         <li class="right" >
           <a href="about.html" title="About"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.8 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">How It Works</a></li> 
       </ul>
     </div>  
@@ -60,18 +63,18 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="how-it-works">
-<h1>How It Works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="funds-accounting">
-<h2>Funds Accounting<a class="headerlink" href="#funds-accounting" title="Permalink to this headline">¶</a></h2>
+  <section id="how-it-works">
+<h1>How It Works<a class="headerlink" href="#how-it-works" title="Permalink to this heading">¶</a></h1>
+<section id="funds-accounting">
+<h2>Funds Accounting<a class="headerlink" href="#funds-accounting" title="Permalink to this heading">¶</a></h2>
 <p>Budget Blitz for Android uses transactions to store all movement of funds. Each transaction has
 four dimensions category, project, payer or payee, and person. Transactions can be
 actual or planned and onetime or recurring. Recurring transactions have own customizable frequency. Generally
 this ones are planned but it is possible to make actual recurring transactions too.</p>
 <p>Any transaction can be split for details. These transactions are called split, see. <a class="reference internal" href="glossary.html#term-split"><span class="xref std std-term">split</span></a>.</p>
-</div>
-<div class="section" id="directories-structure">
-<h2>Directories Structure<a class="headerlink" href="#directories-structure" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="directories-structure">
+<h2>Directories Structure<a class="headerlink" href="#directories-structure" title="Permalink to this heading">¶</a></h2>
 <p>Each transaction has own account. It can be account of a financial institution, or e-money account, or cash,
 or something else. Each transaction has own currency that may be differ from account currency.</p>
 <p>In its turn each account belongs to a portfolio. Each portfolio has own currency that may be differ from account currency also.</p>
@@ -85,9 +88,9 @@ complex as you can see on the chart below:</p>
 <p class="admonition-title">Note</p>
 <p>You can edit any directory. For example, add a currency, a category or something else. There are no restrictions!</p>
 </div>
-</div>
-<div class="section" id="difference-between-contractors-and-persons">
-<h2>Difference Between Contractors and Persons<a class="headerlink" href="#difference-between-contractors-and-persons" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="difference-between-contractors-and-persons">
+<h2>Difference Between Contractors and Persons<a class="headerlink" href="#difference-between-contractors-and-persons" title="Permalink to this heading">¶</a></h2>
 <p>Contrary part of transaction is payer or payee. This is often called a contractor. Only transfer transactions
 have no contractor. All other transactions have. For example your child is contractor
 when you give him or her some money. So you should put him or her to the <span class="bbmeta">Payers and payees</span> directory.</p>
@@ -98,8 +101,8 @@ of contractor. After that the person will be selected within the contractor. For
 to combine both examples above, you should consider the child as the contractor and the person at the same time.</p>
 <p>As the result, you will see total child expenses using a person filter and total
 money delivered to the child using a contractor filter.</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -139,7 +142,7 @@ money delivered to the child using a contractor filter.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -156,14 +159,14 @@ money delivered to the child using a contractor filter.</p>
         <li class="right" >
           <a href="about.html" title="About"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.8 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">How It Works</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017 - 2021, Interblitz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+        &#169; Copyright 2017 - 2023, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

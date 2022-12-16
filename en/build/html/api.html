@@ -5,8 +5,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Integration with third party applications &#8212; Budget Blitz 2.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Integration with third party applications &#8212; Budget Blitz 2.8 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
@@ -14,7 +15,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/bizstyle.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -50,7 +53,7 @@
         <li class="right" >
           <a href="remote-access.html" title="Remote access"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.8 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Integration with third party applications</a></li> 
       </ul>
     </div>  
@@ -60,13 +63,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="integration-with-third-party-applications">
-<span id="chapter-api"></span><h1>Integration with third party applications<a class="headerlink" href="#integration-with-third-party-applications" title="Permalink to this headline">¶</a></h1>
+  <section id="integration-with-third-party-applications">
+<span id="chapter-api"></span><h1>Integration with third party applications<a class="headerlink" href="#integration-with-third-party-applications" title="Permalink to this heading">¶</a></h1>
 <p>You can integrate Budget Blitz for Android with other applications. For example, you can connect Budget Blitz for Android
 with a voice assistant and create transactions by voice. Another hint is to create
 transactions using <a class="reference external" href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a>.</p>
-<div class="section" id="making-transactions-from-text">
-<h2>Making Transactions From Text<a class="headerlink" href="#making-transactions-from-text" title="Permalink to this headline">¶</a></h2>
+<section id="making-transactions-from-text">
+<h2>Making Transactions From Text<a class="headerlink" href="#making-transactions-from-text" title="Permalink to this heading">¶</a></h2>
 <p>To create a new transaction you just need to send broadcast intent. Since intent received the app analyze it
 and create new transaction using notifications detection algorithm.</p>
 <p>Intent parameters are</p>
@@ -77,23 +80,23 @@ and create new transaction using notifications detection algorithm.</p>
 <li><p><span class="bbvar">address</span>: Type of String, sender of the message, can be empty.</p></li>
 <li><p><span class="bbvar">message</span>: Type of String, message like a notification to create a new transaction, required.</p></li>
 </ol>
-</div>
-<div class="section" id="rest-api">
-<span id="sub-chapter-rest-api"></span><h2>REST API<a class="headerlink" href="#rest-api" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="rest-api">
+<span id="sub-chapter-rest-api"></span><h2>REST API<a class="headerlink" href="#rest-api" title="Permalink to this heading">¶</a></h2>
 <p>Budget Blitz for Android supports <a class="reference external" href="https://github.com/interblitz/BudgetBlitz-Api">REST API</a>. API allows to create new directories and transactions, and edit or delete existed ones. Using
 this API you can create your own addons or applications.</p>
 <p>You have to enable remote access to dial with <a class="reference external" href="https://github.com/interblitz/BudgetBlitz-Api">REST API</a> and read documentation, see chart <a class="reference internal" href="remote-access.html#chapter-remote-access"><span class="std std-ref">Remote access</span></a>.
 Documentation is available by <a class="reference external" href="https://interblitz.github.io/BudgetBlitz-Api/swagger/">Swagger</a>. On the <a class="reference external" href="https://interblitz.github.io/BudgetBlitz-Api/swagger/">Swagger</a>. page type the address  <a class="reference external" href="http://[server]:[port]/api/v1/docs.json">http://[server]:[port]/api/v1/docs.json</a>.
 Server and port will be available after PC connection enabled.</p>
 <p>You can try app examples at the <a class="reference external" href="https://github.com/interblitz/BudgetBlitz-Api">github.com</a>. After an exmple has loaded type Budget Blitz for Android address as <a class="reference external" href="http://[server]:[port">http://[server]:[port</a>].</p>
-</div>
-<div class="section" id="intents-api">
-<h2>Intents API<a class="headerlink" href="#intents-api" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="intents-api">
+<h2>Intents API<a class="headerlink" href="#intents-api" title="Permalink to this heading">¶</a></h2>
 <p>In addition to simple API for making transactions from text Budget Blitz for Android supports extended Intents API. It consists of two parts,
 events and data requests. API based on the REST API. By default Intents API is OFF. You have to enable it
 selecting the part you need.</p>
-<div class="section" id="intents-api-part-1-events">
-<h3>Intents API: Part 1, Events<a class="headerlink" href="#intents-api-part-1-events" title="Permalink to this headline">¶</a></h3>
+<section id="intents-api-part-1-events">
+<h3>Intents API: Part 1, Events<a class="headerlink" href="#intents-api-part-1-events" title="Permalink to this heading">¶</a></h3>
 <p>When directories and transactions are saving events occurs. On the event Budget Blitz for Android sends Intent. You have to select target
 packages in the settings. Intent contains:</p>
 <p>Action = <span class="bbvar">{biz.interblitz.budget{free/pro}.api.event.ITEM_ONCHANGE</span></p>
@@ -110,9 +113,9 @@ packages in the settings. Intent contains:</p>
 <li><p><span class="bbvar">currency</span> - transaction currency</p></li>
 </ol>
 <p>To get more data you should send request Intent.</p>
-</div>
-<div class="section" id="intents-api-part-2-requests">
-<h3>Intents API: Part 2, Requests<a class="headerlink" href="#intents-api-part-2-requests" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="intents-api-part-2-requests">
+<h3>Intents API: Part 2, Requests<a class="headerlink" href="#intents-api-part-2-requests" title="Permalink to this heading">¶</a></h3>
 <p>Request intents intended to get, modify or delete some data. Intent structure is</p>
 <p>Class = <span class="bbvar">biz.interblitz.service.ApiReceiver</span></p>
 <p>Action = <span class="bbvar">{biz.interblitz.budget{free/pro}.api.request</span></p>
@@ -134,9 +137,9 @@ packages in the settings. Intent contains:</p>
 </ol>
 <p>Parameters <span class="bbvar">method</span>, <span class="bbvar">path</span>, <span class="bbvar">body</span>, <span class="bbvar">collection</span>, <span class="bbvar">response</span> matches REST API. Documentation is available from the <a class="reference external" href="https://interblitz.github.io/BudgetBlitz-Api/swagger/">Swagger</a>.
 See more <a class="reference internal" href="#sub-chapter-rest-api"><span class="std std-ref">REST API</span></a>.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -180,7 +183,7 @@ See more <a class="reference internal" href="#sub-chapter-rest-api"><span class=
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -197,14 +200,14 @@ See more <a class="reference internal" href="#sub-chapter-rest-api"><span class=
         <li class="right" >
           <a href="remote-access.html" title="Remote access"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Budget Blitz 2.8 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Integration with third party applications</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017 - 2021, Interblitz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+        &#169; Copyright 2017 - 2023, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

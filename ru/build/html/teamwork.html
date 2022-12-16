@@ -5,8 +5,9 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Коллективная работа &#8212; Документация Блиц Бюджет 2.7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Коллективная работа &#8212; Документация Блиц Бюджет 2.8</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
@@ -14,7 +15,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/translations.js"></script>
     <script src="_static/bizstyle.js"></script>
     <link rel="author" title="Об этих документах" href="about.html" />
@@ -51,7 +54,7 @@
         <li class="right" >
           <a href="import.html" title="Импорт данных"
              accesskey="P">назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.8</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Коллективная работа</a></li> 
       </ul>
     </div>  
@@ -61,10 +64,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="chapter-teamwork">
-<span id="id1"></span><h1>Коллективная работа<a class="headerlink" href="#chapter-teamwork" title="Ссылка на этот заголовок">¶</a></h1>
-<div class="section" id="id2">
-<h2>Введение<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+  <section id="chapter-teamwork">
+<span id="id1"></span><h1>Коллективная работа<a class="headerlink" href="#chapter-teamwork" title="Permalink to this heading">¶</a></h1>
+<section id="id2">
+<h2>Введение<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>Блиц Бюджет для Android позволяет вести совместный учет доходов и расходов. Вот несколько примеров:</p>
 <ol class="arabic simple">
 <li><p>Полная синхронизация между устройствами;</p></li>
@@ -79,11 +82,11 @@
 <p>Программа имеет гибкие настройки, регулирующие процесс обмена. Так например, можно разрешить принимать только новые операции от одного узла, и запретить принимать измененные. Для каждого узла обмена действуют свои настройки.</p>
 <p>В целях повышения безопасности все сообщения между узлами шифруются, для каждого узла можно задать свой пароль, который будет использоваться для шифрования / дешифрования передаваемой информации.</p>
 <p>Для совместной работы не требуется учетная запись Dropbox или других сервисов.</p>
-</div>
-<div class="section" id="id3">
-<h2>Начало работы<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
-<div class="section" id="id4">
-<h3>Выбор исходных данных<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="id3">
+<h2>Начало работы<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<section id="id4">
+<h3>Выбор исходных данных<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <p>Предположим, что Алиса и Боб хотят вести совместный финансовый учет. Предварительно, им нужно определиться какая ситуация для них ближе:</p>
 <ol class="arabic simple">
 <li><p>В начале работы у Алисы и Боба будут одинаковые данные.</p></li>
@@ -103,9 +106,9 @@
 <a class="reference internal image-reference" href="_images/exchangenewid-040-select-new-id.png"><img alt="_images/exchangenewid-040-select-new-id.png" src="_images/exchangenewid-040-select-new-id.png" style="width: 25%;" /></a>
 <p>Теперь Алиса и Боб готовы к настройке обмена.</p>
 <p>Во втором случае никаких предварительных действий совершать не нужно. Алиса и Боб сразу готовы к настройке обмена.</p>
-</div>
-<div class="section" id="id5">
-<h3>Обмен идентификаторами<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h3>
+</section>
+<section id="id5">
+<h3>Обмен идентификаторами<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <p>Для работы обмена Алисе и Бобу необходимо обменяться идентификаторами узлов обмена и сохранить их в справочнике узлов.
 Для этого Алиса открывает справочник <span class="bbmeta">Узлы обмена</span> используя меню <span class="menuselection">Действия ‣ Обмен данными ‣  Узлы обмена</span>. В справочнике
 узлов обмена Алиса выбирает пункт меню <span class="menuselection">Отправить идентификатор</span> и отправляет идентификатор своего узла
@@ -123,10 +126,10 @@
 <a class="reference internal image-reference" href="_images/exchangenewnode-030-click-fab.png"><img alt="_images/exchangenewnode-030-click-fab.png" src="_images/exchangenewnode-030-click-fab.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/exchangenewnode-040-setup_node.png"><img alt="_images/exchangenewnode-040-setup_node.png" src="_images/exchangenewnode-040-setup_node.png" style="width: 25%;" /></a>
 <p>Алиса, в свою очередь, принимает сообщение Боба и создает новый узел обмена с идентификатором, который указан в сообщении Боба.</p>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>Включение обмена<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+</section>
+<section id="id6">
+<h2>Включение обмена<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
 <p>После обмена идентификаторами Алиса и Боб включают в настройках синхронизацию данных между узлами обмена.</p>
 <a class="reference internal image-reference" href="_images/exchangeenable-005-select-actions.png"><img alt="_images/exchangeenable-005-select-actions.png" src="_images/exchangeenable-005-select-actions.png" style="width: 25%;" /></a>
 <a class="reference internal image-reference" href="_images/exchangeenable-020-click-on-actions-menu.png"><img alt="_images/exchangeenable-020-click-on-actions-menu.png" src="_images/exchangeenable-020-click-on-actions-menu.png" style="width: 25%;" /></a>
@@ -154,9 +157,9 @@
 <li><p>Если сети нет, то обмен отключается полностью до следующего появления сети.</p></li>
 </ol>
 <p>При необходимости всегда можно вызвать синхронизацию вручную.</p>
-</div>
-<div class="section" id="id7">
-<h2>Как работает обмен данными<a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id7">
+<h2>Как работает обмен данными<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
 <p>Приложение Блиц Бюджет для Android ведет журнал изменений справочников и операций. Каждому узлу обмена отправляются изменения,
 которые произошли либо с момента получения предыдущего пакета изменений, либо с момента создания узла.
 Важна последовательность обмена: Алиса отправляет сообщение Бобу, Боб - Алисе и т.д. Если узел обмена Алисы не
@@ -170,9 +173,9 @@
 <p>Каждый следующий шаг синхронизации выполняется в случае, если предыдущий закончился неудачей. Если элемент
 не удалось найти, то программа создает новый, используя при этом значения по умолчанию, указанные в настройке узла.</p>
 <p>Синхронизация операций выполняется только по уникальному идентификатору.</p>
-</div>
-<div class="section" id="id8">
-<h2>Расширенная настройка<a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id8">
+<h2>Расширенная настройка<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
 <p>Алиса и Боб могут ограничить объем передаваемой информации. Есть два варианта задания ограничений:</p>
 <ol class="arabic simple">
 <li><p>разрешенная область данных;</p></li>
@@ -185,22 +188,22 @@
 <p>На основании областей данных формируется список операций, постоянных операций и справочников для передачи узлу обмена.</p>
 <p>Алиса и Боб могут ограничить объем принимаемой информации. Можно полностью отказаться принимать новые, измененные или удаленные объекты.
 Или можно конкретизировать какой тип объектов не принимать в случае создания, изменения или удаления.</p>
-</div>
-<div class="section" id="id9">
-<h2>Настройка передачи данных<a class="headerlink" href="#id9" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id9">
+<h2>Настройка передачи данных<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
 <p>Для повышения безопасности передачи данных следует указать пароль, которым будут зашифрованы сообщения между узлами обмена. Пароль Алисы должен совпадать с паролем Боба.</p>
 <p>Также Алисе и Бобу следует указать какой вид коммуникаций использовать для обмена сообщениями: Wi-Fi и/или мобильный интернет.</p>
-</div>
-<div class="section" id="id10">
-<h2>Значения по умолчанию<a class="headerlink" href="#id10" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id10">
+<h2>Значения по умолчанию<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h2>
 <p>Справочники на устройствах Алисы и Боба могут не совпадать между собой. Например, Боб уже давно
 ведет финансовый учет, а Алиса только что установила приложение. Боб может создать операцию и указать в ней, например,
 проект, которого нет в узле обмена Алисы. При поступлении сообщения Боба, приложение на устройстве Алисы
 создаст операцию, однако не сможет найти указанный Бобом проект. В этом случае приложение будет использовать
 значение проекта по умолчанию, которое Алиса задала для узла обмена Боба.</p>
-</div>
-<div class="section" id="id11">
-<h2>Перенос данных на новый телефон с сохранением настроек обмена<a class="headerlink" href="#id11" title="Ссылка на этот заголовок">¶</a></h2>
+</section>
+<section id="id11">
+<h2>Перенос данных на новый телефон с сохранением настроек обмена<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h2>
 <p>В случае работающего обмена, переход на новый телефон следует выполнять в порядке:</p>
 <ol class="arabic simple">
 <li><p>На старом телефоне в настройках выключить синхронизацию.</p></li>
@@ -208,8 +211,8 @@
 <li><p>Восстановить резервную копию на новом телефоне.</p></li>
 <li><p>Включить синхронизацию на новом телефоне.</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -258,7 +261,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -275,14 +278,14 @@
         <li class="right" >
           <a href="import.html" title="Импорт данных"
              >назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.7</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.8</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Коллективная работа</a></li> 
       </ul>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2017 - 2021, Interblitz.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+        &#169; Copyright 2017 - 2023, Interblitz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.1.
     </div>
 <div class="footer">This page uses <a href="http://analytics.google.com/">
 Google Analytics</a> to collect statistics. You can disable it by blocking

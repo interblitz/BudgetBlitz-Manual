@@ -169,3 +169,23 @@ OFX files
   :width: 25%
 .. image:: images/ofximport-040-select-file-and-options.png
   :width: 25%
+
+Electronic receipts
+-------------------
+
+|бб| supports electronic receipts import. Now available import for Russia and Ukraine. You can request more formats by email.
+
+To import from other apps:
+
+#. Open specific app.
+#. Select receipt, link or text data and push Share / Send / Transmit button or some thing like that.
+#. Select |бб| as receiver.
+#. Follow instructions on a screen.
+
+To import from the clipboard:
+
+#. Open import dialog.
+#. Paste data from the clipboard.
+#. Follow instructions on a screen.
+
+Use events log to identify errors.
