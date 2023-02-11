@@ -82,7 +82,7 @@ projects, and persons. It depends on your choice.
 
 The column separator can be one of  ";", ",", "|", "/", "\". File must be UTF-8 encoded.
 
-The first row of the file must have column names in English, case does not matter.
+The first row of the file must have column names, case does not matter.
 Since column names are placed at another row they are valid for next rows.
 
 .. list-table:: CSV file format
@@ -95,7 +95,7 @@ Since column names are placed at another row they are valid for next rows.
    * - id
      - No
      - Transaction identity, the app will search existed transaction if not empty.
-   * - account
+   * - account,incomeAccountName, Income account
      - Yes
      - Name, number, or identity of the account
    * - date
@@ -104,19 +104,25 @@ Since column names are placed at another row they are valid for next rows.
    * - time
      - No
      - Time of the transaction, supported formats: "HH:mm:ss", "HH:mm", "HHmmss", "HHmm"
-   * - amount
+   * - amount,income, Income amount
      - Yes
-     - Transaction amount, can have a currency and digits delimiters, fixed point should be point or comma
+     - Transaction amount, can have a currency and digits delimiters, fixed point should be point or comma, can be an amount in the transaction currency or an amount in the account currency
+   * - original amount
+     - No
+     - Amount in the currency of the transaction, if specified, the rate of the transaction is calculated automatically
    * - rate, exchange rate
      - No
      - Transaction rate
-   * - currency
+   * - currency,incomeCurrencyShorttitle
      - No
-     - Transaction currency, account currency is used when empty
+     - Transaction currency or account currency, if not specified, is used in the currency of the account
+   * - original currency
+     - No
+     - Transaction currency
    * - payer, payee, contractor
      - No
      - Name of the contractor, the app will analyze current row keywords when empty
-   * - category
+   * - category, categoryName
      - No
      - Name of the category, the app will analyze current row keywords when empty
    * - project
@@ -125,6 +131,9 @@ Since column names are placed at another row they are valid for next rows.
    * - person, unit
      - No
      - Name of the person, the app will analyze current row keywords when empty
+   * - location, place
+     - No
+     - Name of the location, the app will analyze current row keywords when empty
    * - notes, note
      - No
      - Note
@@ -134,6 +143,18 @@ Since column names are placed at another row they are valid for next rows.
    * - detail, split
      - No
      - Transaction (0) or detail of transaction (1). default value is 0
+   * - X
+     - X
+     - Second transaction from the single line
+   * - outcomeAccountName, Expense account
+     - Yes
+     - Account
+   * - outcome, Expense amoun
+     - Yes
+     - Amount
+   * - outcomeCurrencyShorttitle
+     - No
+     - Currency
 
 The row is canceled when mandatory columns are empty.
 

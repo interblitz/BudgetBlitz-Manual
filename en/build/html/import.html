@@ -110,7 +110,7 @@ certain notification by hands. To do that</p>
 <p>During <a class="reference external" href="https://en.wikipedia.org/wiki/CSV">CSV</a> file import the app can create new accounts, categories, payers or payees,
 projects, and persons. It depends on your choice.</p>
 <p>The column separator can be one of  “;”, “,”, “|”, “/”, “&quot;. File must be UTF-8 encoded.</p>
-<p>The first row of the file must have column names in English, case does not matter.
+<p>The first row of the file must have column names, case does not matter.
 Since column names are placed at another row they are valid for next rows.</p>
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-text">CSV file format</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
@@ -130,7 +130,7 @@ Since column names are placed at another row they are valid for next rows.</p>
 <td><p>No</p></td>
 <td><p>Transaction identity, the app will search existed transaction if not empty.</p></td>
 </tr>
-<tr class="row-odd"><td><p>account</p></td>
+<tr class="row-odd"><td><p>account,incomeAccountName, Income account</p></td>
 <td><p>Yes</p></td>
 <td><p>Name, number, or identity of the account</p></td>
 </tr>
@@ -142,23 +142,31 @@ Since column names are placed at another row they are valid for next rows.</p>
 <td><p>No</p></td>
 <td><p>Time of the transaction, supported formats: “HH:mm:ss”, “HH:mm”, “HHmmss”, “HHmm”</p></td>
 </tr>
-<tr class="row-even"><td><p>amount</p></td>
+<tr class="row-even"><td><p>amount,income, Income amount</p></td>
 <td><p>Yes</p></td>
-<td><p>Transaction amount, can have a currency and digits delimiters, fixed point should be point or comma</p></td>
+<td><p>Transaction amount, can have a currency and digits delimiters, fixed point should be point or comma, can be an amount in the transaction currency or an amount in the account currency</p></td>
 </tr>
-<tr class="row-odd"><td><p>rate, exchange rate</p></td>
+<tr class="row-odd"><td><p>original amount</p></td>
+<td><p>No</p></td>
+<td><p>Amount in the currency of the transaction, if specified, the rate of the transaction is calculated automatically</p></td>
+</tr>
+<tr class="row-even"><td><p>rate, exchange rate</p></td>
 <td><p>No</p></td>
 <td><p>Transaction rate</p></td>
 </tr>
-<tr class="row-even"><td><p>currency</p></td>
+<tr class="row-odd"><td><p>currency,incomeCurrencyShorttitle</p></td>
 <td><p>No</p></td>
-<td><p>Transaction currency, account currency is used when empty</p></td>
+<td><p>Transaction currency or account currency, if not specified, is used in the currency of the account</p></td>
+</tr>
+<tr class="row-even"><td><p>original currency</p></td>
+<td><p>No</p></td>
+<td><p>Transaction currency</p></td>
 </tr>
 <tr class="row-odd"><td><p>payer, payee, contractor</p></td>
 <td><p>No</p></td>
 <td><p>Name of the contractor, the app will analyze current row keywords when empty</p></td>
 </tr>
-<tr class="row-even"><td><p>category</p></td>
+<tr class="row-even"><td><p>category, categoryName</p></td>
 <td><p>No</p></td>
 <td><p>Name of the category, the app will analyze current row keywords when empty</p></td>
 </tr>
@@ -170,17 +178,37 @@ Since column names are placed at another row they are valid for next rows.</p>
 <td><p>No</p></td>
 <td><p>Name of the person, the app will analyze current row keywords when empty</p></td>
 </tr>
-<tr class="row-odd"><td><p>notes, note</p></td>
+<tr class="row-odd"><td><p>location, place</p></td>
+<td><p>No</p></td>
+<td><p>Name of the location, the app will analyze current row keywords when empty</p></td>
+</tr>
+<tr class="row-even"><td><p>notes, note</p></td>
 <td><p>No</p></td>
 <td><p>Note</p></td>
 </tr>
-<tr class="row-even"><td><p>planned, plan</p></td>
+<tr class="row-odd"><td><p>planned, plan</p></td>
 <td><p>No</p></td>
 <td><p>Actual (0) or planned (1), default value is 0</p></td>
 </tr>
-<tr class="row-odd"><td><p>detail, split</p></td>
+<tr class="row-even"><td><p>detail, split</p></td>
 <td><p>No</p></td>
 <td><p>Transaction (0) or detail of transaction (1). default value is 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>Second transaction from the single line</p></td>
+</tr>
+<tr class="row-even"><td><p>outcomeAccountName, Expense account</p></td>
+<td><p>Yes</p></td>
+<td><p>Account</p></td>
+</tr>
+<tr class="row-odd"><td><p>outcome, Expense amoun</p></td>
+<td><p>Yes</p></td>
+<td><p>Amount</p></td>
+</tr>
+<tr class="row-even"><td><p>outcomeCurrencyShorttitle</p></td>
+<td><p>No</p></td>
+<td><p>Currency</p></td>
 </tr>
 </tbody>
 </table>

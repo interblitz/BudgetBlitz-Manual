@@ -214,15 +214,23 @@
 </tr>
 <tr class="row-even"><td><p>amount, income, Income amount, Сумма</p></td>
 <td><p>Да</p></td>
-<td><p>Сумма операции (может содержать валюту и разделители групп разрядов), десятичный разделитель может быть точкой или запятой</p></td>
+<td><p>Сумма операции (может содержать валюту и разделители групп разрядов), десятичный разделитель может быть точкой или запятой, может быть суммой в валюте операции или суммой в валюте счета</p></td>
 </tr>
-<tr class="row-odd"><td><p>rate, exchange rate, Обменный курс</p></td>
+<tr class="row-odd"><td><p>original amount, Сумма в валюте операции</p></td>
+<td><p>Нет</p></td>
+<td><p>Сумма в валюте операции, если указана, то курс операции вычисляется автоматически</p></td>
+</tr>
+<tr class="row-even"><td><p>rate, exchange rate, Обменный курс</p></td>
 <td><p>Нет</p></td>
 <td><p>Курс операции</p></td>
 </tr>
-<tr class="row-even"><td><p>currency, incomeCurrencyShorttitle, Валюта</p></td>
+<tr class="row-odd"><td><p>currency, incomeCurrencyShorttitle, Валюта</p></td>
 <td><p>Нет</p></td>
-<td><p>Валюта операции, если не указано, то используется в валюта счета</p></td>
+<td><p>Валюта операции, если не указано, то используется в валюта счета, может быть валютой счета или валютой операции</p></td>
+</tr>
+<tr class="row-even"><td><p>original currency, Валюта операции</p></td>
+<td><p>Нет</p></td>
+<td><p>Валюта операции</p></td>
 </tr>
 <tr class="row-odd"><td><p>payer, payee, contractor</p></td>
 <td><p>Нет</p></td>
@@ -240,35 +248,39 @@
 <td><p>Нет</p></td>
 <td><p>Наименование персоны/подразделения, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки</p></td>
 </tr>
-<tr class="row-odd"><td><p>notes, note, comment, Примечания</p></td>
+<tr class="row-odd"><td><p>location, place</p></td>
+<td><p>Нет</p></td>
+<td><p>Наименование места, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки</p></td>
+</tr>
+<tr class="row-even"><td><p>notes, note, comment, Примечания</p></td>
 <td><p>Нет</p></td>
 <td><p>Примечание</p></td>
 </tr>
-<tr class="row-even"><td><p>planned, plan</p></td>
+<tr class="row-odd"><td><p>planned, plan</p></td>
 <td><p>Нет</p></td>
 <td><p>Фактическая (0), или плановая (1) операция. Если колонка не задана, создается фактическая операция</p></td>
 </tr>
-<tr class="row-odd"><td><p>detail, split</p></td>
+<tr class="row-even"><td><p>detail, split</p></td>
 <td><p>Нет</p></td>
 <td><p>Операция (0), или детализация операции (1). По умолчанию используется значение 0</p></td>
 </tr>
-<tr class="row-even"><td><p>Тип</p></td>
+<tr class="row-odd"><td><p>Тип</p></td>
 <td><p>Нет</p></td>
 <td><p>Знак операции, если не указан, знак определяется суммой</p></td>
 </tr>
-<tr class="row-odd"><td><p>Х</p></td>
+<tr class="row-even"><td><p>Х</p></td>
 <td><p>Х</p></td>
 <td><p>Вторая операция из одной строки</p></td>
 </tr>
-<tr class="row-even"><td><p>outcomeAccountName, Expense account</p></td>
+<tr class="row-odd"><td><p>outcomeAccountName, Expense account</p></td>
 <td><p>Да</p></td>
 <td><p>Счет</p></td>
 </tr>
-<tr class="row-odd"><td><p>outcome, Expense amount</p></td>
+<tr class="row-even"><td><p>outcome, Expense amount</p></td>
 <td><p>Да</p></td>
 <td><p>Сумма</p></td>
 </tr>
-<tr class="row-even"><td><p>outcomeCurrencyShorttitle</p></td>
+<tr class="row-odd"><td><p>outcomeCurrencyShorttitle</p></td>
 <td><p>Нет</p></td>
 <td><p>Валюта</p></td>
 </tr>

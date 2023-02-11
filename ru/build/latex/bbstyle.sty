@@ -1,0 +1,36 @@
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{bbstyle}
+
+\usepackage{amssymb}
+
+\usepackage[many]{tcolorbox}
+
+\definecolor{backgroundcolor}{RGB}{238,238,238}
+
+\newtcbox{\grayovalbox}{on line,colback=backgroundcolor,boxrule=0.5pt,arc=5pt,
+  boxsep=0pt,left=3pt,right=3pt,top=3pt,bottom=3pt}
+
+\newtcbox{\whiteovalbox}{on line,colback=white,boxrule=0.5pt,arc=5pt,
+  boxsep=0pt,left=3pt,right=3pt,top=3pt,bottom=3pt}
+
+\newtcbox{\rectbox}{enhanced,nobeforeafter,tcbox raise base,boxrule=0.4pt,
+  left=1pt,right=1pt,top=1pt,bottom=1pt,
+  colback=white,
+  arc=1pt,boxsep=2pt,before upper={\vphantom{dlg}}
+}
+
+\newcommand{\DUrolebbbutton}[1]{\rectbox{#1}}
+
+\newcommand{\DUrolebbspinner}[1]{\rectbox{#1 {$\scriptstyle \blacktriangledown$}}}
+
+\newcommand{\DUrolebbmeta}[1]{\grayovalbox{#1}}
+
+\newcommand{\DUrolebbitem}[1]{\whiteovalbox{#1}}
+
+\newcommand{\DUrolebbsection}[1]{\underline{#1}}
+
+\newcommand{\DUrolebbproperty}[1]{\textit{#1}}
+
+\newcommand{\DUrolebbvalue}[1]{\texttt{#1}}
+
+\newcommand{\DUrolebbvar}[1]{\textsf{#1}}

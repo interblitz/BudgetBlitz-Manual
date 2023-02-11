@@ -1,0 +1,121 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Notations}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Preface}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Additional Sources}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}User Manual Editions}{3}{section.2.3}
+\contentsline {section}{\numberline {2.4}Feedback}{3}{section.2.4}
+\contentsline {chapter}{\numberline {3}About}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Key Features}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Interesting Solutions Implemented}{6}{section.3.2}
+\contentsline {chapter}{\numberline {4}How It Works}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Funds Accounting}{7}{section.4.1}
+\contentsline {section}{\numberline {4.2}Directories Structure}{7}{section.4.2}
+\contentsline {section}{\numberline {4.3}Difference Between Contractors and Persons}{8}{section.4.3}
+\contentsline {chapter}{\numberline {5}Getting Started}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}Basic Customization}{9}{section.5.1}
+\contentsline {section}{\numberline {5.2}Loading Bank Settings}{10}{section.5.2}
+\contentsline {section}{\numberline {5.3}Portfolio and Account Settings}{10}{section.5.3}
+\contentsline {section}{\numberline {5.4}Initial Data Import}{11}{section.5.4}
+\contentsline {section}{\numberline {5.5}Entering Initial Balance and Credit Limit}{11}{section.5.5}
+\contentsline {chapter}{\numberline {6}Main Screen}{13}{chapter.6}
+\contentsline {section}{\numberline {6.1}Description}{13}{section.6.1}
+\contentsline {section}{\numberline {6.2}Time Range Selection}{13}{section.6.2}
+\contentsline {section}{\numberline {6.3}List View Settings}{14}{section.6.3}
+\contentsline {section}{\numberline {6.4}Saving List View Settings}{15}{section.6.4}
+\contentsline {chapter}{\numberline {7}Directories}{17}{chapter.7}
+\contentsline {section}{\numberline {7.1}Portfolio Types}{17}{section.7.1}
+\contentsline {section}{\numberline {7.2}Portfolios}{18}{section.7.2}
+\contentsline {section}{\numberline {7.3}Accounts}{18}{section.7.3}
+\contentsline {section}{\numberline {7.4}Categories}{19}{section.7.4}
+\contentsline {section}{\numberline {7.5}Payers and Payees}{19}{section.7.5}
+\contentsline {section}{\numberline {7.6}Projects}{19}{section.7.6}
+\contentsline {section}{\numberline {7.7}Persons}{20}{section.7.7}
+\contentsline {section}{\numberline {7.8}Currencies}{20}{section.7.8}
+\contentsline {chapter}{\numberline {8}Transactions}{21}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introduction}{21}{section.8.1}
+\contentsline {section}{\numberline {8.2}Splits}{22}{section.8.2}
+\contentsline {section}{\numberline {8.3}Planned Transactions}{23}{section.8.3}
+\contentsline {section}{\numberline {8.4}Manual Transfers}{23}{section.8.4}
+\contentsline {section}{\numberline {8.5}Recurring Transactions}{24}{section.8.5}
+\contentsline {chapter}{\numberline {9}Account Settings for Notifications Import}{27}{chapter.9}
+\contentsline {section}{\numberline {9.1}Identity Choosing}{27}{section.9.1}
+\contentsline {section}{\numberline {9.2}Key Phrase Choosing for Transfers}{28}{section.9.2}
+\contentsline {chapter}{\numberline {10}Advanced Import SMS and Push Notifications Setting}{31}{chapter.10}
+\contentsline {section}{\numberline {10.1}Notifications Detection Algorithm}{31}{section.10.1}
+\contentsline {section}{\numberline {10.2}New Custom Import Tune}{32}{section.10.2}
+\contentsline {chapter}{\numberline {11}Data Import}{35}{chapter.11}
+\contentsline {section}{\numberline {11.1}Notification Import Tunes}{35}{section.11.1}
+\contentsline {section}{\numberline {11.2}SMS and Push Notifications}{36}{section.11.2}
+\contentsline {section}{\numberline {11.3}CSV files}{38}{section.11.3}
+\contentsline {section}{\numberline {11.4}OFX files}{39}{section.11.4}
+\contentsline {chapter}{\numberline {12}Teamwork}{41}{chapter.12}
+\contentsline {section}{\numberline {12.1}Introduction}{41}{section.12.1}
+\contentsline {section}{\numberline {12.2}Getting Started}{41}{section.12.2}
+\contentsline {subsection}{\numberline {12.2.1}Initial Database}{41}{subsection.12.2.1}
+\contentsline {subsection}{\numberline {12.2.2}Identities Interchange}{42}{subsection.12.2.2}
+\contentsline {section}{\numberline {12.3}Setting Teamwork On}{44}{section.12.3}
+\contentsline {section}{\numberline {12.4}How Synchronization Works}{45}{section.12.4}
+\contentsline {section}{\numberline {12.5}Advanced Settings}{45}{section.12.5}
+\contentsline {section}{\numberline {12.6}Data Transfer Settings}{46}{section.12.6}
+\contentsline {section}{\numberline {12.7}Default Values}{46}{section.12.7}
+\contentsline {section}{\numberline {12.8}Moving Database to a New Device}{46}{section.12.8}
+\contentsline {chapter}{\numberline {13}Reports}{47}{chapter.13}
+\contentsline {section}{\numberline {13.1}Payment Schedule}{48}{section.13.1}
+\contentsline {section}{\numberline {13.2}Plan vs. Actual}{48}{section.13.2}
+\contentsline {section}{\numberline {13.3}Turnovers}{48}{section.13.3}
+\contentsline {section}{\numberline {13.4}Totals and Turnovers}{48}{section.13.4}
+\contentsline {section}{\numberline {13.5}Planned Totals and Turnovers}{49}{section.13.5}
+\contentsline {section}{\numberline {13.6}Debts}{49}{section.13.6}
+\contentsline {section}{\numberline {13.7}Plan Implementation}{49}{section.13.7}
+\contentsline {section}{\numberline {13.8}Distribution of Turnovers}{50}{section.13.8}
+\contentsline {section}{\numberline {13.9}Changes in Turnovers}{50}{section.13.9}
+\contentsline {section}{\numberline {13.10}Changes in Totals}{50}{section.13.10}
+\contentsline {chapter}{\numberline {14}Reminders}{51}{chapter.14}
+\contentsline {chapter}{\numberline {15}Bulk Actions}{55}{chapter.15}
+\contentsline {section}{\numberline {15.1}Objects Selection}{55}{section.15.1}
+\contentsline {section}{\numberline {15.2}Editing}{55}{section.15.2}
+\contentsline {section}{\numberline {15.3}Deleting}{56}{section.15.3}
+\contentsline {section}{\numberline {15.4}Filters}{56}{section.15.4}
+\contentsline {section}{\numberline {15.5}Repetitive Sending Under Teamwork}{57}{section.15.5}
+\contentsline {section}{\numberline {15.6}CSV and OFX Export}{57}{section.15.6}
+\contentsline {section}{\numberline {15.7}Connecting of transactions}{58}{section.15.7}
+\contentsline {section}{\numberline {15.8}Sending Source Data to Developer}{58}{section.15.8}
+\contentsline {chapter}{\numberline {16}Report Settings and Shortcuts}{61}{chapter.16}
+\contentsline {section}{\numberline {16.1}Report Settings}{61}{section.16.1}
+\contentsline {section}{\numberline {16.2}Creating Shortcuts}{63}{section.16.2}
+\contentsline {chapter}{\numberline {17}Widgets and Templates}{65}{chapter.17}
+\contentsline {section}{\numberline {17.1}Widgets}{65}{section.17.1}
+\contentsline {section}{\numberline {17.2}Using Widgets as Transaction Templates}{66}{section.17.2}
+\contentsline {section}{\numberline {17.3}Using Widgets as Reports}{66}{section.17.3}
+\contentsline {section}{\numberline {17.4}Widgets as Reports Example}{66}{section.17.4}
+\contentsline {section}{\numberline {17.5}Widgets as Templates Example}{68}{section.17.5}
+\contentsline {chapter}{\numberline {18}Remote access}{71}{chapter.18}
+\contentsline {chapter}{\numberline {19}Integration with third party applications}{73}{chapter.19}
+\contentsline {section}{\numberline {19.1}Making Transactions From Text}{73}{section.19.1}
+\contentsline {section}{\numberline {19.2}REST API}{73}{section.19.2}
+\contentsline {section}{\numberline {19.3}Intents API}{74}{section.19.3}
+\contentsline {subsection}{\numberline {19.3.1}Intents API: Part 1, Events}{74}{subsection.19.3.1}
+\contentsline {subsection}{\numberline {19.3.2}Intents API: Part 2, Requests}{74}{subsection.19.3.2}
+\contentsline {chapter}{\numberline {20}Difference Between Versions}{75}{chapter.20}
+\contentsline {chapter}{\numberline {21}Migration to Pro Version}{77}{chapter.21}
+\contentsline {chapter}{\numberline {22}Service}{79}{chapter.22}
+\contentsline {chapter}{\numberline {23}Ready to use Financial Institutes}{81}{chapter.23}
+\contentsline {section}{\numberline {23.1}Belarus}{81}{section.23.1}
+\contentsline {section}{\numberline {23.2}Brazil}{81}{section.23.2}
+\contentsline {section}{\numberline {23.3}Canada}{81}{section.23.3}
+\contentsline {section}{\numberline {23.4}Hungary}{81}{section.23.4}
+\contentsline {section}{\numberline {23.5}India}{82}{section.23.5}
+\contentsline {section}{\numberline {23.6}Indonesia}{82}{section.23.6}
+\contentsline {section}{\numberline {23.7}Maldives}{82}{section.23.7}
+\contentsline {section}{\numberline {23.8}Poland}{82}{section.23.8}
+\contentsline {section}{\numberline {23.9}Russia}{82}{section.23.9}
+\contentsline {section}{\numberline {23.10}Thailand}{85}{section.23.10}
+\contentsline {section}{\numberline {23.11}Ukraine}{85}{section.23.11}
+\contentsline {section}{\numberline {23.12}United Arab Emirates}{86}{section.23.12}
+\contentsline {section}{\numberline {23.13}United States}{86}{section.23.13}
+\contentsline {section}{\numberline {23.14}Uzbekistan}{86}{section.23.14}
+\contentsline {section}{\numberline {23.15}Vietnam}{86}{section.23.15}
+\contentsline {chapter}{\numberline {24}Terms and definitions}{87}{chapter.24}
+\contentsline {chapter}{\numberline {25}Indices and tables}{89}{chapter.25}
+\contentsline {chapter}{Index}{91}{section*.7}
