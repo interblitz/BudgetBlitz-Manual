@@ -4,31 +4,45 @@
 \ifdefined\pdfpxdimen
    \let\sphinxpxdimen\pdfpxdimen\else\newdimen\sphinxpxdimen
 \fi \sphinxpxdimen=.75bp\relax
+\ifdefined\pdfimageresolution
+    \pdfimageresolution= \numexpr \dimexpr1in\relax/\sphinxpxdimen\relax
+\fi
+%% let collapsible pdf bookmarks panel have high depth per default
+\PassOptionsToPackage{bookmarksdepth=5}{hyperref}
 
 \PassOptionsToPackage{warn}{textcomp}
 \usepackage[utf8]{inputenc}
 \ifdefined\DeclareUnicodeCharacter
 % support both utf8 and utf8x syntaxes
-\edef\sphinxdqmaybe{\ifdefined\DeclareUnicodeCharacterAsOptional\string"\fi}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe00A0}{\nobreakspace}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe2500}{\sphinxunichar{2500}}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe2502}{\sphinxunichar{2502}}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe2514}{\sphinxunichar{2514}}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe251C}{\sphinxunichar{251C}}
-  \DeclareUnicodeCharacter{\sphinxdqmaybe2572}{\textbackslash}
+  \ifdefined\DeclareUnicodeCharacterAsOptional
+    \def\sphinxDUC#1{\DeclareUnicodeCharacter{"#1}}
+  \else
+    \let\sphinxDUC\DeclareUnicodeCharacter
+  \fi
+  \sphinxDUC{00A0}{\nobreakspace}
+  \sphinxDUC{2500}{\sphinxunichar{2500}}
+  \sphinxDUC{2502}{\sphinxunichar{2502}}
+  \sphinxDUC{2514}{\sphinxunichar{2514}}
+  \sphinxDUC{251C}{\sphinxunichar{251C}}
+  \sphinxDUC{2572}{\textbackslash}
 \fi
 \usepackage{cmap}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amstext}
 \usepackage[russian]{babel}
 
+
+
+
+
 \usepackage[Sonny]{fncychap}
 \ChNameVar{\Large\normalfont\sffamily}
 \ChTitleVar{\Large\normalfont\sffamily}
 \usepackage{sphinx}
 
-\fvset{fontsize=\small}
+\fvset{fontsize=auto}
 \usepackage{geometry}
+
 
 % Include hyperref last.
 \usepackage{hyperref}
@@ -37,31 +51,15 @@
 % Set up styles of URL: it should be placed after hyperref.
 \urlstyle{same}
 
-\addto\captionsrussian{\renewcommand{\figurename}{Рис.\@ }}
-\makeatletter
-\def\fnum@figure{\figurename\thefigure{}}
-\makeatother
-\addto\captionsrussian{\renewcommand{\tablename}{Таблица }}
-\makeatletter
-\def\fnum@table{\tablename\thetable{}}
-\makeatother
-\addto\captionsrussian{\renewcommand{\literalblockname}{Список}}
 
-\addto\captionsrussian{\renewcommand{\literalblockcontinuedname}{продолжение с предыдущей страницы}}
-\addto\captionsrussian{\renewcommand{\literalblockcontinuesname}{continues on next page}}
-\addto\captionsrussian{\renewcommand{\sphinxnonalphabeticalgroupname}{Non-alphabetical}}
-\addto\captionsrussian{\renewcommand{\sphinxsymbolsname}{Символы}}
-\addto\captionsrussian{\renewcommand{\sphinxnumbersname}{Numbers}}
-
-\addto\extrasrussian{\def\pageautorefname{страница}}
-
+\usepackage{sphinxmessages}
 \setcounter{tocdepth}{1}
 
 \usepackage{bbstyle}
 
 \title{Блиц Бюджет: Документация}
-\date{авг. 19, 2021}
-\release{2.7}
+\date{сент. 22, 2023}
+\release{2.9}
 \author{Басин Михаил}
 \newcommand{\sphinxlogo}{\vbox{}}
 \renewcommand{\releasename}{Выпуск}
@@ -81,30 +79,44 @@
 \phantomsection\label{\detokenize{index::doc}}
 
 
+\sphinxstepscope
+
 
 \chapter{Используемые обозначения}
 \label{\detokenize{notations:id1}}\label{\detokenize{notations::doc}}
+\sphinxAtStartPar
 Меню: \sphinxmenuselection{Действия \(\rightarrow\) Профили (Настройки)}
 
+\sphinxAtStartPar
 Кнопка: \DUrole{bbbutton}{Настройки импорта SMS и PUSH}
 
+\sphinxAtStartPar
 Выпадающий список: \DUrole{bbspinner}{Настройки отчета}
 
+\sphinxAtStartPar
 Наименование справочника, отчета: \DUrole{bbmeta}{Настройки импорта SMS}
 
+\sphinxAtStartPar
 Элемент справочника: \DUrole{bbitem}{Персональный}
 
+\sphinxAtStartPar
 Раздел в списке свойств карточки элемента: \DUrole{bbsection}{Вид}
 
+\sphinxAtStartPar
 Свойство элемента: \DUrole{bbproperty}{Наименование}
 
+\sphinxAtStartPar
 Значение, введенное вручную:  \DUrole{bbvalue}{Сводка по одному счету}
 
+\sphinxAtStartPar
 Переменная: \DUrole{bbvar}{biz.interblitz.intent.CONVERT\_TEXT\_TO\_NEW\_TRANSACTION}
+
+\sphinxstepscope
 
 
 \chapter{Предисловие}
 \label{\detokenize{preface:id1}}\label{\detokenize{preface::doc}}
+\sphinxAtStartPar
 Хотелось бы сразу обратить Ваше внимание на основную проблему, с которой сталкиваются пользователи приложения Блиц Бюджет для Android. Это — высокий порог вхождения,
 что выражается в необходимости потратить время на изучение приложения. Поэтому запланируйте время, оно не будет потеряно даром, ведь впоследствии
 пользователи указывают, что о потраченном времени не жалеют.
@@ -112,6 +124,7 @@
 
 \section{Введение}
 \label{\detokenize{preface:id2}}
+\sphinxAtStartPar
 Руководство поможет Вам начать пользоваться приложением Блиц Бюджет для Android. Руководство не является исчерпывающим, но оно
 постоянно дополняется и развивается вместе с приложением. Критика, замечания и предложения приветствуются,
 см. {\hyperref[\detokenize{preface:id5}]{\sphinxcrossref{Обратная связь}}} (\autopageref*{\detokenize{preface:id5}}).
@@ -119,42 +132,57 @@
 
 \section{Дополнительные источники информации}
 \label{\detokenize{preface:id3}}
+\sphinxAtStartPar
 Вопросы и ответы на русском языке: \sphinxurl{http://qa.bbmoney.biz/ru/}
 
+\sphinxAtStartPar
 Вопросы и ответы на английском языке: \sphinxurl{http://qa.bbmoney.biz/en/}
 
+\sphinxAtStartPar
 Обсуждение приложения на 4PDA: \sphinxurl{http://4pda.ru/forum/index.php?showtopic=658215}
 
+\sphinxAtStartPar
 Предыдущее официальное руководство: \sphinxurl{http://interblitz.biz/projects/blitz-0035/wiki/Blitz\_Budget}
 
+\sphinxAtStartPar
 Предыдущее руководство для новичков: \sphinxurl{http://bbmoney.biz.ru/assets/budgetblitz-manual.pdf}
 
 
 \section{Варианты руководства}
 \label{\detokenize{preface:id4}}
+\sphinxAtStartPar
 HTML: \sphinxurl{http://bbmoney.biz/ru/manual/index.html}
 
+\sphinxAtStartPar
 PDF: \sphinxurl{http://bbmoney.biz/ru/assets/budgetblitz-user-manual.pdf}
 
 
 \section{Обратная связь}
 \label{\detokenize{preface:id5}}
+\sphinxAtStartPar
 Автор: Басин Михаил
 
+\sphinxAtStartPar
 Контакты: \sphinxhref{mailto:basin.michael@gmail.com}{basin.michael@gmail.com}
+
+\sphinxstepscope
 
 
 \chapter{О приложении}
 \label{\detokenize{about:id1}}\label{\detokenize{about::doc}}
+\sphinxAtStartPar
 Приложение Блиц Бюджет для Android служит для автоматизации учета и планирования:
 \begin{itemize}
 \item {} 
+\sphinxAtStartPar
 персональных финансов;
 
 \item {} 
+\sphinxAtStartPar
 финансов очень малого бизнеса (индивидуальные предприниматели);
 
 \item {} 
+\sphinxAtStartPar
 финансов малого бизнеса.
 
 \end{itemize}
@@ -166,90 +194,121 @@ PDF: \sphinxurl{http://bbmoney.biz/ru/assets/budgetblitz-user-manual.pdf}
 
 \section{Ключевые особенности}
 \label{\detokenize{about:id2}}
+\sphinxAtStartPar
 Совмещение учета личных финансов и финансов предприятия.
 
+\sphinxAtStartPar
 Тщательный учет финансов — поддержка статей, контрагентов (плательщиков и получателей), персон и проектов.
 
+\sphinxAtStartPar
 Автоматическое распознавание SMS и Push уведомлений банков — определение сумм, статей, проектов, персон,
 получателей и плательщиков, выделение комиссий из суммы платежа, автоматическая корректировка баланса,
 поддержка 160+ банков разных стран, см. {\hyperref[\detokenize{banks:chapter-supported-banks}]{\sphinxcrossref{\DUrole{std,std-ref}{Поддерживаемые банки}}}} (\autopageref*{\detokenize{banks:chapter-supported-banks}}).
 
+\sphinxAtStartPar
 Отображение ключевых показателей на главном экране.
 
+\sphinxAtStartPar
 «Умные» значения по умолчанию при вводе операций.
 
+\sphinxAtStartPar
 Виджет для быстрого ввода и редактирования операций, с возможностью вывода настраиваемого среза данных (виджет как отчет).
 
+\sphinxAtStartPar
 Децентрализованная коллективная работа с настраиваемыми правами доступа.
 
+\sphinxAtStartPar
 Клиент для ПК (доступ к данным программы через web браузер).
 
+\sphinxAtStartPar
 API для приема данных от других приложений.
 
+\sphinxAtStartPar
 Разнообразные аналитические отчеты.
 
+\sphinxAtStartPar
 Напоминания на базе отчетов.
 
 
 \section{Интересные решения, реализованные в программе}
 \label{\detokenize{about:id3}}
+\sphinxAtStartPar
 Подсистема распознавания уведомлений (SMS и Push) банков
 \begin{itemize}
 \item {} 
+\sphinxAtStartPar
 Автоматическое распознавание аналитик (статья, контрагент, проект, персона);
 
 \item {} 
-Удобный подбор ключевых слов непосредственно из SMS и Push-уведомлений;
+\sphinxAtStartPar
+Удобный подбор ключевых слов непосредственно из SMS и Push\sphinxhyphen{}уведомлений;
 
 \item {} 
+\sphinxAtStartPar
 Автоматический расчет курсов для валютных операций;
 
 \item {} 
+\sphinxAtStartPar
 Автоматическое занесение переводов между счетами;
 
 \item {} 
-Возможность создания собственной настройки импорта SMS и Push-уведомлений.
+\sphinxAtStartPar
+Возможность создания собственной настройки импорта SMS и Push\sphinxhyphen{}уведомлений.
 
 \end{itemize}
 
+\sphinxAtStartPar
 Подсистема отчетности
 \begin{itemize}
 \item {} 
+\sphinxAtStartPar
 Поддержка упрощенной технологии OLAP при формировании отчетов, т.е. возможности выбирать одновременно несколько срезов данных, включая временные периоды;
 
 \item {} 
+\sphinxAtStartPar
 Поддержка функции «Drilldown», т.е. возможности расшифровки и редактирования исходных данных;
 
 \item {} 
+\sphinxAtStartPar
 Использование виджетов для отображения коротких сводных отчетов;
 
 \item {} 
+\sphinxAtStartPar
 Использования ярлыков для быстрого запуска отчетов с сохраненными настройками.
 
 \item {} 
+\sphinxAtStartPar
 Напоминания на базе отчетов с возможностью быстрого доступа к готовому отчету из напоминания.
 
 \end{itemize}
 
+\sphinxAtStartPar
 Подсистема коллективной работы
 \begin{itemize}
 \item {} 
+\sphinxAtStartPar
 Использование механизма обмена данными для коллективной работы, регистрация на сайте разработчика не требуется. Общей базы данных не существует, у каждого участника обмена своя база данных.
 
 \item {} 
+\sphinxAtStartPar
 Гибкая система настройки прав и областей данных для обмена. Можно синхронизировать операции между участниками обмена только по одному счету, проекту и т. д.
 
 \item {} 
+\sphinxAtStartPar
 Неограниченное количество участников обмена данными.
 
 \end{itemize}
 
+\sphinxAtStartPar
 Подсистема доступа с персонального компьютера
 \begin{itemize}
 \item {} 
-Клиент работает на операционных системах Windows, Linux, Mac и пр. Все что нужно для работы - это современный браузер. Поддерживаются Internet Explorer 8+, Google Chrome, Apple Safari, Mozilla Firefox, Opera.
+\sphinxAtStartPar
+Клиент работает на операционных системах Windows, Linux, Mac и пр. Все что нужно для работы \sphinxhyphen{} это современный браузер. Поддерживаются Internet Explorer 8+, Google Chrome, Apple Safari, Mozilla Firefox, Opera.
 
 \end{itemize}
+
+\sphinxstepscope
 
 
 \chapter{Как устроено приложение}
@@ -257,127 +316,156 @@ API для приема данных от других приложений.
 
 \section{Учет денежных средств}
 \label{\detokenize{intro:id2}}
+\sphinxAtStartPar
 Все движения денежных средств учитываются при помощи операций (финансовых транзакций). Каждая операция содержит
 четыре аналитики: статья (категория), проект, плательщик (получатель) и персона. Операции могут быть
 фактическими или плановыми, разовыми или постоянными. Постоянные операции повторяются с заданной периодичностью, как правило
 такие операции являются плановыми, но также могут быть и фактическими.
 
-Любую операцию можно разбить на несколько подопераций, такая операция называется сплитом, см. {\hyperref[\detokenize{glossary:term}]{\sphinxtermref{\DUrole{xref,std,std-term}{сплит}}}}.
+\sphinxAtStartPar
+Любую операцию можно разбить на несколько подопераций, такая операция называется сплитом, см. {\hyperref[\detokenize{glossary:term-0}]{\sphinxtermref{\DUrole{xref,std,std-term}{сплит}}}}.
 
 
 \section{Структура справочников}
 \label{\detokenize{intro:id3}}
+\sphinxAtStartPar
 Операции принадлежат определенному счету. Это может быть банковский счет, счет с электронными деньгами, наличные в портмоне,
-или что-то другое. Каждый счет имеет свою валюту, которая может отличаться от валюты операции.
+или что\sphinxhyphen{}то другое. Каждый счет имеет свою валюту, которая может отличаться от валюты операции.
 
+\sphinxAtStartPar
 В свою очередь, все счета разбиты по портфелям. Каждый портфель также имеет свою валюту, которая может отличаться от валюты счета.
 
+\sphinxAtStartPar
 Но это еще не все. Портфели разбиты по типам портфелям. Тип портфеля можно считать аналогом организации.
 Если Вы ведете только домашнюю бухгалтерию, то у Вас будет только один тип портфеля — персональный. Если Вы
 дополнительно ведете учет в организации, то два — персональный и малый бизнес. В некоторых случаях типов
 портфелей может быть и больше.
 
+\sphinxAtStartPar
 Статьи, контрагенты, проекты и персоны привязаны к типу портфеля. Схематично все справочники можно представить на рисунке:
 
 \noindent{\hspace*{\fill}\sphinxincludegraphics[width=0.750\linewidth]{{directories_structure_ru}.png}\hspace*{\fill}}
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 Любой справочник можно отредактировать. Например, можно добавить валюту, статью и т.п. Нет никаких ограничений!
 \end{sphinxadmonition}
 
 
 \section{Отличие между плательщиками (получателями) и персонами}
 \label{\detokenize{intro:id4}}
+\sphinxAtStartPar
 Под плательщиками и получателями в программе понимается вторая сторона в денежной операции. Часто это сторону называют
 контрагентом. Операции не может быть без контрагента, исключение составляет перевод между своими счетами. Если Вы даете, например,
 ребенку некую сумму денег, то ребенок является контрагентом и должен быть занесен в справочник \DUrole{bbmeta}{Плательщики и получатели}.
 
+\sphinxAtStartPar
 Персоны, а также категории (статьи) и проекты являются расшифровкой операции. Так например, если Вы покупаете, одежду для
 ребенка в магазине, то контрагентом является магазин, а ребенок в этой операции — персоной.
 
+\sphinxAtStartPar
 Контрагенты и персоны можно связать между собой. Для этого в карточке контрагента можно выбрать конкретную персону. Тогда,
 при выборе контрагента, в операцию также будет попадать и указанная персона. Например, ребенок будет и контрагентом и персоной.
 
+\sphinxAtStartPar
 Настроив учет таким образом, можно увидеть общую сумму потраченную на содержание ребенка (аналитика по персоне)
 и отдельно сумму денежных средств непосредственно переданных ребенку (аналитика по контрагенту).
+
+\sphinxstepscope
 
 
 \chapter{Начало работы}
 \label{\detokenize{getting-started:id1}}\label{\detokenize{getting-started::doc}}
+\sphinxAtStartPar
 В этой главе предлагается определенная последовательность действий по настройке приложения. Следовать предлагаемому порядку совсем не обязательно. Помните, что любой из параметров всегда можно изменить позже.
 
 
 \section{Настройка основных параметров}
 \label{\detokenize{getting-started:id2}}
+\sphinxAtStartPar
 После первого запуска отредактируйте основные настройки приложения.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{gettingstarted-010-main-screen}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{gettingstarted-020-click-on-actions-menu}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{gettingstarted-030-settings}.png}
 
+\sphinxAtStartPar
 Здесь можно:
 \begin{itemize}
 \item {} 
+\sphinxAtStartPar
 задать графический ключ для входа в приложение (наподобие ключа, который используется для разблокировки меню смартфона);
 
 \item {} 
-включить/выключить анализ входящих SMS и push-уведомлений банков;
+\sphinxAtStartPar
+включить/выключить анализ входящих SMS и push\sphinxhyphen{}уведомлений банков;
 
 \item {} 
+\sphinxAtStartPar
 включить/выключить синхронизацию между различными устройствами;
 
 \item {} 
+\sphinxAtStartPar
 установить/отключить по умолчанию отрицательную сумму для новых операций (для тех, кто расходы заносит чаще, чем доходы);
 
 \item {} 
+\sphinxAtStartPar
 установить основную валюту для профиля, а также источник загрузки курсов валют;
 
 \item {} 
+\sphinxAtStartPar
 настроить автоматические резервное копирование с отправкой данных в сервис Dropbox;
 
 \item {} 
+\sphinxAtStartPar
 включить/отключить напоминания о предстоящих платежах;
 
 \item {} 
+\sphinxAtStartPar
 задать звуковые уведомления при обработке смс от банков.
 
 \end{itemize}
 
+\sphinxAtStartPar
 После настройки основных параметров можно приступать ко второму этапу настройки, основные пункты которого
 расположены прямо на главном экране.
 
 
 \section{Загрузка настроек банков}
 \label{\detokenize{getting-started:id3}}
+\sphinxAtStartPar
 Этот раздел предназначен для тех кто планирует использовать функцию автоматического создания операций из коротких сообщений банков,
 платежных систем или установленных на устройстве приложений.
 
+\sphinxAtStartPar
 Для автоматического импорта SMS уведомлений:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 должен быть отмечен соответствующий флажок в активном профиле, меню \sphinxmenuselection{Действия \(\rightarrow\) Профили (Настройки)};
 
 \item {} 
+\sphinxAtStartPar
 приложению должен быть предоставлен доступ к SMS (Android 6 и выше).
 
 \end{enumerate}
 
-Для автоматического импорта push-уведомлений в активном профиле, меню \sphinxmenuselection{Действия \(\rightarrow\) Профили (Настройки)}:
+\sphinxAtStartPar
+Для автоматического импорта push\sphinxhyphen{}уведомлений в активном профиле, меню \sphinxmenuselection{Действия \(\rightarrow\) Профили (Настройки)}:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 должны быть выбраны пакеты, уведомления которых Блиц Бюджет для Android будет импортировать:
 
 \item {} 
+\sphinxAtStartPar
 должны быть предоставлены дополнительные разрешения.
 
 \end{enumerate}
 
+\sphinxAtStartPar
 Чтобы загрузить настройки Вашего банка нажмите кнопку \DUrole{bbbutton}{Настройки импорта SMS и PUSH}. В дальнейшем загрузить
 настройки можно будет через меню \sphinxmenuselection{Действия \(\rightarrow\) Импорт \(\rightarrow\) Настройки импорта SMS и Push} или из справочника
 \DUrole{bbmeta}{Настройки импорта SMS}.
@@ -388,44 +476,53 @@ API для приема данных от других приложений.
 
 \section{Настройка портфелей и счетов}
 \label{\detokenize{getting-started:id4}}
+\sphinxAtStartPar
 После установки программа содержит три типа портфелей \DUrole{bbitem}{Персональный}, \DUrole{bbitem}{Малый бизнес} и \DUrole{bbitem}{Универсальный},
 один персональный портфель \DUrole{bbitem}{Кошелек}, два счета \DUrole{bbitem}{Карта} и \DUrole{bbitem}{Наличные} в портфеле \DUrole{bbitem}{Кошелек} и предзаполненный
 список категорий.
 
+\sphinxAtStartPar
 В зависимости от того, какому типу портфеля принадлежит операция, при редактировании отображаются те или иные аналитики.  Так например,
 при ведении домашней бухгалтерии используется один список статей, а при учете финансов малого бизнеса — другой.
 Тем не менее, есть и общие для обоих учетов статьи и другие аналитики. Они принадлежат универсальному типу портфеля и
 отображаются всегда, вне зависимости от того, какому типу портфеля принадлежит операция.
 
+\sphinxAtStartPar
 Портфель можно рассматривать как группу счетов. Приложение группирует счета на главном экране по портфелям и рассчитывает
 по ним сводные итоги.
 
+\sphinxAtStartPar
 Создайте нужное количество портфелей и счетов. Для использования функции автоматического создания операций из коротких
-сообщений см. {\hyperref[\detokenize{account-identities:chapter-account-identities}]{\sphinxcrossref{\DUrole{std,std-ref}{Настройка счетов для импорта SMS и push-уведомлений}}}} (\autopageref*{\detokenize{account-identities:chapter-account-identities}}).
+сообщений см. {\hyperref[\detokenize{account-identities:chapter-account-identities}]{\sphinxcrossref{\DUrole{std,std-ref}{Настройка счетов для импорта SMS и push\sphinxhyphen{}уведомлений}}}} (\autopageref*{\detokenize{account-identities:chapter-account-identities}}).
 
+\sphinxAtStartPar
 Теперь можно импортировать SMS, данные из файла в форматах \sphinxhref{https://ru.wikipedia.org/wiki/CSV}{CSV} и \sphinxhref{https://en.wikipedia.org/wiki/Open\_Financial\_Exchange}{OFX}, или просто внести начальные остатки. Обратите внимание, что как только будет занесена хотя
 бы одна операция, главный экран примет вид сводки по счетам. Тем менее все функции настройки параметров будут доступны из главного меню приложения.
 
 
 \section{Первоначальный импорт данных}
 \label{\detokenize{getting-started:id5}}
-Перед импортом ранее полученных уведомлений от банков проверьте настройки счетов согласно главе {\hyperref[\detokenize{account-identities:chapter-account-identities}]{\sphinxcrossref{\DUrole{std,std-ref}{Настройка счетов для импорта SMS и push-уведомлений}}}} (\autopageref*{\detokenize{account-identities:chapter-account-identities}}). Затем нажмите \DUrole{bbbutton}{SMS и PUSH уведомления}
+\sphinxAtStartPar
+Перед импортом ранее полученных уведомлений от банков проверьте настройки счетов согласно главе {\hyperref[\detokenize{account-identities:chapter-account-identities}]{\sphinxcrossref{\DUrole{std,std-ref}{Настройка счетов для импорта SMS и push\sphinxhyphen{}уведомлений}}}} (\autopageref*{\detokenize{account-identities:chapter-account-identities}}). Затем нажмите \DUrole{bbbutton}{SMS и PUSH уведомления}
 в разделе \DUrole{bbsection}{Импорт} или выберите пункт меню \sphinxmenuselection{Действия \(\rightarrow\) Импорт \(\rightarrow\) SMS и PUSH уведомления}, укажите счет
 и импортируйте SMS. Подробней процесс импорта разобран в главе {\hyperref[\detokenize{import:chapter-import}]{\sphinxcrossref{\DUrole{std,std-ref}{Импорт данных}}}} (\autopageref*{\detokenize{import:chapter-import}}) и \sphinxhref{http://qa.bbmoney.biz/ru/index.php?qa=13\&qa\_1=\%D0\%BA\%D0\%B0\%D0\%BA-\%D0\%B2\%D1\%80\%D1\%83\%D1\%87\%D0\%BD\%D1\%83\%D1\%8E-\%D0\%B8\%D0\%BC\%D0\%BF\%D0\%BE\%D1\%80\%D1\%82\%D0\%B8\%D1\%80\%D0\%BE\%D0\%B2\%D0\%B0\%D1\%82\%D1\%8C-sms\&show=13\#q13}{вопросах и ответах}.
 
+\sphinxAtStartPar
 Кроме того, приложение может импортировать первоначальные данные из файлов в формате \sphinxhref{https://ru.wikipedia.org/wiki/CSV}{CSV} или \sphinxhref{https://en.wikipedia.org/wiki/Open\_Financial\_Exchange}{OFX}. Перед импортом данных в формате CSV
 проверьте и при необходимости отредактируйте исходный файл согласно главе {\hyperref[\detokenize{import:chapter-import}]{\sphinxcrossref{\DUrole{std,std-ref}{Импорт данных}}}} (\autopageref*{\detokenize{import:chapter-import}}). Файл в формате OFX не
-требует каких-либо предварительных манипуляций.
+требует каких\sphinxhyphen{}либо предварительных манипуляций.
 
 
 \section{Ввод начальных остатков и кредитного лимита}
 \label{\detokenize{getting-started:id7}}
+\sphinxAtStartPar
 Начальный остаток по счету заносится операцией. Дата операции может любой, но желательно, чтобы операция была первой в списке операций. В качестве статьи
 следует указать статью \DUrole{bbitem}{Ввод начальных остатков}.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{initialbalance-010-initial-transaction}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{initialbalance-020-initial-budget-item}.png}
 
+\sphinxAtStartPar
 Кредитный лимит также заносится операцией. Желательно, чтобы дата операции совпадала с датой установки лимита банком. В качестве статьи
 следует указать статью \DUrole{bbitem}{Изменение кредитного лимита}. Обратите внимание, что это техническая статья,
 у нее отключены признаки \DUrole{bbproperty}{Revenue} и \DUrole{bbproperty}{Expense}. Подробней причины ввода кредитного лимита операциями
@@ -434,20 +531,24 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{initialbalance-040-credit-limit-transaction}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{initialbalance-050-credit-limit--budget-item}.png}
 
+\sphinxAtStartPar
 Остатки по каждому долгу лучше внести двумя операциями. Например, если Ваш долг составляет 1000 руб., то следует:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 ввести приходную (положительную) операцию на сумму 1000 руб. по статье \DUrole{bbitem}{Кредиты (Я должен)} и указать плательщика или персону — кому должны.
 
 \item {} 
+\sphinxAtStartPar
 ввести расходную (отрицательную) операцию на сумму 1000 руб. по статье \DUrole{bbitem}{00 Не указано}, либо задать статью, если известно, на что были потрачены средства.
 
 \end{enumerate}
 
+\sphinxAtStartPar
 В итоге баланс будет 0, а отчет Долги покажет долг.
+
+\sphinxstepscope
 
 
 \chapter{Главный экран}
@@ -455,13 +556,16 @@ API для приема данных от других приложений.
 
 \section{Описание}
 \label{\detokenize{main-screen:id2}}
+\sphinxAtStartPar
 Главный экран Блиц Бюджет для Android содержит сводку по портфелям и счетам. Если в приложении используется несколько
 типов портфелей, то на экране будет выведено несколько сводок. В примерах ниже рассматривается вариант с
 одним типом портфеля \DUrole{bbitem}{Персональный}.
 
+\sphinxAtStartPar
 В сводке отображаются остатки по каждому счету и всему портфелю в целом. Если для счета задан кредитный лимит,
 то также отображается доступная сумма.
 
+\sphinxAtStartPar
 Ниже остатков расположены фактические и планируемые суммы расходов и доходов. Также отдельно выводятся суммы переводов,
 если таковые были в выбранном периоде.
 
@@ -469,12 +573,14 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{mainscreen-014-main-screen-swipe-left}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{mainscreen-015-main-screen-transactions}.png}
 
+\sphinxAtStartPar
 Кроме того, слева от набора сводок отображается список операций, в котором отображаются операции без разделения
 на типы портфелей.
 
 
 \section{Выбор периода}
 \label{\detokenize{main-screen:id3}}
+\sphinxAtStartPar
 Период можно изменить при помощи редактора периодов, который расположен в верхней части экрана. Редактор
 поддерживает жесты перелистывания и выбора.
 
@@ -485,10 +591,12 @@ API для приема данных от других приложений.
 
 \section{Настройки}
 \label{\detokenize{main-screen:id4}}
+\sphinxAtStartPar
 Настройки сводки расположены в нижней части экрана. В настройках можно изменить группировку, заданную по умолчанию,
 отредактировать фильтр и изменить период. В фильтре можно задать отбор по портфелям, счетам, валютам и отключить
 отображение плана.
 
+\sphinxAtStartPar
 В следующем примере задается фильтр по счетам.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{mainscreen-020-main-screen-bottom-sheet-opening}.png}
@@ -498,11 +606,13 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{mainscreen-060-main-screen-filter-apply}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{mainscreen-065-main-screen-filter-applied}.png}
 
+\sphinxAtStartPar
 Теперь на главном экране отображается только счет \DUrole{bbitem}{Наличные}.
 
 
 \section{Сохранение настроек}
 \label{\detokenize{main-screen:id5}}
+\sphinxAtStartPar
 Измененные настройки можно сохранить для последующего использования. Для этого следует выбрать
 \DUrole{bbspinner}{Настройки отчета} и создать новую настройку. Значения фильтра будут автоматически
 скопированы. Остается указать название настройки, например \DUrole{bbvalue}{Сводка по одному счету}, и
@@ -511,12 +621,16 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{mainscreen-070-main-screen-select-new-setting}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{mainscreen-080-main-screen-setting-save}.png}
 
+\sphinxAtStartPar
 Приложение позволяет иметь одновременно несколько сохраненных настроек и
 при запуске загружает для главного экрана последнюю использованную настройку.
+
+\sphinxstepscope
 
 
 \chapter{Справочники}
 \label{\detokenize{directories:chapter-directories}}\label{\detokenize{directories:id1}}\label{\detokenize{directories::doc}}
+\sphinxAtStartPar
 Любой справочник можно открыть из панели быстрых кнопок или меню \sphinxmenuselection{Действия \(\rightarrow\) Справочники} в зависимости от того,
 какой экран открыт в данный момент.
 
@@ -526,6 +640,7 @@ API для приема данных от других приложений.
 
 \section{Типы портфелей}
 \label{\detokenize{directories:id2}}
+\sphinxAtStartPar
 Типы портфелей служат для разделения аналитик между портфелями. Например для персонального портфеля
 может использоваться один набор статей, а для малого бизнеса совсем другой.
 Тип портфеля учитывается при подборе аналитик (статей, проектов, плательщиков, получателей, персон) в
@@ -535,49 +650,60 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{directories-040-portfolios}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{directories-050-accounts}.png}
 
+\sphinxAtStartPar
 Следует обратить внимание на тип портфеля \DUrole{bbitem}{Универсальный}. В старых версиях этот тип называется \DUrole{bbitem}{00 Не указано}.
 Аналитики этого типа портфеля всегда доступны для использования. Например, статья \DUrole{bbitem}{Перевод}
 принадлежит портфелю \DUrole{bbitem}{Универсальный} и может быть выбрана в любой операции вне зависимости от выбранного счета и
 связанного с ним типа портфеля.
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 По умолчанию, аналитики портфеля \DUrole{bbitem}{Универсальный} доступны для всех счетов
 \end{sphinxadmonition}
 
+\sphinxAtStartPar
 См. также {\hyperref[\detokenize{shared-transactions:chapter-shared-transactions}]{\sphinxcrossref{\DUrole{std,std-ref}{Совместное использование типов портфелей}}}} (\autopageref*{\detokenize{shared-transactions:chapter-shared-transactions}}).
 
 
 \section{Портфели}
 \label{\detokenize{directories:id3}}
+\sphinxAtStartPar
 Справочник Портфели служит для группировки счетов. Каждый портфель имеет свои валюту. Итоги и движения по портфелю
 будут отображаться в указанной валюте исходя из курсов справочника Валюты.
 
 
 \section{Счета}
 \label{\detokenize{directories:id4}}
+\sphinxAtStartPar
 Счетом может быть банковский счет или карта, металлический счет,
 наличные и пр. Каждый счет имеет свою валюту, которая может отличаться от валюты портфеля.
 
+\sphinxAtStartPar
 Идентификатор счета используется при импорте данных, см. {\hyperref[\detokenize{import:chapter-import}]{\sphinxcrossref{\DUrole{std,std-ref}{Импорт данных}}}} (\autopageref*{\detokenize{import:chapter-import}}). Можно указать несколько
 идентификаторов, разделенных запятой. Идентификатором может также служить телефонный номер, короткое имя отправителя SMS
 или идентификатор пакета Push уведомлений.
 
+\sphinxAtStartPar
 Ключевые слова счета также используются при импорте SMS. В случае операций перевода счет, найденный по идентификатору
 является отправителем, а счет найденный по ключевым словам — получателем. Перевод может быть как положительным
 (зачисление), так и отрицательным (списание). Ключевые слова используются только для переводов.
 
+\sphinxAtStartPar
 Например, от банка поступило SMS:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{Karta} \PYG{n}{Visa2900}\PYG{o}{.} \PYG{n}{Proizvedeno} \PYG{n}{snyatie} \PYG{l+m+mf}{2000.00} \PYG{n}{RUR} \PYG{n}{ATM} \PYG{o}{.}\PYG{n}{Ostatok}\PYG{p}{:}\PYG{l+m+mf}{274.26} \PYG{n}{RUR}\PYG{o}{.} \PYG{l+m+mi}{25}\PYG{o}{/}\PYG{l+m+mi}{03}\PYG{o}{/}\PYG{l+m+mi}{14}\PYG{p}{,}\PYG{l+m+mi}{15}\PYG{p}{:}\PYG{l+m+mi}{00}\PYG{p}{:}\PYG{l+m+mf}{00.}
 \end{sphinxVerbatim}
 
+\sphinxAtStartPar
 В этом случае Visa2900 является идентификатором счета \DUrole{bbitem}{Карта}, ATM — ключевой фразой счета \DUrole{bbitem}{Наличные}. При импорте SMS приложение создаст
 две операции — операцию списания для счета Карта и операцию зачисления для счета Наличные.
 
+\sphinxAtStartPar
 Настройка импорта SMS определяет как именно будут распознаваться операции.
-Подробнее о настройках импорта SMS см. {\hyperref[\detokenize{notifications:chapter-notifications}]{\sphinxcrossref{\DUrole{std,std-ref}{Расширенная настройка импорта SMS и push-уведомлений}}}} (\autopageref*{\detokenize{notifications:chapter-notifications}}).
+Подробнее о настройках импорта SMS см. {\hyperref[\detokenize{notifications:chapter-notifications}]{\sphinxcrossref{\DUrole{std,std-ref}{Расширенная настройка импорта SMS и push\sphinxhyphen{}уведомлений}}}} (\autopageref*{\detokenize{notifications:chapter-notifications}}).
 
+\sphinxAtStartPar
 Значения по умолчанию, заданные для проектов, контрагентов и персон, будут использоваться при создании операций. При
 импорте и обмене данными приложение также использует эти значения.
 
@@ -588,35 +714,44 @@ API для приема данных от других приложений.
 
 \section{Статьи}
 \label{\detokenize{directories:id5}}
+\sphinxAtStartPar
 Справочник \DUrole{bbmeta}{Статьи} является основным при классификации операций. Выбранная статья влияет на то, как будет учитываться
 операция на главном экране, в отчетах и списке операций. В зависимости от признаков статья может быть доходной, расходной,
 технической, переводной и архивной.
 
+\sphinxAtStartPar
 Признаки Доходная и Расходная влияют на сортировку статей при редактировании операции. Для доходный операций сначала
 будут отображаться доходные операции, затем расходные и наоборот.
 
+\sphinxAtStartPar
 Статья может не быть ни доходной ни расходной. В этом случае статья считается технической. В качестве примера использования
 технической статьи можно привести операцию изменения кредитного лимита на карте Сбербанка.
 Движение денег для владельца карты в такой операции нет, но сумма на карте увеличивается или уменьшается.
 Для такой операции следует выбрать техническую статью. Подробней  ввод кредитного лимита
 рассмотрен в \sphinxhref{http://qa.bbmoney.biz/ru/index.php?qa=93\&qa\_1=\%D0\%B7\%D0\%B0\%D0\%B4\%D0\%B0\%D1\%82\%D1\%8C-\%D0\%BA\%D1\%80\%D0\%B5\%D0\%B4\%D0\%B8\%D1\%82\%D0\%BD\%D1\%8B\%D0\%B9-\%D0\%BB\%D0\%B8\%D0\%BC\%D0\%B8\%D1\%82-\%D0\%BD\%D0\%BE\%D0\%B2\%D0\%BE\%D0\%B3\%D0\%BE-\%D1\%81\%D1\%87\%D0\%B5\%D1\%82\%D0\%B0-\%D1\%81\%D1\%87\%D0\%B5\%D1\%82\%D0\%B0-\%D0\%BA\%D0\%BE\%D1\%82\%D0\%BE\%D1\%80\%D0\%BE\%D0\%BC\%D1\%83-\%D0\%BE\%D0\%BF\%D0\%B5\%D1\%80\%D0\%B0\%D1\%86\%D0\%B8\%D0\%B8}{вопросах и ответах (Как задать кредитный лимит)}.
 
+\sphinxAtStartPar
 По суммируемым статьям можно увидеть баланс в отчетах \DUrole{bbmeta}{Долги} и \DUrole{bbmeta}{Исполнение плана}.
 
+\sphinxAtStartPar
 Статья может иметь признак исключаемой из портфеля. Такие статьи обычно используются в операциях,
 которые не изменяют остатка внутри портфеля. Если у статьи установлен такой признак,
 то все движения по этой статье не будут влиять на сумму движений денежных средств за период.
 В списке операций итоги по таким статьям выводятся отдельно.
 
+\sphinxAtStartPar
 Ключевые фразы используются для подбора при импорте данных. Можно указать несколько ключевых фраз, разделенных запятой,
 
+\sphinxAtStartPar
 В операции может быть указано несколько статей.
 
+\sphinxAtStartPar
 Справочник автоматически заполняется при установке приложения, однако Вы можете отредактировать его на свой вкус.
 
 
 \section{Плательщики и получатели}
 \label{\detokenize{directories:id7}}
+\sphinxAtStartPar
 Под плательщиками и получателями в программе понимается вторая сторона в денежной операции. Часто это сторону называют
 контрагентом. Без контрагента операции не может быть (за исключением перевода между своими счетами). В операции может быть
 указан только один контрагент.
@@ -624,15 +759,19 @@ API для приема данных от других приложений.
 
 \section{Проекты}
 \label{\detokenize{directories:id8}}
+\sphinxAtStartPar
 Проектом может быть, например, отпуск, строительство дома, стартап и т.п. В операции может быть указано несколько проектов.
 
+\sphinxAtStartPar
 Ключевые фразы используются для подбора при импорте данных. Можно указать несколько ключевых фраз, разделенных запятой.
 
 
 \section{Персоны}
 \label{\detokenize{directories:id9}}
+\sphinxAtStartPar
 В справочник Персоны можно указать членов семьи или сотрудников предприятия. В операции может быть указано несколько персон.
 
+\sphinxAtStartPar
 Ключевые фразы используются для подбора при импорте данных. Можно указать несколько ключевых фраз, разделенных запятой.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{directories-080-projects}.png}
@@ -642,12 +781,16 @@ API для приема данных от других приложений.
 
 \section{Валюты}
 \label{\detokenize{directories:id10}}
+\sphinxAtStartPar
 Сразу после установки приложение содержит практически все мировые валюты. При необходимости, Вы можете добавить в справочник новую валюту.
 
+\sphinxAtStartPar
 Итоговые значения в разрезе портфелей рассчитываются согласно курсам валют. Курсы валют можно указывать вручную или
-загружать из интернет-источников. В зависимости от настроек курсы валют загружаются из следующих источников:
+загружать из интернет\sphinxhyphen{}источников. В зависимости от настроек курсы валют загружаются из следующих источников:
 Центральный Банк РФ (валюты и драг. металлы), Центральный Европейский Банк, банк Канады, Национальный Банк Республики Беларусь,
-Национальный Банк Республики Казахстан, банк Израиля, BitPay (котировки валют относительно BTC), Poloniex (биржа крипто-валют).
+Национальный Банк Республики Казахстан, банк Израиля, BitPay (котировки валют относительно BTC), Poloniex (биржа крипто\sphinxhyphen{}валют).
+
+\sphinxstepscope
 
 
 \chapter{Финансовые операции}
@@ -655,39 +798,46 @@ API для приема данных от других приложений.
 
 \section{Введение}
 \label{\detokenize{transactions:id2}}
+\sphinxAtStartPar
 Любые изменения денежных средств учитываются при помощи операций. Ввод начальных остатков,
 изменение кредитного лимита, списание или зачисление средств, снятие наличных в банкомате или
-что-то другое — все это отражается при помощи операций. Такой
+что\sphinxhyphen{}то другое — все это отражается при помощи операций. Такой
 подход является наиболее гибким и позволяет хранить историю всех движений.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactions-010-transactions}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactions-015-transactions-bottom-sheet-opening}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactions-016-transactions-bottom-sheet-open}.png}
 
+\sphinxAtStartPar
 В списке операций можно использовать фильтр, который находится в подвале. Также доступен быстрый выбор периода.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactions-017-transactions-dates-range-swipe}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactions-018-transactions-dates-range-spinner}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactions-020-transaction}.png}
 
+\sphinxAtStartPar
 Операция может быть доходной или расходной. Специального признака для вида операции нет, достаточно указать
 положительную или отрицательную сумму. Если операция является переводом, то в ней необходимо выбрать статью
 с признаком \DUrole{bbproperty}{Исключаемая из портфеля}. Сразу после установки приложение содержит статью \DUrole{bbitem}{Перевод},
 которую можно использовать при переводах.
 
+\sphinxAtStartPar
 Если операция выполнена в валюте, то следует указать валюту и курс валюты операции. Этот курс может отличаться
-от курса валюты в справочнике валют. Если операция создается в результате импорта SMS или push-уведомлений, то
+от курса валюты в справочнике валют. Если операция создается в результате импорта SMS или push\sphinxhyphen{}уведомлений, то
 курс и валюта определяются автоматически.
 
+\sphinxAtStartPar
 Для подробного финансового учета следует правильно указывать статьи, проекты, плательщиков, получателей и персон.
 
 
 \section{Сплиты}
 \label{\detokenize{transactions:id3}}
-Любую операцию можно разбить на несколько, такая операция называется {\hyperref[\detokenize{glossary:term}]{\sphinxtermref{\DUrole{xref,std,std-term}{сплит}}}}. Использовать сплиты удобно, например,
+\sphinxAtStartPar
+Любую операцию можно разбить на несколько, такая операция называется {\hyperref[\detokenize{glossary:term-0}]{\sphinxtermref{\DUrole{xref,std,std-term}{сплит}}}}. Использовать сплиты удобно, например,
 для классификации покупок в супермаркете, когда часть затрат, предположим, ушла на питание дома, часть — на
 хозяйственные товары. Конечно, это далеко не единственный пример использования сплитов.
 
+\sphinxAtStartPar
 При редактировании сумма первой части сплита автоматически пересчитывается с учетом новых частей так, чтобы
 общая сумма операции оставалась неизменной. Для удаления части сплита, достаточно указать сумму равную 0.
 
@@ -700,6 +850,7 @@ API для приема данных от других приложений.
 
 \section{Планируемые операции}
 \label{\detokenize{transactions:id4}}
+\sphinxAtStartPar
 Операции могут быть фактическими или планируемыми. Планируемая операция отмечается флажком \DUrole{bbproperty}{План}. Такие операции
 учитываются в планируемом движении денежных средств до того момента пока не перестанут быть актуальными.
 Актуальность определяется по дате и времени операции. Планировать можно любые операции: расходы, доходы,
@@ -710,28 +861,33 @@ API для приема данных от других приложений.
 
 \section{Ручные переводы}
 \label{\detokenize{transactions:id5}}
+\sphinxAtStartPar
 Переводы отражаются в приложении двумя операциями. В карточке операции предусмотрен быстрый и удобный способ
 создания перевода вручную. Чтобы создать новый перевод:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 Создайте операцию, укажите сумму.
 
 \item {} 
-Нажмите \DUrole{bbbutton}{Перевод} рядом со счетом-источником.
+\sphinxAtStartPar
+Нажмите \DUrole{bbbutton}{Перевод} рядом со счетом\sphinxhyphen{}источником.
 
 \item {} 
-Укажите счет-получатель.
+\sphinxAtStartPar
+Укажите счет\sphinxhyphen{}получатель.
 
 \item {} 
+\sphinxAtStartPar
 При необходимости отредактируйте остальные реквизиты операции.
 
 \item {} 
+\sphinxAtStartPar
 Сохраните операцию.
 
 \item {} 
+\sphinxAtStartPar
 Приложение автоматически обновит главный экран, сумма переводов отразится в соответствующей строке.
 
 \end{enumerate}
@@ -744,12 +900,14 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionstransfer-050-transaction-edit-save}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionstransfer-070-transfer-result}.png}
 
+\sphinxAtStartPar
 Переводы сохраняются в виде двух связанных между с собой операций. При удалении одной
 операции автоматически удаляется вторая.
 
 
 \section{Постоянные операции}
 \label{\detokenize{transactions:id6}}
+\sphinxAtStartPar
 Многие операции могут повторяться с некоторой периодичностью. Такие операции называются постоянными. Обычно постоянные
 операции используют при планировании, однако такие операции могут быть также и фактическими.
 
@@ -758,9 +916,12 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{recurringtransactions-030-select-transaction}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{recurringtransactions-040-reccuring-transaction}.png}
 
+\sphinxstepscope
+
 
 \chapter{Совместное использование типов портфелей}
 \label{\detokenize{shared-transactions:chapter-shared-transactions}}\label{\detokenize{shared-transactions:id1}}\label{\detokenize{shared-transactions::doc}}
+\sphinxAtStartPar
 Совместное использование типов портфелей предназначено в основном для предпринимателей
 и решает проблему «агентских» платежей. Например, пользователь является
 индивидуальным предпринимателем и имеет два типа портфеля, персональный и малый бизнес.
@@ -771,21 +932,23 @@ API для приема данных от других приложений.
 не удобно для формирования отчетности. Более того для таких расходов необходимо
 использовать аналитики малого бизнеса, которые недоступны для личной карты.
 
+\sphinxAtStartPar
 Для решения этой проблемы в приложении предусмотрен режим совместного использования типов
 портфелей.
 
+\sphinxAtStartPar
 Чтобы включить режим совместного использования отредактируйте тип портфеля.
 Флажок \DUrole{bbproperty}{Совместное использование} предназначен для того, чтобы аналитики данного типа портфеля
 были доступны для всех типов портфелей.
 Флажок \DUrole{bbproperty}{Выделение операций при совместном использовании как агентские} предназначен для того, чтобы:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 В списке операций выделялись как агентские операции те операции, у которых не совпадает тип портфеля счета и статьи;
 
 \item {} 
+\sphinxAtStartPar
 В отчетах тип портфеля определялся не по типу портфеля счета, а по типу портфеля статьи.
 
 \end{enumerate}
@@ -793,6 +956,7 @@ API для приема данных от других приложений.
 
 \section{Пример совместного использования типов портфелей}
 \label{\detokenize{shared-transactions:id2}}
+\sphinxAtStartPar
 Включим режим совместного использования для типа портфеля \DUrole{bbitem}{Малый бизнес}.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionsshared-010-select-directories}.png}
@@ -800,6 +964,7 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionsshared-025-types-of-portfolio}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionsshared-030-types-of-portfolio-business}.png}
 
+\sphinxAtStartPar
 Занесем новую операцию выплаты зарплаты работникам со счета \DUrole{bbitem}{Наличные}, который принадлежит типу портфеля \DUrole{bbitem}{Персональный},
 в интересах типа портфеля \DUrole{bbitem}{Малый бизнес}.
 
@@ -807,12 +972,14 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionsshared-050-transaction-edit}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionsshared-050-transaction-select-salary-start}.png}
 
+\sphinxAtStartPar
 Видно, что теперь доступна статья \DUrole{bbitem}{Выплата зарплаты}, а после ее выбора ниже статьи отображается
 расшифровка, какому типу портфеля принадлежит аналитика.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionsshared-055-transaction-select-salary}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionsshared-057-transaction-select-salary-end}.png}
 
+\sphinxAtStartPar
 Теперь проверим список операций, сводку и отчеты. В списке операций новая операция выделена другим цветом,
 кроме того отдельно рассчитаны итоги. Точно также в сводке итоги рассчитаны отдельно.
 
@@ -820,31 +987,38 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionsshared-070-summary-personal}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionsshared-080-summary-small-business}.png}
 
+\sphinxAtStartPar
 В отчетах мы видим, что такая операция попала в тип портфеля \DUrole{bbitem}{Малый бизнес},
 благодаря чему легче рассчитать баланс.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{transactionsshared-090-turnovers}.png}
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 Чтобы не дублировались расходы, перечисление денежных средств на сумму агентских операций из типа портфеля \DUrole{bbitem}{Малый бизнес} в тип портфеля \DUrole{bbitem}{Персональный} необходимо отражать переводом
 \end{sphinxadmonition}
 
+\sphinxstepscope
 
-\chapter{Настройка счетов для импорта SMS и push-уведомлений}
+
+\chapter{Настройка счетов для импорта SMS и push\sphinxhyphen{}уведомлений}
 \label{\detokenize{account-identities:sms-push}}\label{\detokenize{account-identities:chapter-account-identities}}\label{\detokenize{account-identities::doc}}
 
 \section{Выбор идентификатора}
 \label{\detokenize{account-identities:id1}}
-Перед импортом SMS и Push-уведомлений в карточке счета необходимо указать идентификатор. Это нужно для того,
+\sphinxAtStartPar
+Перед импортом SMS и Push\sphinxhyphen{}уведомлений в карточке счета необходимо указать идентификатор. Это нужно для того,
 чтобы приложение смогло определить, какому счету принадлежит импортируемая операция. Обычно банки
 указывают  в сообщениях последние четыре цифры карты. Именно их лучше всего указать в качестве идентификатора счета.
 
+\sphinxAtStartPar
 Например, в сообщении вида
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{VISA1234}\PYG{p}{:} \PYG{l+m+mf}{08.08}\PYG{o}{.}\PYG{l+m+mi}{13} \PYG{l+m+mi}{14}\PYG{p}{:}\PYG{l+m+mi}{05} \PYG{n}{oplata} \PYG{n}{uslug} \PYG{l+m+mf}{5000.00} \PYG{n}{rub}\PYG{o}{.} \PYG{n}{dostupno} \PYG{l+m+mf}{1000.00} \PYG{n}{rub}\PYG{o}{.}
+\PYG{n}{VISA1234}\PYG{p}{:} \PYG{l+m+mf}{08.08}\PYG{l+m+mf}{.13} \PYG{l+m+mi}{14}\PYG{p}{:}\PYG{l+m+mi}{05} \PYG{n}{oplata} \PYG{n}{uslug} \PYG{l+m+mf}{5000.00} \PYG{n}{rub}\PYG{o}{.} \PYG{n}{dostupno} \PYG{l+m+mf}{1000.00} \PYG{n}{rub}\PYG{o}{.}
 \end{sphinxVerbatim}
 
+\sphinxAtStartPar
 в качестве идентификатора следует выбрать VISA1234. Бывает так, что в сообщении банка номер карты или счета не указан.
 Например в сообщении вида
 
@@ -852,10 +1026,12 @@ API для приема данных от других приложений.
 \PYG{n}{Операция} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{6000} \PYG{n}{руб}\PYG{o}{.} \PYG{n}{Atm}\PYG{o}{\PYGZhy{}}\PYG{n}{msk}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{001}
 \end{sphinxVerbatim}
 
+\sphinxAtStartPar
 невозможно выбрать идентификатор. В этом случае следует указать отправителя сообщения. Для SMS это будет номер или
-имя. Например, Сбербанк отправляет все сообщения с номера 900. Для Push-уведомлений отправителем является идентификатор пакета.
+имя. Например, Сбербанк отправляет все сообщения с номера 900. Для Push\sphinxhyphen{}уведомлений отправителем является идентификатор пакета.
 Например, для РокетБанка это ru.rocketbank.r2d2.
 
+\sphinxAtStartPar
 Чтобы задать идентификатор, откройте карточку счета. Перейдите к полю \DUrole{bbspinner}{Идентификатор счета или карты} счета или карты и выберите его из любого
 сообщения банка. Если Вы хотите указать отправителя, то отредактируйте идентификатор вручную.
 Также укажите настройку для Вашего банка.
@@ -870,109 +1046,127 @@ API для приема данных от других приложений.
 
 \section{Выбор ключевой фразы для перевода}
 \label{\detokenize{account-identities:id2}}
+\sphinxAtStartPar
 Приложение может автоматически создавать переводы на основании сообщения банка. Например, при получении сообщения вида
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{VISA1234}\PYG{p}{:} \PYG{l+m+mf}{08.08}\PYG{o}{.}\PYG{l+m+mi}{13} \PYG{l+m+mi}{14}\PYG{p}{:}\PYG{l+m+mi}{05} \PYG{n}{выдача} \PYG{n}{наличных} \PYG{l+m+mf}{2000.00}\PYG{n}{р}\PYG{o}{.} \PYG{n}{ATM} \PYG{l+m+mi}{10010001} \PYG{n}{Баланс} \PYG{l+m+mf}{500.00} \PYG{n}{rub}\PYG{o}{.}
+\PYG{n}{VISA1234}\PYG{p}{:} \PYG{l+m+mf}{08.08}\PYG{l+m+mf}{.13} \PYG{l+m+mi}{14}\PYG{p}{:}\PYG{l+m+mi}{05} \PYG{n}{выдача} \PYG{n}{наличных} \PYG{l+m+mf}{2000.00}\PYG{n}{р}\PYG{o}{.} \PYG{n}{ATM} \PYG{l+m+mi}{10010001} \PYG{n}{Баланс} \PYG{l+m+mf}{500.00} \PYG{n}{rub}\PYG{o}{.}
 \end{sphinxVerbatim}
 
+\sphinxAtStartPar
 приложение может создать не только списание на 2000.00 руб. со счета VISA1234, но и поступление на счет Наличные. Для этого в карточке
 счета Наличные следует задать ключевые фразы, по которым приложение будет идентифицировать этот счет. Для приведенного примера
 это может быть \sphinxtitleref{выдача наличных} или \sphinxtitleref{ATM}.
 
 \begin{sphinxadmonition}{note}{Примечание:}
-Для автоматического создания переводов необходимо также, чтобы приложение смогло правильно идентифицировать операцию как перевод, см. {\hyperref[\detokenize{notifications:chapter-notifications}]{\sphinxcrossref{\DUrole{std,std-ref}{Расширенная настройка импорта SMS и push-уведомлений}}}} (\autopageref*{\detokenize{notifications:chapter-notifications}}).
+\sphinxAtStartPar
+Для автоматического создания переводов необходимо также, чтобы приложение смогло правильно идентифицировать операцию как перевод, см. {\hyperref[\detokenize{notifications:chapter-notifications}]{\sphinxcrossref{\DUrole{std,std-ref}{Расширенная настройка импорта SMS и push\sphinxhyphen{}уведомлений}}}} (\autopageref*{\detokenize{notifications:chapter-notifications}}).
 \end{sphinxadmonition}
 
+\sphinxAtStartPar
 Чтобы задать ключевую фразу, откройте карточку счета. Перейдите к полю Ключевые слова и выберите его их сообщения банка. Также, при необходимости, можно отредактировать фразы вручную.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{accountidenties-050-open-cash-account}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{accountidenties-060-scroll-to-keywords}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{accountidenties-070-set-keywords}.png}
 
+\sphinxAtStartPar
 Обычно для счетов, по которым приходят уведомления, поле \DUrole{bbproperty}{Ключевые слова} остается пустым и наоборот, в наличных счетах
 остается пустым поле \DUrole{bbproperty}{Номер}. Однако есть случаи, когда для счетов используются оба поля. В качестве примера можно привести настройку
 импорта сообщений \sphinxhref{http://qa.bbmoney.biz/ru/index.php?qa=67\&qa\_1=\%D0\%BA\%D0\%B0\%D0\%BA-\%D0\%BD\%D0\%B0\%D1\%81\%D1\%82\%D1\%80\%D0\%BE\%D0\%B8\%D1\%82\%D1\%8C-\%D0\%B8\%D0\%BC\%D0\%BF\%D0\%BE\%D1\%80\%D1\%82-\%D1\%83\%D0\%B2\%D0\%B5\%D0\%B4\%D0\%BE\%D0\%BC\%D0\%BB\%D0\%B5\%D0\%BD\%D0\%B8\%D0\%B9-\%D1\%80\%D0\%BE\%D0\%BA\%D0\%B5\%D1\%82\%D0\%B1\%D0\%B0\%D0\%BD\%D0\%BA\%D0\%B0\&show=68\#a68}{РокетБанка}.
 
+\sphinxstepscope
 
-\chapter{Расширенная настройка импорта SMS и push-уведомлений}
+
+\chapter{Расширенная настройка импорта SMS и push\sphinxhyphen{}уведомлений}
 \label{\detokenize{notifications:sms-push}}\label{\detokenize{notifications:chapter-notifications}}\label{\detokenize{notifications::doc}}
 
 \section{Алгоритм распознавания уведомлений}
 \label{\detokenize{notifications:id1}}
-Основную роль при импорте SMS и push-уведомлений играет настройка импорта. Именно от нее зависит
+\sphinxAtStartPar
+Основную роль при импорте SMS и push\sphinxhyphen{}уведомлений играет настройка импорта. Именно от нее зависит
 как приложение распознает операцию, будет ли операция доходной, расходной или переводом, нужно ли
 рассчитать баланс и курс операции и т.д.
 
+\sphinxAtStartPar
 Алгоритм распознавания операции показан на рис ниже.
 
 \noindent{\hspace*{\fill}\sphinxincludegraphics[width=0.750\linewidth]{{sms-import-algorithm-ru}.png}\hspace*{\fill}}
 
+\sphinxAtStartPar
 При поступлении нового уведомление приложение пытается определить счет исходя из идентификаторов,
 которые указаны в справочнике \DUrole{bbmeta}{Счета}. Если счет найден и он является единственным, то приложение
 загружает связанную со счетом настройку импорта.
 
+\sphinxAtStartPar
 Далее, на основании настройки выполняется классификация типа операции — доходная, расходная или перевод.
-Для переводов приложение пытается подобрать счет-получатель исходя из ключевых фраз,
+Для переводов приложение пытается подобрать счет\sphinxhyphen{}получатель исходя из ключевых фраз,
 которые указаны в справочнике счетов. Если корреспондирующий счет найден и он является единственным, то
 приложение создаст вторую операцию и перевод будет завершенным.
 
+\sphinxAtStartPar
 Следующий этап — определение аналитик. По соответствующим ключевым фразам приложение пытается подобрать
-контрагента, статью, проект и персону. Если какую-либо из
+контрагента, статью, проект и персону. Если какую\sphinxhyphen{}либо из
 аналитик не удалось подобрать, то используются значения по умолчанию.
 
+\sphinxAtStartPar
 Наконец, приложение вычисляет сумму и баланс после операции. Если баланс по данным приложения не совпадает
 с указанным в тексте уведомления, то могут быть созданы дополнительные операции комиссии, корректировки баланса
 или же будет рассчитан курс операции. Это зависит от контекста и валюты операции.
 
+\sphinxAtStartPar
 Иногда бывает так, что уведомления приходят не в том порядке, как были совершены операции. В этом случае приложение
 будет создавать автоматические корректировки баланса до тех пор, пока порядок не восстановится. После восстановления
 правильного порядка приложение по возможности удалит лишние корректировки.
 
+\sphinxAtStartPar
 Например:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 13.04.2016, 10:00, остаток = 1000 руб.
 
 \end{enumerate}
 
+\sphinxAtStartPar
 Пришли SMS в неправильном порядке (правильный порядок: 4, 3, 5, 2)
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \setcounter{enumi}{1}
 \item {} 
-13.04.2016, 15:00, списание = -50 руб., баланс = 500 руб., \(\rightarrow\) автокорректировка = -450 руб.
+\sphinxAtStartPar
+13.04.2016, 15:00, списание = \sphinxhyphen{}50 руб., баланс = 500 руб., \(\rightarrow\) автокорректировка = \sphinxhyphen{}450 руб.
 
 \item {} 
-13.04.2016, 15:05, списание = -90 руб., баланс = 800 руб., \(\rightarrow\) автокорректировка = +390 руб.
+\sphinxAtStartPar
+13.04.2016, 15:05, списание = \sphinxhyphen{}90 руб., баланс = 800 руб., \(\rightarrow\) автокорректировка = +390 руб.
 
 \item {} 
-13.04.2016, 15:10, списание = -110 руб., баланс = 890 руб., \(\rightarrow\) автокорректировка = +200 руб.
+\sphinxAtStartPar
+13.04.2016, 15:10, списание = \sphinxhyphen{}110 руб., баланс = 890 руб., \(\rightarrow\) автокорректировка = +200 руб.
 
 \item {} 
-13.04.2016, 15:15, списание = -250 руб., баланс = 550 руб., \(\rightarrow\) автокорректировка = -90 руб.
+\sphinxAtStartPar
+13.04.2016, 15:15, списание = \sphinxhyphen{}250 руб., баланс = 550 руб., \(\rightarrow\) автокорректировка = \sphinxhyphen{}90 руб.
 
 \end{enumerate}
 
+\sphinxAtStartPar
 Поступила SMS в правильном порядке
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \setcounter{enumi}{5}
 \item {} 
-13.04.2016, 15:20, списание = -100 руб., баланс = 400 руб., \(\rightarrow\) автокорректировка = 0 руб., автокорректировки 2 - 5 удалены
+\sphinxAtStartPar
+13.04.2016, 15:20, списание = \sphinxhyphen{}100 руб., баланс = 400 руб., \(\rightarrow\) автокорректировка = 0 руб., автокорректировки 2 \sphinxhyphen{} 5 удалены
 
 \end{enumerate}
 
 
 \section{Создание новой настройки импорта}
 \label{\detokenize{notifications:id2}}
+\sphinxAtStartPar
 На момент написания руководства приложение имеет более 160 готовых настроек импорта для банков различных стран.
 Конечно, это не очень много, однако Вы с легкостью можете добавить настройку импорта для своего банка.
 Поверьте, это совсем не сложно.
@@ -981,27 +1175,30 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{notificationsimporttunes-020-select-import-tunes}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{notificationsimporttunes-030-select-new}.png}
 
+\sphinxAtStartPar
 \DUrole{bbproperty}{Наименование} новой настройки может быть любым. Конечно, лучше чтобы название совпадало с
 названием банка или платежной системы.
 
-\DUrole{bbproperty}{Ограничение по отправителю} (номерами или именами отправителей SMS, идентификаторами пакетов push-уведомлений)
+\sphinxAtStartPar
+\DUrole{bbproperty}{Ограничение по отправителю} (номерами или именами отправителей SMS, идентификаторами пакетов push\sphinxhyphen{}уведомлений)
 используется в редких случаях, когда приложение не может корректно определить счет. Оно отрабатывает раньше
 подбора счета, ограничивая выбор счета только среди счетов с подходящей настройкой импорта.
 \begin{description}
-\item[{Например, пусть в приложении занесено два счета}] \leavevmode\begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxlineitem{Например, пусть в приложении занесено два счета}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 РокетБанк, идентификатор ru.rocketbank.r2d2, настройка импорта РокетБанк;
 
 \item {} 
+\sphinxAtStartPar
 ВТБ, идентификатор ***1234, настройка импорта ВТБ.
 
 \end{enumerate}
 
 \end{description}
 
+\sphinxAtStartPar
 РокетБанк, отправитель ru.rocketbank.r2d2, присылает уведомления о зачислении средств в виде
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
@@ -1009,55 +1206,63 @@ API для приема данных от других приложений.
 Пополнение с карты «ВТБ\PYGZhy{}24 ***1234»
 \end{sphinxVerbatim}
 
-В этом уведомлении нет идентификатора счета, зато указан счет-источник перевода. Если ограничение не указано,
+\sphinxAtStartPar
+В этом уведомлении нет идентификатора счета, зато указан счет\sphinxhyphen{}источник перевода. Если ограничение не указано,
 то приложение не может корректно выбрать счет, т.к. подходят оба счета.
 
+\sphinxAtStartPar
 Если задано ограничение ru.rocketbank.r2d2, то приложение по совпадению отправителя и заданного ограничения
 находит настройку импорта РокетБанк. Эта настройка указана только в одном счете, поэтому приложение правильно выбирает
 счет РокетБанк.
 
+\sphinxAtStartPar
 Основные параметры импорта задаются ключевыми фразами. Каждый параметр может содержать несколько ключевых фраз.
 Ключевая фраза может содержать пробелы, между собой ключевые фразы должны быть разделены запятыми.
 
+\sphinxAtStartPar
 \DUrole{bbproperty}{Ключевые фразы для доходов и расходов} определяют знак операции. Если знак операции не определен, то импорт такой операции невозможен.
 
+\sphinxAtStartPar
 \DUrole{bbproperty}{Ключевые фразы для перевода} сигнализируют приложению о том, что нужно создать не одну, а две операции. Направление
 перевода зависит от знака операции.
 \begin{description}
-\item[{Например, пусть:}] \leavevmode\begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxlineitem{Например, пусть:}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 Ключевые фразы для доходов: «пополнение наличными,кредит,поступление»
 
 \item {} 
+\sphinxAtStartPar
 Ключевые фразы для переводов: «пополнение наличными»
 
 \item {} 
+\sphinxAtStartPar
 Идентификатор счета Карта: Visa2900
 
 \item {} 
+\sphinxAtStartPar
 Ключевые фразы счета Наличные: ATM
 
 \end{enumerate}
 
 \end{description}
 
+\sphinxAtStartPar
 От банка поступило SMS:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{Karta} \PYG{n}{Visa2900}\PYG{o}{.} \PYG{n}{Пополнение} \PYG{n}{наличными} \PYG{l+m+mf}{2000.00} \PYG{n}{RUR} \PYG{n}{ATM} \PYG{o}{.}\PYG{n}{Ostatok}\PYG{p}{:}\PYG{l+m+mf}{2740.26} \PYG{n}{RUR}\PYG{o}{.} \PYG{l+m+mi}{25}\PYG{o}{/}\PYG{l+m+mi}{03}\PYG{o}{/}\PYG{l+m+mi}{14}\PYG{p}{,}\PYG{l+m+mi}{15}\PYG{p}{:}\PYG{l+m+mi}{00}\PYG{p}{:}\PYG{l+m+mf}{00.}
 \end{sphinxVerbatim}
 \begin{description}
-\item[{В результате программа создаст две операции:}] \leavevmode\begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxlineitem{В результате программа создаст две операции:}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 Операцию зачисления на счет Карта;
 
 \item {} 
+\sphinxAtStartPar
 Операцию списания со счета Наличные.
 
 \end{enumerate}
@@ -1067,59 +1272,73 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{notificationsimporttunes-040-import-tune}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{notificationsimporttunes-050-import-tune-2}.png}
 
+\sphinxAtStartPar
 Иногда бывает так, что некоторые уведомления содержат баланс, некоторые — нет. Соответствующие ключевые фразы
 подскажут приложению, когда нужно определять баланс, а когда — нет.
 
+\sphinxAtStartPar
 Банковские сообщения о том, что не может быть выполнена та или иная операция носят информационный характер,
 однако содержат ключевые фразы для доходов или расходов. Ключевые фразы в параметре \DUrole{bbproperty}{Пропустить операцию} позволяют
 прервать обработку импорта уведомления.
 \begin{description}
-\item[{Например:}] \leavevmode\begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxlineitem{Например:}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 Ключевые фразы для зачисления: «пополнение наличными,кредит,поступление»
 
 \item {} 
+\sphinxAtStartPar
 Ключевые фразы для неудачной операции: «ошибка»
 
 \item {} 
+\sphinxAtStartPar
 Идентификатор счета Карта: Visa2900
 
 \end{enumerate}
 
 \end{description}
 
+\sphinxAtStartPar
 От банка поступило SMS:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{Karta} \PYG{n}{Visa2900}\PYG{o}{.} \PYG{n}{Пополнение} \PYG{n}{наличными} \PYG{l+m+mf}{2000.00} \PYG{n}{RUR} \PYG{n}{ATM} \PYG{o}{.}\PYG{n}{Ostatok}\PYG{p}{:}\PYG{l+m+mf}{740.26} \PYG{n}{RUR}\PYG{o}{.} \PYG{n}{Произошла} \PYG{n}{ошибка}\PYG{o}{.} \PYG{l+m+mi}{25}\PYG{o}{/}\PYG{l+m+mi}{03}\PYG{o}{/}\PYG{l+m+mi}{14}\PYG{p}{,}\PYG{l+m+mi}{15}\PYG{p}{:}\PYG{l+m+mi}{00}\PYG{p}{:}\PYG{l+m+mf}{00.}
 \end{sphinxVerbatim}
 
+\sphinxAtStartPar
 В результате программа не создаст операцию зачисления средств на счет Карта. И это будет соответствовать действительности,
-т.к. по какой-то причине банкомат вернул деньги, вместо зачисления на счет.
+т.к. по какой\sphinxhyphen{}то причине банкомат вернул деньги, вместо зачисления на счет.
 
+\sphinxAtStartPar
 \DUrole{bbproperty}{Позиция суммы операции среди числовых значений} указывает программе на наиболее вероятное
 расположение суммы. В процессе разбора уведомления приложение примет окончательное решение.
 
+\sphinxAtStartPar
 \DUrole{bbproperty}{Позиция остатка операции среди числовых значений} указывает приложению на наиболее вероятное
 расположение баланса. Также как и в случае с суммой операции, в процессе разбора уведомления
 приложение самостоятельно примет окончательное решение.
 
-Если все уведомления банка не содержат информацию о балансе, то следует указать «-1».
+\sphinxAtStartPar
+Если все уведомления банка не содержат информацию о балансе, то следует указать «\sphinxhyphen{}1».
 
-Если задана позиция баланса, отличная от «-1», то приложение будет игнорировать все сообщения, в которых нет баланса.
+\sphinxAtStartPar
+Если задана позиция баланса, отличная от «\sphinxhyphen{}1», то приложение будет игнорировать все сообщения, в которых нет баланса.
 Тем не менее, при помощи ключевых фраз Вы можете уточнить, в каких случаях надо искать баланс, а когда — нет.
 
+\sphinxAtStartPar
 Сумма операции и значение баланса используются для расчета курса операции, комиссий и автоматических корректировок.
 
+\sphinxAtStartPar
 Для правильной работы программы необходимо, чтобы рядом с суммой была указана валюта. Валюта может быть указана как
 слева от суммы так и справа. Для подбора валюты используются название и ключевые слова, указанные для каждой валюты
 в справочнике Валюты.
 
+\sphinxAtStartPar
 Однако некоторые банки не всегда указывают валюту, например, Росбанк. В этом случае отметьте флажок
 \DUrole{bbproperty}{Иногда валюта платежа может быть не указана}. В этом случае программа будет использовать валюту счета.
+
+\sphinxstepscope
 
 
 \chapter{Импорт данных}
@@ -1127,20 +1346,23 @@ API для приема данных от других приложений.
 
 \section{Настройки импорта уведомлений}
 \label{\detokenize{import:id2}}
+\sphinxAtStartPar
 Настройки импорта уведомлений играют важную роль в процессе импорта уведомлений. Если банк меняет
 структуру уведомлений, то вместе со структурой меняются и настройки импорта. В этом случае Вы можете
-загрузить обновление настроек или отредактировать настройки самостоятельно, см. главу {\hyperref[\detokenize{notifications:chapter-notifications}]{\sphinxcrossref{\DUrole{std,std-ref}{Расширенная настройка импорта SMS и push-уведомлений}}}} (\autopageref*{\detokenize{notifications:chapter-notifications}}).
+загрузить обновление настроек или отредактировать настройки самостоятельно, см. главу {\hyperref[\detokenize{notifications:chapter-notifications}]{\sphinxcrossref{\DUrole{std,std-ref}{Расширенная настройка импорта SMS и push\sphinxhyphen{}уведомлений}}}} (\autopageref*{\detokenize{notifications:chapter-notifications}}).
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{updateimporttunes-010-select-actions}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{updateimporttunes-020-select-import}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{updateimporttunes-030-select-import-sms-tunes}.png}
 
+\sphinxAtStartPar
 Для загрузки обновлений выберите пункт меню \sphinxmenuselection{Действия \(\rightarrow\) Импорт \(\rightarrow\) Настройки импорта SMS и Push}.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{updateimporttunes-040-select-import-tunes-updated}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{updateimporttunes-050-select-import-tunes-new}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{updateimporttunes-060-select-import-tunes-no-updates}.png}
 
+\sphinxAtStartPar
 Приложение покажет доступные обновления. Здесь же можно загрузить настройки для новых банков.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{updateimporttunes-070-select-actions}.png}
@@ -1148,34 +1370,41 @@ API для приема данных от других приложений.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{updateimporttunes-085-select-notifications}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{updateimporttunes-090-check-use_exchange_when_wifi}.png}
 
+\sphinxAtStartPar
 Возможно, что приложение не покажет доступные настройки импорта уведомлений. В этом случае проверьте, что
 в настройках включен обмен настройками импорта SMS.
 
 
 \section{SMS и Push уведомления}
 \label{\detokenize{import:sms-push}}
+\sphinxAtStartPar
 По умолчанию Блиц Бюджет для Android автоматически импортирует SMS и Push уведомления. Тем не менее, в приложении есть возможность
-в любой момент импортировать вручную SMS и push-уведомления. Для этого:
+в любой момент импортировать вручную SMS и push\sphinxhyphen{}уведомления. Для этого откройте справочник \DUrole{bbmeta}{SMS сообщения}, \DUrole{bbmeta}{Push уведомления} или
+специальный диалог импорта:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 Откройте диалог импорта.
 
 \item {} 
+\sphinxAtStartPar
 Выберите счет, для которого нужно импортировать SMS. В счете должны быть указаны идентификатор и настройка импорта SMS.
 
 \item {} 
+\sphinxAtStartPar
 Отметьте галочками SMS для импорта.
 
 \item {} 
+\sphinxAtStartPar
 Нажмите \DUrole{bbbutton}{Импорт}. Кнопка будет доступна, если есть отмеченные SMS.
 
 \item {} 
+\sphinxAtStartPar
 Проверьте результат в списке операций.
 
 \item {} 
+\sphinxAtStartPar
 Проблемы, возникшие при импорте, можно увидеть в журнале событий.
 
 \end{enumerate}
@@ -1192,161 +1421,483 @@ API для приема данных от других приложений.
 
 \section{CSV файлы}
 \label{\detokenize{import:id3}}
-Во время импорта данных из файлов в формате \sphinxhref{https://ru.wikipedia.org/wiki/CSV}{CSV}, помимо операций, могут быть созданы новые
-счета и элементы справочников статей, плательщиков / получателей, проектов и персон.
+\sphinxAtStartPar
+Приложение Блиц Бюджет для Android может загрузить из файлов в формате \sphinxhref{https://ru.wikipedia.org/wiki/CSV}{CSV} операции и справочники
+\DUrole{bbmeta}{Счета}, \DUrole{bbmeta}{Статьи}, \DUrole{bbmeta}{Плательщики и получатели}, \DUrole{bbmeta}{Проекты}, \DUrole{bbmeta}{Персоны} и \DUrole{bbmeta}{Места}.
+Справочники могут быть загружены как из файла с операциями, так и из отдельного
+файла.
 
-Программа автоматически определяет разделитель колонок, который может быть одним из символов «;», «,», «\textbar{}», «/», «».
-Файл должен быть в кодировке UTF-8.
+\sphinxAtStartPar
+Программа автоматически определяет разделитель колонок, который может быть одним из символов «;», «,», «|», «/», «\textbackslash{}».
 
-Первая строка файла должна содержать имена колонок на английском языке, регистр не имеет значения. Помимо этого, имена
-колонок могут быть заданы в любой другой строке, тогда они будут иметь силу для последующих строк. Поддерживаются имена:
+\sphinxAtStartPar
+Первая строка файла должна содержать имена колонок, регистр не имеет значения. Помимо этого, имена
+колонок могут быть заданы в любой другой строке, тогда они будут иметь силу для последующих строк.
+
+\sphinxAtStartPar
+Имена колонок должны быть в списке имен, которые поддерживает приложение. Колонка, имя которой не поддерживается
+приложением, игнорируется. Для справочников и операций списки различаются, и приведены ниже.
+
+
+\subsection{Справочники}
+\label{\detokenize{import:id4}}
+\sphinxAtStartPar
+Возможен импорт справочников \DUrole{bbmeta}{Счета}, \DUrole{bbmeta}{Статьи}, \DUrole{bbmeta}{Плательщики и получатели}, \DUrole{bbmeta}{Проекты}, \DUrole{bbmeta}{Персоны} и \DUrole{bbmeta}{Места}.
+Поддерживается импорт древовидных данных, для этого полный путь к элементу должна быть указан в колонке Name с разделителем «/», «\textbackslash{}» или другим.
+Сам разделитель можно указать в диалоге импорта. Например, из строки:
+\begin{quote}
+
+\sphinxAtStartPar
+Расходы/Прочие
+\end{quote}
+
+\sphinxAtStartPar
+будут созданы группа Расходы и элемент Прочие, принадлежащий группе Расходы.
+
+\sphinxAtStartPar
+Поддерживаются имена колонок (если в таблице указано несколько имен, то в файле должно
+использоваться только одно из перечисленных в таблице):
 
 
 \begin{savenotes}\sphinxattablestart
 \centering
 \sphinxcapstartof{table}
 \sphinxthecaptionisattop
-\sphinxcaption{Формат CSV файла}\label{\detokenize{import:id5}}
+\sphinxcaption{Формат CSV файла с элементами справочника}\label{\detokenize{import:id8}}
 \sphinxaftertopcaption
 \begin{tabular}[t]{|\X{7}{42}|\X{5}{42}|\X{30}{42}|}
 \hline
 \sphinxstyletheadfamily 
-Имена
+\sphinxAtStartPar
+Имя
 &\sphinxstyletheadfamily 
+\sphinxAtStartPar
 Обязательный
 &\sphinxstyletheadfamily 
+\sphinxAtStartPar
 Комментарий
 \\
 \hline
-id
+\sphinxAtStartPar
+Name
 &
-Нет
-&
-Идентификатор операции, если указан, то будет выполнен поиск существующей операции
-\\
-\hline
-account
-&
+\sphinxAtStartPar
 Да
 &
-Наименование или номер счета
+\sphinxAtStartPar
+Имя справочника
 \\
 \hline
-date
+\sphinxAtStartPar
+Comment, Note
 &
+\sphinxAtStartPar
 Нет
 &
-Дата в одном из форматов: «dd’d’MM’d’yyyy» (например, 01d01d2017), «yyyy’d’MM’d’dd» (например, 2017d01d01), «yyyyMMddHHmmss», «yyyyMMddHHmm», «yyyyMMdd», «yyyy-MM-dd HH:mm:ss», «yyyy-MM-dd HH:mm», «yyyy-MM-dd», «dd-MM-yyyy HH:mm:ss», «dd-MM-yyyy HH:mm», «dd-MM-yyyy», «dd.MM.yyyy HH:mm:ss», «dd.MM.yyyy HH:mm», «dd.MM.yyyy»
-\\
-\hline
-time
-&
-Нет
-&
-Время в одном из форматов: «HH:mm:ss», «HH:mm», «HHmmss», «HHmm»
-\\
-\hline
-amount
-&
-Да
-&
-Сумма операции (может содержать валюту и разделители групп разрядов), десятичный разделитель может быть точкой или запятой
-\\
-\hline
-rate, exchange rate
-&
-Нет
-&
-Курс операции
-\\
-\hline
-currency
-&
-Нет
-&
-Валюта операции, если не указано, то используется в валюта счета
-\\
-\hline
-payer, payee, contractor
-&
-Нет
-&
-Наименование плательщика или получателя платежа
-\\
-\hline
-category
-&
-Нет
-&
-Наименование категории, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки
-\\
-\hline
-project
-&
-Нет
-&
-Наименование проекта, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки
-\\
-\hline
-person, unit
-&
-Нет
-&
-Наименование персоны/подразделения, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки
-\\
-\hline
-notes, note
-&
-Нет
-&
+\sphinxAtStartPar
 Примечание
 \\
 \hline
-planned, plan
+\sphinxAtStartPar
+Currency
 &
+\sphinxAtStartPar
 Нет
 &
-Фактическая (0), или плановая (1) операция. Если колонка не задана, создается фактическая операция
+\sphinxAtStartPar
+Валюта (только для счетов)
 \\
 \hline
-detail, split
+\sphinxAtStartPar
+Balance
 &
+\sphinxAtStartPar
 Нет
 &
-Операция (0), или детализация операции (1). По умолчанию используется значение 0.
+\sphinxAtStartPar
+Начальный остаток (только для счетов)
 \\
 \hline
 \end{tabular}
 \par
 \sphinxattableend\end{savenotes}
 
+\sphinxAtStartPar
+Если строка не содержит обязательных колонок, или значение обязательной колонки не задано, то такая строка будет пропущена.
+
+\sphinxAtStartPar
+Пример файла:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Name}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Comment}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Расходы}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Расходы}\PYG{l+s+s2}{\PYGZbs{}}\PYG{l+s+s2}{Прочие}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Расходы}\PYG{l+s+s2}{\PYGZbs{}}\PYG{l+s+s2}{Прочие}\PYG{l+s+s2}{\PYGZbs{}}\PYG{l+s+s2}{Ремонт}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Прочий ремонт}\PYG{l+s+s2}{\PYGZdq{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Операции}
+\label{\detokenize{import:id5}}
+\sphinxAtStartPar
+Возможен импорт фактических и плановых операций, сплитов, а также переводов. В последнем случае из одной
+строки файла создаются две операции. Названия элементов справочников можно указывать с учетом иерархии, например:
+\begin{quote}
+
+\sphinxAtStartPar
+Расходы/Прочие
+\end{quote}
+
+\sphinxAtStartPar
+При импорте операции с такой категорией дополнительно будут найдены или созданы группа Расходы и элемент Прочие,
+принадлежащий группе Расходы.
+
+\sphinxAtStartPar
+По\sphinxhyphen{}умолчанию, без изменений CSV файла поддерживается импорт файлов, созданных в приложениях:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+AbilityCash
+
+\item {} 
+\sphinxAtStartPar
+AnMoney
+
+\item {} 
+\sphinxAtStartPar
+Bluecoins
+
+\item {} 
+\sphinxAtStartPar
+Financisto
+
+\item {} 
+\sphinxAtStartPar
+Дзен\sphinxhyphen{}мани
+
+\item {} 
+\sphinxAtStartPar
+Handy Money
+
+\end{itemize}
+
+\sphinxAtStartPar
+Поддерживаются имена колонок (если в таблице указано несколько имен, то в файле должно
+использоваться только одно из перечисленных в таблице):
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\sphinxcapstartof{table}
+\sphinxthecaptionisattop
+\sphinxcaption{Формат CSV файла с операциями}\label{\detokenize{import:id9}}
+\sphinxaftertopcaption
+\begin{tabular}[t]{|\X{7}{42}|\X{5}{42}|\X{30}{42}|}
+\hline
+\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Имя
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Обязательный
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Комментарий
+\\
+\hline
+\sphinxAtStartPar
+id
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Идентификатор операции, если указан, то будет выполнен поиск существующей операции
+\\
+\hline
+\sphinxAtStartPar
+account, incomeAccountName, Income account, Счёт, Счет
+&
+\sphinxAtStartPar
+Да
+&
+\sphinxAtStartPar
+Наименование или номер счета
+\\
+\hline
+\sphinxAtStartPar
+date, Дата
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Дата в одном из форматов: «dd’d’MM’d’yyyy» (например, 01d01d2017), «yyyy’d’MM’d’dd» (например, 2017d01d01), «yyyyMMddHHmmss», «yyyyMMddHHmm», «yyyyMMdd», «yyyy\sphinxhyphen{}MM\sphinxhyphen{}dd HH:mm:ss», «yyyy\sphinxhyphen{}MM\sphinxhyphen{}dd HH:mm», «yyyy\sphinxhyphen{}MM\sphinxhyphen{}dd», «dd\sphinxhyphen{}MM\sphinxhyphen{}yyyy HH:mm:ss», «dd\sphinxhyphen{}MM\sphinxhyphen{}yyyy HH:mm», «dd\sphinxhyphen{}MM\sphinxhyphen{}yyyy», «dd.MM.yyyy HH:mm:ss», «dd.MM.yyyy HH:mm», «dd.MM.yyyy»
+\\
+\hline
+\sphinxAtStartPar
+time
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Время в одном из форматов: «HH:mm:ss», «HH:mm», «HHmmss», «HHmm»
+\\
+\hline
+\sphinxAtStartPar
+amount, income, Income amount, Сумма
+&
+\sphinxAtStartPar
+Да
+&
+\sphinxAtStartPar
+Сумма операции (может содержать валюту и разделители групп разрядов), десятичный разделитель может быть точкой или запятой, может быть суммой в валюте операции или суммой в валюте счета
+\\
+\hline
+\sphinxAtStartPar
+original amount, Сумма в валюте операции
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Сумма в валюте операции, если указана, то курс операции вычисляется автоматически
+\\
+\hline
+\sphinxAtStartPar
+rate, exchange rate, Обменный курс
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Курс операции
+\\
+\hline
+\sphinxAtStartPar
+currency, incomeCurrencyShorttitle, Валюта
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Валюта операции, если не указано, то используется в валюта счета, может быть валютой счета или валютой операции
+\\
+\hline
+\sphinxAtStartPar
+original currency, Валюта операции
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Валюта операции
+\\
+\hline
+\sphinxAtStartPar
+payer, payee, contractor
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Наименование плательщика или получателя платежа
+\\
+\hline
+\sphinxAtStartPar
+category, categoryName, Категория
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Наименование категории
+\\
+\hline
+\sphinxAtStartPar
+project
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Наименование проекта
+\\
+\hline
+\sphinxAtStartPar
+person, unit
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Наименование персоны/подразделения
+\\
+\hline
+\sphinxAtStartPar
+location, place
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Наименование места
+\\
+\hline
+\sphinxAtStartPar
+notes, note, comment, Примечания
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Примечание
+\\
+\hline
+\sphinxAtStartPar
+planned, plan
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Фактическая (0), или плановая (1) операция. Если колонка не задана, создается фактическая операция
+\\
+\hline
+\sphinxAtStartPar
+detail, split
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Операция (0), или детализация операции (1). По умолчанию используется значение 0
+\\
+\hline
+\sphinxAtStartPar
+Тип
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Знак операции, если не указан, знак определяется суммой
+\\
+\hline
+\sphinxAtStartPar
+Х
+&
+\sphinxAtStartPar
+Х
+&
+\sphinxAtStartPar
+Вторая операция из одной строки
+\\
+\hline
+\sphinxAtStartPar
+outcomeAccountName, Expense account
+&
+\sphinxAtStartPar
+Да
+&
+\sphinxAtStartPar
+Счет
+\\
+\hline
+\sphinxAtStartPar
+outcome, Expense amount
+&
+\sphinxAtStartPar
+Да
+&
+\sphinxAtStartPar
+Сумма
+\\
+\hline
+\sphinxAtStartPar
+outcomeCurrencyShorttitle
+&
+\sphinxAtStartPar
+Нет
+&
+\sphinxAtStartPar
+Валюта
+\\
+\hline
+\end{tabular}
+\par
+\sphinxattableend\end{savenotes}
+
+\sphinxAtStartPar
 Если строка не содержит обязательных колонок, или значение обязательной колонки не задано, то такая
 строка будет пропущена.
 
+\sphinxAtStartPar
 Если строка содержит не все обязательные колонки, но при этом задано значение обязательной колонки amount, то такая
 строка считается детализацией операции и приложение создает сплит.
 
+\sphinxAtStartPar
+Пример файла, сформированного в приложении AbilityCash:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Executed}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Locked}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Date}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Balance correction}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Income account}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Income amount}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Income balance}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Expense account}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Expense amount}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Expense balance}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Comment}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{+}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{p}{;}\PYG{l+m+mf}{01.11}\PYG{l+m+mf}{.2021} \PYG{l+m+mi}{09}\PYG{p}{:}\PYG{l+m+mi}{00}\PYG{p}{:}\PYG{l+m+mi}{00}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{+}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Card 1234}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+m+mi}{500}\PYG{p}{;}\PYG{l+m+mi}{100}\PYG{p}{;}\PYG{p}{;}\PYG{p}{;}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Some notes}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Пример файла, сформированного в приложении Bluecoins:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Тип,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Дата}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Установить время}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Название}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Сумма}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Валюта}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Обменный курс}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Название группы категорий}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Категория}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Счёт}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Примечания}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Ярлыки}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Статус}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Доход,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{2021\PYGZhy{}11\PYGZhy{}01 11:00:00}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{11:00}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{500,0}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{UAH}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{1,0000000000}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Работа}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Разное}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Card}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}  \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{,Нет}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Пример файла со сплитами без колонки detail:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{id}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{date}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{time}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{account}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{amount}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{currency}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{original amount}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{original currency}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{parent}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{payee}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{location}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{project}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{note}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{1213}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{2021\PYGZhy{}11\PYGZhy{}01}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{04:04:00}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Card}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{}800.00}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{SEK}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{SPLIT}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Магазин}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{No project}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{1214}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZti{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Card}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{}400.08}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{SEK}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Food}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Магазин}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{No project}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Еда}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{1215}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZti{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Card}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{}400.68}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{SEK}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Goods}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Магазин}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{No project}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Хозтовары}\PYG{l+s+s2}{\PYGZdq{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Пример файла со сплитами с колонкой detail:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{id}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{date}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{time}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{account}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{amount}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{currency}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{original amount}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{original currency}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{category}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{parent}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{payee}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{location}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{project}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{note}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{detail}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{1213}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{2021\PYGZhy{}11\PYGZhy{}01}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{04:04:00}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Card}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{}800.00}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{SEK}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{SPLIT}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Магазин}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{No project}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{0}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{1214}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{2021\PYGZhy{}11\PYGZhy{}01}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Card}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{}400.00}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{SEK}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Food}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Магазин}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{No project}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Еда}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{1}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{1215}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{2021\PYGZhy{}11\PYGZhy{}01}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Card}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{}400.00}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{SEK}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Goods}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Магазин}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{No project}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Хозтовары}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{;}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{1}\PYG{l+s+s2}{\PYGZdq{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
 Для импорта:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 Откройте диалог импорта.
 
 \item {} 
+\sphinxAtStartPar
 Выберите файл для импорта.
 
 \item {} 
+\sphinxAtStartPar
 Нажмите \DUrole{bbbutton}{Далее} и отметьте галочками строки для импорта.
 
 \item {} 
+\sphinxAtStartPar
 Нажмите \DUrole{bbbutton}{Импорт}. Кнопка будет доступна, если есть отмеченные строки.
 
 \item {} 
+\sphinxAtStartPar
 Проверьте результат в списке операций.
 
 \item {} 
+\sphinxAtStartPar
 Проблемы, возникшие при импорте, можно увидеть в журнале событий.
 
 \end{enumerate}
@@ -1356,28 +1907,33 @@ detail, split
 
 
 \section{OFX файлы}
-\label{\detokenize{import:id4}}
+\label{\detokenize{import:id6}}
+\sphinxAtStartPar
 Блиц Бюджет для Android поддерживает импорт \sphinxhref{https://en.wikipedia.org/wiki/Open\_Financial\_Exchange}{OFX} файлов. Поддерживается спецификация начиная с версии 2.1.1. Для импорта:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 Откройте диалог импорта.
 
 \item {} 
+\sphinxAtStartPar
 Выберите файл для импорта.
 
 \item {} 
+\sphinxAtStartPar
 Нажмите \DUrole{bbbutton}{Далее} и отметьте галочками строки для импорта.
 
 \item {} 
+\sphinxAtStartPar
 Нажмите \DUrole{bbbutton}{Импорт}. Кнопка будет доступна, если есть отмеченные строки.
 
 \item {} 
+\sphinxAtStartPar
 Проверьте результат в списке операций.
 
 \item {} 
+\sphinxAtStartPar
 Проблемы, возникшие при импорте, можно увидеть в журнале событий.
 
 \end{enumerate}
@@ -1386,37 +1942,118 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{ofximport-040-select-file-and-options}.png}
 
 
+\section{Электронные чеки}
+\label{\detokenize{import:id7}}
+\sphinxAtStartPar
+Блиц Бюджет для Android поддерживает импорт электронных чеков. Возможен импорт чеков:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+В формате JSON из приложения Проверка чеков ФНС России.
+
+\item {} 
+\sphinxAtStartPar
+http\sphinxhyphen{}ссылки на чеки в формате HTML в сервисе platformaofd.ru (авторизация не требуется).
+
+\item {} 
+\sphinxAtStartPar
+Из текста электронного письма Ozon с чеком. Возможно объединение чеков по одному заказу.
+
+\item {} 
+\sphinxAtStartPar
+Из QR кода на бумажном чеке. В этом случае будет создана операция на сумму и дату, указанные в QR коде. QR код необходимо сканировать и распознать в любом стороннем приложении.
+
+\item {} 
+\sphinxAtStartPar
+В формате XML из личного кабинета на cabinet.tax.gov.ua для Украины.
+
+\end{enumerate}
+
+\sphinxAtStartPar
+Для импорта из сторонних приложений:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Откройте стороннее приложение.
+
+\item {} 
+\sphinxAtStartPar
+Выберите нужные данные, нажмите Поделиться / Отправить / Передать или другую подобную по смыслу кнопку.
+
+\item {} 
+\sphinxAtStartPar
+В качестве получателя укажите Блиц Бюджет для Android.
+
+\item {} 
+\sphinxAtStartPar
+Далее следуйте инструкциям на экране.
+
+\end{enumerate}
+
+\sphinxAtStartPar
+Для импорта из буфера обмена:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Откройте диалог импорта.
+
+\item {} 
+\sphinxAtStartPar
+Скопируйте данные из буфера обмена в диалог.
+
+\item {} 
+\sphinxAtStartPar
+Далее следуйте инструкциям на экране.
+
+\end{enumerate}
+
+\sphinxAtStartPar
+Проблемы, возникшие при импорте, можно увидеть в журнале событий.
+
+\sphinxstepscope
+
+
 \chapter{Коллективная работа}
 \label{\detokenize{teamwork:chapter-teamwork}}\label{\detokenize{teamwork:id1}}\label{\detokenize{teamwork::doc}}
 
 \section{Введение}
 \label{\detokenize{teamwork:id2}}
+\sphinxAtStartPar
 Блиц Бюджет для Android позволяет вести совместный учет доходов и расходов. Вот несколько примеров:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 Полная синхронизация между устройствами;
 
 \item {} 
+\sphinxAtStartPar
 Совместный финансовый учет только по выбранным счетам, проектам, персонам, контрагентам или даже статьям;
 
 \item {} 
+\sphinxAtStartPar
 Сбор данных на одном устройстве, в случае, когда, скажем, родители отслеживают расходы детей.
 
 \end{enumerate}
 
+\sphinxAtStartPar
 Любое устройство, на котором установлена программа, может стать узлом обмена (см. {\hyperref[\detokenize{glossary:term-1}]{\sphinxtermref{\DUrole{xref,std,std-term}{узел обмена}}}}) и получать или передавать изменения. Каждый узел обмена может обмениваться информацией с другими узлами.
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 Версия Free может передавать, но не может принимать сообщения. Версия Pro не содержит ограничений.
 \end{sphinxadmonition}
 
+\sphinxAtStartPar
 Программа имеет гибкие настройки, регулирующие процесс обмена. Так например, можно разрешить принимать только новые операции от одного узла, и запретить принимать измененные. Для каждого узла обмена действуют свои настройки.
 
+\sphinxAtStartPar
 В целях повышения безопасности все сообщения между узлами шифруются, для каждого узла можно задать свой пароль, который будет использоваться для шифрования / дешифрования передаваемой информации.
 
+\sphinxAtStartPar
 Для совместной работы не требуется учетная запись Dropbox или других сервисов.
 
 
@@ -1425,24 +2062,27 @@ detail, split
 
 \subsection{Выбор исходных данных}
 \label{\detokenize{teamwork:id4}}
+\sphinxAtStartPar
 Предположим, что Алиса и Боб хотят вести совместный финансовый учет. Предварительно, им нужно определиться какая ситуация для них ближе:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 В начале работы у Алисы и Боба будут одинаковые данные.
 
 \item {} 
+\sphinxAtStartPar
 Алиса и/или Боб уже давно ведут учет и не хотят объединять все данные, а планируют синхронизировать лишь отдельные счета.
 
 \end{enumerate}
 
+\sphinxAtStartPar
 В первом случае Алиса или Боб (для определенности пусть это будет Алиса) делает резервную копию данных. Затем Алиса передает резервную
 копию данных Бобу и тот восстанавливает ее у себя на устройстве. Теперь у Алисы и Боба идентичные базы данных. Для корректной работы обмена
 необходимо, что идентификаторы баз данных различались, поэтому Боб выполняет дополнительную сервисную операцию, формирует новый идентификатор на своем устройстве.
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 После восстановления данных из резервной копии для нового узла обмена необходимо сформировать новый идентификатор.
 \end{sphinxadmonition}
 
@@ -1452,13 +2092,16 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{exchangenewid-030-select-actions}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{exchangenewid-040-select-new-id}.png}
 
+\sphinxAtStartPar
 Теперь Алиса и Боб готовы к настройке обмена.
 
+\sphinxAtStartPar
 Во втором случае никаких предварительных действий совершать не нужно. Алиса и Боб сразу готовы к настройке обмена.
 
 
 \subsection{Обмен идентификаторами}
 \label{\detokenize{teamwork:id5}}
+\sphinxAtStartPar
 Для работы обмена Алисе и Бобу необходимо обменяться идентификаторами узлов обмена и сохранить их в справочнике узлов.
 Для этого Алиса открывает справочник \DUrole{bbmeta}{Узлы обмена} используя меню \sphinxmenuselection{Действия \(\rightarrow\) Обмен данными \(\rightarrow\)  Узлы обмена}. В справочнике
 узлов обмена Алиса выбирает пункт меню \sphinxmenuselection{Отправить идентификатор} и отправляет идентификатор своего узла
@@ -1471,6 +2114,7 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{exchangesendid-040-select-share-id}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{exchangesendid-050-mail-id}.png}
 
+\sphinxAtStartPar
 Боб принимает сообщение, создает новый узел обмена, указывает название и копирует полученный идентификатор. После этого отправляет свой идентификатор Алисе.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{exchangenewnode-005-select-actions}.png}
@@ -1479,11 +2123,13 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{exchangenewnode-030-click-fab}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{exchangenewnode-040-setup_node}.png}
 
+\sphinxAtStartPar
 Алиса, в свою очередь, принимает сообщение Боба и создает новый узел обмена с идентификатором, который указан в сообщении Боба.
 
 
 \section{Включение обмена}
 \label{\detokenize{teamwork:id6}}
+\sphinxAtStartPar
 После обмена идентификаторами Алиса и Боб включают в настройках синхронизацию данных между узлами обмена.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{exchangeenable-005-select-actions}.png}
@@ -1491,120 +2137,138 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{exchangeenable-025-select-exchange}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{exchangeenable-030-check-use-exchange}.png}
 
+\sphinxAtStartPar
 Теперь все изменения, которые делает Алиса отправляются Бобу и наоборот. Приложение синхронизирует изменения
-автоматически примерно один раз в пять минут при наличии Wi-Fi или мобильного интернета. Функция синхронизации
-автоматически отключается, если нет интернет-соединения или во время сна устройства. Благодаря этому
+автоматически примерно один раз в пять минут при наличии Wi\sphinxhyphen{}Fi или мобильного интернета. Функция синхронизации
+автоматически отключается, если нет интернет\sphinxhyphen{}соединения или во время сна устройства. Благодаря этому
 экономится трафик и электроэнергия аккумулятора.
 
+\sphinxAtStartPar
 Вот точный алгоритм запуска обмена:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 После запуска обмена программа проверяет включен экран телефона или нет.
 \begin{enumerate}
-\def\theenumii{\arabic{enumii}}
-\def\labelenumii{\theenumii .}
-\makeatletter\def\p@enumiii{\p@enumii \theenumii .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumii}{enumiii}{}{.}%
 \item {} 
-Если экран включен, то следующее время срабатывания - через 5 мин. от текущего.
+\sphinxAtStartPar
+Если экран включен, то следующее время срабатывания \sphinxhyphen{} через 5 мин. от текущего.
 
 \item {} 
-Если экран выключен, то следующее время срабатывания - через 60 мин. от текущего.
+\sphinxAtStartPar
+Если экран выключен, то следующее время срабатывания \sphinxhyphen{} через 60 мин. от текущего.
 
 \item {} 
+\sphinxAtStartPar
 Оба будильника не имеют права будить телефон.
 
 \end{enumerate}
 
 \item {} 
+\sphinxAtStartPar
 При открытии главного экрана программы выполняется проверка на следующее время срабатывания будильника.
 \begin{enumerate}
-\def\theenumii{\arabic{enumii}}
-\def\labelenumii{\theenumii .}
-\makeatletter\def\p@enumiii{\p@enumii \theenumii .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumii}{enumiii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 Если следующее время срабатывания находится в пределах 10 мин. от текущего, то ничего не происходит.
 
 \item {} 
+\sphinxAtStartPar
 Если следующее время срабатывания находится в пределах более 10 мин. от текущего, то запускается обмен в фоновом режиме и далее программа определяет следующее время срабатывания по п. 1
 
 \end{enumerate}
 
 \item {} 
+\sphinxAtStartPar
 Если сети нет, то обмен отключается полностью до следующего появления сети.
 
 \end{enumerate}
 
+\sphinxAtStartPar
 При необходимости всегда можно вызвать синхронизацию вручную.
 
 
 \section{Как работает обмен данными}
 \label{\detokenize{teamwork:id7}}
+\sphinxAtStartPar
 Приложение Блиц Бюджет для Android ведет журнал изменений справочников и операций. Каждому узлу обмена отправляются изменения,
 которые произошли либо с момента получения предыдущего пакета изменений, либо с момента создания узла.
-Важна последовательность обмена: Алиса отправляет сообщение Бобу, Боб - Алисе и т.д. Если узел обмена Алисы не
+Важна последовательность обмена: Алиса отправляет сообщение Бобу, Боб \sphinxhyphen{} Алисе и т.д. Если узел обмена Алисы не
 получит ответ Боба, то не будет отправлять следующий пакет изменений до тех пор, пока не придет ответ.
 
+\sphinxAtStartPar
 Синхронизация всех элементов справочников выполняется в несколько этапов:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 синхронизация по уникальному идентификатору;
 
 \item {} 
+\sphinxAtStartPar
 синхронизация по ключевым фразам или коду;
 
 \item {} 
+\sphinxAtStartPar
 синхронизация по наименованию.
 
 \end{enumerate}
 
+\sphinxAtStartPar
 Каждый следующий шаг синхронизации выполняется в случае, если предыдущий закончился неудачей. Если элемент
 не удалось найти, то программа создает новый, используя при этом значения по умолчанию, указанные в настройке узла.
 
+\sphinxAtStartPar
 Синхронизация операций выполняется только по уникальному идентификатору.
 
 
 \section{Расширенная настройка}
 \label{\detokenize{teamwork:id8}}
+\sphinxAtStartPar
 Алиса и Боб могут ограничить объем передаваемой информации. Есть два варианта задания ограничений:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 разрешенная область данных;
 
 \item {} 
+\sphinxAtStartPar
 запрещенная область данных.
 
 \end{enumerate}
 
+\sphinxAtStartPar
 Области задаются в справочнике \DUrole{bbmeta}{Области данных}. Можно указать любую комбинацию счетов, статей, плательщиков и получателей,
 проектов и персон.
 
+\sphinxAtStartPar
 В случае, если один и тот же элемент справочника одновременно попадает в разрешенную и запрещенную область, то более
 высокий приоритет имеет запрещенная область.
 
+\sphinxAtStartPar
 На основании областей данных формируется список операций, постоянных операций и справочников для передачи узлу обмена.
 
+\sphinxAtStartPar
 Алиса и Боб могут ограничить объем принимаемой информации. Можно полностью отказаться принимать новые, измененные или удаленные объекты.
 Или можно конкретизировать какой тип объектов не принимать в случае создания, изменения или удаления.
 
 
 \section{Настройка передачи данных}
 \label{\detokenize{teamwork:id9}}
+\sphinxAtStartPar
 Для повышения безопасности передачи данных следует указать пароль, которым будут зашифрованы сообщения между узлами обмена. Пароль Алисы должен совпадать с паролем Боба.
 
-Также Алисе и Бобу следует указать какой вид коммуникаций использовать для обмена сообщениями: Wi-Fi и/или мобильный интернет.
+\sphinxAtStartPar
+Также Алисе и Бобу следует указать какой вид коммуникаций использовать для обмена сообщениями: Wi\sphinxhyphen{}Fi и/или мобильный интернет.
 
 
 \section{Значения по умолчанию}
 \label{\detokenize{teamwork:id10}}
+\sphinxAtStartPar
 Справочники на устройствах Алисы и Боба могут не совпадать между собой. Например, Боб уже давно
 ведет финансовый учет, а Алиса только что установила приложение. Боб может создать операцию и указать в ней, например,
 проект, которого нет в узле обмена Алисы. При поступлении сообщения Боба, приложение на устройстве Алисы
@@ -1614,28 +2278,34 @@ detail, split
 
 \section{Перенос данных на новый телефон с сохранением настроек обмена}
 \label{\detokenize{teamwork:id11}}
+\sphinxAtStartPar
 В случае работающего обмена, переход на новый телефон следует выполнять в порядке:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 На старом телефоне в настройках выключить синхронизацию.
 
 \item {} 
+\sphinxAtStartPar
 Сделать резервную копию.
 
 \item {} 
+\sphinxAtStartPar
 Восстановить резервную копию на новом телефоне.
 
 \item {} 
+\sphinxAtStartPar
 Включить синхронизацию на новом телефоне.
 
 \end{enumerate}
 
+\sphinxstepscope
+
 
 \chapter{Отчеты}
 \label{\detokenize{reports:chapter-reports}}\label{\detokenize{reports:id1}}\label{\detokenize{reports::doc}}
+\sphinxAtStartPar
 Любой отчет можно открыть из панели быстрых кнопок. Каждый отчет имеет возможность фильтрации,
 группировки исходных данных и сохранения выбранных параметров. Функции
 управления отчетом располагаются в нижней части экрана. При открытии отчета из списка или
@@ -1647,14 +2317,17 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reports-026-report-bottom-sheet-open}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reports-027-report-select-group}.png}
 
+\sphinxAtStartPar
 Из отчета всегда можно открыть исходные операции, чтобы понять из чего состоит та или иная цифра.
 
+\sphinxAtStartPar
 Также для отчетов можно создавать ярлыки для быстрого доступа к отчетам с заранее подготовленными параметрами.
 Ярлыки запускаются из окна оболочки Android.
 
 
 \section{Расписание платежей}
 \label{\detokenize{reports:id2}}
+\sphinxAtStartPar
 Отчет предназначен для планирования предстоящих операций. Расписание отображает не только плановые, но и фактические
 операции, если они находятся в выбранном периоде. Например, можно увидеть не только сколько запланировано расходов
 на текущую неделю, но и сколько расходов уже оплачено.
@@ -1664,28 +2337,33 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reports-050-turnovers}.png}
 
 
-\section{План-факт}
+\section{План\sphinxhyphen{}факт}
 \label{\detokenize{reports:id3}}
+\sphinxAtStartPar
 Отчет служит для выявления отклонений между запланированными и фактическими движениями в заданном периоде. Так, например,
 из отчета видно, что по статье \DUrole{bbitem}{Доходы от аренды} прошло внеплановое поступление денежных средств,
 а по статье \DUrole{bbitem}{Зарплата}
 запланированные денежные средства еще не поступили.
 
+\sphinxAtStartPar
 Отчет можно сформировать как в разрезе аналитик, так и в разрезе периодов.
 
 
 \section{Обороты}
 \label{\detokenize{reports:id4}}
+\sphinxAtStartPar
 Отчет служит для просмотра агрегированных движений в заданном периоде. Так, например,
 из отчета видно, что по статье \DUrole{bbitem}{Кредиты (Я должен)} было поступление денежных средств, по статье \DUrole{bbitem}{Карманные расходы}
 было списание и т.д.
 
+\sphinxAtStartPar
 Отчет можно формировать как по фактическим, так и по планируемым операциям. По умолчанию отчет формируется
 по фактическим операциям.
 
 
 \section{Остатки и обороты}
 \label{\detokenize{reports:id5}}
+\sphinxAtStartPar
 Отчет служит для просмотра начальных, конечных остатков и агрегированных движений в заданном периоде. Отчет формируется
 только по фактическим операциям.
 
@@ -1696,16 +2374,19 @@ detail, split
 
 \section{Планируемые остатки и обороты}
 \label{\detokenize{reports:id6}}
+\sphinxAtStartPar
 Отчет служит для просмотра начальных, конечных остатков и агрегированных планируемых движений в заданном периоде. Отчет формируется
 только по планируемым операциям.
 
 
 \section{Долги}
 \label{\detokenize{reports:id7}}
+\sphinxAtStartPar
 Отчет формируется по операциями, которые содержат статьи с признаком \DUrole{bbproperty}{Суммируемая} и при этом являются
 одновременно и доходными и расходными. Суммы таких операций складываются, отчет показывает начальный, конечный
 остатки и движения за выбранный период. Нулевые суммы скрываются.
 
+\sphinxAtStartPar
 Так, например, из отчета видно, что по статье \DUrole{bbitem}{Кредиты (Я должен)} на начало периода не было остатка. Затем
 в течение периода было зачисление, т.е. был получен кредит. Погашения кредита не было, поэтому конечный
 остаток совпадает с суммой зачисления.
@@ -1713,11 +2394,13 @@ detail, split
 
 \section{Исполнение плана}
 \label{\detokenize{reports:id8}}
+\sphinxAtStartPar
 Отчет Исполнение плана формируется по плановым и фактическим операциями, которые содержат статьи с
 признаком \DUrole{bbproperty}{Суммируемая} и являются либо доходными, либо расходными. Из суммы плановых операций вычитается
 сумма фактических, отчет также показывает начальный, конечный остатки и движения за выбранный период.
 Нулевые суммы скрываются.
 
+\sphinxAtStartPar
 Так, например, из отчета видно, что по статье \DUrole{bbitem}{Зарплата} на начало периода есть остаток плана, т.е. фактическая сумма
 движений по статье \DUrole{bbitem}{Зарплата} меньше запланированной. По этой статье также в течение выбранного периода запланировано
 поступление денежных средств. Однако фактического движения не было.
@@ -1729,6 +2412,7 @@ detail, split
 
 \section{Распределение оборотов}
 \label{\detokenize{reports:id9}}
+\sphinxAtStartPar
 Диаграмма служит для анализа распределения движений денежных средств. Отчет имеет два режима формирования —
 по расходам и по доходам. Иногда не все названия помещаются на экране или накладываются друг на друга. Чтобы
 увидеть такие значения, просто вращайте график против часовой стрелки.
@@ -1736,55 +2420,70 @@ detail, split
 
 \section{Изменение оборотов}
 \label{\detokenize{reports:id10}}
+\sphinxAtStartPar
 График служит для анализа и выявления тенденций движений денежных средств. В положительной части графика отображаются доходы,
 в отрицательной — расходы.
 
 
 \section{Изменение остатков}
 \label{\detokenize{reports:id11}}
+\sphinxAtStartPar
 График служит для анализа и выявления тенденций в изменениях остатков денежных средств. Возможно одновременное отображение
 фактических и планируемых остатков.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reports-120-lines}.png}
 
+\sphinxstepscope
+
 
 \chapter{Напоминания}
 \label{\detokenize{reminders:chapter-reminders}}\label{\detokenize{reminders:id1}}\label{\detokenize{reminders::doc}}
+\sphinxAtStartPar
 Блиц Бюджет для Android позволяет создавать напоминания на основании отчетов или списка операций. Напоминание может быть разовым
 или иметь заданную периодичность. Механизм напоминаний позволяет:
 \begin{itemize}
 \item {} 
+\sphinxAtStartPar
 Настроить напоминания о незаполненных операциях.
 
 \item {} 
+\sphinxAtStartPar
 Настроить напоминания об особенных операциях.
 
 \item {} 
+\sphinxAtStartPar
 Настроить предупреждения о расхождении плана и факта.
 
 \item {} 
+\sphinxAtStartPar
 Настроить предупреждения о любом событии, которое можно выявить с помощью отчета.
 
 \item {} 
+\sphinxAtStartPar
 Автоматически формировать отчеты по расписанию.
 
 \end{itemize}
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 В версии Pro из напоминания можно сразу перейти в отчет
 \end{sphinxadmonition}
 
+\sphinxAtStartPar
 Перед созданием напоминания необходимо сформулировать условия, при наступлении которых Вы хотите увидеть
 уведомление о возникновении того или иного события. Для этого создайте и сохраните настройку
 отчета, в которой укажите нужные значения фильтра и группировку отчета, см.
 {\hyperref[\detokenize{shortcuts:chapter-shortcuts}]{\sphinxcrossref{\DUrole{std,std-ref}{Настройки отчетов и ярлыки}}}} (\autopageref*{\detokenize{shortcuts:chapter-shortcuts}}).
 
+\sphinxAtStartPar
 Как только настройка будет готова, создайте для нее напоминание кнопкой \DUrole{bbbutton}{Напоминания} или из справочника \DUrole{bbmeta}{Напоминания}.
 
 \begin{sphinxadmonition}{note}{Примечание:}
-Начиная с версии Android 4.4 точность срабатывания напоминаний составляет +/- 15 мин.
+\sphinxAtStartPar
+Начиная с версии Android 4.4 точность срабатывания напоминаний составляет +/\sphinxhyphen{} 15 мин.
 \end{sphinxadmonition}
 
+\sphinxAtStartPar
 Разберем создание напоминания на примере напоминания об операциях с незаполненной категорией. На главном экране
 перейдем в список операций.
 
@@ -1792,6 +2491,7 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reminders-020-main-screen-swipe-left}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reminders-030-main-screen-transactions}.png}
 
+\sphinxAtStartPar
 Отредактируем фильтр так, что бы в список попадали только операции с незаполненной категорией.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reminders-040-transactions-bottom-sheet-opening}.png}
@@ -1801,6 +2501,7 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reminders-080-report-filter-apply}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reminders-090-report-filter-applied}.png}
 
+\sphinxAtStartPar
 После установки фильтра список операций изменился, теперь он содержит только две операции. Сохраним фильтр
 в настройке отчета. Для этого откроем подвал и щелкнув по \DUrole{bbspinner}{Настройки отчета} создадим
 новую настройку. Оставим период настройки без изменений, однако Вы можете отредактировать его нужным образом.
@@ -1809,6 +2510,7 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reminders-100-report-setting-save}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reminders-110-report-view-settings-alarms}.png}
 
+\sphinxAtStartPar
 Теперь на основании новой настройки создадим напоминание. Для этого перейдем в список напоминаний и
 откроем карточку нового напоминания. Зададим дату начала и время выполнения напоминания, периодичность и название. Название
 отображается в уведомлении, которое будет сформировано по напоминанию.
@@ -1817,6 +2519,7 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reminders-130-alarms-edit}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reminders-140-alarms}.png}
 
+\sphinxAtStartPar
 Напоминание готово, осталось только проверить, как оно работает. Для этого отмечаем напоминание и выбираем
 \DUrole{bbbutton}{Выполнить}. В строке состояния мы видим уведомление о наличии операций с незаполненной категорией.
 
@@ -1824,18 +2527,24 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reminders-160-alarms-run}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{reminders-170-alarm_notification}.png}
 
+\sphinxAtStartPar
 Для просмотра списка операций достаточно щелкнуть по уведомлению.
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 Переход к данным уведомления доступен только в версии Pro
 \end{sphinxadmonition}
 
+\sphinxAtStartPar
 Теперь при появлении операций с незаполненной категорией мы каждый день в назначенное время
 будем видеть уведомление о необходимости заполнить категорию.
+
+\sphinxstepscope
 
 
 \chapter{Действия с группами объектов}
 \label{\detokenize{bulk-actions:chapter-bulk-actions}}\label{\detokenize{bulk-actions:id1}}\label{\detokenize{bulk-actions::doc}}
+\sphinxAtStartPar
 Блиц Бюджет для Android позволяет выполнять действия сразу со множеством объектов. В качестве примера можно привести замену
 статьи сразу для нескольких операций. Групповые действия можно выполнять не только с операциями, но и с
 любыми справочниками.
@@ -1843,6 +2552,7 @@ detail, split
 
 \section{Выбор объектов}
 \label{\detokenize{bulk-actions:id2}}
+\sphinxAtStartPar
 Разберем выбор нескольких объектов на примере списка операций. Точно такие же действия можно выполнить в
 любом справочнике.
 
@@ -1850,12 +2560,14 @@ detail, split
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{bulkactions-020-transaction-check}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{bulkactions-030-transactions-checked}.png}
 
+\sphinxAtStartPar
 Первом делом следует открыть список операций. Затем отметим галочками нужные операции. Если необходимо выбрать все
 операции, то достаточно отметить любую операцию из списка, а затем в панели действий выбрать \DUrole{bbbutton}{Отметить все}.
 
 
 \section{Редактирование}
 \label{\detokenize{bulk-actions:id3}}
+\sphinxAtStartPar
 Для редактирования выбранных операций следует нажать \DUrole{bbbutton}{Редактировать}. Приложение откроет диалог, в котором
 указано количество выбранных элементов и поля, которые в этих элементах можно изменить. Так, для операций можно изменить
 дату и время, примечаний, аналитики и пр. поля. Изменения применяются только для модифицированных в диалоге редактирования
@@ -1867,6 +2579,7 @@ detail, split
 
 \section{Удаление}
 \label{\detokenize{bulk-actions:id4}}
+\sphinxAtStartPar
 Для удаления выбранных операций следует нажать \DUrole{bbbutton}{Удалить}. После подтверждения приложение удалит выбранные элементы.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{bulkactions-060-transactions-delete}.png}
@@ -1875,10 +2588,12 @@ detail, split
 
 \section{Фильтр}
 \label{\detokenize{bulk-actions:id5}}
+\sphinxAtStartPar
 На основании нескольких элементов можно создать фильтр. Это удобно, когда например, необходимо увидеть все операции с
 такими же как и отмеченных операций, статьями, контрагентами, проектами или персонами. В поля фильтра сразу будут скопированы
 значения из выбранных операций, останется лишь отметить нужные поля отбора галочками.
 
+\sphinxAtStartPar
 Для создания фильтра на основании выбранных элементов следует нажать \DUrole{bbbutton}{Фильтр}.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{bulkactions-080-transactions-filter}.png}
@@ -1887,6 +2602,7 @@ detail, split
 
 \section{Повторная отправка объектов при обмене}
 \label{\detokenize{bulk-actions:id6}}
+\sphinxAtStartPar
 Иногда в случае коллективной работы необходимо повторить отправку операции или элементов справочника. Для этого служит
 пункт меню \sphinxmenuselection{Отправить при обмене}.
 
@@ -1897,11 +2613,13 @@ detail, split
 
 \section{Экспорт в CSV и OFX}
 \label{\detokenize{bulk-actions:csv-ofx}}
+\sphinxAtStartPar
 Выделенные операции можно экспортировать в файлы формата CSV и OFX, используя пункты меню \sphinxmenuselection{Экспорт CSV}
 и \sphinxmenuselection{Экспорт OFX}. В отличие от операций, элементы справочников можно экспортировать только в файлы формата
 CSV.
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 Экспорт операций в OFX доступен только в версии Pro.
 \end{sphinxadmonition}
 
@@ -1912,6 +2630,7 @@ CSV.
 
 \section{Автоматическое связывание операций}
 \label{\detokenize{bulk-actions:id7}}
+\sphinxAtStartPar
 Для точного учета переводов иногда требуется дополнительно связать операции. Например,
 такая операция может потребоваться, если перевод занесен вручную или в результате импорта
 в виде двух отдельных несвязанных операций. Для связывания операций отметьте хотя бы
@@ -1920,6 +2639,7 @@ CSV.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{bulkactions-190-transactions-connect}.png}
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 Начиная с версии 6 при вводе перевода вручную обе операции автоматически связываются, поэтому нет
 необходимости дополнительно связывать такие операции. Связанные операции помечаются специальным значком.
 \end{sphinxadmonition}
@@ -1927,9 +2647,11 @@ CSV.
 
 \section{Отправка исходных данных разработчику}
 \label{\detokenize{bulk-actions:id8}}
+\sphinxAtStartPar
 Иногда требуется помощь разработчика для выяснения причин того или иного поведения приложения. В этих
 случаях для анализа обычно требуются исходные данные.
 
+\sphinxAtStartPar
 Отправить исходные данные можно через пункт меню \sphinxmenuselection{Отправить разработчику}. Перед отправкой
 приложение откроет предварительный просмотр письма и Вы можете увидеть и отредактировать содержание
 отправляемых данных. Таким образом можно избежать передачи конфиденциальной информации.
@@ -1937,25 +2659,31 @@ CSV.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{bulkactions-170-transactions-developer-send}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{bulkactions-180-transactions-developer-send}.png}
 
+\sphinxstepscope
+
 
 \chapter{Настройки отчетов и ярлыки}
 \label{\detokenize{shortcuts:chapter-shortcuts}}\label{\detokenize{shortcuts:id1}}\label{\detokenize{shortcuts::doc}}
 
 \section{Настройки отчетов}
 \label{\detokenize{shortcuts:id2}}
+\sphinxAtStartPar
 Блиц Бюджет для Android позволяет сохранять значения группировок и фильтров для отчетов и списка операций. Разберем
 сохранение настройки на примере отчета \DUrole{bbmeta}{Обороты}. Аналогичным образом сохраняются настройки
 для других отчетов и списка операций.
 
+\sphinxAtStartPar
 Итак, после открытия в отчете по умолчанию установлены текущий месяц, группировки и значения фильтра.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{shortcuts-010-select-reports}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{shortcuts-020-report-open}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{shortcuts-030-report-bottom-sheet-opening}.png}
 
+\sphinxAtStartPar
 Наша цель — добиться того, чтобы был быстрый доступ к формированию отчета \DUrole{bbmeta}{Обороты} с отбором
 сразу только по одному счету.
 
+\sphinxAtStartPar
 Отредактируем настройки фильтр. Для этого следует вытянуть подвал и нажать на \DUrole{bbspinner}{Фильтр}.
 В редакторе фильтра зададим отбор только по одному счету и применим изменения.
 
@@ -1963,6 +2691,7 @@ CSV.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{shortcuts-050-report-filter}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{shortcuts-060-report-filter-account}.png}
 
+\sphinxAtStartPar
 На рисунке видно, что теперь в отчете отображаются данные только одного счета. Теперь создадим и
 сохраним настройку. Для этого в подвале следует нажать на \DUrole{bbspinner}{Настройки отчета} и в выпадающем списке
 выбрать создание новой настройки.
@@ -1971,6 +2700,7 @@ CSV.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{shortcuts-080-report-filter-applied}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{shortcuts-090-report-select-new-setting}.png}
 
+\sphinxAtStartPar
 Укажем название новой настройки \DUrole{bbvalue}{Обороты по одному счету} и сохраним ее. Теперь в списке настроек доступна
 готовая настройка \DUrole{bbitem}{Обороты по одному счету}, при ее выборе в отчете сразу будут установлены нужные группировки
 и значения фильтра.
@@ -1981,25 +2711,31 @@ CSV.
 
 \section{Создание ярлыка}
 \label{\detokenize{shortcuts:id3}}
+\sphinxAtStartPar
 Блиц Бюджет для Android позволяет открывать отчеты и список операций прямо из окна оболочки Android. В предыдущей части мы рассмотрели
 создание настройки. Предположим, что мы хотим не только создать настройку но и сделать для нее ярлык.
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 Создание ярлыков доступно в версии Pro.
 \end{sphinxadmonition}
 
+\sphinxAtStartPar
 Вернемся к карточке настройки. Обратите внимание, что в карточке можно задать вид периодичности. От этого зависит,
 какой период будет установлен при открытии отчета по ярлыку. По умолчанию установлен текущий месяц, но при
 необходимости можно задать другой вид периодичности, например, текущий квартал или полугодие и т.п.
 
+\sphinxAtStartPar
 Для создания ярлыка следует нажать \DUrole{bbbutton}{Создать ярлык}.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{shortcuts-120-report-setting-shortcut-create}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{shortcuts-130-report-shortcut-select}.png}
 
+\sphinxAtStartPar
 При создании ярлыка приложения автоматически размещает новый ярлык на свободном месте на одном из окон оболочки.
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 Ярлык связан с настройкой списка. Если удалить настройку, то ярлык перестанет работать.
 \end{sphinxadmonition}
 
@@ -2007,11 +2743,15 @@ CSV.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{shortcuts-150-report-bottom-sheet-opening}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{shortcuts-160-report-bottom-sheet-open}.png}
 
+\sphinxAtStartPar
 Проверим работу ярлыка. По нажатию открывается отчет, на рисунках видно, что приложение сразу применило заданные
 настройки фильтра.
 
+\sphinxAtStartPar
 Ярлык — это только ссылка на настройку, поэтому если в дальнейшем требуется изменить параметры отчета,
 то достаточно просто отредактировать сохраненную настройку.
+
+\sphinxstepscope
 
 
 \chapter{Виджеты и шаблоны}
@@ -2019,12 +2759,15 @@ CSV.
 
 \section{Виджеты}
 \label{\detokenize{widgets:id2}}
+\sphinxAtStartPar
 Блиц Бюджет для Android содержит удобный виджет для отображения фактических остатков, оборотов и быстрого создания новой операции.
 
 \noindent{\hspace*{\fill}\sphinxincludegraphics[width=0.250\linewidth]{{widget-480}.png}\hspace*{\fill}}
 
+\sphinxAtStartPar
 Виджет доступен в различных размерах, 1x1, 1x2 и 1x4 ячейки. Оформление виджета совпадает с темой приложения.
 
+\sphinxAtStartPar
 Благодаря гибким настройкам виджет можно использовать не только как сводку, но и как краткий отчет или шаблон
 новой операции. Примеры будут рассмотрены ниже.
 
@@ -2032,19 +2775,24 @@ CSV.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-010-widget-settings-open}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-020-widget-settings}.png}
 
+\sphinxAtStartPar
 После создания в виджете отображаются текущий остаток и движения денежных средств в основной валюте за текущий день.
 Для изменения этих настроек служит кнопка \DUrole{bbbutton}{Настройка}.
 
+\sphinxAtStartPar
 В разделе \DUrole{bbsection}{Вид} можно задать основные параметры виджета.
 
+\sphinxAtStartPar
 \DUrole{bbproperty}{Наименование} удобно использовать, если на экран выведено несколько виджетов. При желании можно оставить это поле
 пустым.
 
+\sphinxAtStartPar
 \DUrole{bbproperty}{Типы портфелей}, \DUrole{bbproperty}{Портфели} и \DUrole{bbproperty}{Счета} служат для базового ограничения отображаемой в
 виджете информации. Можно указать один из параметров или их комбинацию. В разных экземплярах виджета могут использоваться
 разные ограничения. Так, например, на экран можно вывести два виджета, один будет показывать информацию по одному счету,
 другой — по другому.
 
+\sphinxAtStartPar
 \DUrole{bbproperty}{Отображать баланс}  служит для включения и отключения расчета баланса, также можно конкретизировать как именно
 рассчитывать баланс, с учетом кредитного лимита или без. По умолчанию кредитный лимит не учитывается в балансе, т.е. для
 кредитных карт отображается отрицательный остаток.
@@ -2055,32 +2803,39 @@ CSV.
 
 \section{Использование виджетов в качестве шаблонов операций}
 \label{\detokenize{widgets:id3}}
+\sphinxAtStartPar
 Виджет содержит кнопку \DUrole{bbbutton}{Новая операция}. Эта кнопка доступна после того, как в настройках будет указан счет для
 создания новых операций. При желании можно указать сумму новой операции, которая будет автоматически установлена
 при открытии карточки новой операции.
 
+\sphinxAtStartPar
 Также в новую операцию будут скопированы значения фильтров.
 
+\sphinxAtStartPar
 Таким образом, задав счет, сумму и фильтры, возможно использовать виджет для создания новой операции по шаблону. Все
 поля новой операции будут сразу заполнены.
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 Использование виджетов для создания новых операций по шаблону доступно в версии Pro. В версии Free доступно создание новых операций без заполнения по шаблону.
 \end{sphinxadmonition}
 
 
 \section{Использование виджетов в качестве отчетов}
 \label{\detokenize{widgets:id4}}
+\sphinxAtStartPar
 Гибкие настройки позволяют использовать виджеты в качестве отчетов с заранее сохраненными настройками. Для этого
 служат параметры расположенные в разделе \DUrole{bbsection}{Фильтр}.
 
 \begin{sphinxadmonition}{note}{Примечание:}
+\sphinxAtStartPar
 Использование виджетов в качестве отчетов доступно в версии Pro
 \end{sphinxadmonition}
 
 
 \section{Пример использования виджета в качестве отчета}
 \label{\detokenize{widgets:id5}}
+\sphinxAtStartPar
 Рассмотрим в качестве примера настройку виджета для отображения расходов на общественный транспорт в течение текущего месяца.
 Откроем настройки виджета и зададим название \DUrole{bbvalue}{Общественный транспорт}.
 
@@ -2088,25 +2843,30 @@ CSV.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-060-widget-example-select-period}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-070-widget-example-select-period-apply}.png}
 
+\sphinxAtStartPar
 Общее количество потраченных денежных средств на общественный транспорт с начала ведения учета нас не интересует,
 поэтому отключим отображение баланса.
 
+\sphinxAtStartPar
 В качестве периода выберем текущий месяц.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-080-widget-example-select-budget-item}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-090-widget-example-select-budget-item-apply}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-100-widget-example-settings-apply}.png}
 
+\sphinxAtStartPar
 В настройках фильтра зададим статью \DUrole{bbitem}{Общественный транспорт} и сохраним настройку.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-110-widget-example}.png}
 
+\sphinxAtStartPar
 Теперь виджет отображает движения только по статье \DUrole{bbitem}{Общественный транспорт} за текущий месяц, мы видим
 конкретную сумму расходов и два счета, с которых оплачивался транспорт.
 
 
 \section{Пример использования виджета в качестве шаблона}
 \label{\detokenize{widgets:id6}}
+\sphinxAtStartPar
 Теперь изменим настройки виджета так, чтобы мы могли не только видеть расходы, но и быстро их создавать. Для
 этого снова откроем настройки.
 
@@ -2114,6 +2874,7 @@ CSV.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-140-widget-example-select-amount}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-150-widget-example-select-amount-value}.png}
 
+\sphinxAtStartPar
 Зададим счет, с которого чаще всего будет происходить оплата транспорта. После этого укажем сумму, которая будет
 подставлена в новую операцию.
 
@@ -2121,19 +2882,25 @@ CSV.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-170-widget-example-settings-apply}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-180-widget-example-transaction-new}.png}
 
+\sphinxAtStartPar
 Сохраним настройки. Теперь в виджете появилась кнопка добавления новой операции.
 
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{widgets-190-widget-example-transaction}.png}
 
+\sphinxAtStartPar
 Добавляем новую операцию из виджета. Видно, что в новой операции автоматически заполнились счета, сумма и статья. Осталось
 только сохранить новую операцию.
 
+\sphinxAtStartPar
 Аналогичным образом можно задать контрагентов, проекты и персоны, которые будут подставлены в новую операцию. Для каждого
 шаблона следует создать свой виджет.
+
+\sphinxstepscope
 
 
 \chapter{Удаленный доступ}
 \label{\detokenize{remote-access:chapter-remote-access}}\label{\detokenize{remote-access:id1}}\label{\detokenize{remote-access::doc}}
+\sphinxAtStartPar
 Блиц Бюджет для Android включает в себя клиента для персональных компьютеров. Клиент работает на операционных системах
 Windows, Linux, Mac и пр. Все что нужно для работы — это современный браузер. Поддерживаются Internet
 Explorer 8+, Google Chrome, Apple Safari, Mozilla Firefox, Opera.
@@ -2142,15 +2909,20 @@ Explorer 8+, Google Chrome, Apple Safari, Mozilla Firefox, Opera.
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{remoteaccess-020-view-status-bar}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{remoteaccess-030-remote-access-disable}.png}
 
+\sphinxAtStartPar
 Активация клиента выполняется из главного экрана. После включения программа выводит сообщение с инструкцией
 по доступу к данным с персонального компьютера. Одновременно появляется значок дисплей в строке всплывающих
 сообщение, напоминающий о том что связь с ПК включена.
 
+\sphinxAtStartPar
 Клиент для ПК имеет широкие возможности по формированию отчетов и графиков, позволяет выводить их на печать.
+
+\sphinxstepscope
 
 
 \chapter{Интеграция со сторонними приложениями}
 \label{\detokenize{api:chapter-api}}\label{\detokenize{api:id1}}\label{\detokenize{api::doc}}
+\sphinxAtStartPar
 Блиц Бюджет для Android можно интегрировать с другими приложениями. Например, можно совместить приложение с голосовым
 ассистентом и просто надиктовывать операции или автоматизировать создание или заполнение новых операций при помощи
 приложения \sphinxhref{https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm}{Tasker}.
@@ -2158,26 +2930,31 @@ Explorer 8+, Google Chrome, Apple Safari, Mozilla Firefox, Opera.
 
 \section{Создание операций из текстовой строки}
 \label{\detokenize{api:id2}}
+\sphinxAtStartPar
 Чтобы создать новую операцию в Блиц Бюджет для Android достаточно отправить широковещательный интент. Получив такой
 интент, приложение проанализирует сообщение и создаст новую операцию по алгоритму, аналогичному распознавания SMS
-и push-уведомлений.
+и push\sphinxhyphen{}уведомлений.
 
+\sphinxAtStartPar
 Параметры интента:
 
+\sphinxAtStartPar
 Class = \DUrole{bbvar}{biz.interblitz.intent.CONVERT\_TEXT\_TO\_NEW\_TRANSACTION}
 
+\sphinxAtStartPar
 Extras:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 \DUrole{bbvar}{timestampMillis}: Тип long, дата и время новой операции в миллисекундах. Значение может быть не указано, тогда используются текущие дата и время.
 
 \item {} 
+\sphinxAtStartPar
 \DUrole{bbvar}{address}: Тип String, адресат сообщения, может быть не указан.
 
 \item {} 
+\sphinxAtStartPar
 \DUrole{bbvar}{message}: Тип String, текстовое сообщение, из которого приложение создаст новую операцию. Сообщение по своей структуре должно быть аналогично SMS. Обязательный параметр.
 
 \end{enumerate}
@@ -2185,18 +2962,22 @@ Extras:
 
 \section{REST API}
 \label{\detokenize{api:rest-api}}\label{\detokenize{api:sub-chapter-rest-api}}
+\sphinxAtStartPar
 Блиц Бюджет для Android поддерживает \sphinxhref{https://github.com/interblitz/BudgetBlitz-Api}{REST API}. API позволяет создавать новые объекты, справочники и операции, а также редактировать и удалять существующие. Используя API
 можно создавать свои дополнения и приложения.
 
+\sphinxAtStartPar
 Для работы с \sphinxhref{https://github.com/interblitz/BudgetBlitz-Api}{REST API} и просмотра документации необходимо включить удаленный доступ, см. {\hyperref[\detokenize{remote-access:chapter-remote-access}]{\sphinxcrossref{\DUrole{std,std-ref}{Удаленный доступ}}}} (\autopageref*{\detokenize{remote-access:chapter-remote-access}}).
 Документация к API доступна через \sphinxhref{https://interblitz.github.io/BudgetBlitz-Api/swagger/}{Swagger}. После загрузки страницы в адресной строке \sphinxhref{https://interblitz.github.io/BudgetBlitz-Api/swagger/}{Swagger} укажите \sphinxurl{http://{[}server{]}:{[}port{]}/api/v1/docs.json}.
 В качестве сервера (server) и порта (port) необходимо указать значения, которые выводятся при включении удаленного доступа.
 
+\sphinxAtStartPar
 Примеры приложений можно посмотреть на \sphinxhref{https://github.com/interblitz/BudgetBlitz-Api}{github.com}. В примерах также нужно указать адрес к Блиц Бюджет для Android в виде \sphinxurl{http://{[}server{]}:{[}port}{]}.
 
 
 \section{Intents API}
 \label{\detokenize{api:intents-api}}
+\sphinxAtStartPar
 Помимо простого API для создания операций из текста Блиц Бюджет для Android предоставляет расширенный Intents API.
 Intents API  состоит из двух частей, событий и запросов данных,.и построен на базе REST API.
 По умолчанию Intents API выключен. В настройках можно указать, какая часть API должна быть включена.
@@ -2204,131 +2985,157 @@ Intents API  состоит из двух частей, событий и зап
 
 \subsection{Intents API: Часть 1, События}
 \label{\detokenize{api:intents-api-1}}
+\sphinxAtStartPar
 События возникают при записи элементов справочников и операций. При возникновении события Блиц Бюджет для Android отправляет интент тем пакетам,
 которые указаны в настройках. В интенте передается:
 
+\sphinxAtStartPar
 Action = \DUrole{bbvar}{\{biz.interblitz.budget\{free/pro\}.api.event.ITEM\_ONCHANGE}
 
+\sphinxAtStartPar
 Extras:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
-\DUrole{bbvar}{collection} - наименование коллекции, для которой произошло событие
+\sphinxAtStartPar
+\DUrole{bbvar}{collection} \sphinxhyphen{} наименование коллекции, для которой произошло событие
 
 \item {} 
-\DUrole{bbvar}{id} - идентификатор объекта, для которого произошло событие
+\sphinxAtStartPar
+\DUrole{bbvar}{id} \sphinxhyphen{} идентификатор объекта, для которого произошло событие
 
 \end{enumerate}
 
+\sphinxAtStartPar
 При импорте уведомлений в Extras дополнительно передаются
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
-\DUrole{bbvar}{notification} - текст уведомления
+\sphinxAtStartPar
+\DUrole{bbvar}{notification} \sphinxhyphen{} текст уведомления
 
 \item {} 
-\DUrole{bbvar}{address} - адрес уведомления (номер телефона или наименование пакета)
+\sphinxAtStartPar
+\DUrole{bbvar}{address} \sphinxhyphen{} адрес уведомления (номер телефона или наименование пакета)
 
 \item {} 
-\DUrole{bbvar}{amount} - сумма операции
+\sphinxAtStartPar
+\DUrole{bbvar}{amount} \sphinxhyphen{} сумма операции
 
 \item {} 
-\DUrole{bbvar}{currency} - валюта операции
+\sphinxAtStartPar
+\DUrole{bbvar}{currency} \sphinxhyphen{} валюта операции
 
 \end{enumerate}
 
+\sphinxAtStartPar
 Для получения дополнительных данных, которых нет в интенте, следует отправить запрос.
 
 
 \subsection{Intents API: Часть 2, Запросы}
 \label{\detokenize{api:intents-api-2}}
+\sphinxAtStartPar
 Для запроса данных следует отправить Intent:
 
+\sphinxAtStartPar
 Class = \DUrole{bbvar}{biz.interblitz.service.ApiReceiver}
 
+\sphinxAtStartPar
 Action = \DUrole{bbvar}{\{biz.interblitz.budget\{free/pro\}.api.request}
 
+\sphinxAtStartPar
 Extras:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
-\DUrole{bbvar}{method} - одно из значений: GET, POST, DELETE
+\sphinxAtStartPar
+\DUrole{bbvar}{method} \sphinxhyphen{} одно из значений: GET, POST, DELETE
 
 \item {} 
-\DUrole{bbvar}{path} - путь к данным
+\sphinxAtStartPar
+\DUrole{bbvar}{path} \sphinxhyphen{} путь к данным
 
 \item {} 
-\DUrole{bbvar}{body} - данные в формате JSON
+\sphinxAtStartPar
+\DUrole{bbvar}{body} \sphinxhyphen{} данные в формате JSON
 
 \item {} 
-\DUrole{bbvar}{package} - полное имя пакета, которому следует вернуть ответ, если не указано - ответ не будет возвращен
+\sphinxAtStartPar
+\DUrole{bbvar}{package} \sphinxhyphen{} полное имя пакета, которому следует вернуть ответ, если не указано \sphinxhyphen{} ответ не будет возвращен
 
 \item {} 
-\DUrole{bbvar}{class} - класс пакета, которые примет ответ, можно не указывать.
+\sphinxAtStartPar
+\DUrole{bbvar}{class} \sphinxhyphen{} класс пакета, которые примет ответ, можно не указывать.
 
 \end{enumerate}
 
+\sphinxAtStartPar
 Также в Extras можно указать любые дополнительные данные. Все заданные в запросе данные Extras вернутся обратно  в ответе.
 
+\sphinxAtStartPar
 В ответ на запрос отправляется Intent:
 
+\sphinxAtStartPar
 Action = \DUrole{bbvar}{\{biz.interblitz.budget\{free/pro\}.api.response}
 
+\sphinxAtStartPar
 Extras:
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
-\DUrole{bbvar}{collection} - наименование коллекции, для которой отправляется ответ
+\sphinxAtStartPar
+\DUrole{bbvar}{collection} \sphinxhyphen{} наименование коллекции, для которой отправляется ответ
 
 \item {} 
-\DUrole{bbvar}{response} - ответ в формате JSON
+\sphinxAtStartPar
+\DUrole{bbvar}{response} \sphinxhyphen{} ответ в формате JSON
 
 \end{enumerate}
 
+\sphinxAtStartPar
 Параметры \DUrole{bbvar}{method}, \DUrole{bbvar}{path}, \DUrole{bbvar}{body}, \DUrole{bbvar}{collection}, \DUrole{bbvar}{response} соответствуют REST API. Документация к ним доступна через \sphinxhref{https://interblitz.github.io/BudgetBlitz-Api/swagger/}{Swagger}.
 Подробней см. {\hyperref[\detokenize{api:sub-chapter-rest-api}]{\sphinxcrossref{\DUrole{std,std-ref}{REST API}}}} (\autopageref*{\detokenize{api:sub-chapter-rest-api}}).
+
+\sphinxstepscope
 
 
 \chapter{Отличия между версиями}
 \label{\detokenize{versions:chapter-versions}}\label{\detokenize{versions:id1}}\label{\detokenize{versions::doc}}
 
-\begin{savenotes}\sphinxatlongtablestart\begin{longtable}{|\X{25}{40}|\X{10}{40}|\X{5}{40}|}
+\begin{savenotes}\sphinxatlongtablestart\begin{longtable}[c]{|\X{25}{40}|\X{10}{40}|\X{5}{40}|}
 \sphinxthelongtablecaptionisattop
 \caption{Отличия между версиями\strut}\label{\detokenize{versions:id2}}\\*[\sphinxlongtablecapskipadjust]
 \hline
 \sphinxstyletheadfamily &\sphinxstyletheadfamily 
+\sphinxAtStartPar
 Версия Free
 &\sphinxstyletheadfamily 
+\sphinxAtStartPar
 Версия Pro
 \\
 \hline
 \endfirsthead
 
 \multicolumn{3}{c}%
-{\makebox[0pt]{\sphinxtablecontinued{\tablename\ \thetable{} -- продолжение с предыдущей страницы}}}\\
+{\makebox[0pt]{\sphinxtablecontinued{\tablename\ \thetable{} \textendash{} продолжение с предыдущей страницы}}}\\
 \hline
 \sphinxstyletheadfamily &\sphinxstyletheadfamily 
+\sphinxAtStartPar
 Версия Free
 &\sphinxstyletheadfamily 
+\sphinxAtStartPar
 Версия Pro
 \\
 \hline
 \endhead
 
 \hline
-\multicolumn{3}{r}{\makebox[0pt][r]{\sphinxtablecontinued{Продолжается на следующей странице}}}\\
+\multicolumn{3}{r}{\makebox[0pt][r]{\sphinxtablecontinued{continues on next page}}}\\
 \endfoot
 
 \endlastfoot
 
+\sphinxAtStartPar
 Финансовый учет
 &\begin{itemize}
 \item {} 
@@ -2338,6 +3145,7 @@ Extras:
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Планирование
 &\begin{itemize}
 \item {} 
@@ -2347,6 +3155,7 @@ Extras:
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Отчеты
 &\begin{itemize}
 \item {} 
@@ -2356,6 +3165,7 @@ Extras:
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Импорт SMS, OFX, CSV
 &\begin{itemize}
 \item {} 
@@ -2365,90 +3175,107 @@ Extras:
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Импорт Push уведомлений
 &
+\sphinxAtStartPar
 15 в месяц
 &\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Дополнительный анализ SMS с паролями подтверждения операции
 &&\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Дополнительный импорт данных из SMS с детализацией платежа (две SMS для одной операции)
 &&\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Экспорт OFX
 &&\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Коллективная работа
 &
+\sphinxAtStartPar
 Только передача данных
 &\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Удаленный доступ
 &
+\sphinxAtStartPar
 Только 50 операций
 &\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Напоминания о предстоящих платежах
 &&\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Напоминания на базе отчетов
 &&\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Создание ярлыков с настройками для быстрого открытия отчетов
 &&\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Использование фильтров в виджетах (виджет как отчет)
 &&\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Автоматическое резервное копирование по расписанию
 &&\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Шифрование резервных копий
 &&\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Отчетность для программы 1С:Предприятие 8.2, 8.3
 &&\begin{itemize}
 \item {} 
 \end{itemize}
 \\
 \hline
+\sphinxAtStartPar
 Техническая поддержка
 &\begin{itemize}
 \item {} 
@@ -2460,37 +3287,48 @@ Extras:
 \hline
 \end{longtable}\sphinxatlongtableend\end{savenotes}
 
+\sphinxAtStartPar
 Перейти на Google Play:
 
+\sphinxAtStartPar
 \sphinxhref{https://play.google.com/store/apps/details?id=biz.interblitz.budgetfree}{Версия Free}
 
+\sphinxAtStartPar
 \sphinxhref{https://play.google.com/store/apps/details?id=biz.interblitz.budgetpro}{Версия Pro}
+
+\sphinxstepscope
 
 
 \chapter{Переход на версию Pro}
 \label{\detokenize{migration-to-pro:pro}}\label{\detokenize{migration-to-pro:chapter-migration-to-pro}}\label{\detokenize{migration-to-pro::doc}}
+\sphinxAtStartPar
 Переход выполняется в два этапа. Сначала нужно подготовить данные вашей версии, а затем загрузить их в новую версию программы. Предварительно убедитесь что SD карта подключена к мобильному устройству и на ней достаточно свободного места.
 \begin{enumerate}
-\def\theenumi{\arabic{enumi}}
-\def\labelenumi{\theenumi .}
-\makeatletter\def\p@enumii{\p@enumi \theenumi .}\makeatother
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
+\sphinxAtStartPar
 Загрузите версию Free;
 
 \item {} 
+\sphinxAtStartPar
 В главном меню выберите \sphinxmenuselection{Действия \(\rightarrow\) Экспорт \(\rightarrow\) В версию Pro};
 
 \item {} 
+\sphinxAtStartPar
 Загрузите версию Pro;
 
 \item {} 
+\sphinxAtStartPar
 В главном меню выберите \sphinxmenuselection{Действия \(\rightarrow\) Импорт \(\rightarrow\) Из версии Free}.
 
 \end{enumerate}
 
+\sphinxstepscope
+
 
 \chapter{Сервисное обслуживание}
 \label{\detokenize{service:chapter-service}}\label{\detokenize{service:id1}}\label{\detokenize{service::doc}}
+\sphinxAtStartPar
 Как правило приложение Блиц Бюджет для Android не требует сервисного обслуживания. Тем не менее, если Вы замечаете
 падение скорости работы программы, то запуск сервисных операций может решить проблему.
 
@@ -2498,17 +3336,23 @@ Extras:
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{service-020-select-service}.png}
 \noindent\sphinxincludegraphics[width=0.250\linewidth]{{service-030-select-iitems}.png}
 
+\sphinxAtStartPar
 Сжатие данных освобождает захваченное и неиспользуемое место в памяти, дефрагментирует таблицы и индексы.
 Это способствует увеличению производительности работы приложения. Технически, сжатие данных вызывает команду \sphinxhref{https://sqlite.org/lang\_vacuum.html}{VACUUM}.
 
+\sphinxAtStartPar
 Сжатие данных работает только с базой данных и не удаляет файлы, которые также могут располагаться в данных приложения.
 
+\sphinxAtStartPar
 Переиндексация может помочь в случае резкого падения производительности. Технически, переиндексация данных вызывает
 команду \sphinxhref{https://sqlite.org/lang\_reindex.html}{REINDEX}.
 
 \begin{sphinxadmonition}{warning}{Предупреждение:}
+\sphinxAtStartPar
 Не забывайте делать резервные копии, особенно перед выполнением сервисных операций. Если установлен пароль шифрования, то обязательно убедитесь, что Вы его помните. Иначе восстановить данные из резервной копии будет невозможно.
 \end{sphinxadmonition}
+
+\sphinxstepscope
 
 
 \chapter{Поддерживаемые банки}
@@ -2516,392 +3360,563 @@ Extras:
 
 \section{Maldives}
 \label{\detokenize{banks:maldives}}
+\sphinxAtStartPar
 BML
 
 
 \section{Беларусь}
 \label{\detokenize{banks:id2}}
-БПС-Сбербанк
+\sphinxAtStartPar
+БПС\sphinxhyphen{}Сбербанк
 
+\sphinxAtStartPar
 БелВнешЭкономБанк
 
+\sphinxAtStartPar
 Белагропромбанк
 
+\sphinxAtStartPar
 Беларусбанк
 
+\sphinxAtStartPar
 Белгазпромбанк
 
+\sphinxAtStartPar
 Белинвестбанк
 
+\sphinxAtStartPar
 Белросбанк
 
+\sphinxAtStartPar
 МТБанк
 
+\sphinxAtStartPar
 Приорбанк
 
+\sphinxAtStartPar
 Хоум Кредит Беларусь
 
 
 \section{Бразилия}
 \label{\detokenize{banks:id3}}
+\sphinxAtStartPar
 Banco do Brasil
 
+\sphinxAtStartPar
 Itaú Unibanco
 
 
 \section{Венгрия}
 \label{\detokenize{banks:id4}}
+\sphinxAtStartPar
 CIB BANK
 
-OTP Bank - Simple
+\sphinxAtStartPar
+OTP Bank \sphinxhyphen{} Simple
 
 
 \section{Вьетнам}
 \label{\detokenize{banks:id5}}
+\sphinxAtStartPar
 Australia and New Zealand Banking Group
 
 
 \section{Индия}
 \label{\detokenize{banks:id6}}
+\sphinxAtStartPar
 Central Bank of India
 
+\sphinxAtStartPar
 Deutsche Bank
 
+\sphinxAtStartPar
 State Bank of India
 
 
 \section{Индонезия}
 \label{\detokenize{banks:id7}}
+\sphinxAtStartPar
 Commonwealth Bank
 
 
 \section{Канада}
 \label{\detokenize{banks:id8}}
+\sphinxAtStartPar
 ICICI Bank
 
 
 \section{Объединенные Арабские Эмираты}
 \label{\detokenize{banks:id9}}
+\sphinxAtStartPar
 Emirates Islamic bank
 
+\sphinxAtStartPar
 Emirates NBD
 
 
 \section{Польша}
 \label{\detokenize{banks:id10}}
+\sphinxAtStartPar
 Bank Millennium SA
 
 
 \section{Россия}
 \label{\detokenize{banks:id11}}
+\sphinxAtStartPar
 AnyBalance
 
+\sphinxAtStartPar
 BSGV
 
+\sphinxAtStartPar
 KARI CLUB
 
+\sphinxAtStartPar
 Modulbank
 
+\sphinxAtStartPar
 QIWI
 
-SDM-Bank
+\sphinxAtStartPar
+SDM\sphinxhyphen{}Bank
 
+\sphinxAtStartPar
 АКИБАНК
 
+\sphinxAtStartPar
 АМТ Банк
 
+\sphinxAtStartPar
 Абсолют Банк
 
+\sphinxAtStartPar
 Авангард
 
+\sphinxAtStartPar
 АйМаниБанк
 
+\sphinxAtStartPar
 АкБарс
 
-Альфа-Банк
+\sphinxAtStartPar
+Альфа\sphinxhyphen{}Банк
 
+\sphinxAtStartPar
 БКС БАНК
 
+\sphinxAtStartPar
 Балтийский Банк
 
+\sphinxAtStartPar
 Банк Европейский
 
+\sphinxAtStartPar
 Банк Москвы
 
+\sphinxAtStartPar
 Банк Петрокоммерц
 
+\sphinxAtStartPar
 Банк Приморье
 
-Банк Санкт-Петербург
+\sphinxAtStartPar
+Банк Санкт\sphinxhyphen{}Петербург
 
+\sphinxAtStartPar
 Банк Советский
 
+\sphinxAtStartPar
 Банк Точка
 
+\sphinxAtStartPar
 Банк Транспортный
 
+\sphinxAtStartPar
 Банк УРАЛСИБ
 
+\sphinxAtStartPar
 Банк Финсервис
 
+\sphinxAtStartPar
 Банк24.ru
 
-Барклайс-Банк
+\sphinxAtStartPar
+Барклайс\sphinxhyphen{}Банк
 
+\sphinxAtStartPar
 Белгородсоцбанк
 
+\sphinxAtStartPar
 Бинбанк
 
+\sphinxAtStartPar
 ВТБ 24
 
-ВУЗ-Банк
+\sphinxAtStartPar
+ВУЗ\sphinxhyphen{}Банк
 
+\sphinxAtStartPar
 Внешпромбанк
 
+\sphinxAtStartPar
 Возрождение Банк
 
+\sphinxAtStartPar
 Восточный экспресс
 
+\sphinxAtStartPar
 Всероссийский банк развития регионов
 
-Вятка-банк
+\sphinxAtStartPar
+Вятка\sphinxhyphen{}банк
 
+\sphinxAtStartPar
 ГЛОБЭКСБАНК
 
+\sphinxAtStartPar
 ГУТА Банк
 
+\sphinxAtStartPar
 Газпромбанк
 
+\sphinxAtStartPar
 Газпромбанк Доп карта
 
+\sphinxAtStartPar
 Дальневосточный Банк
 
+\sphinxAtStartPar
 Европлан
 
+\sphinxAtStartPar
 ЕвроситиБанк
 
+\sphinxAtStartPar
 Екатеринбургский Муниципальный Банк
 
+\sphinxAtStartPar
 Запсибкомбанк
 
+\sphinxAtStartPar
 Инвестбанк
 
+\sphinxAtStartPar
 Интеркоммерц
 
+\sphinxAtStartPar
 Интерпрогрессбанк
 
+\sphinxAtStartPar
 Кедр
 
+\sphinxAtStartPar
 Кольцо Урала
 
+\sphinxAtStartPar
 КредитЕвропаБанк
 
+\sphinxAtStartPar
 Кукуруза
 
+\sphinxAtStartPar
 Липецккомбанк
 
+\sphinxAtStartPar
 ЛокоБанк
 
+\sphinxAtStartPar
 МДМ Банк
 
+\sphinxAtStartPar
 МИНБанк
 
+\sphinxAtStartPar
 МТС банк
 
+\sphinxAtStartPar
 Мастербанк
 
+\sphinxAtStartPar
 Меткомбанк
 
+\sphinxAtStartPar
 Московский кредитный
 
+\sphinxAtStartPar
 Москомприватбанк
 
+\sphinxAtStartPar
 НБ Траст
 
+\sphinxAtStartPar
 Нефтепромбанк
 
+\sphinxAtStartPar
 Новый Символ
 
+\sphinxAtStartPar
 Номос Банк
 
+\sphinxAtStartPar
 ОТП Банк
 
+\sphinxAtStartPar
 Первый Республиканский Банк
 
+\sphinxAtStartPar
 Почта Банк
 
+\sphinxAtStartPar
 Промсвязьбанк
 
+\sphinxAtStartPar
 Райффайзен Банк
 
+\sphinxAtStartPar
 Региональный банк развития
 
+\sphinxAtStartPar
 Рокетбанк
 
+\sphinxAtStartPar
 РосЕвроБанк
 
+\sphinxAtStartPar
 Росбанк
 
+\sphinxAtStartPar
 РоссельхозБанк
 
+\sphinxAtStartPar
 Россия
 
+\sphinxAtStartPar
 РостФинанс
 
+\sphinxAtStartPar
 Русский Стандарт
 
-СКБ-Банк
+\sphinxAtStartPar
+СКБ\sphinxhyphen{}Банк
 
+\sphinxAtStartPar
 СМП Банк
 
+\sphinxAtStartPar
 Сбер.книжка
 
+\sphinxAtStartPar
 Сбербанк России
 
-Сбербанк-Maestro Поволжье
+\sphinxAtStartPar
+Сбербанк\sphinxhyphen{}Maestro Поволжье
 
+\sphinxAtStartPar
 Связной Банк
 
-Связь-Банк
+\sphinxAtStartPar
+Связь\sphinxhyphen{}Банк
 
+\sphinxAtStartPar
 Севергазбанк
 
+\sphinxAtStartPar
 Ситибанк
 
+\sphinxAtStartPar
 Собинбанк
 
+\sphinxAtStartPar
 Солидарность
 
+\sphinxAtStartPar
 Сургутнефтегазбанк
 
+\sphinxAtStartPar
 ТААТТА
 
+\sphinxAtStartPar
 Татфондбанк
 
+\sphinxAtStartPar
 Тачбанк
 
+\sphinxAtStartPar
 Тинькофф
 
+\sphinxAtStartPar
 ТрансКредитБанк
 
+\sphinxAtStartPar
 Трастбанк
 
+\sphinxAtStartPar
 Урал ФД
 
+\sphinxAtStartPar
 УралПромБанк
 
+\sphinxAtStartPar
 УралТрансБанк
 
+\sphinxAtStartPar
 Уральский банк реконструкции и развития
 
-ФК Открытие (бывш. НОМОС-Банк)
+\sphinxAtStartPar
+ФК Открытие (бывш. НОМОС\sphinxhyphen{}Банк)
 
+\sphinxAtStartPar
 ФОНДСЕРВИСБАНК
 
-Ханты-Мансийский Банк
+\sphinxAtStartPar
+Ханты\sphinxhyphen{}Мансийский Банк
 
+\sphinxAtStartPar
 Хоум Кредит
 
-Центр-инвест
+\sphinxAtStartPar
+Центр\sphinxhyphen{}инвест
 
+\sphinxAtStartPar
 Челиндбанк
 
+\sphinxAtStartPar
 Челябинвестбанк
 
+\sphinxAtStartPar
 Экспресс
 
+\sphinxAtStartPar
 ЭнергоМашБанк
 
+\sphinxAtStartPar
 Юниаструм Банк
 
+\sphinxAtStartPar
 Юникредит Банк
 
+\sphinxAtStartPar
 Яндекс.Деньги
 
 
 \section{Соединенные Штаты}
 \label{\detokenize{banks:id12}}
+\sphinxAtStartPar
 First National Bank
 
+\sphinxAtStartPar
 Guardian Alert General
 
+\sphinxAtStartPar
 Pendleton Community Bank
 
+\sphinxAtStartPar
 Town Bank
 
+\sphinxAtStartPar
 UniBank
 
 
 \section{Таиланд}
 \label{\detokenize{banks:id13}}
+\sphinxAtStartPar
 KASIKORNBANK
 
 
 \section{Узбекистан}
 \label{\detokenize{banks:id14}}
+\sphinxAtStartPar
 Uzcard
 
 
 \section{Украина}
 \label{\detokenize{banks:id15}}
+\sphinxAtStartPar
 VAB Банк
 
+\sphinxAtStartPar
 АБанк
 
-Альфа-Банк
+\sphinxAtStartPar
+Альфа\sphinxhyphen{}Банк
 
-Альфа-Банк Украина
+\sphinxAtStartPar
+Альфа\sphinxhyphen{}Банк Украина
 
+\sphinxAtStartPar
 БРОКБИЗНЕСБАНК
 
+\sphinxAtStartPar
 Донгорбанк
 
-Експресс-банк
+\sphinxAtStartPar
+Експресс\sphinxhyphen{}банк
 
+\sphinxAtStartPar
 Индустриал
 
+\sphinxAtStartPar
 КРЕДОБАНК
 
+\sphinxAtStartPar
 Михайлівський
 
+\sphinxAtStartPar
 ОТП Банк
 
+\sphinxAtStartPar
 ОщадБанк
 
+\sphinxAtStartPar
 ПУМБ
 
+\sphinxAtStartPar
 Петрокоммерц Украина
 
+\sphinxAtStartPar
 ПриватБанк
 
+\sphinxAtStartPar
 ПроКредитБанк
 
+\sphinxAtStartPar
 Проминвестбанк
 
+\sphinxAtStartPar
 Райффайзенбанк Аваль
 
+\sphinxAtStartPar
 Сбербанк России в Украине
 
+\sphinxAtStartPar
 УкрСибБанк
 
+\sphinxAtStartPar
 Укрексімбанк
 
+\sphinxAtStartPar
 Укрсоцбанк
+
+\sphinxstepscope
 
 
 \chapter{Определения и термины}
 \label{\detokenize{glossary:chapter-index}}\label{\detokenize{glossary:id1}}\label{\detokenize{glossary::doc}}\begin{description}
-\item[{контрагент\index{контрагент@\spxentry{контрагент}|spxpagem}\phantomsection\label{\detokenize{glossary:term-2}}}] \leavevmode
+\sphinxlineitem{контрагент\index{контрагент@\spxentry{контрагент}|spxpagem}\phantomsection\label{\detokenize{glossary:term-2}}}
+\sphinxAtStartPar
 Контрагентом называется противоположная сторона в операции.
 
-\item[{сплит\index{сплит@\spxentry{сплит}|spxpagem}\phantomsection\label{\detokenize{glossary:term}}}] \leavevmode
+\sphinxlineitem{сплит\index{сплит@\spxentry{сплит}|spxpagem}\phantomsection\label{\detokenize{glossary:term-0}}}
+\sphinxAtStartPar
 Расшифровка операции называется сплитом. В сплите можно указать статью, проект, персону и комментарий
 для каждой строки расшифровки.
 
-\item[{техническая статья\index{техническая статья@\spxentry{техническая статья}|spxpagem}\phantomsection\label{\detokenize{glossary:term-3}}}] \leavevmode
+\sphinxlineitem{техническая статья\index{техническая статья@\spxentry{техническая статья}|spxpagem}\phantomsection\label{\detokenize{glossary:term-3}}}
+\sphinxAtStartPar
 Технической называется статья, в которой выключены признаки \DUrole{bbproperty}{Revenue} и \DUrole{bbproperty}{Expense}.
 
-\item[{узел обмена\index{узел обмена@\spxentry{узел обмена}|spxpagem}\phantomsection\label{\detokenize{glossary:term-1}}}] \leavevmode
+\sphinxlineitem{узел обмена\index{узел обмена@\spxentry{узел обмена}|spxpagem}\phantomsection\label{\detokenize{glossary:term-1}}}
+\sphinxAtStartPar
 Узлом обмена или просто узлом называется устройство, участвующее в обмене данными при коллективной работе.
 
 \end{description}
@@ -2910,9 +3925,11 @@ VAB Банк
 \chapter{Indices and tables}
 \label{\detokenize{index:indices-and-tables}}\begin{itemize}
 \item {} 
+\sphinxAtStartPar
 \DUrole{xref,std,std-ref}{genindex}
 
 \item {} 
+\sphinxAtStartPar
 \DUrole{xref,std,std-ref}{search}
 
 \end{itemize}

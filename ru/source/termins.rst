@@ -124,6 +124,8 @@
 .. |meta_dir_nodes|                           replace:: :bbmeta:`Узлы обмена`
 .. |meta_dir_scopes|                          replace:: :bbmeta:`Области данных`
 .. |meta_dir_reminders|                       replace:: :bbmeta:`Напоминания`
+.. |meta_dir_sms|                             replace:: :bbmeta:`SMS сообщения`
+.. |meta_dir_push|                            replace:: :bbmeta:`Push уведомления`
 .. |meta_report_turnovers|                    replace:: :bbmeta:`Обороты`
 .. |meta_report_debts|                        replace:: :bbmeta:`Долги`
 .. |meta_report_plan_implementation|          replace:: :bbmeta:`Исполнение плана`

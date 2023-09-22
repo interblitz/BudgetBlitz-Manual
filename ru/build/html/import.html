@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Импорт данных &#8212; Документация Блиц Бюджет 2.8</title>
+    <title>Импорт данных &#8212; Документация Блиц Бюджет 2.9</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
@@ -54,7 +54,7 @@
         <li class="right" >
           <a href="notifications.html" title="Расширенная настройка импорта SMS и push-уведомлений"
              accesskey="P">назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.8</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.9</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Импорт данных</a></li> 
       </ul>
     </div>  
@@ -89,7 +89,8 @@
 <section id="sms-push">
 <h2>SMS и Push уведомления<a class="headerlink" href="#sms-push" title="Permalink to this heading">¶</a></h2>
 <p>По умолчанию Блиц Бюджет для Android автоматически импортирует SMS и Push уведомления. Тем не менее, в приложении есть возможность
-в любой момент импортировать вручную SMS и push-уведомления. Для этого:</p>
+в любой момент импортировать вручную SMS и push-уведомления. Для этого откройте справочник <span class="bbmeta">SMS сообщения</span>, <span class="bbmeta">Push уведомления</span> или
+специальный диалог импорта:</p>
 <ol class="arabic simple">
 <li><p>Откройте диалог импорта.</p></li>
 <li><p>Выберите счет, для которого нужно импортировать SMS. В счете должны быть указаны идентификатор и настройка импорта SMS.</p></li>
@@ -121,10 +122,11 @@
 <section id="id4">
 <h3>Справочники<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <p>Возможен импорт справочников <span class="bbmeta">Счета</span>, <span class="bbmeta">Статьи</span>, <span class="bbmeta">Плательщики и получатели</span>, <span class="bbmeta">Проекты</span>, <span class="bbmeta">Персоны</span> и <span class="bbmeta">Места</span>.
-При импорте поддерживается иерархия, которая должна быть указана в колонке Name с разделителем «/» или «\». Например, из строки:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Расходы</span>\<span class="n">Прочие</span>
-</pre></div>
-</div>
+Поддерживается импорт древовидных данных, для этого полный путь к элементу должна быть указан в колонке Name с разделителем «/», «\» или другим.
+Сам разделитель можно указать в диалоге импорта. Например, из строки:</p>
+<blockquote>
+<div><p>Расходы/Прочие</p>
+</div></blockquote>
 <p>будут созданы группа Расходы и элемент Прочие, принадлежащий группе Расходы.</p>
 <p>Поддерживаются имена колонок (если в таблице указано несколько имен, то в файле должно
 использоваться только одно из перечисленных в таблице):</p>
@@ -171,14 +173,21 @@
 </section>
 <section id="id5">
 <h3>Операции<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
-<p>Возможен импорт фактических и плановых операций, сплитов, а также переводов. В последнем случае из одной строки файла создаются две операции.</p>
-<p>По-умолчанию, без изменений CSV файла работает импорт файлов, созданных в приложениях:</p>
+<p>Возможен импорт фактических и плановых операций, сплитов, а также переводов. В последнем случае из одной
+строки файла создаются две операции. Названия элементов справочников можно указывать с учетом иерархии, например:</p>
+<blockquote>
+<div><p>Расходы/Прочие</p>
+</div></blockquote>
+<p>При импорте операции с такой категорией дополнительно будут найдены или созданы группа Расходы и элемент Прочие,
+принадлежащий группе Расходы.</p>
+<p>По-умолчанию, без изменений CSV файла поддерживается импорт файлов, созданных в приложениях:</p>
 <ul class="simple">
 <li><p>AbilityCash</p></li>
 <li><p>AnMoney</p></li>
 <li><p>Bluecoins</p></li>
 <li><p>Financisto</p></li>
 <li><p>Дзен-мани</p></li>
+<li><p>Handy Money</p></li>
 </ul>
 <p>Поддерживаются имена колонок (если в таблице указано несколько имен, то в файле должно
 использоваться только одно из перечисленных в таблице):</p>
@@ -238,19 +247,19 @@
 </tr>
 <tr class="row-even"><td><p>category, categoryName, Категория</p></td>
 <td><p>Нет</p></td>
-<td><p>Наименование категории, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки</p></td>
+<td><p>Наименование категории</p></td>
 </tr>
 <tr class="row-odd"><td><p>project</p></td>
 <td><p>Нет</p></td>
-<td><p>Наименование проекта, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки</p></td>
+<td><p>Наименование проекта</p></td>
 </tr>
 <tr class="row-even"><td><p>person, unit</p></td>
 <td><p>Нет</p></td>
-<td><p>Наименование персоны/подразделения, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки</p></td>
+<td><p>Наименование персоны/подразделения</p></td>
 </tr>
 <tr class="row-odd"><td><p>location, place</p></td>
 <td><p>Нет</p></td>
-<td><p>Наименование места, если не указано, то программа дополнительно выполняет поиск по ключевым словам текущей строки</p></td>
+<td><p>Наименование места</p></td>
 </tr>
 <tr class="row-even"><td><p>notes, note, comment, Примечания</p></td>
 <td><p>Нет</p></td>
@@ -429,7 +438,7 @@
         <li class="right" >
           <a href="notifications.html" title="Расширенная настройка импорта SMS и push-уведомлений"
              >назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.8</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.9</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Импорт данных</a></li> 
       </ul>
     </div>

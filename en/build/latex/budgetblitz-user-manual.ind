@@ -5,18 +5,18 @@
 \let\spxextra \sphinxstyleindexextra
 
   \bigletter C
-  \item \spxentry {contractor}, \hyperindexformat{\spxpagem}{87}
+  \item \spxentry{contractor}, \hyperindexformat{\spxpagem}{87}
 
   \indexspace
   \bigletter E
-  \item \spxentry {exchange node}, \hyperindexformat{\spxpagem}{87}
+  \item \spxentry{exchange node}, \hyperindexformat{\spxpagem}{87}
 
   \indexspace
   \bigletter S
-  \item \spxentry {split}, \hyperindexformat{\spxpagem}{87}
+  \item \spxentry{split}, \hyperindexformat{\spxpagem}{87}
 
   \indexspace
   \bigletter T
-  \item \spxentry {technical category}, \hyperindexformat{\spxpagem}{87}
+  \item \spxentry{technical category}, \hyperindexformat{\spxpagem}{87}
 
 \end{sphinxtheindex}

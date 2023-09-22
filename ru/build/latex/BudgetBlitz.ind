@@ -4,14 +4,13 @@
 \let\spxentry \sphinxstyleindexentry
 \let\spxextra \sphinxstyleindexextra
 
-  \bigletter {\sphinxsymbolsname}
-  \item \spxentry {\IeC {\cyrk }\IeC {\cyro }\IeC {\cyrn }\IeC {\cyrt }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrg }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyrt }}, 
-		\hyperindexformat{\spxpagem}{139}
-  \item \spxentry {\IeC {\cyrs }\IeC {\cyrp }\IeC {\cyrl }\IeC {\cyri }\IeC {\cyrt }}, 
-		\hyperindexformat{\spxpagem}{139}
-  \item \spxentry {\IeC {\cyrt }\IeC {\cyre }\IeC {\cyrh }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyrch }\IeC {\cyre }\IeC {\cyrs }\IeC {\cyrk }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyrs }\IeC {\cyrt }\IeC {\cyra }\IeC {\cyrt }\IeC {\cyrsftsn }\IeC {\cyrya }}, 
-		\hyperindexformat{\spxpagem}{139}
-  \item \spxentry {\IeC {\cyru }\IeC {\cyrz }\IeC {\cyre }\IeC {\cyrl } \IeC {\cyro }\IeC {\cyrb }\IeC {\cyrm }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyra }}, 
-		\hyperindexformat{\spxpagem}{139}
+  \bigletter �
+  \item \spxentry{контрагент}, \hyperindexformat{\spxpagem}{143}
+
+  \indexspace
+  \bigletter �
+  \item \spxentry{сплит}, \hyperindexformat{\spxpagem}{143}
+  \item \spxentry{техническая статья}, \hyperindexformat{\spxpagem}{143}
+  \item \spxentry{узел обмена}, \hyperindexformat{\spxpagem}{143}
 
 \end{sphinxtheindex}
