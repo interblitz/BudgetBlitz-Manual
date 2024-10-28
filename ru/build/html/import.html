@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Импорт данных &#8212; Документация Блиц Бюджет 2.9</title>
+    <title>Импорт данных &#8212; документация Блиц Бюджет 2.9</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/bbstyle.css" />
@@ -54,7 +54,7 @@
         <li class="right" >
           <a href="notifications.html" title="Расширенная настройка импорта SMS и push-уведомлений"
              accesskey="P">назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.9</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">документация Блиц Бюджет 2.9</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Импорт данных</a></li> 
       </ul>
     </div>  
@@ -180,7 +180,7 @@
 </div></blockquote>
 <p>При импорте операции с такой категорией дополнительно будут найдены или созданы группа Расходы и элемент Прочие,
 принадлежащий группе Расходы.</p>
-<p>По-умолчанию, без изменений CSV файла поддерживается импорт файлов, созданных в приложениях:</p>
+<p>По-умолчанию, без изменения CSV файла, поддерживается импорт файлов, созданных в приложениях:</p>
 <ul class="simple">
 <li><p>AbilityCash</p></li>
 <li><p>AnMoney</p></li>
@@ -188,6 +188,7 @@
 <li><p>Financisto</p></li>
 <li><p>Дзен-мани</p></li>
 <li><p>Handy Money</p></li>
+<li><p>Cash Organizer (расширение файла txt)</p></li>
 </ul>
 <p>Поддерживаются имена колонок (если в таблице указано несколько имен, то в файле должно
 использоваться только одно из перечисленных в таблице):</p>
@@ -241,7 +242,7 @@
 <td><p>Нет</p></td>
 <td><p>Валюта операции</p></td>
 </tr>
-<tr class="row-odd"><td><p>payer, payee, contractor</p></td>
+<tr class="row-odd"><td><p>payer, payee, contractor, контрагент, получатель</p></td>
 <td><p>Нет</p></td>
 <td><p>Наименование плательщика или получателя платежа</p></td>
 </tr>
@@ -354,11 +355,12 @@
 <h2>Электронные чеки<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
 <p>Блиц Бюджет для Android поддерживает импорт электронных чеков. Возможен импорт чеков:</p>
 <ol class="arabic simple">
-<li><p>В формате JSON из приложения Проверка чеков ФНС России.</p></li>
+<li><p>В формате JSON из приложения Проверка чеков ФНС России (возмржен импорт одного чека или набора чеков).</p></li>
 <li><p>http-ссылки на чеки в формате HTML в сервисе platformaofd.ru (авторизация не требуется).</p></li>
 <li><p>Из текста электронного письма Ozon с чеком. Возможно объединение чеков по одному заказу.</p></li>
 <li><p>Из QR кода на бумажном чеке. В этом случае будет создана операция на сумму и дату, указанные в QR коде. QR код необходимо сканировать и распознать в любом стороннем приложении.</p></li>
 <li><p>В формате XML из личного кабинета на cabinet.tax.gov.ua для Украины.</p></li>
+<li><p>Из сервиса распоназвания чеков www.eagle-doc.com.</p></li>
 </ol>
 <p>Для импорта из сторонних приложений:</p>
 <ol class="arabic simple">
@@ -385,7 +387,7 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <div>
-    <h3><a href="index.html">Table of Contents</a></h3>
+    <h3><a href="index.html">Оглавление</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Импорт данных</a><ul>
 <li><a class="reference internal" href="#id2">Настройки импорта уведомлений</a></li>
@@ -438,7 +440,7 @@
         <li class="right" >
           <a href="notifications.html" title="Расширенная настройка импорта SMS и push-уведомлений"
              >назад</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Документация Блиц Бюджет 2.9</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">документация Блиц Бюджет 2.9</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Импорт данных</a></li> 
       </ul>
     </div>
