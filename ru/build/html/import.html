@@ -215,14 +215,14 @@
 <td><p>Наименование или номер счета</p></td>
 </tr>
 <tr class="row-even"><td><p>date, Дата</p></td>
-<td><p>Нет</p></td>
-<td><p>Дата в одном из форматов: «dd’d’MM’d’yyyy» (например, 01d01d2017), «yyyy’d’MM’d’dd» (например, 2017d01d01), «yyyyMMddHHmmss», «yyyyMMddHHmm», «yyyyMMdd», «yyyy-MM-dd HH:mm:ss», «yyyy-MM-dd HH:mm», «yyyy-MM-dd», «dd-MM-yyyy HH:mm:ss», «dd-MM-yyyy HH:mm», «dd-MM-yyyy», «dd.MM.yyyy HH:mm:ss», «dd.MM.yyyy HH:mm», «dd.MM.yyyy»</p></td>
+<td><p>Да</p></td>
+<td><p>Дата в одном из форматов, см. <a class="reference internal" href="app-supported-formats.html#chapter-app-supported-formats"><span class="std std-ref">Поддерживаемые форматы</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>time</p></td>
 <td><p>Нет</p></td>
-<td><p>Время в одном из форматов: «HH:mm:ss», «HH:mm», «HHmmss», «HHmm»</p></td>
+<td><p>Время в одном из форматов, см. <a class="reference internal" href="app-supported-formats.html#chapter-app-supported-formats"><span class="std std-ref">Поддерживаемые форматы</span></a></p></td>
 </tr>
-<tr class="row-even"><td><p>amount, income, Income amount, Сумма</p></td>
+<tr class="row-even"><td><p>amount, income, Income amount, Сумма, Amount Split, Сумма сплита</p></td>
 <td><p>Да</p></td>
 <td><p>Сумма операции (может содержать валюту и разделители групп разрядов), десятичный разделитель может быть точкой или запятой, может быть суммой в валюте операции или суммой в валюте счета</p></td>
 </tr>
@@ -262,7 +262,7 @@
 <td><p>Нет</p></td>
 <td><p>Наименование места</p></td>
 </tr>
-<tr class="row-even"><td><p>notes, note, comment, Примечания</p></td>
+<tr class="row-even"><td><p>notes, note, comment, Примечания, Note Split, Примечание сплита</p></td>
 <td><p>Нет</p></td>
 <td><p>Примечание</p></td>
 </tr>
@@ -300,6 +300,10 @@
 строка будет пропущена.</p>
 <p>Если строка содержит не все обязательные колонки, но при этом задано значение обязательной колонки amount, то такая
 строка считается детализацией операции и приложение создает сплит.</p>
+<p>Сплит прикрепляется к последней строке, которая не является сплитом.</p>
+<p>Для справочников <span class="bbmeta">Счета</span>, <span class="bbmeta">Статьи</span>, <span class="bbmeta">Плательщики и получатели</span>, <span class="bbmeta">Проекты</span>, <span class="bbmeta">Персоны</span> и <span class="bbmeta">Места</span>
+поддерживается импорт древовидных данных, для этого полный путь к элементу должен быть указан в наименовании с разделителем «/», «\» или другим.
+Разделитель можно указать в диалоге импорта.</p>
 <p>Пример файла, сформированного в приложении AbilityCash:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Executed&quot;</span><span class="p">;</span><span class="s2">&quot;Locked&quot;</span><span class="p">;</span><span class="s2">&quot;Date&quot;</span><span class="p">;</span><span class="s2">&quot;Balance correction&quot;</span><span class="p">;</span><span class="s2">&quot;Income account&quot;</span><span class="p">;</span><span class="s2">&quot;Income amount&quot;</span><span class="p">;</span><span class="s2">&quot;Income balance&quot;</span><span class="p">;</span><span class="s2">&quot;Expense account&quot;</span><span class="p">;</span><span class="s2">&quot;Expense amount&quot;</span><span class="p">;</span><span class="s2">&quot;Expense balance&quot;</span><span class="p">;</span><span class="s2">&quot;Comment&quot;</span><span class="p">;</span>
 <span class="s2">&quot;+&quot;</span><span class="p">;;</span><span class="mf">01.11.2021</span> <span class="mi">09</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">;</span><span class="s2">&quot;+&quot;</span><span class="p">;</span><span class="s2">&quot;Card 1234&quot;</span><span class="p">;</span><span class="mi">500</span><span class="p">;</span><span class="mi">100</span><span class="p">;;;;</span><span class="s2">&quot;Some notes&quot;</span><span class="p">;</span>
@@ -356,11 +360,12 @@
 <p>Блиц Бюджет для Android поддерживает импорт электронных чеков. Возможен импорт чеков:</p>
 <ol class="arabic simple">
 <li><p>В формате JSON из приложения Проверка чеков ФНС России (возможен импорт одного чека или набора чеков).</p></li>
+<li><p>В формате JSON по ссылке на <a class="reference external" href="https://consumer.oofd.kz">https://consumer.oofd.kz</a> (Казахстан, ОФД Казахтелеком).</p></li>
 <li><p>http-ссылки на чеки в формате HTML в сервисе platformaofd.ru (авторизация не требуется).</p></li>
 <li><p>Из текста электронного письма Ozon с чеком. Возможно объединение чеков по одному заказу.</p></li>
 <li><p>Из QR кода на бумажном чеке. В этом случае будет создана операция на сумму и дату, указанные в QR коде. QR код необходимо сканировать и распознать в любом стороннем приложении.</p></li>
 <li><p>В формате XML из личного кабинета на cabinet.tax.gov.ua для Украины.</p></li>
-<li><p>Из сервиса распоназвания чеков www.eagle-doc.com.</p></li>
+<li><p>Из сервиса распознавания чеков www.eagle-doc.com.</p></li>
 </ol>
 <p>Для импорта из сторонних приложений:</p>
 <ol class="arabic simple">

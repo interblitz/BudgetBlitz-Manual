@@ -30,6 +30,7 @@
    versions
    migration-to-pro
    service
+   app-supported-formats
    banks
    glossary
 
