@@ -156,6 +156,7 @@ CSV файлы
 * Дзен-мани
 * Handy Money
 * Cash Organizer (расширение файла txt)
+* 1C: Деньги (`Обработка для выгрузки справочников и операций <https://github.com/interblitz/BudgetBlitz-Manual/releases/download/import/bz1CMoneyExport_v1_00.epf>`_)
 
 Поддерживаются имена колонок (если в таблице указано несколько имен, то в файле должно
 использоваться только одно из перечисленных в таблице):
